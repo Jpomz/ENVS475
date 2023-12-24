@@ -1,0 +1,160 @@
+---
+title: "ENVS475 Homework 11: Factorial"
+subtitle: "Not Graded"
+date: "Spring, 2023"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+   warning = FALSE, message = FALSE,
+   eval = FALSE,
+   fig.align = 'center', fig.retina = 2,
+  collapse = TRUE,
+  comment = "#>"
+)
+library(dplyr)
+
+```
+
+# This assignment will Not be graded.
+
+# Assignment Format
+
+* Open a new R script
+* Save your R script in the `homework/` folder
+* Name your script according to: `full_name_hw##.R`
+  + For example: `justin_pomeranz_hw11.R`
+* Comment before each problem, and each sub-problem
+* Make sure your results print out on `Source with echo`
+  + If you're answer is saved in an object, make sure you print out that object afterwards
+  
+# Setup
+
+## Load packages
+
+```{r, eval=FALSE}
+# load libraries
+library(dplyr)
+library(ggplot2)
+```
+
+# Data
+
+For this homework, you will need to download three .csv files from D2L: `moth_data.csv`, and `latin_square_crops.csv`.  
+
+# Problem 1: `moth` 
+
+### Load the data into R  
+```{r}
+moth <- read.csv("data/moth_data.csv")
+```
+
+This is simulated data looking at the effects of different pesticides for controlling the abundance of a moth pest species. The experiment was blocked based on different regions in the SE US. 
+
+You should always print out the `names()` and `head()` of data objects when you load them into your R environment.
+
+You may also want to look at the distinct/unique levels of each of the categorical/factor variables. 
+
+### Wrangle the data
+
+You may have noticed that the `Region` variable is a number. If we plug the data as-is into a linear model, R will treat this as a continuous variable. Since this represents different groups, we need to change the class of this variable to be a factor. 
+
+Run the following code **before** answering the problems below. 
+
+```{r}
+moth <- moth %>%
+  mutate(Region = factor(Region))
+```
+
+1.1 Make a box plot of the response variable (`caterpillar`) grouped with the herbicide treatment.  
+
+  * **Note** do **not** include `Region` as a grouping variable. There is only one observation for each treatment in each region, and this is not enough to make a box plot.  
+
+1.2 Interpret the box plots here. Does it appear that there is equal variance across the different treatments? Why or why not?  
+
+1.3 Now, make a box plot of the response variable grouped by region (ignore the treatment variable)  
+
+1.4 Interpret the box plots here. Does it appear that there is equal variance across the different regions? Why or why not?  
+
+1.5 Fit a linear model using the `lm()` function, and save it as a new data object. Make sure to include both the `Treatment` and `Region` variables as main effects in the model.  
+
+1.6 Write out the null and alternative hypotheses for this model.  
+
+
+1.7 Print out the ANOVA table for the linear model you fit in problem 2.5.  
+
+1.8 Write out your statistical interpretation of the ANOVA table. Make sure to report all appropriate statistics. 
+
+1.9 Write out an interpretation of these results using plain words.  
+
+1.10 To see how accounting for blocking effects can affect our model, fit a linear model without the region factor, and save it as a new data object.  
+
+
+1.11 Print out the ANOVA table for your second model (without region)  
+
+1.12 Write out the statistical interpretation of this second model. 
+
+
+1.13 What does this mean in your own words? What happened?  
+
+
+# Problem 2: `latin_square_crops`
+
+### Read in the data
+
+```{r}
+latin_ag <- read.csv("data/latin_square_crops.csv")
+```
+
+This is a data set investigating the impact of tillage, fertilizer, and seed variety on yield (measured in cwt_year) in an agricultural setting. 
+
+* `cwt_year` = this is the response variable (yield) measured in hundred-weight. (Hundred weight is a measurement in commodities trading. Basically, a higher number means more yield)
+
+You should always print out the `names()` and `head()` of data objects when you load them into your R environment.
+
+You may also want to look at the distinct/unique levels of each of the categorical/factor variables. 
+
+### Experimental design
+
+Here is an illustration of how the experimental field was set up. 
+
+```{r, echo=FALSE}
+latin_ag <- read.csv(here::here("data/latin_square_crops.csv"))
+ls_mat <- matrix(latin_ag$seed, 5, 5)
+row.names(ls_mat) <- unique(latin_ag$fertil)
+colnames(ls_mat) <- unique(latin_ag$treat)
+ls_mat
+```
+
+Variables: 
+  * `treat` = each "column" in the field received a different tillage method  
+  * `fertil` = each "row" in the field received a different fertilizer mix  
+  * `seed` = "LETTER" = each "cell" in the field received a different seed variety  
+  
+You can see that each column and row has exactly one observation of each seed variety (A-E).   
+
+2.1 Write out the null and alternative hypotheses for this experiemntal design.  
+
+  * **Hint** You should have one set of hypotheses for each factor: Fertilizer, Tillage, and Seed.  
+  
+2.2 Fit a linear model for this analysis, and save it as a new data object.  
+
+2.3 Print out the ANOVA table for your linear model.  
+
+2.4 Write out the statistical interpretation for the main effects tested in this model. Be sure to include all appropriate statistics and relate it back to your null and alternative hypotheses.  
+
+2.5 Perform a Tukey HSD multiple comparison for this model.   
+
+2.6 Interpret the output of the Tukey HSD here.  
+
+  * **Note** There are lots of pairwise comparisons here. To simplify,  you can just list the pairs within each factor which were significantly different.  
+
+2.7 Make a plot of the Tukey HSD results.  
+
+### Coda  
+
+This concludes the homework assignment.  
