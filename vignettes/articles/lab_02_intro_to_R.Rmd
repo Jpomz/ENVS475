@@ -1,7 +1,9 @@
 ---
-title: "Lab 01A: Introduction to R"
+title: "Lab 02: Introduction to R"
 subtitle: "ENVS475: Experimental Analysis and Design"
 date: "Spring, 2023"
+resource_files:
+  - vignettes/Swainson_Thrush.jpg
 output:
   html_document:
     toc: true
