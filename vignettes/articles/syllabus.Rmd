@@ -1,0 +1,25 @@
+---
+title: "Syllabus"
+subtitle: "ENVS475"
+author: "Spring 2024"
+output: 
+  rmarkdown::html_vignette:
+    keep_md: yes
+vignette: >
+  %\VignetteIndexEntry{Syllabus}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  collapse = TRUE, warning = FALSE, message = FALSE,
+  comment = "#>"
+)
+```
+
+
+### Subject to change  
+
+Need to update file

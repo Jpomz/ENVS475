@@ -1,0 +1,67 @@
+title: ENVS475
+#url: http://Jpomz.github.io/ENVS475
+template:
+  params:
+    bootswatch: spacelab
+
+reference:
+
+navbar:
+  left:
+    - icon: fa-home
+      href: index.html
+  right:
+    - text: "Syllabus"
+      icon: fa-book
+      href: articles/syllabus.html
+    - text: "Schedule"
+      icon: fa-calendar
+      href: articles/schedule.html
+    - text: "Lectures"
+      icon: fa-desktop
+      menu:
+        - text: "Lecture 0: Course introduction"
+          href: articles/lectures/lecture_00/lecture_00_course_overview.html
+        - text: "Lecture 03: Basic Statistics"
+          href: articles/lectures/lecture_03_basic-stats/lecture_03_basic-stats.html
+    - text: "Labs"
+      icon: fa-laptop-code
+      menu:
+        - text: "lab_01_projects"
+          href: articles/lab_01_projects.html
+        - text: "lab_02_intro_to_R"
+          href: articles/lab_02_intro_to_R.html
+        - text: "lab 03: Normal Distributions"
+          href: articles/lab_03_normal-distributions.html
+        - text: "lab 04a: dplyr"
+          href: articles/lab_04a_dplyr.html
+        - text: "lab_04b_ggplot"
+          href: articles/lab_04b_ggplot.html
+        - text: "lab_05_point-estimates"
+          href: articles/lab_05_point-estimates.html
+        - text: "lab_06_linear-models"
+          href: articles/lab_06_linear-models.html
+        - text: "lab_07_intro_markdown"
+          href: articles/lab_07_intro_markdown.html
+        - text: "lab_08_t-tests"
+          href: articles/lab_08_t-tests.html
+        - text: "lab_10_anova"
+          href: articles/lab_10_anova.html
+        - text: "lab_11_factorial-anova"
+          href: articles/lab_11_factorial-anova.html
+        - text: "lab_12_2-way-anova"
+          href: articles/lab_12_2-way-anova.html
+        - text: "lab_13_linear-regression"
+          href: articles/lab_13_linear-regression.html
+        - text: "lab_14_ANCOVA"
+          href: articles/lab_14_ANCOVA.html
+    - text: "Homework"
+      icon: fa-folder-open
+      menu:
+        - text: "Homework 01 setup"
+          href: articles/homework/HW_01.html
+    - text: "References"
+      icon: fa-pencil-square-o
+      menu:
+        - text: "Terms and Definitions"
+          href: articles/term-list.html

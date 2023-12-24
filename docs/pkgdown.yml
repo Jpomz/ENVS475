@@ -4,6 +4,7 @@ pkgdown_sha: ~
 articles:
   lab_01_projects: lab_01_projects.html
   lab_02_intro_to_R: lab_02_intro_to_R.html
+  lab_03_normal-distributions: lab_03_normal-distributions.html
   lab_04a_dplyr: lab_04a_dplyr.html
   lab_04b_ggplot: lab_04b_ggplot.html
   lab_05_point-estimates: lab_05_point-estimates.html
@@ -16,5 +17,7 @@ articles:
   lab_13_linear-regression: lab_13_linear-regression.html
   lab_14_ANCOVA: lab_14_ANCOVA.html
   schedule: schedule.html
-last_built: 2023-12-24T20:48Z
+  syllabus: syllabus.html
+  term-list: term-list.html
+last_built: 2023-12-24T22:56Z
 
