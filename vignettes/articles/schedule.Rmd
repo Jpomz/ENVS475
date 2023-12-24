@@ -5,6 +5,7 @@ author: "Spring 2024"
 output: 
   rmarkdown::html_vignette:
     keep_md: yes
+    rmarkdown.html_vignette.check_title = FALSE
 vignette: >
   %\VignetteIndexEntry{Schedule}
   %\VignetteEngine{knitr::rmarkdown}
