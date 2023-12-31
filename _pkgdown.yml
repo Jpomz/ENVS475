@@ -20,46 +20,80 @@ navbar:
     - text: "Lectures"
       icon: fa-desktop
       menu:
-        - text: "Lecture 0: Course introduction"
+        - text: "Lecture 01: Course introduction"
           href: articles/lectures/lecture_00/lecture_00_course_overview.html
+        - text: "Lecture 02: Normal Distributions"
+          href: articles/lectures/lecture_02_normal-distributions/lecture_02_normal-distributions.html
         - text: "Lecture 03: Basic Statistics"
           href: articles/lectures/lecture_03_basic-stats/lecture_03_basic-stats.html
+        - text: "Lecture 05: Point Estimates"
+          href: articles/lectures/lecture_05_estimation/lecture_05_estimation.html
+        - text: "Lecture 06: Intro to Models"
+          href: articles/lectures/lecture_06_intro-models/lecture_06_intro-models.html
+        - text: "Lecture 07: t-tests"
+          href: articles/lectures/lecture_07_t-tests/lecture_07_t-tests.html
+        - text: "Lecture 10: ANOVA"
+          href: articles/lectures/lecture_10_anova/lecture_10_anova.html
     - text: "Labs"
       icon: fa-laptop-code
       menu:
-        - text: "lab_01_projects"
+        - text: "lab 01: projects"
           href: articles/lab_01_projects.html
-        - text: "lab_02_intro_to_R"
+        - text: "lab 02: Intro to R"
           href: articles/lab_02_intro_to_R.html
         - text: "lab 03: Normal Distributions"
           href: articles/lab_03_normal-distributions.html
         - text: "lab 04a: dplyr"
           href: articles/lab_04a_dplyr.html
-        - text: "lab_04b_ggplot"
+        - text: "lab 04b: ggplot"
           href: articles/lab_04b_ggplot.html
-        - text: "lab_05_point-estimates"
+        - text: "lab 05: point estimates"
           href: articles/lab_05_point-estimates.html
-        - text: "lab_06_linear-models"
+        - text: "lab 06: linear models"
           href: articles/lab_06_linear-models.html
-        - text: "lab_07_intro_markdown"
+        - text: "lab 07: intro to R markdown"
           href: articles/lab_07_intro_markdown.html
-        - text: "lab_08_t-tests"
+        - text: "lab 08: t-tests"
           href: articles/lab_08_t-tests.html
-        - text: "lab_10_anova"
+        - text: "lab 10: ANOVA"
           href: articles/lab_10_anova.html
-        - text: "lab_11_factorial-anova"
+        - text: "lab 11: Factorial ANOVA"
           href: articles/lab_11_factorial-anova.html
-        - text: "lab_12_2-way-anova"
+        - text: "lab 12: 2-way anova"
           href: articles/lab_12_2-way-anova.html
-        - text: "lab_13_linear-regression"
+        - text: "lab 13: Linear Regression"
           href: articles/lab_13_linear-regression.html
-        - text: "lab_14_ANCOVA"
+        - text: "lab 14: ANCOVA"
           href: articles/lab_14_ANCOVA.html
     - text: "Homework"
       icon: fa-folder-open
       menu:
         - text: "Homework 01 setup"
           href: articles/homework/HW_01.html
+        - text: "Homework 02 Intro to R"
+          href: articles/homework/HW_02_intro_R.html
+        - text: "Homework 03 Normal Distributions"
+          href: articles/homework/HW_03_normal-distriburions.html
+        - text: "Homework 04 dplyr + ggplot2"
+          href: articles/homework/HW_04_dplyr_ggplot.html
+        - text: "Homework 05 Point Estimates"
+          href: articles/homework/HW_05_point-estimates.html
+        - text: "Homework 06 Intro to Linear Models"
+          href: articles/homework/HW_06_linear_models.html
+        - text: "Homework 07 t-tests"
+          href: articles/homework/HW_07_t-tests.html
+        - text: "Homework 09 R Markdown"
+          href: articles/homework/HW_09_markdown.html
+        - text: "Homework 10 ANOVA"
+          href: articles/homework/HW_10_ANOVA.html
+        - text: "Homework 11 Factorial ANOVA"
+          href: articles/homework/HW_11_factorial.html
+        - text: "Homework 12 2-way ANOVA"
+          href: articles/homework/HW_12_two-way-ANOVA.html
+        - text: "Homework 13 Linear Regression"
+          href: articles/homework/HW_13_linear-regression.html
+        - text: "Homework 14 ANCOVA"
+          href: articles/homework/HW_14_ANCOVA.html
     - text: "References"
       icon: fa-pencil-square-o
       menu:
