@@ -7,6 +7,42 @@
     <loc>/articles/homework/HW_01.html</loc>
   </url>
   <url>
+    <loc>/articles/homework/HW_02_intro_R.html</loc>
+  </url>
+  <url>
+    <loc>/articles/homework/HW_03_normal-distributions.html</loc>
+  </url>
+  <url>
+    <loc>/articles/homework/HW_04_dplyr_ggplot.html</loc>
+  </url>
+  <url>
+    <loc>/articles/homework/HW_05_point-estimates.html</loc>
+  </url>
+  <url>
+    <loc>/articles/homework/HW_06_linear_models.html</loc>
+  </url>
+  <url>
+    <loc>/articles/homework/HW_07_t-tests.html</loc>
+  </url>
+  <url>
+    <loc>/articles/homework/HW_09_markdown.html</loc>
+  </url>
+  <url>
+    <loc>/articles/homework/HW_10_ANOVA.html</loc>
+  </url>
+  <url>
+    <loc>/articles/homework/HW_11_factorial.html</loc>
+  </url>
+  <url>
+    <loc>/articles/homework/HW_12_two-way-ANOVA.html</loc>
+  </url>
+  <url>
+    <loc>/articles/homework/HW_13_linear-regression.html</loc>
+  </url>
+  <url>
+    <loc>/articles/homework/HW_14_ANCOVA.html</loc>
+  </url>
+  <url>
     <loc>/articles/index.html</loc>
   </url>
   <url>
@@ -52,10 +88,28 @@
     <loc>/articles/lab_14_ANCOVA.html</loc>
   </url>
   <url>
-    <loc>/articles/lectures/lecture_00/lecture_00_course_overview.html</loc>
+    <loc>/articles/lectures/lecture_00/lecture_01_course_overview.html</loc>
+  </url>
+  <url>
+    <loc>/articles/lectures/lecture_02_normal-distributions/lecture_02-notes_normal-distributions.html</loc>
   </url>
   <url>
     <loc>/articles/lectures/lecture_03_basic-stats/lecture_03_basic-stats.html</loc>
+  </url>
+  <url>
+    <loc>/articles/lectures/lecture_05_estimation/lecture_05_estimation.html</loc>
+  </url>
+  <url>
+    <loc>/articles/lectures/lecture_06_intro-models/lecture_06_intro-models.html</loc>
+  </url>
+  <url>
+    <loc>/articles/lectures/lecture_07_t-tests/lecture_07_t-tests.html</loc>
+  </url>
+  <url>
+    <loc>/articles/lectures/lecture_10_anova/lecture_10_anova.html</loc>
+  </url>
+  <url>
+    <loc>/articles/lectures/lecture_10_anova/lecture_10_anova_rushing.html</loc>
   </url>
   <url>
     <loc>/articles/schedule.html</loc>
