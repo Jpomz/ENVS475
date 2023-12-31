@@ -11,7 +11,7 @@
 
 
 
-<title>ENVS475 Homework 01: Setup</title>
+<title>ENVS475 Homework 14: Linear Regression</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,81 +348,165 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">ENVS475 Homework 01: Setup</h1>
-<h4 class="date">Spring 2024</h4>
+<h1 class="title toc-ignore">ENVS475 Homework 14: Linear Regression</h1>
+<h4 class="date">Spring, 2024</h4>
 
 </div>
 
 <div id="TOC">
 <ul>
-<li><a href="#complete-this-assignment-for-a-grade." id="toc-complete-this-assignment-for-a-grade.">Complete this assignment
-for a grade.</a>
+<li><a href="#assignment-format" id="toc-assignment-format">Assignment
+Format</a></li>
+<li><a href="#overview-ancova" id="toc-overview-ancova">Overview:
+ANCOVA</a></li>
+<li><a href="#setup" id="toc-setup">Setup</a>
 <ul>
-<li><a href="#assignment-submission" id="toc-assignment-submission">Assignment submission</a></li>
+<li><a href="#load-packages" id="toc-load-packages">Load
+packages</a></li>
+</ul></li>
+<li><a href="#data" id="toc-data">Data</a>
+<ul>
+<li><a href="#download-the-data-and-read-into-r" id="toc-download-the-data-and-read-into-r">Download the data and read
+into R</a></li>
+</ul></li>
+<li><a href="#exercises-homework-14-ancova" id="toc-exercises-homework-14-ancova">Exercises Homework 14: ANCOVA</a>
+<ul>
+<li><a href="#problem-1-limpet" id="toc-problem-1-limpet">Problem 1:
+<code>limpet</code></a></li>
 </ul></li>
 </ul>
 </div>
 
-<div id="complete-this-assignment-for-a-grade." class="section level1">
-<h1>Complete this assignment for a grade.</h1>
-<div id="learning-objectives" class="section level3">
-<h3>Learning Objectives</h3>
-<blockquote>
-<p>Following this assignment students should:</p>
+<div id="assignment-format" class="section level1">
+<h1>Assignment Format</h1>
 <ul>
-<li>Have R and Rstudio downloaded</li>
-<li>Be able to access and open Rstudio</li>
-<li>Have an R-Project for the course</li>
-<li>Be able to download packages and load them into your working
-session</li>
-</ul>
-</blockquote>
-<ol style="list-style-type: decimal">
-<li>Download R and Rstudio</li>
-<li>Make a new Project called “ENVS475”</li>
-<li>In the console, enter the following command and run it:</li>
-</ol>
-<pre class="r"><code>install.packages(&quot;tidyverse&quot;)</code></pre>
-<p><strong>NOTE:</strong> Do <em>NOT</em> put
-<code>install.packages()</code> commands in your scripts. Only ever run
-them in the console.</p>
+<li>Open a new R script</li>
+<li>Save your R script in the <code>homework/</code> folder</li>
+<li>Name your script according to: <code>full_name_hw##.R</code>
 <ul>
-<li>You can also install packages by clicking <code>Tools</code> –&gt;
-<code>Install Packages</code> and then entering the package name in the
-text box and clicking <code>Install</code></li>
+<li>For example: <code>justin_pomeranz_hw14.R</code></li>
+</ul></li>
+<li>Comment before each problem, and each sub-problem</li>
+<li>Make sure your results print out on <code>Source with echo</code>
+<ul>
+<li>If you’re answer is saved in an object, make sure you print out that
+object afterwards</li>
+</ul></li>
 </ul>
-<ol start="4" style="list-style-type: decimal">
-<li><p>Make a new script called “lastname_first-assignment.R” and save
-it in your <code>homework</code> folder in your ENVS396
-Project.</p></li>
-<li><p>In your script, type in the following code and make sure it runs
-correctly:</p></li>
-</ol>
-<pre class="r"><code>library(tidyverse)
-data(&quot;starwars&quot;)
-starwars %&gt;% 
-    filter(homeworld == &quot;Tatooine&quot;) %&gt;%
-    select(name) %&gt;%
-    unique()</code></pre>
-<p>You should see the following output in your console:</p>
-<pre><code>#&gt; # A tibble: 10 × 1
-#&gt;    name              
-#&gt;    &lt;chr&gt;             
-#&gt;  1 Luke Skywalker    
-#&gt;  2 C-3PO             
-#&gt;  3 Darth Vader       
-#&gt;  4 Owen Lars         
-#&gt;  5 Beru Whitesun lars
-#&gt;  6 R5-D4             
-#&gt;  7 Biggs Darklighter 
-#&gt;  8 Anakin Skywalker  
-#&gt;  9 Shmi Skywalker    
-#&gt; 10 Cliegg Lars</code></pre>
 </div>
-<div id="assignment-submission" class="section level2">
-<h2>Assignment submission</h2>
-<p><strong>For full credit, you must show your instructor that you have
-accomplished all of the above tasks.</strong></p>
+<div id="overview-ancova" class="section level1">
+<h1>Overview: ANCOVA</h1>
+<p>Here we go for our final linear-model example. It is unique in that
+it combines a categorical explanatory variable with a continuous
+explanatory variable. What are we up to? We are combining regression and
+one-way ANOVA! Yes we are.</p>
+</div>
+<div id="setup" class="section level1">
+<h1>Setup</h1>
+<div id="load-packages" class="section level2">
+<h2>Load packages</h2>
+<pre class="r"><code># load libraries
+library(dplyr)
+library(ggplot2)</code></pre>
+</div>
+</div>
+<div id="data" class="section level1">
+<h1>Data</h1>
+<div id="download-the-data-and-read-into-r" class="section level2">
+<h2>Download the data and read into R</h2>
+<p>Download the <code>limpet.csv</code> file from D2L and put it in your
+“data” folder. Read it in to R and convert it to a <code>tibble</code>
+with the following command.</p>
+<pre class="r"><code># read in data for problem 1
+limp &lt;- read.csv(&quot;data/limpet.csv&quot;) %&gt;%
+  as_tibble()</code></pre>
+<p>The dataset we will use is <code>limpet.csv</code> and is originally
+from Quinn and Keough’s 2002 book Experimental Design and Data Analysis
+for Biologists. The data relate egg production by limpets to four
+density conditions in two seasons. The response variable (y) is egg
+production (<code>EGGS</code>) and the independent variables (x’s) are
+<code>DENSITY</code> (continuous) and <code>SEASON</code> (categorical).
+Because we are examining egg production along a continuous density
+gradient, this is essentially a study of density-dependent reproduction.
+The experimental manipulation of density was implemented in spring and
+in summer. Thus, a motivation for collecting these data could be ‘does
+the density dependence of egg production differ between spring and
+summer’?</p>
+<p>Density dependence is the idea that as the number of individuals
+sharing a food resource increases (e.g. their density goes up), they get
+a smaller and smaller portion of that food, leading to reduced
+reproduction success.</p>
+</div>
+</div>
+<div id="exercises-homework-14-ancova" class="section level1">
+<h1>Exercises Homework 14: ANCOVA</h1>
+<div id="problem-1-limpet" class="section level2">
+<h2>Problem 1: <code>limpet</code></h2>
+<p>1.1 Print the <code>names()</code> and <code>head()</code> of your
+data object here.</p>
+<p>1.2 Add a comment to your script with each variable and its class.
+Recall that <code>SEASON</code> and <code>DENSITY</code> are our
+predictor variables.</p>
+<p>1.3 Produce a scatter plot of the data with <code>EGGS</code> as the
+response variable and <code>DENSITY</code> as the predictor
+variable.</p>
+<p>1.4 Does there appear to be a linear relationship between the number
+of eggs and increasing population density? Why or why not?</p>
+<p>1.5 Add a line of best fit to your scatter plot with
+<code>geom_smooth(method = &quot;lm&quot;)</code></p>
+<p>1.6 Now, make another scatter plot (without the line) which includes
+<code>SEASON</code> mapped to the <code>color</code> aesthetic. R</p>
+<p>1.7 Does it appear that there is a different relationship between
+spring and summer? In other words, do the colors seem to “group” on one
+side/part of the graph, or are the colors randomly or evenly distributed
+across the graph?</p>
+<p>1.8 Repeat the plot in 1.6, but now add a line of best fit. Below the
+plot, add a comment as to whether or not your answer in 1.7 is supported
+or if you’ve changed your mind.</p>
+<p>1.9 Let’s check the normality of residuals with a qqplot. Make the
+plot, and add a comment below discussing if we meet or fail or
+asusmption.</p>
+<p>1.10 Fit a model using <code>lm()</code> for the limpet data, and
+save it as a new data object. Make sure to include main effects of both
+explanatory AND the interaction between them.</p>
+<p>1.11 Before we look at the model output, let’s make a fitted
+vs. residual plot to check our assumption of Equal variance of
+residuals.</p>
+<ul>
+<li>Use the model-fit object you made in 1.9 above to make a fitted vs
+residual plot.</li>
+</ul>
+<p>1.12 Add a comment to Interpret the plot made above. Does this model
+appear to have equal variance in the residuals? Why or why not?</p>
+<p>1.13 Now, use the <code>anova()</code> function on your model fit
+object above to print out an ANOVA table for your linear regression.</p>
+<p>1.14 Add a comment to your script interpreting the ANOVA table for
+our ANCOVA analysis. Discuss what the predictor variable means, and how
+that relates to a linear model. Recall which variables were continuous
+or categorical.</p>
+<ul>
+<li><p>HINT: Continuous predictors indicate if there is a relationship
+(Linear Regression).</p></li>
+<li><p>Categorical predictors indicate if there is a difference in means
+between groups (different intercepts)</p></li>
+</ul>
+<p>1.15 Print out the <code>summary()</code> of the linear model object
+you created.</p>
+<p>1.16 Add a comment to your script describing what each coefficient
+means. Be sure to specify what group (if necessary) the coefficient
+refers to.</p>
+<p>1.17 Add a comment which has the adjusted R-squared value from our
+model as well as an interpretation for what it means.</p>
+<p>1.18 Add a comment to your script writing out the full equations for
+our linear model.</p>
+<ul>
+<li>HINT: You should have an equation for spring and an equation for
+summer</li>
+</ul>
+<p><span class="math display">\[EGGS_{spring} = \beta_0 + \beta_1 *
+DENSITY \]</span></p>
+<p><span class="math display">\[EGGS_{summer} = (\beta_0+\beta_{0
+\Delta}) + (\beta_1 +\beta_{1 \Delta}) * DENSITY \]</span></p>
 </div>
 </div>
 

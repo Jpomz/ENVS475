@@ -11,7 +11,7 @@
 
 
 
-<title>ENVS475 Homework 01: Setup</title>
+<title>ENVS475 Homework 10: ANOVA</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,81 +348,281 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">ENVS475 Homework 01: Setup</h1>
-<h4 class="date">Spring 2024</h4>
+<h1 class="title toc-ignore">ENVS475 Homework 10: ANOVA</h1>
+<h4 class="date">Spring, 2023</h4>
 
 </div>
 
 <div id="TOC">
 <ul>
-<li><a href="#complete-this-assignment-for-a-grade." id="toc-complete-this-assignment-for-a-grade.">Complete this assignment
-for a grade.</a>
+<li><a href="#assignment-format" id="toc-assignment-format">Assignment
+Format</a></li>
+<li><a href="#setup" id="toc-setup">Setup</a>
 <ul>
-<li><a href="#assignment-submission" id="toc-assignment-submission">Assignment submission</a></li>
+<li><a href="#load-packages" id="toc-load-packages">Load
+packages</a></li>
+</ul></li>
+<li><a href="#data" id="toc-data">Data</a>
+<ul>
+<li><a href="#download-the-data-and-read-into-r" id="toc-download-the-data-and-read-into-r">Download the data and read
+into R</a></li>
+</ul></li>
+<li><a href="#exercises-homework-10-one-way-anova" id="toc-exercises-homework-10-one-way-anova">Exercises Homework 10:
+One-way ANOVA</a>
+<ul>
+<li><a href="#problem-1-crop_anova.csv" id="toc-problem-1-crop_anova.csv">Problem 1:
+<code>crop_anova.csv</code></a></li>
+<li><a href="#data-wrangling" id="toc-data-wrangling">data
+wrangling</a></li>
+<li><a href="#problem-2-orchardsprays" id="toc-problem-2-orchardsprays">Problem 2:
+<code>OrchardSprays</code></a></li>
 </ul></li>
 </ul>
 </div>
 
-<div id="complete-this-assignment-for-a-grade." class="section level1">
-<h1>Complete this assignment for a grade.</h1>
-<div id="learning-objectives" class="section level3">
-<h3>Learning Objectives</h3>
-<blockquote>
-<p>Following this assignment students should:</p>
+<div id="assignment-format" class="section level1">
+<h1>Assignment Format</h1>
 <ul>
-<li>Have R and Rstudio downloaded</li>
-<li>Be able to access and open Rstudio</li>
-<li>Have an R-Project for the course</li>
-<li>Be able to download packages and load them into your working
-session</li>
-</ul>
-</blockquote>
-<ol style="list-style-type: decimal">
-<li>Download R and Rstudio</li>
-<li>Make a new Project called “ENVS475”</li>
-<li>In the console, enter the following command and run it:</li>
-</ol>
-<pre class="r"><code>install.packages(&quot;tidyverse&quot;)</code></pre>
-<p><strong>NOTE:</strong> Do <em>NOT</em> put
-<code>install.packages()</code> commands in your scripts. Only ever run
-them in the console.</p>
+<li>Open a new R script</li>
+<li>Save your R script in the <code>homework/</code> folder</li>
+<li>Name your script according to: <code>full_name_hw##.R</code>
 <ul>
-<li>You can also install packages by clicking <code>Tools</code> –&gt;
-<code>Install Packages</code> and then entering the package name in the
-text box and clicking <code>Install</code></li>
+<li>For example: <code>justin_pomeranz_hw10.R</code></li>
+</ul></li>
+<li>Comment before each problem, and each sub-problem</li>
+<li>Make sure your results print out on <code>Source with echo</code>
+<ul>
+<li>If you’re answer is saved in an object, make sure you print out that
+object afterwards</li>
+</ul></li>
 </ul>
-<ol start="4" style="list-style-type: decimal">
-<li><p>Make a new script called “lastname_first-assignment.R” and save
-it in your <code>homework</code> folder in your ENVS396
-Project.</p></li>
-<li><p>In your script, type in the following code and make sure it runs
-correctly:</p></li>
-</ol>
-<pre class="r"><code>library(tidyverse)
-data(&quot;starwars&quot;)
-starwars %&gt;% 
-    filter(homeworld == &quot;Tatooine&quot;) %&gt;%
-    select(name) %&gt;%
-    unique()</code></pre>
-<p>You should see the following output in your console:</p>
-<pre><code>#&gt; # A tibble: 10 × 1
-#&gt;    name              
-#&gt;    &lt;chr&gt;             
-#&gt;  1 Luke Skywalker    
-#&gt;  2 C-3PO             
-#&gt;  3 Darth Vader       
-#&gt;  4 Owen Lars         
-#&gt;  5 Beru Whitesun lars
-#&gt;  6 R5-D4             
-#&gt;  7 Biggs Darklighter 
-#&gt;  8 Anakin Skywalker  
-#&gt;  9 Shmi Skywalker    
-#&gt; 10 Cliegg Lars</code></pre>
 </div>
-<div id="assignment-submission" class="section level2">
-<h2>Assignment submission</h2>
-<p><strong>For full credit, you must show your instructor that you have
-accomplished all of the above tasks.</strong></p>
+<div id="setup" class="section level1">
+<h1>Setup</h1>
+<div id="load-packages" class="section level2">
+<h2>Load packages</h2>
+<pre class="r"><code># load libraries
+library(dplyr)
+library(ggplot2)</code></pre>
+</div>
+</div>
+<div id="data" class="section level1">
+<h1>Data</h1>
+<div id="download-the-data-and-read-into-r" class="section level2">
+<h2>Download the data and read into R</h2>
+<ol style="list-style-type: decimal">
+<li>Problem 1 will use the “crop_anova.csv” data set on D2L<br />
+</li>
+<li>Problem 2 will use the <code>OrchardSprays</code> data set pre built
+into R.</li>
+</ol>
+<pre class="r"><code># read in data
+crop &lt;- read.csv(&quot;data/crop_anova.csv&quot;)</code></pre>
+</div>
+</div>
+<div id="exercises-homework-10-one-way-anova" class="section level1">
+<h1>Exercises Homework 10: One-way ANOVA</h1>
+<div id="problem-1-crop_anova.csv" class="section level2">
+<h2>Problem 1: <code>crop_anova.csv</code></h2>
+<p>An experiment on the effects of fertilizer addition on the yield (in
+kg) of crops. Agricultural fields received one of three treatments:
+control (no fertilizer), Nitrogen addition, or Phosphorous addition.
+This experimental design has a single factor (<code>fertilizer</code>)
+with three levels (<code>control</code>, <code>N</code>,
+<code>P</code>).</p>
+<p>For this problem, I will not be asking you to print out the names,
+dimensions, etc. of this data set as a question, but you should always
+be in the habit of doing that whenever you load a new data object.</p>
+<p>We will be formally testing whether there is at least one inequality
+between the three groups.</p>
+</div>
+<div id="data-wrangling" class="section level2">
+<h2>data wrangling</h2>
+<p>For this analysis, we will only be looking at the “low”
+<code>density</code> plantings and will also be ignoring the
+<code>block</code> variable (we will use these variables in a future
+assignment).</p>
+<p>Enter the following code into your script and run it:</p>
+<pre class="r"><code>crop1 &lt;- crop %&gt;%
+  filter(density == &quot;low&quot;) %&gt;%
+  select(fertilizer, yield)</code></pre>
+<p>1.1 Add a comment to your homework script stating the null and
+alternative hypotheses for a one-way ANOVA.</p>
+<p>1.2 Make a plot of all the observations of yield, ignoring any other
+grouping variables. Be sure to include a box plot and the raw data
+points.</p>
+<p>1.3 Make a plot of the yield separated by fertilizer treatment. Be
+sure to include a box plot and the raw observations.</p>
+<p>1.4 Based on the box plots made in question 1.3, add a comment to
+your script interpreting the assumption of equal variance. Do these data
+appear to have equal variation between the groups? Why or why not?</p>
+<p>1.5 Check the assumption of the normality of residuals by making a
+QQ-plot of this data.</p>
+<p>1.6 Add a comment to your script interpreting the QQ-plot you made in
+1.5 above. Does it appear that the residuals are normally distributed?
+Why or why not?</p>
+<p>1.7 Use <code>lm()</code> to fit a model to formally test the effect
+of fertilizer treatment on plant yield. Save your model fit as a new
+object (i.e., <code>crop_lm</code>)</p>
+<p>1.8 Before we look at the model output, let’s make a fitted
+vs. residual plot to check our last assumption: Equal variance of
+residuals.</p>
+<ul>
+<li>Use the model-fit object you made in 1.7 above to make a fitted vs
+residual plot.</li>
+</ul>
+<p>1.9 Add a comment to Interpret the plot made in 1.8. Does this model
+appear to have equal variance in the residuals? Why or why not?</p>
+<p>1.10 Now, use the <code>anova()</code> function on your model fit
+object created in 1.7 above to print out an ANOVA table in your
+output.<br />
+1.11 Add a comment to your script and manually type out the following
+values from the table.</p>
+<ul>
+<li><p>The two degrees of freedom</p></li>
+<li><p>The mean square of the among-group variation (treatment
+effect)</p></li>
+<li><p>The Mean square of the unexplained variation (the residual, or
+the “noise”)</p></li>
+<li><p>The F-value</p></li>
+<li><p>The p-value (rounded if necessary)</p></li>
+</ul>
+<p>1.12 Add a comment to your script interpreting the results of our
+one-way ANOVA analysis. Do we reject or fail to reject our null
+hypothesis? Make sure to include all the appropriate statistics in your
+interpretation.</p>
+<p>1.13 Regardless of what your answer to 1.12 was, let’s now look at
+pairwise comparisons between the groups. We will start by looking at the
+output from the <code>lm()</code> analysis.</p>
+<ul>
+<li>Use the <code>summary()</code> function to print out your lm model
+fit object here.</li>
+</ul>
+<p>1.14 Interpret what the Intercept coefficient means.</p>
+<ul>
+<li><p>What is the coefficient estimate of?</p></li>
+<li><p>What does the p-value mean? (What is the null and alternative
+hypothesis?)</p></li>
+</ul>
+<p>1.15 Interpret the other two coefficient estimates here.</p>
+<ul>
+<li><p>What is the coefficient estimating?</p></li>
+<li><p>What do the p-values mean?</p></li>
+</ul>
+<p>1.16 Use the coefficient estimates from the <code>lm()</code> model
+to estimate the mean yield for the N and P groups.</p>
+<p>1.17 Perform a Tukey HSD multiple comparison on the linear model fit
+object that you created in problem 1.7.</p>
+<ul>
+<li><p>You will first need to create a new object with the
+<code>aov()</code> function</p></li>
+<li><p>You can then use <code>TukeyHSD()</code> on your aov
+object.</p></li>
+<li><p>print out the results of the Tukey HSD here.</p></li>
+</ul>
+<p>1.18 Also make a plot of the Tukey HSD results.</p>
+<p>1.19 Finally, interpret the results of the Tukey HSD here.</p>
+</div>
+<div id="problem-2-orchardsprays" class="section level2">
+<h2>Problem 2: <code>OrchardSprays</code></h2>
+<p>For this problem, we will be using a data set that comes pre-built
+into R. To load the data set into your working session, run the
+following code:</p>
+<pre class="r"><code>data(OrchardSprays)</code></pre>
+<p>You can learn more about the data by running
+<code>?OrchardSprays</code> in your console. You should look at the
+names, dimensions, and head of the data object to familiarize yourself
+with it. For this analysis, we will only be using the
+<code>treatment</code> and <code>decrease</code> columns.</p>
+<p>2.1 Add a comment to your homework script stating the null and
+alternative hypotheses for a one-way ANOVA.</p>
+<p>2.2 Make a plot of all the observations of decrease, ignoring any
+other grouping variables. Be sure to include a box plot and the raw data
+points.</p>
+<p>2.3 Make a plot of the decrease separated by treatment. Be sure to
+include a box plot and the raw observations.</p>
+<p>2.4 Based on the box plots made in question 2.3, add a comment to
+your script interpreting the assumption of equal variance. Do these data
+appear to have equal variation between the groups? Why or why not?</p>
+<p>2.5 Check the assumption of the normality of residuals by making a
+QQ-plot of this data.</p>
+<p>2.6 Add a comment to your script interpreting the QQ-plot you made in
+2.5 above. Does it appear that the residuals are normally distributed?
+Why or why not?</p>
+<p>2.7 Use <code>lm()</code> to fit a model to formally test the effect
+of treatment on the decrease of bees. Save your model fit as a new
+object (i.e., <code>spray_lm</code>)</p>
+<p>2.8 Before we look at the model output, let’s make a fitted
+vs. residual plot to check our last assumption: Equal variance of
+residuals.</p>
+<ul>
+<li>Use the model-fit object you made in 2.7 above to make a fitted vs
+residual plot.</li>
+</ul>
+<p>2.9 Add a comment to Interpret the plot made in 1.8. Does this model
+appear to have equal variance in the residuals? Why or why not?</p>
+<div id="regardless-of-your-answers-to-the-assumption-questions-above-continue-the-analysis-as-if-all-assumptions-were-met." class="section level3">
+<h3>Regardless of your answers to the assumption questions above,
+continue the analysis as if all assumptions were met.</h3>
+<p>If the above point wasn’t enough of a clue, this data set actually
+fails the assumptions for a one-way analysis of variance. We will return
+to this data in a future assignment and perform a data transformation on
+it. But for now, continue on with the analysis. When you interpret the
+results below, you should mention that the assumptions were not met, so
+the results obtained are questionable.</p>
+<p>2.10 Now, use the <code>anova()</code> function on your model fit
+object created in 2.7 above to print out an ANOVA table in your
+output.</p>
+<p>2.11 Add a comment to your script and manually type out the following
+values from the table.</p>
+<ul>
+<li><p>The two degrees of freedom</p></li>
+<li><p>The mean square of the among-group variation (treatment
+effect)</p></li>
+<li><p>The Mean square of the unexplained variation (the residual, or
+the “noise”)</p></li>
+<li><p>The F-value</p></li>
+<li><p>The p-value (rounded if necessary)</p></li>
+</ul>
+<p>2.12 Add a comment to your script interpreting the results of our
+one-way ANOVA analysis. Do we reject or fail to reject our null
+hypothesis? Make sure to include all the appropriate statistics in your
+interpretation.</p>
+<p>2.13 Regardless of what your answer to 1.12 was, let’s now look at
+pairwise comparisons between the groups. We will start by looking at the
+output from the <code>lm()</code> analysis.</p>
+<ul>
+<li>Use the <code>summary()</code> function to print out your lm model
+fit object here.</li>
+</ul>
+<p>2.14 Interpret what the Intercept coefficient means.</p>
+<ul>
+<li><p>What is the coefficient estimate of?</p></li>
+<li><p>What does the p-value mean? (What is the null and alternative
+hypothesis?)</p></li>
+</ul>
+<p>2.15 What are all the other coefficients estimating?</p>
+<ul>
+<li><p>What is the Null and alternative hypothesis? (You can be general
+in your answer, you don’t need to write out all 8 hypotheses)</p></li>
+<li><p>What do the p-values mean? (Again, you can be general
+here)</p></li>
+</ul>
+<p>2.16 Perform a Tukey HSD multiple comparison on the linear model fit
+object that you created in problem 2.7.</p>
+<ul>
+<li><p>You will first need to create a new object with the
+<code>aov()</code> function</p></li>
+<li><p>You can then use <code>TukeyHSD()</code> on your aov
+object.</p></li>
+<li><p>print out the results of the Tukey HSD here.</p></li>
+</ul>
+<p>2.17 Also make a plot of the Tukey HSD results.</p>
+<p>2.18 Finally, interpret the results of the Tukey HSD here. Once
+again, you can be general. For example, list all the pairwise
+comparisons which were significant, and then say “all Tukey adjusted
+p-values &lt; 0.05”.</p>
+</div>
 </div>
 </div>
 

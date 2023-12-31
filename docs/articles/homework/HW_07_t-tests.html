@@ -11,7 +11,7 @@
 
 
 
-<title>ENVS475 Homework 01: Setup</title>
+<title>ENVS475 Homework 07: t-tests</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,81 +348,244 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">ENVS475 Homework 01: Setup</h1>
-<h4 class="date">Spring 2024</h4>
+<h1 class="title toc-ignore">ENVS475 Homework 07: t-tests</h1>
+<h4 class="date">Spring, 2024</h4>
 
 </div>
 
 <div id="TOC">
 <ul>
-<li><a href="#complete-this-assignment-for-a-grade." id="toc-complete-this-assignment-for-a-grade.">Complete this assignment
-for a grade.</a>
+<li><a href="#assignment-format" id="toc-assignment-format">Assignment
+Format</a></li>
+<li><a href="#setup" id="toc-setup">Setup</a>
 <ul>
-<li><a href="#assignment-submission" id="toc-assignment-submission">Assignment submission</a></li>
+<li><a href="#load-packages" id="toc-load-packages">Load
+packages</a></li>
+</ul></li>
+<li><a href="#data" id="toc-data">Data</a>
+<ul>
+<li><a href="#download-the-data-and-read-into-r" id="toc-download-the-data-and-read-into-r">Download the data and read
+into R</a></li>
+</ul></li>
+<li><a href="#exercises-homework-08-t-tests" id="toc-exercises-homework-08-t-tests">Exercises Homework 08:
+t-tests</a>
+<ul>
+<li><a href="#problem-1-one-sample-t-test" id="toc-problem-1-one-sample-t-test">Problem 1: One-sample
+t-test</a></li>
+<li><a href="#problem-2-two-sample-t-test" id="toc-problem-2-two-sample-t-test">Problem 2: two-sample
+t-test</a></li>
+<li><a href="#problem-3-paired-t-test" id="toc-problem-3-paired-t-test">Problem 3: paired t-test</a></li>
 </ul></li>
 </ul>
 </div>
 
-<div id="complete-this-assignment-for-a-grade." class="section level1">
-<h1>Complete this assignment for a grade.</h1>
-<div id="learning-objectives" class="section level3">
-<h3>Learning Objectives</h3>
-<blockquote>
-<p>Following this assignment students should:</p>
+<div id="assignment-format" class="section level1">
+<h1>Assignment Format</h1>
 <ul>
-<li>Have R and Rstudio downloaded</li>
-<li>Be able to access and open Rstudio</li>
-<li>Have an R-Project for the course</li>
-<li>Be able to download packages and load them into your working
-session</li>
-</ul>
-</blockquote>
-<ol style="list-style-type: decimal">
-<li>Download R and Rstudio</li>
-<li>Make a new Project called “ENVS475”</li>
-<li>In the console, enter the following command and run it:</li>
-</ol>
-<pre class="r"><code>install.packages(&quot;tidyverse&quot;)</code></pre>
-<p><strong>NOTE:</strong> Do <em>NOT</em> put
-<code>install.packages()</code> commands in your scripts. Only ever run
-them in the console.</p>
+<li>Open a new R script</li>
+<li>Save your R script in the <code>homework/</code> folder</li>
+<li>Name your script according to: <code>full_name_hw##.R</code>
 <ul>
-<li>You can also install packages by clicking <code>Tools</code> –&gt;
-<code>Install Packages</code> and then entering the package name in the
-text box and clicking <code>Install</code></li>
+<li>For example: <code>justin_pomeranz_hw08.R</code></li>
+</ul></li>
+<li>Comment before each problem, and each sub-problem</li>
+<li>Make sure your results print out on <code>Source with echo</code>
+<ul>
+<li>If you’re answer is saved in an object, make sure you print out that
+object afterwards</li>
+</ul></li>
 </ul>
-<ol start="4" style="list-style-type: decimal">
-<li><p>Make a new script called “lastname_first-assignment.R” and save
-it in your <code>homework</code> folder in your ENVS396
-Project.</p></li>
-<li><p>In your script, type in the following code and make sure it runs
-correctly:</p></li>
-</ol>
-<pre class="r"><code>library(tidyverse)
-data(&quot;starwars&quot;)
-starwars %&gt;% 
-    filter(homeworld == &quot;Tatooine&quot;) %&gt;%
-    select(name) %&gt;%
-    unique()</code></pre>
-<p>You should see the following output in your console:</p>
-<pre><code>#&gt; # A tibble: 10 × 1
-#&gt;    name              
-#&gt;    &lt;chr&gt;             
-#&gt;  1 Luke Skywalker    
-#&gt;  2 C-3PO             
-#&gt;  3 Darth Vader       
-#&gt;  4 Owen Lars         
-#&gt;  5 Beru Whitesun lars
-#&gt;  6 R5-D4             
-#&gt;  7 Biggs Darklighter 
-#&gt;  8 Anakin Skywalker  
-#&gt;  9 Shmi Skywalker    
-#&gt; 10 Cliegg Lars</code></pre>
 </div>
-<div id="assignment-submission" class="section level2">
-<h2>Assignment submission</h2>
-<p><strong>For full credit, you must show your instructor that you have
-accomplished all of the above tasks.</strong></p>
+<div id="setup" class="section level1">
+<h1>Setup</h1>
+<div id="load-packages" class="section level2">
+<h2>Load packages</h2>
+<pre class="r"><code># load libraries
+library(dplyr)
+library(ggplot2)</code></pre>
+</div>
+</div>
+<div id="data" class="section level1">
+<h1>Data</h1>
+<div id="download-the-data-and-read-into-r" class="section level2">
+<h2>Download the data and read into R</h2>
+<pre class="r"><code># read in data
+bt_samp &lt;- read.csv(&quot;data/body_temp_hr.csv&quot;)</code></pre>
+</div>
+</div>
+<div id="exercises-homework-08-t-tests" class="section level1">
+<h1>Exercises Homework 08: t-tests</h1>
+<div id="problem-1-one-sample-t-test" class="section level2">
+<h2>Problem 1: One-sample t-test</h2>
+<p>We will be formally testing whether the true population mean of human
+body temperatures is eaqual to 98.6 degrees Fahrenheit.</p>
+<p>1.1 Add a comment to your homework script stating the null and
+alternative hypotheses. Make sure to put each hypothesis on its own
+line. Make sure that your alternative hypothesis is 2-tailed.<br />
+1.2 Extract the <code>body_temp</code> column/variable from
+<code>bt_samp</code> and store it as a vector called <code>b</code>.</p>
+<p>1.3 Create new variables for the mean, SD and SEM of the vector
+<code>b</code>. Be sure that the values print out when you source your
+script so that I can check your work.</p>
+<p>1.4 Calculate a t-statistic and print it out to your console.</p>
+<ul>
+<li><strong>HINT</strong> Name it something different from the lab so
+that you don’t get confused which variable is which.</li>
+</ul>
+<p>1.5 calculate the critical value of t for this analysis and store it
+as a variable.</p>
+<ul>
+<li><p><strong>HINT</strong> use the <code>qt()</code> function, and
+make sure you calculate the correct degrees of freedom for this data
+set.</p></li>
+<li><p>Give it a different name than what was used in the lab.</p></li>
+</ul>
+<p>1.6 Add a comment interpreting how the t-stat compares to our
+t-critical value. Do we reject or fail to reject our null
+hypothesis?</p>
+<p>1.7 Calculate the p-value for your t-statistic in this analysis.</p>
+<p>1.8 Analyze your <code>b</code> vector using the <code>lm()</code>
+function. Make sure to correctly account for your null value of 98.6
+degrees.</p>
+<ul>
+<li>Store your fitted model as an object, and then use the
+<code>summary()</code> function to print out the results</li>
+</ul>
+<p>1.9 Add a comment to your script interpreting the results of your
+analysis. Be sure to refer back to the null and alternative hypotheses
+(reject or fail to reject?) include the t-statistic, the degrees of
+freedom, and the p-value in your answer.</p>
+</div>
+<div id="problem-2-two-sample-t-test" class="section level2">
+<h2>Problem 2: two-sample t-test</h2>
+<div id="data-scandens" class="section level3">
+<h3>Data: <code>scandens</code></h3>
+<p>We want to know if the average beak length (<code>blength</code>) has
+changed in the population of <em>Geospiza scandens</em> living on Daphne
+Major in the Galapagos islands between 1975 and 2012.</p>
+<p>We will once again be using the <em>Geospiza scandens</em> data from
+the <code>darwin-finches.csv</code>.</p>
+<pre class="r"><code># read in full data set
+finch &lt;- read.csv(&quot;data/galapago-finches.csv&quot;)
+# filter out scandens data and make a tibble
+scandens &lt;- finch %&gt;%
+  filter(species == &quot;scandens&quot;) %&gt;%
+  as_tibble()
+
+# change the year column to a character data type
+# this is necessary to run a 2-sample t-test
+# If we leave year as an integer, the lm() function 
+# will treat it as continuous and will calculate statistics for a linear regression. 
+scandens$year &lt;- as.character(scandens$year)</code></pre>
+<p>All of the following questions refer to the <code>scandens</code>
+object.</p>
+<p>2.1 Add a comment to your homework script stating the null and
+alternative hypotheses. Make sure to put each hypothesis on its own
+line. Make sure that your alternative hypothesis is 2-tailed.</p>
+<p>2.2 Use <code>dplyr</code>, <code>group_by()</code>,
+<code>summarize()</code> and <code>mutate()</code> to calculate the
+following statistics for the <code>blength</code> variable in each
+<code>year</code>:</p>
+<ul>
+<li>Average, Standard Deviation, <span class="math inline">\(\sqrt(n)\)</span>, and the Standard Error of the
+Mean.</li>
+</ul>
+<p>1.3 Use the <code>lm()</code> function to perform a 2-sample t-test
+on whether or not the average <code>blength</code> (in mm) is equal
+between the two years of data.<br />
++ Note that you will be using the <code>scandens</code> data for this
+step, not the summarized data you calculated in 1.2 above.<br />
++ Make sure to save your model-fit as an object, and then use the
+<code>summary()</code> function to print out the results.</p>
+<p>1.4 Add a comment to your script interpreting the results of your
+analysis.</p>
+<p>2.3 Use the <code>lm()</code> function to perform a 2-sample t-test
+on whether or not the average <code>blength</code> (in mm) is equal
+between the two years of data.</p>
+<ul>
+<li>Make sure to save your model-fit as an object, and then use the
+<code>summary()</code> function to print out the results.</li>
+</ul>
+<p>2.4 What is the estimate and standard error for <code>blength</code>
+in the “1975” sample? What is the estimate and standard error for the
+<em>difference</em> in <code>blength</code> between “1975” and the
+“2012” samples?</p>
+<p>2.5 Add a comment to your script interpreting the results of your
+analysis. Be sure to refer back to the null and alternative hypotheses
+(reject or fail to reject?) include the t-statistic, the degrees of
+freedom, and the p-value in your answer.</p>
+</div>
+</div>
+<div id="problem-3-paired-t-test" class="section level2">
+<h2>Problem 3: paired t-test</h2>
+<div id="data-darwin_maize" class="section level3">
+<h3>Data <code>darwin_maize</code></h3>
+<p>For this problem, we will be returning to the
+<code>darwin_maize</code> data. Recall that the original experimental
+design included growing plants from different fertilization categories
+(self vs. cross). The individual plants were taken from the same parent,
+so are “paired” in this sense. Here, we will be testing the hypothesis
+that there is a difference in <code>height</code> between the Self and
+Cross <code>type</code>.</p>
+</div>
+<div id="data-darwin_maize-1" class="section level3">
+<h3>Data: <code>darwin_maize</code></h3>
+<p>For this problem, we will be using the <code>darwin_maize.csv</code>
+available on D2L. Download this csv file into your <code>data/</code>
+folder and read it into R.</p>
+<pre class="r"><code>darwin_maize &lt;- read.csv(&quot;data/darwin_maize.csv&quot;)</code></pre>
+<p>3.1 Add a comment to your homework script stating the null and
+alternative hypotheses. Make sure to put each hypothesis on its own
+line. Make sure that your alternative hypothesis is 2-tailed.</p>
+<p>3.2. Make a new data object called <code>darwin_diff</code> which
+includes the <code>difference</code> in <code>heights</code> for each
+<code>pair</code> in the data set. + As in the lab, the way the data is
+structured does not make this task simple, but we can use
+<code>group_by()</code> function before using the <code>-diff()</code>
+function inside of <code>mutate()</code> to accomplish this.<br />
++ See the <code>caterpillar</code> example from the lab.<br />
++ <strong>Hint</strong> your new object should contain the following
+columns: <code>pair</code> and <code>difference</code>.<br />
++ Make sure to print out your new <code>darwin_diff</code> object at the
+end of this problem.</p>
+<p>3.3 Use <code>lm()</code> function to formally test your
+hypothesis.<br />
++ Store the output of <code>lm()</code> in a new data object, and then
+use the <code>summary()</code> function to print out the results.</p>
+<p>3.4 Add a comment to your script interpreting the results of your
+analysis.</p>
+<pre class="r"><code># read in the data
+darwin_maize &lt;- read.csv(here::here(&quot;data/darwin_maize.csv&quot;))</code></pre>
+<p>3.1 Add a comment to your script describing the null and alternative
+hypotheses. Put each hypothesis on its own line.</p>
+<p>3.2 You will need to modify the structure of the
+<code>darwin_maize</code> object in order to formally test these
+hypotheses. Follow the example in lab, and save your modified data as a
+new object.</p>
+<ul>
+<li>Hint: The grouping variable will be <code>pair</code> and you will
+want to calculate the difference in the <code>height</code>
+variable.</li>
+</ul>
+<p>3.3 Use the <code>lm()</code> function to calculate a formal test on
+the modified data object.</p>
+<ul>
+<li><p>Hint: If you modified the data correctly in 3.2, you should be
+setting up an “intercept-only” model inside of
+<code>lm()</code>.</p></li>
+<li><p>Be sure to store your model fit in a new object and run the
+<code>summary()</code> function on it.</p></li>
+</ul>
+<p>3.4 Add a comment to your script describing the estimated average and
+standard error for the difference between the two groups.</p>
+<p>3.5 Add a comment to your script interpreting the results of your
+analysis. Be sure to refer back to the null and alternative hypotheses
+(reject or fail to reject?) include the t-statistic, the degrees of
+freedom, and the p-value in your answer.</p>
+<div id="this-concludes-the-homework" class="section level4">
+<h4><strong>This concludes the homework</strong></h4>
+</div>
+</div>
 </div>
 </div>
 

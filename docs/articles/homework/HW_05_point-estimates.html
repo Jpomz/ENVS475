@@ -11,7 +11,7 @@
 
 
 
-<title>ENVS475 Homework 01: Setup</title>
+<title>ENVS475 Homework 5: point estimates</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,81 +348,296 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">ENVS475 Homework 01: Setup</h1>
-<h4 class="date">Spring 2024</h4>
+<h1 class="title toc-ignore">ENVS475 Homework 5: point estimates</h1>
+<h4 class="date">Spring, 2023</h4>
 
 </div>
 
 <div id="TOC">
 <ul>
-<li><a href="#complete-this-assignment-for-a-grade." id="toc-complete-this-assignment-for-a-grade.">Complete this assignment
-for a grade.</a>
+<li><a href="#assignment-format" id="toc-assignment-format">Assignment
+Format</a></li>
+<li><a href="#setup" id="toc-setup">Setup</a>
 <ul>
-<li><a href="#assignment-submission" id="toc-assignment-submission">Assignment submission</a></li>
+<li><a href="#load-packages" id="toc-load-packages">Load
+packages</a></li>
+</ul></li>
+<li><a href="#data" id="toc-data">Data</a>
+<ul>
+<li><a href="#download-the-data-and-read-into-r" id="toc-download-the-data-and-read-into-r">Download the data and read
+into R</a></li>
+</ul></li>
+<li><a href="#exercises-homework-05-point-estimates" id="toc-exercises-homework-05-point-estimates">Exercises Homework 05:
+point estimates</a>
+<ul>
+<li><a href="#problem-1-data-wrangling" id="toc-problem-1-data-wrangling">Problem 1: Data Wrangling</a></li>
+<li><a href="#problem-2-fortis1975" id="toc-problem-2-fortis1975">Problem 2:
+<code>fortis1975</code></a></li>
+<li><a href="#problem-3-fortis2012" id="toc-problem-3-fortis2012">Problem 3 <code>fortis2012</code></a></li>
+<li><a href="#problem-4-scandens-beak-depth" id="toc-problem-4-scandens-beak-depth">Problem 4 <code>scandens</code>
+beak depth</a></li>
+<li><a href="#problem-5-challenge-optional" id="toc-problem-5-challenge-optional">Problem 5 Challenge
+(optional)</a></li>
 </ul></li>
 </ul>
 </div>
 
-<div id="complete-this-assignment-for-a-grade." class="section level1">
-<h1>Complete this assignment for a grade.</h1>
-<div id="learning-objectives" class="section level3">
-<h3>Learning Objectives</h3>
-<blockquote>
-<p>Following this assignment students should:</p>
+<div id="assignment-format" class="section level1">
+<h1>Assignment Format</h1>
 <ul>
-<li>Have R and Rstudio downloaded</li>
-<li>Be able to access and open Rstudio</li>
-<li>Have an R-Project for the course</li>
-<li>Be able to download packages and load them into your working
-session</li>
+<li>Open a new R script</li>
+<li>Save your R script in the <code>homework/</code> folder</li>
+<li>Name your script according to: <code>full_name_hw##.R</code>
+<ul>
+<li>For example: <code>justin_pomeranz_hw05.R</code></li>
+</ul></li>
+<li>Comment before each problem, and each sub-problem</li>
+<li>Make sure your results print out on <code>Source with echo</code>
+<ul>
+<li>If you’re answer is saved in an object, make sure you print out that
+object afterwards</li>
+</ul></li>
 </ul>
-</blockquote>
-<ol style="list-style-type: decimal">
-<li>Download R and Rstudio</li>
-<li>Make a new Project called “ENVS475”</li>
-<li>In the console, enter the following command and run it:</li>
-</ol>
-<pre class="r"><code>install.packages(&quot;tidyverse&quot;)</code></pre>
-<p><strong>NOTE:</strong> Do <em>NOT</em> put
-<code>install.packages()</code> commands in your scripts. Only ever run
-them in the console.</p>
+</div>
+<div id="setup" class="section level1">
+<h1>Setup</h1>
+<div id="load-packages" class="section level2">
+<h2>Load packages</h2>
 <ul>
-<li>You can also install packages by clicking <code>Tools</code> –&gt;
-<code>Install Packages</code> and then entering the package name in the
-text box and clicking <code>Install</code></li>
+<li>Make sure that the <code>dplyr</code> and <code>ggplot2</code>
+packages are downloaded on the machine you’re using
+<ul>
+<li>You can check this by clicking on the <code>Packages</code> tab in
+the <em>Files, Plots, Packages…</em> panel and scrolling down</li>
+<li>If you need to download the package, copy the following code into
+your Console panel and run it **Do not put it in your homework
+script*</li>
+<li><code>install.packages(&quot;dplyr&quot;)</code></li>
+</ul></li>
+<li>Copy the following code into the beginning of your homework script
+to load the <code>dplyr</code> package:</li>
+</ul>
+<pre class="r"><code># load libraries
+library(dplyr)
+library(ggplot2)</code></pre>
+</div>
+</div>
+<div id="data" class="section level1">
+<h1>Data</h1>
+<p>For this homework assignment, we will be working with real data from
+<a href="https://en.wikipedia.org/wiki/Darwin%27s_finches">“Darwin’s
+Finches”</a> in the Galapagos Islands. Famously, the variation in beak
+sizes of these birds is one of the observations which is often credited
+to Darwin’s formulation of his Theory of Natural Selection (although in
+reality he just <a href="https://www.sciencehistory.org/distillations/darwins-barnacles#:~:text=But%20the%20truth%20is%2C%20Darwin,an%20expert%20back%20in%20England">brought
+back finch</a> specimens, and museum archivists were the ones to realize
+the diversity of species on the islands).</p>
+<p>
+<a href="https://commons.wikimedia.org/wiki/File:Darwin%27s_finches_by_Gould.jpg#/media/File:Darwin&#39;s_finches_by_Gould.jpg"><img src="data:text/html; charset=utf-8;charset=utf-8,%3C%21DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22en%22%3E%0A%3Cmeta%20charset%3D%22utf%2D8%22%3E%0A%3Ctitle%3EWikimedia%20Error%3C%2Ftitle%3E%0A%3Cstyle%3E%0A%2A%20%7B%20margin%3A%200%3B%20padding%3A%200%3B%20%7D%0Abody%20%7B%20background%3A%20%23fff%3B%20font%3A%2015px%2F1%2E6%20sans%2Dserif%3B%20color%3A%20%23333%3B%20%7D%0A%2Econtent%20%7B%20margin%3A%207%25%20auto%200%3B%20padding%3A%202em%201em%201em%3B%20max%2Dwidth%3A%20640px%3B%20%7D%0A%2Efooter%20%7B%20clear%3A%20both%3B%20margin%2Dtop%3A%2014%25%3B%20border%2Dtop%3A%201px%20solid%20%23e5e5e5%3B%20background%3A%20%23f9f9f9%3B%20padding%3A%202em%200%3B%20font%2Dsize%3A%200%2E8em%3B%20text%2Dalign%3A%20center%3B%20%7D%0Aimg%20%7B%20float%3A%20left%3B%20margin%3A%200%202em%202em%200%3B%20%7D%0Aa%20img%20%7B%20border%3A%200%3B%20%7D%0Ah1%20%7B%20margin%2Dtop%3A%201em%3B%20font%2Dsize%3A%201%2E2em%3B%20%7D%0A%2Econtent%2Dtext%20%7B%20overflow%3A%20hidden%3B%20overflow%2Dwrap%3A%20break%2Dword%3B%20word%2Dwrap%3A%20break%2Dword%3B%20%2Dwebkit%2Dhyphens%3A%20auto%3B%20%2Dmoz%2Dhyphens%3A%20auto%3B%20%2Dms%2Dhyphens%3A%20auto%3B%20hyphens%3A%20auto%3B%20%7D%0Ap%20%7B%20margin%3A%200%2E7em%200%201em%200%3B%20%7D%0Aa%20%7B%20color%3A%20%230645ad%3B%20text%2Ddecoration%3A%20none%3B%20%7D%0Aa%3Ahover%20%7B%20text%2Ddecoration%3A%20underline%3B%20%7D%0Acode%20%7B%20font%2Dfamily%3A%20sans%2Dserif%3B%20%7D%0A%2Etext%2Dmuted%20%7B%20color%3A%20%23777%3B%20%7D%0A%3C%2Fstyle%3E%0A%3Cdiv%20class%3D%22content%22%20role%3D%22main%22%3E%0A%3Ca%20href%3D%22https%3A%2F%2Fwww%2Ewikimedia%2Eorg%22%3E%3Cimg%20src%3D%22https%3A%2F%2Fwww%2Ewikimedia%2Eorg%2Fstatic%2Fimages%2Fwmf%2Dlogo%2Epng%22%20srcset%3D%22https%3A%2F%2Fwww%2Ewikimedia%2Eorg%2Fstatic%2Fimages%2Fwmf%2Dlogo%2D2x%2Epng%202x%22%20alt%3D%22Wikimedia%22%20width%3D%22135%22%20height%3D%22101%22%3E%0A%3C%2Fa%3E%0A%3Ch1%3EError%3C%2Fh1%3E%0A%3Cdiv%20class%3D%22content%2Dtext%22%3E%0A%3Cp%3EOur%20servers%20are%20currently%20under%20maintenance%20or%20experiencing%20a%20technical%20problem%2E%0A%0APlease%20%3Ca%20href%3D%22%22%20title%3D%22Reload%20this%20page%22%20onclick%3D%22window%2Elocation%2Ereload%28false%29%3B%20return%20false%22%3Etry%20again%3C%2Fa%3E%20in%20a%20few%26nbsp%3Bminutes%2E%3C%2Fp%3E%0A%0A%3Cp%3ESee%20the%20error%20message%20at%20the%20bottom%20of%20this%20page%20for%20more%26nbsp%3Binformation%2E%3C%2Fp%3E%0A%3C%2Fdiv%3E%0A%3C%2Fdiv%3E%0A%3Cdiv%20class%3D%22footer%22%3E%3Cp%3EIf%20you%20report%20this%20error%20to%20the%20Wikimedia%20System%20Administrators%2C%20please%20include%20the%20details%20below%2E%3C%2Fp%3E%3Cp%20class%3D%22text%2Dmuted%22%3E%3Ccode%3ERequest%20from%2071%2E218%2E255%2E74%20via%20cp2030%20cp2030%2C%20Varnish%20XID%201008527484%3Cbr%3EUpstream%20caches%3A%20cp2030%20int%3Cbr%3EError%3A%20403%2C%20Forbidden%2E%20Please%20comply%20with%20the%20User%2DAgent%20policy%3A%20https%3A%2F%2Fmeta%2Ewikimedia%2Eorg%2Fwiki%2FUser%2DAgent%5Fpolicy%20at%20Sun%2C%2031%20Dec%202023%2017%3A25%3A47%20GMT%3C%2Fcode%3E%3C%2Fp%3E%0A%3C%2Fdiv%3E%0A%3C%2Fhtml%3E%0A" alt="Darwin&#39;s finches by Gould.jpg" height="480" width="636"></a>
+<br> Figure By John Gould (14.Sep.1804 - 3.Feb.1881) - From “Voyage of
+the Beagle” <br> Public Domain, available <a href="http://darwin-online.org.uk/converted/published/1845_Beagle_F14/1845_Beagle_F14_fig07.jpg" class="uri">http://darwin-online.org.uk/converted/published/1845_Beagle_F14/1845_Beagle_F14_fig07.jpg</a>
+</a>
+</p>
+<p>The beaks of the Galapagos finches was the primary detail of
+interest. For birds, beaks are the primary tool at their disposal, and
+the type (size, shape, etc.) of beak you have determines what type of
+food resources that are available to you, and the types of “jobs” you
+can do.</p>
+<p>Regardless of Darwin’s personal affinity (or lack thereof) for these
+birds, they have nonetheless played an outsized role in the history of
+biology. In more recent times, Drs. Peter and Rosemary Grant have spent
+decades on the islands following the birds through time and documenting
+changes in Finch morphology in response to drought and other
+environmental conditions. Their work has been well documented, including
+in the popular science book <a href="https://www.goodreads.com/en/book/show/125286.The_Beak_of_the_Finch"><em>Beak
+of the finch</em></a> by Jonathan Weiner, and much of this work is
+summarized in an <a href="https://youtu.be/mcM23M-CCog">educational
+documentary on HHMI</a>.</p>
+<p>In this homework assignment, we will be working with a subset of the
+Grants’ beak measurement data for two of the species, <em>Geospiza
+fortis</em>, and <em>G. scandens</em>, collected on Daphne Major Island
+in 1975 and 2012. The full data set is available at <a href="https://datadryad.org/stash/dataset/doi:10.5061/dryad.g6g3h">Data
+Dryad</a></p>
+<div id="download-the-data-and-read-into-r" class="section level2">
+<h2>Download the data and read into R</h2>
+<p>Be sure to download the data <code>galapago-finches.csv</code> and
+from D2L and place them both in your <code>data/</code> folder in your R
+project.</p>
+<p>Copy the following code and put it at the top of your homework
+script:</p>
+<pre class="r"><code>finch &lt;- read.csv(&quot;data/galapago-finches.csv&quot;)</code></pre>
+</div>
+</div>
+<div id="exercises-homework-05-point-estimates" class="section level1">
+<h1>Exercises Homework 05: point estimates</h1>
+<div id="problem-1-data-wrangling" class="section level2">
+<h2>Problem 1: Data Wrangling</h2>
+<ol style="list-style-type: decimal">
+<li><p>Get to know your data by using the <code>names()</code>,
+<code>dim()</code>, <code>head()</code>, and <code>str()</code>
+functions.</p></li>
+<li><p>which species are present? To determine this, use the following
+code: <code>unique(finch$species)</code></p></li>
+<li><p>Split the data based on species, and make two new data frames,
+one called <code>fortis</code> and one called
+<code>scandens</code>.<br />
+</p></li>
+</ol>
+<ul>
+<li>hint: use the <code>filter()</code> function from dplyr.<br />
+</li>
+<li>Remember to use <code>==</code> in the filter function<br />
+</li>
+<li>here is the code for the fortis species:
+<ul>
+<li><code>fortis &lt;- finch %&gt;% filter(species == &quot;fortis&quot;)</code></li>
+</ul></li>
 </ul>
 <ol start="4" style="list-style-type: decimal">
-<li><p>Make a new script called “lastname_first-assignment.R” and save
-it in your <code>homework</code> folder in your ENVS396
-Project.</p></li>
-<li><p>In your script, type in the following code and make sure it runs
-correctly:</p></li>
+<li>Now that you have an object for each species, split each of these
+based on year.<br />
+</li>
 </ol>
-<pre class="r"><code>library(tidyverse)
-data(&quot;starwars&quot;)
-starwars %&gt;% 
-    filter(homeworld == &quot;Tatooine&quot;) %&gt;%
-    select(name) %&gt;%
-    unique()</code></pre>
-<p>You should see the following output in your console:</p>
-<pre><code>#&gt; # A tibble: 10 × 1
-#&gt;    name              
-#&gt;    &lt;chr&gt;             
-#&gt;  1 Luke Skywalker    
-#&gt;  2 C-3PO             
-#&gt;  3 Darth Vader       
-#&gt;  4 Owen Lars         
-#&gt;  5 Beru Whitesun lars
-#&gt;  6 R5-D4             
-#&gt;  7 Biggs Darklighter 
-#&gt;  8 Anakin Skywalker  
-#&gt;  9 Shmi Skywalker    
-#&gt; 10 Cliegg Lars</code></pre>
+<ul>
+<li>you should end up with a total of 4 objects called the following:
+<ul>
+<li><code>fortis1975</code><br />
+</li>
+<li><code>fortis2012</code><br />
+</li>
+<li><code>scandens1975</code><br />
+</li>
+<li><code>scandens2012</code></li>
+</ul></li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li>print out the dimensions of all four of your new objects using the
+<code>dim()</code> function. Do these dimensions make sense? You may
+want to rerun the <code>dim()</code> from problem 1.1 above.</li>
+</ol>
 </div>
-<div id="assignment-submission" class="section level2">
-<h2>Assignment submission</h2>
-<p><strong>For full credit, you must show your instructor that you have
-accomplished all of the above tasks.</strong></p>
+<div id="problem-2-fortis1975" class="section level2">
+<h2>Problem 2: <code>fortis1975</code></h2>
+<ol style="list-style-type: decimal">
+<li>Use <code>ggplot()</code> to make separate histograms for both the
+<code>blength</code> and the <code>bdepth</code> variables.<br />
+</li>
+</ol>
+<ul>
+<li>You should make two separate plots (not a faceted plot)<br />
+</li>
+<li>for your aesthetics, you should map your variable of interest to the
+x axis:
+<ul>
+<li><code>aes(x = blength)</code><br />
+</li>
+</ul></li>
+<li>Make sure to add a <code>+</code> at the end of each function in
+order to add another layer.
+<ul>
+<li>Do not add a <code>+</code> at the last line.<br />
+</li>
+</ul></li>
+<li>Set the number of bins to 15 by adding the following geom layer:
+<code>geom_histogram(bins = 15)</code><br />
+</li>
+<li>use the <code>labs(title = &quot;...&quot;)</code> function to add a title
+with the species name and year.<br />
+</li>
+<li>You can add <code>theme_bw()</code> if you want to.<br />
+</li>
+<li>Under each plot, comment on whether or not you think these variables
+appear to be normally distributed.
+<ul>
+<li>Make sure you begin each line of your interpretation answer with a
+<code>#</code> to make it a comment in your R scipt.</li>
+</ul></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Calculate the mean, SD, and SEM for <code>blength</code> for the
+<code>fortis1975</code> object.<br />
+</li>
+</ol>
+<ul>
+<li>you may want to save each of these as a new object.</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Calculate an approximate 95% and a 99% Confidence Interval for beak
+length for the <em>fortis</em> species from 1975.<br />
+</li>
+</ol>
+<ul>
+<li>Hint: by approximate I mean assume a normal distribution, so your
+95% CI will have a <code>2*</code> and your 99% will have a
+<code>3*</code> in the calculation.<br />
+</li>
+<li><strong>Bonus</strong> calculate these intervals in a way that the
+lower and upper bounds print out as a single vector</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Interpret just the 95% CI here.<br />
+</li>
+</ol>
+<ul>
+<li>make sure to start your interpretation with a <code>#</code> in your
+R script.</li>
+</ul>
+</div>
+<div id="problem-3-fortis2012" class="section level2">
+<h2>Problem 3 <code>fortis2012</code></h2>
+<ol style="list-style-type: decimal">
+<li><p>Calculate the mean, SD and SEM for beak length for the
+<em>fortis</em> species from 2012.</p></li>
+<li><p>Calculate a 95% and 99% CI for beak length for the
+<em>fortis</em> species from 2012.</p></li>
+<li><p>Compare and interpret the 95% CIs for the <em>fortis</em> species
+from 1975 and 2012.<br />
+</p></li>
+</ol>
+<ul>
+<li>Hint: Do the intervals cross?<br />
+</li>
+<li>Is the mean beak length different between the years?<br />
+</li>
+<li>How “confident” are we?</li>
+</ul>
+</div>
+<div id="problem-4-scandens-beak-depth" class="section level2">
+<h2>Problem 4 <code>scandens</code> beak depth</h2>
+<ol style="list-style-type: decimal">
+<li><p>Calculate the mean, SD, SEM, and 95% confidence interval for the
+<code>blength</code> variable for the <em>scandens</em> species in both
+1975 and 2012.</p></li>
+<li><p>Interpret the 95% confidence intervals for the <em>scandens</em>
+species in the two years.<br />
+</p></li>
+</ol>
+<ul>
+<li>Hint: Do the intervals cross?<br />
+</li>
+<li>Is the mean beak length different between the years?<br />
+</li>
+<li>How “confident” are we?</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li></li>
+</ol>
+</div>
+<div id="problem-5-challenge-optional" class="section level2">
+<h2>Problem 5 Challenge (optional)</h2>
+<p>In the above example we split the original data object into four
+based on combinations of finch species and survey year. However, we
+could have performed all of these calculations on the original data set
+using <code>dplyr</code>. Using <code>dplyr</code> functions and the
+original, complete, <code>finch</code> data object, calculate the mean,
+sd, sem, and 95% CIs for beak length for each combination of year, and
+species.</p>
+<p><strong>Hints</strong><br />
+* Recall the <code>group_by()</code> function.<br />
+* <code>summarize()</code> collapses a large data set down to one row
+per group<br />
+* the <code>mutate()</code> function can be used to make new column(s)
+based on calculations using values already in columns.</p>
 </div>
 </div>
 

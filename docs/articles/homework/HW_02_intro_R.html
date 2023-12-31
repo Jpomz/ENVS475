@@ -11,7 +11,7 @@
 
 
 
-<title>ENVS475 Homework 01: Setup</title>
+<title>ENVS475 Homework 02: Intro to R</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,81 +348,310 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">ENVS475 Homework 01: Setup</h1>
-<h4 class="date">Spring 2024</h4>
+<h1 class="title toc-ignore">ENVS475 Homework 02: Intro to R</h1>
+<h3 class="subtitle">Complete for a grade</h3>
+<h4 class="date">December, 2023</h4>
 
 </div>
 
 <div id="TOC">
 <ul>
-<li><a href="#complete-this-assignment-for-a-grade." id="toc-complete-this-assignment-for-a-grade.">Complete this assignment
-for a grade.</a>
+<li><a href="#assignment-formats-r-scripts" id="toc-assignment-formats-r-scripts">Assignment Formats: R
+Scripts</a></li>
+<li><a href="#exercises-homework-01" id="toc-exercises-homework-01">Exercises Homework 01</a>
 <ul>
-<li><a href="#assignment-submission" id="toc-assignment-submission">Assignment submission</a></li>
+<li><a href="#basic-expressions" id="toc-basic-expressions">1. Basic
+expressions</a></li>
+<li><a href="#basic-objects-scalars" id="toc-basic-objects-scalars">2.
+Basic Objects: Scalars</a></li>
+<li><a href="#built-in-functions" id="toc-built-in-functions">4.
+Built-in Functions</a></li>
+<li><a href="#modify-the-code" id="toc-modify-the-code">5. Modify the
+code</a></li>
+<li><a href="#basic-vectors" id="toc-basic-vectors">6. Basic
+Vectors</a></li>
+<li><a href="#nulls-in-vectors" id="toc-nulls-in-vectors">7.
+<code>NULLS</code> in Vectors</a></li>
+<li><a href="#shrub-volume-vectors" id="toc-shrub-volume-vectors">8.
+Shrub Volume Vectors</a></li>
+<li><a href="#variable-names-optional" id="toc-variable-names-optional">9. Variable Names (optional)</a></li>
 </ul></li>
 </ul>
 </div>
 
-<div id="complete-this-assignment-for-a-grade." class="section level1">
-<h1>Complete this assignment for a grade.</h1>
-<div id="learning-objectives" class="section level3">
-<h3>Learning Objectives</h3>
-<blockquote>
-<p>Following this assignment students should:</p>
-<ul>
-<li>Have R and Rstudio downloaded</li>
-<li>Be able to access and open Rstudio</li>
-<li>Have an R-Project for the course</li>
-<li>Be able to download packages and load them into your working
-session</li>
-</ul>
-</blockquote>
-<ol style="list-style-type: decimal">
-<li>Download R and Rstudio</li>
-<li>Make a new Project called “ENVS475”</li>
-<li>In the console, enter the following command and run it:</li>
-</ol>
-<pre class="r"><code>install.packages(&quot;tidyverse&quot;)</code></pre>
-<p><strong>NOTE:</strong> Do <em>NOT</em> put
-<code>install.packages()</code> commands in your scripts. Only ever run
-them in the console.</p>
-<ul>
-<li>You can also install packages by clicking <code>Tools</code> –&gt;
-<code>Install Packages</code> and then entering the package name in the
-text box and clicking <code>Install</code></li>
-</ul>
-<ol start="4" style="list-style-type: decimal">
-<li><p>Make a new script called “lastname_first-assignment.R” and save
-it in your <code>homework</code> folder in your ENVS396
-Project.</p></li>
-<li><p>In your script, type in the following code and make sure it runs
-correctly:</p></li>
-</ol>
-<pre class="r"><code>library(tidyverse)
-data(&quot;starwars&quot;)
-starwars %&gt;% 
-    filter(homeworld == &quot;Tatooine&quot;) %&gt;%
-    select(name) %&gt;%
-    unique()</code></pre>
-<p>You should see the following output in your console:</p>
-<pre><code>#&gt; # A tibble: 10 × 1
-#&gt;    name              
-#&gt;    &lt;chr&gt;             
-#&gt;  1 Luke Skywalker    
-#&gt;  2 C-3PO             
-#&gt;  3 Darth Vader       
-#&gt;  4 Owen Lars         
-#&gt;  5 Beru Whitesun lars
-#&gt;  6 R5-D4             
-#&gt;  7 Biggs Darklighter 
-#&gt;  8 Anakin Skywalker  
-#&gt;  9 Shmi Skywalker    
-#&gt; 10 Cliegg Lars</code></pre>
+<div id="assignment-formats-r-scripts" class="section level1">
+<h1>Assignment Formats: R Scripts</h1>
+<p>For your assignments, you will be writing R scripts with comments and
+code which solve problems and answer questions. You will submit your R
+scripts on D2L. I will download all the scripts and run them in RStudio
+on my computer to check your work. Therefore, you will need to follow
+strict assignment formatting rules.</p>
+<div id="file-names" class="section level3">
+<h3>File Names</h3>
+<p>Each assignment should follow this naming convention:</p>
+<p><code>full_name_hw##.R</code></p>
+<p>For example: <code>justin_pomeranz_hw01.R</code></p>
+<p>You can capitalize words in the file name if you choose, but it
+should follow the general convention above.</p>
 </div>
-<div id="assignment-submission" class="section level2">
-<h2>Assignment submission</h2>
-<p><strong>For full credit, you must show your instructor that you have
-accomplished all of the above tasks.</strong></p>
+<div id="file-format" class="section level3">
+<h3>File format</h3>
+<ul>
+<li>Comment before each problem, and each sub-problem</li>
+<li>Make sure your results print out on <code>Source with echo</code>
+<ul>
+<li>If you’re answer is saved in an object, make sure you print out that
+object afterwards</li>
+<li>for example, see that <code>volume</code> is on the last line of the
+problem 2 example below</li>
+</ul></li>
+</ul>
+<pre class="r"><code># Problem 1
+
+# 1.1
+2 - 10
+
+# 1.2
+3 * 5
+
+# problem 2
+
+width = 2
+height = 3
+length = 1.5
+volume = width * height * length
+volume
+</code></pre>
+</div>
+</div>
+<div id="exercises-homework-01" class="section level1">
+<h1>Exercises Homework 01</h1>
+<p>Create an assignment script, put it in your class folder and name it
+according to the convention above.</p>
+<ul>
+<li>We are going to get a feel for this by working through some
+exercises together.</li>
+<li>In class we will often only do part of an exercise and save the rest
+for later or for you to do on your own.</li>
+</ul>
+<div id="basic-expressions" class="section level2">
+<h2>1. Basic expressions</h2>
+<p>Write the following calculations in your script.</p>
+<p>2 - 10</p>
+<p>3 * 5</p>
+<p>9 / 2</p>
+<p>5 - 3 * 2</p>
+<p>(5 - 3) * 2</p>
+<p>4^2</p>
+<p>8 / 2^2</p>
+<p>Run them by either clicking the Run button in the top-right corner of
+the editor or press <code>Ctrl+Enter</code> (Windows &amp; Linux) or
+<code>Command+Enter</code> (Mac) to run code and print the results in
+the console.</p>
+<p>If no code is highlighted/selected this will run the line the cursor
+is on. If you highlighted/selected a block of code it will run that
+entire group of lines.</p>
+<p>You can also run the entire script by clicking the arrow next to
+Source and selecting Source with Echo or by using
+<code>Ctrl+Shift+Enter</code> (Windows &amp; Linux) or
+<code>Command+Shift+Enter</code> (Mac).</p>
+<p>To tell someone reading the code what this section of the code is
+about, add a comment line that says ‘Exercise 1’ before the code that
+answers the exercise. Comments in R are added by adding the
+<code>#</code> sign. Anything after a<code>#</code> sign on the same
+line is ignored when the program is run. So, the start of your program
+should look something like:</p>
+<pre class="r"><code># Exercise 1
+
+# 1.1
+2 - 10
+
+# 1.2
+3*5</code></pre>
+</div>
+<div id="basic-objects-scalars" class="section level2">
+<h2>2. Basic Objects: Scalars</h2>
+<p>Here is a small program that converts a mass in kilograms to a mass
+in grams and then prints out the resulting value.</p>
+<pre class="r"><code>mass_kg &lt;- 2.62
+mass_g &lt;- mass_kg * 1000
+mass_g</code></pre>
+<p>Create similar code to convert a mass in pounds to a mass
+kilograms.</p>
+<ul>
+<li><p>Create a variable to store a body mass in pounds. Assign this
+variable a value of 3.5 (an appropriate mass for a <a href="https://en.wikipedia.org/wiki/Desert_cottontail"><em>Sylvilagus
+audubonii</em></a>.</p></li>
+<li><p>Convert the variable from body mass in pounds to body mass in
+kilograms (by dividing it by 2.2046), and assign it to a new
+variable.</p></li>
+<li><p>Print the value of the new variable to the screen.</p></li>
+</ul>
+<div id="more-objects" class="section level3">
+<h3>3. More Objects</h3>
+<p>Calculate a total biomass in grams for 3 white-throated woodrats <a href="https://en.wikipedia.org/wiki/White-throated_woodrat"><em>Neotoma
+albigula</em></a> and then convert it to kilograms. The total biomass is
+three times the average size of a single individual. An average
+individual weighs 250 grams.</p>
+<ul>
+<li><p>Add a new section to your R script starting with a
+comment.</p></li>
+<li><p>Create a variable <code>grams</code> and assign it the mass of a
+single <em>Neotoma albigula</em> (250).</p></li>
+<li><p>Create a variable <code>number</code> and assign it the number of
+individuals (3).</p></li>
+<li><p>Create a variable <code>biomass</code> and assign it a value by
+multiplying the <code>grams</code> and <code>number</code> variables
+together.</p></li>
+<li><p>Convert the value of <code>biomass</code> into kilograms (there
+are 1000 grams in a kilogram so divide by 1000) and assign this value to
+a new variable.</p></li>
+<li><p>Print the final answer to the screen.</p></li>
+</ul>
+</div>
+</div>
+<div id="built-in-functions" class="section level2">
+<h2>4. Built-in Functions</h2>
+<p>A built-in function is one that you don’t need to install and load a
+package to use. Some examples include:</p>
+<ul>
+<li><code>abs()</code> returns the absolute value of a number (e.g.,
+<code>abs(-2)</code>)</li>
+<li><code>round()</code> rounds a number (the first argument) to a given
+number of decimal places (the second argument <code>digits =</code>)
+(e.g., <code>round(12.1123, digits = 2)</code>)</li>
+<li><code>sqrt()</code> takes the square root of a number (e.g.,
+<code>sqrt(4)</code>)</li>
+<li><code>tolower()</code> makes a string all lower case (e.g.,
+<code>tolower(&quot;HELLO&quot;)</code>)</li>
+<li><code>toupper()</code> makes a string all upper case (e.g.,
+<code>toupper(&quot;hello&quot;)</code>)</li>
+</ul>
+<p>Use these built-in functions to print the following items:</p>
+<ol style="list-style-type: decimal">
+<li>The absolute value of -15.5.</li>
+<li>4.483847 rounded to one decimal place.</li>
+<li>3.8 rounded to the nearest integer. <em>You don’t have to specify
+the number of decimal places in this case if you don’t want to, because
+<code>round()</code> will default to using 0 if the <code>digits</code>
+argument is not provided. Look at <code>help(round)</code> or
+<code>?round</code> to see how this is indicated.</em></li>
+<li>“species” in all capital letters.</li>
+<li>“SPECIES” in all lower case letters.</li>
+<li>Assign the value of the square root of 2.6 to a variable. Then round
+the variable you’ve created to 2 decimal places and assign it to another
+variable. Print out the rounded value.</li>
+</ol>
+<p><em>Optional Challenge</em>: Do the same thing as task 6 (immediately
+above), but instead of creating the intermediate variable, perform both
+the square root and the round on a single line by putting the
+<code>sqrt()</code> call inside the <code>round()</code> call.</p>
+</div>
+<div id="modify-the-code" class="section level2">
+<h2>5. Modify the code</h2>
+<p>The following code estimates the total net primary productivity (NPP)
+per day for two sites. It does this by multiplying the grams of carbon
+produced in a single square meter per day by the total area of the site.
+It then prints the daily NPP for each site.</p>
+<pre class="r"><code>site1_g_carbon_m2_day &lt;- 5
+site2_g_carbon_m2_day &lt;- 2.3
+site1_area_m2 &lt;- 200
+site2_area_m2 &lt;- 450
+site1_npp_day &lt;- site1_g_carbon_m2_day * site1_area_m2
+site2_npp_day &lt;- site2_g_carbon_m2_day * site2_area_m2
+site1_npp_day
+site2_npp_day</code></pre>
+<p>Copy this code into your assignment and then add additional lines of
+code to do the following steps and print them out after the daily NPP
+values (the ones currently printed by the code):</p>
+<ol style="list-style-type: decimal">
+<li>The sum of the total daily NPP for the two sites.</li>
+<li>The difference between the daily NPP for the two sites. We only want
+an absolute difference, so use abs() function to make sure the number is
+positive.</li>
+<li>The total NPP over a year for the two sites combined (the sum of the
+total daily NPP values from part (1) multiplied by 365).</li>
+</ol>
+</div>
+<div id="basic-vectors" class="section level2">
+<h2>6. Basic Vectors</h2>
+<p>Cut and paste the following vector into your assignment and then use
+code to print the requested values related to the vector.</p>
+<pre class="r"><code>numbers &lt;- c(5, 2, 26, 8, 16)</code></pre>
+<ol style="list-style-type: decimal">
+<li>The number of items in the numbers vector (using the
+<code>length</code> function)</li>
+<li>The third item in the numbers vector (using <code>[]</code>)</li>
+<li>The smallest number in the numbers vector (using the
+<code>min</code> function)</li>
+<li>The largest number in the numbers vector (using the <code>max</code>
+function)</li>
+<li>The average of the numbers in the numbers vector (using the
+<code>mean</code> function)</li>
+<li>The first, second and third numbers in the numbers vector (using
+<code>[]</code>)</li>
+<li>The sum of the values in the numbers vector (using the
+<code>sum</code> function)</li>
+</ol>
+</div>
+<div id="nulls-in-vectors" class="section level2">
+<h2>7. <code>NULLS</code> in Vectors</h2>
+<p>Cut and paste the following vector into your assignment. Then use
+code to print the requested values related to the vector. You’ll need to
+use <code>na.rm = TRUE</code> argument within each function to ignore
+the null values. for example:
+<code>range(numbers_2, na.rm = TRUE)</code></p>
+<pre class="r"><code>numbers_2 &lt;- c(7, 6, 22, 5, NA, 42)</code></pre>
+<ol style="list-style-type: decimal">
+<li>The smallest number in the <code>numbers_2</code> vector</li>
+<li>The largest number in the <code>numbers_2</code> vector</li>
+<li>The average of the numbers in the <code>numbers_2</code></li>
+<li>The sum of the values in the <code>numbers_2</code> vector</li>
+</ol>
+</div>
+<div id="shrub-volume-vectors" class="section level2">
+<h2>8. Shrub Volume Vectors</h2>
+<p>You have data on the length, width, and height of 10 individuals of
+the yew <a href="https://en.wikipedia.org/wiki/Taxus_baccata"><em>Taxus
+baccata</em></a> stored in the following vectors:</p>
+<pre class="r"><code>length &lt;- c(2.2, 2.1, 2.7, 3.0, 3.1, 2.5, 1.9, 1.1, 3.5, 2.9)
+width &lt;- c(1.3, 2.2, 1.5, 4.5, 3.1, NA, 1.8, 0.5, 2.0, 2.7)
+height &lt;- c(9.6, 7.6, 2.2, 1.5, 4.0, 3.0, 4.5, 2.3, 7.5, 3.2)</code></pre>
+<p>Copy these vectors into an R script and then determine the
+following:</p>
+<ol style="list-style-type: decimal">
+<li>The volume of each shrub (length × width × height). <em>Storing this
+in a variable will make some of the next problems easier.</em></li>
+<li>The sum of the volume of all of the shrubs (using the
+<code>sum</code> function).</li>
+<li>A vector of the height of shrubs with lengths &gt; 2.5.</li>
+<li>A vector of the height of shrubs with heights &gt; 5.</li>
+<li>A vector of the heights of the first 5 shrubs (using
+<code>[]</code>).</li>
+<li>A vector of the volumes of the first 3 shrubs (using
+<code>[]</code>).</li>
+</ol>
+<p><em>Optional Challenge</em>: A vector of the volumes of the last 5
+shrubs with the code written so that it will return the last 5 values
+regardless of the length of the vector (i.e., it will give the last 5
+values if there are 10, 20, or 50 individuals).</p>
+</div>
+<div id="variable-names-optional" class="section level2">
+<h2>9. Variable Names (optional)</h2>
+<p>In the More Variables exercise (number 3 above) we used the variable
+names grams, number, and biomass to describe the individual mass, number
+of individuals, and total biomass of some white-throated woodrats. But
+are these variable names the best choice? If we came back to the code
+for this assignment in two weeks would we be able to remember what these
+variables were referring to and therefore what was going on in the code?
+The variable name biomass is also kind of long. If we had to type it
+many times it would be faster just to type b. We could also use really
+descriptive alternatives like individual_mass_in_grams. Or we would
+compromise and abbreviate this or leave out some of the words to make it
+shorter (e.g., indiv_mass_g).</p>
+<p>Think about good variable names and then create a new version of this
+code with the variables renamed to be most useful. Make sure your code
+still runs properly with the name changes.</p>
 </div>
 </div>
 

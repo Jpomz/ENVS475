@@ -11,7 +11,7 @@
 
 
 
-<title>ENVS475 Homework 01: Setup</title>
+<title>ENVS475 Homework 12: Two-Way ANOVA</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,81 +348,308 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">ENVS475 Homework 01: Setup</h1>
-<h4 class="date">Spring 2024</h4>
+<h1 class="title toc-ignore">ENVS475 Homework 12: Two-Way ANOVA</h1>
+<h4 class="date">Spring, 2024</h4>
 
 </div>
 
 <div id="TOC">
 <ul>
-<li><a href="#complete-this-assignment-for-a-grade." id="toc-complete-this-assignment-for-a-grade.">Complete this assignment
-for a grade.</a>
+<li><a href="#assignment-format" id="toc-assignment-format">Assignment
+Format</a></li>
+<li><a href="#setup" id="toc-setup">Setup</a>
 <ul>
-<li><a href="#assignment-submission" id="toc-assignment-submission">Assignment submission</a></li>
+<li><a href="#load-packages" id="toc-load-packages">Load
+packages</a></li>
+</ul></li>
+<li><a href="#data" id="toc-data">Data</a>
+<ul>
+<li><a href="#download-the-data-and-read-into-r" id="toc-download-the-data-and-read-into-r">Download the data and read
+into R</a></li>
+</ul></li>
+<li><a href="#exercises-homework-12-two-way-anova" id="toc-exercises-homework-12-two-way-anova">Exercises Homework 12:
+Two-way ANOVA</a>
+<ul>
+<li><a href="#problem-1-wheat_2-way.csv" id="toc-problem-1-wheat_2-way.csv">Problem 1:
+<code>wheat_2-way.csv</code></a></li>
+<li><a href="#problem-2-selenium" id="toc-problem-2-selenium">Problem 2:
+<code>selenium</code></a></li>
 </ul></li>
 </ul>
 </div>
 
-<div id="complete-this-assignment-for-a-grade." class="section level1">
-<h1>Complete this assignment for a grade.</h1>
-<div id="learning-objectives" class="section level3">
-<h3>Learning Objectives</h3>
-<blockquote>
-<p>Following this assignment students should:</p>
+<div id="assignment-format" class="section level1">
+<h1>Assignment Format</h1>
 <ul>
-<li>Have R and Rstudio downloaded</li>
-<li>Be able to access and open Rstudio</li>
-<li>Have an R-Project for the course</li>
-<li>Be able to download packages and load them into your working
-session</li>
-</ul>
-</blockquote>
-<ol style="list-style-type: decimal">
-<li>Download R and Rstudio</li>
-<li>Make a new Project called “ENVS475”</li>
-<li>In the console, enter the following command and run it:</li>
-</ol>
-<pre class="r"><code>install.packages(&quot;tidyverse&quot;)</code></pre>
-<p><strong>NOTE:</strong> Do <em>NOT</em> put
-<code>install.packages()</code> commands in your scripts. Only ever run
-them in the console.</p>
+<li>Open a new R script</li>
+<li>Save your R script in the <code>homework/</code> folder</li>
+<li>Name your script according to: <code>full_name_hw##.R</code>
 <ul>
-<li>You can also install packages by clicking <code>Tools</code> –&gt;
-<code>Install Packages</code> and then entering the package name in the
-text box and clicking <code>Install</code></li>
+<li>For example: <code>justin_pomeranz_hw12.R</code></li>
+</ul></li>
+<li>Comment before each problem, and each sub-problem</li>
+<li>Make sure your results print out on <code>Source with echo</code>
+<ul>
+<li>If you’re answer is saved in an object, make sure you print out that
+object afterwards</li>
+</ul></li>
 </ul>
-<ol start="4" style="list-style-type: decimal">
-<li><p>Make a new script called “lastname_first-assignment.R” and save
-it in your <code>homework</code> folder in your ENVS396
-Project.</p></li>
-<li><p>In your script, type in the following code and make sure it runs
-correctly:</p></li>
-</ol>
-<pre class="r"><code>library(tidyverse)
-data(&quot;starwars&quot;)
-starwars %&gt;% 
-    filter(homeworld == &quot;Tatooine&quot;) %&gt;%
-    select(name) %&gt;%
-    unique()</code></pre>
-<p>You should see the following output in your console:</p>
-<pre><code>#&gt; # A tibble: 10 × 1
-#&gt;    name              
-#&gt;    &lt;chr&gt;             
-#&gt;  1 Luke Skywalker    
-#&gt;  2 C-3PO             
-#&gt;  3 Darth Vader       
-#&gt;  4 Owen Lars         
-#&gt;  5 Beru Whitesun lars
-#&gt;  6 R5-D4             
-#&gt;  7 Biggs Darklighter 
-#&gt;  8 Anakin Skywalker  
-#&gt;  9 Shmi Skywalker    
-#&gt; 10 Cliegg Lars</code></pre>
 </div>
-<div id="assignment-submission" class="section level2">
-<h2>Assignment submission</h2>
-<p><strong>For full credit, you must show your instructor that you have
-accomplished all of the above tasks.</strong></p>
+<div id="setup" class="section level1">
+<h1>Setup</h1>
+<div id="load-packages" class="section level2">
+<h2>Load packages</h2>
+<pre class="r"><code># load libraries
+library(dplyr)
+library(ggplot2)</code></pre>
+</div>
+</div>
+<div id="data" class="section level1">
+<h1>Data</h1>
+<div id="download-the-data-and-read-into-r" class="section level2">
+<h2>Download the data and read into R</h2>
+<ol style="list-style-type: decimal">
+<li>Problem 1 will use the “wheat_2-way.csv” data set on D2L<br />
+</li>
+<li>Problem 2 will use the “selenium_2-way-anova.csv” data set on D2L
+.</li>
+</ol>
+<pre class="r"><code># read in data
+wheat &lt;- read.csv(&quot;data/wheat_2-way.csv&quot;)
+selenium &lt;-read.csv(&quot;data/selenium_2-way-anova.csv&quot;)</code></pre>
+</div>
+</div>
+<div id="exercises-homework-12-two-way-anova" class="section level1">
+<h1>Exercises Homework 12: Two-way ANOVA</h1>
+<div id="problem-1-wheat_2-way.csv" class="section level2">
+<h2>Problem 1: <code>wheat_2-way.csv</code></h2>
+<p>An experiment on the effects of fertilizer addition on the yield (in
+kg) of wheat. Agricultural fields received one of four treatments:
+control (no fertilizer), Nitrogen addition, Phosphorous addition, or
+addition of N+P in combination. This experimental design has a two
+factors (<code>Nitrogen</code>, <code>Phosphorous</code>) each with two
+levels (<code>no</code>, <code>yes</code>).</p>
+<p>For this problem, I will not be asking you to print out the names,
+dimensions, etc. of this data set as a question, but you should always
+be in the habit of doing that whenever you load a new data object.</p>
+<p>We will perform a two-way ANOVA looking for both main and interactive
+effects.</p>
+<p>1.1 Add a comment to your homework script stating the null and
+alternative hypotheses for a two-way ANOVA.</p>
+<ul>
+<li><strong>Hint</strong>: you should have three pairs of
+hypotheses.</li>
+</ul>
+<p>1.2 Make a box plot of all the observations of yield for all groups
+in the experimental design.</p>
+<ul>
+<li><strong>Hint</strong>: put one factor in as <code>x</code> and the
+other factor in as the `color.</li>
+</ul>
+<p>1.3 Make an interaction plot of the yield.</p>
+<ul>
+<li><strong>Hint</strong>: The lab showed two two ways of doing
+this.</li>
+</ul>
+<p>1.4 Based on the box plots made in question 1.2, add a comment to
+your script interpreting the assumption of equal variance. Do these data
+appear to have equal variation between the groups? Why or why not?</p>
+<p>1.5 Check the assumption of the normality of residuals by making a
+QQ-plot of this data.</p>
+<p>1.6 Add a comment to your script interpreting the QQ-plot you made in
+1.5 above. Does it appear that the residuals are normally distributed?
+Why or why not?</p>
+<p>1.7 Use <code>lm()</code> to fit a model and formally test the
+two-way ANOVA. Make sure to include the interaction. Save your model fit
+as a new object (i.e., <code>wheat_lm</code>)</p>
+<p>1.8 Before we look at the model output, let’s make a fitted
+vs. residual plot to check our last assumption: Equal variance of
+residuals.<br />
+* Use the model-fit object you made in 1.7 above to make a fitted vs
+residual plot.</p>
+<p>1.9 Add a comment to Interpret the plot made in 1.8. Does this model
+appear to have equal variance in the residuals? Why or why not?</p>
+<p>1.10 Now, use the <code>anova()</code> function on your model fit
+object created in 1.7 above to print out an ANOVA table for your 2-way
+analysis of varianvce.</p>
+<p>1.11 Add a comment to your script interpreting the results of our
+two-way ANOVA analysis. Do we reject or fail to reject our null
+hypotheses? Be sure to specifically address all three pairs of
+hypotheses and include all the appropriate statistics in your
+interpretation.</p>
+<p>1.12 Let’s now look at pairwise comparisons between the groups. We
+will start by looking at the output from the <code>lm()</code>
+analysis.</p>
+<ul>
+<li>Use the <code>summary()</code> function to print out your lm model
+fit object here.</li>
+</ul>
+<p>1.13 Add a comment to your script describing what each coefficient
+means. Pay close attention to how you define the groups.</p>
+<p>1.14 Add a comment to your script describing which coefficients are
+significantly different from 0, including the <em>t</em>- and
+<em>p</em>-value. For each coefficient that is significant, also include
+a brief description of what this means using plain language.</p>
+<p>1.15 Use the coefficient estimates from the <code>lm()</code> model
+to estimate the mean yield for the N and P groups.</p>
+<ul>
+<li><strong>Hint</strong> the code for this using the
+<code>coef()</code> function is described in the “Mean estimatesfor
+treatment groups” seciton in <strong>Lab 10</strong></li>
+</ul>
+<p>1.16 Perform a Tukey HSD multiple comparison on the linear model fit
+object that you created in problem 1.7.</p>
+<ul>
+<li><p>You will first need to create a new object with the
+<code>aov()</code> function</p></li>
+<li><p>You can then use <code>TukeyHSD()</code> on your aov
+object.</p></li>
+<li><p>print out the results of the Tukey HSD here.</p></li>
+</ul>
+<p>1.17 Make a plot of the Tukey HSD results.</p>
+<p>1.18 Finally, interpret the results of the Tukey HSD here. You can be
+broad and summarize these results generally.</p>
+<p>1.19 Based on the interaction plot above, you may have guessed that
+there would be a significant interaction effect. However, the last few
+questions should have made it clear that there was not a statistically
+significant interaction effect (if you got a different result, double
+check your code and/or ask me). Here, add a comment discussing why you
+think the interaction plot disagrees with the statistical analyses.</p>
+</div>
+<div id="problem-2-selenium" class="section level2">
+<h2>Problem 2: <code>selenium</code></h2>
+<p>For this problem, we will be using a simulated data set comparing the
+effects of Selenium and Atrazine (an herbicide) on aquatic insect
+abundance.</p>
+<div id="load-the-data" class="section level3">
+<h3>Load the data</h3>
+<p>Download the data from D2L and load it into your R session.</p>
+<pre class="r"><code>selenium &lt;-read.csv(&quot;data/selenium_2-way-anova.csv&quot;)</code></pre>
+</div>
+<div id="data-background" class="section level3">
+<h3>Data background</h3>
+<p>This simulated data is based on a study by <a href="https://pubs.acs.org/doi/10.1021/acs.est.8b01791">Henry and Wesner
+(2018)</a>.</p>
+<ul>
+<li><p>Aquatic insects are an important food source for migrating
+birds.</p></li>
+<li><p>Prairie potholes in North Dakota are an important resting and
+foraging location for migrating birds</p></li>
+<li><p>Aquatic insect abundance in prairie potholes has declined in
+recent years</p></li>
+<li><p>Some potholes have naturally elevated levels of Selenium</p></li>
+<li><p>High agricultural cultivation in the area, and use of Atrazine
+(herbicide) has also increased in recent years.</p></li>
+<li><p>Mesocosm experiment designed to test the main and interactive
+effects of these two chemicals on the abundance of aquatic
+insects</p></li>
+<li><p>Mesocosm experiment also included a block factor</p></li>
+</ul>
+</div>
+<div id="problem-2-questions" class="section level3">
+<h3>Problem 2 questions</h3>
+<p>2.1 You should always get to know your data by looking at
+<code>names()</code>, <code>head()</code>, etc. It is also a good idea
+to print out all the levels of categorical variables using
+<code>distinct()</code> or <code>unique()</code> functions.</p>
+<p>2.2 Produce a table showing the number of replicates for each
+combination of Selenium and Atrazine treatment. Is this a balanced
+design?</p>
+<ul>
+<li><strong>Hint</strong> This was shown in Lab 11</li>
+</ul>
+<p>2.3 Make a box plot of the abundance observations grouped by Selenium
+and Atrazine levels.</p>
+<ul>
+<li>Set one factor as the <code>x</code> variable and one factor as the
+<code>color</code> variable.</li>
+</ul>
+<p>2.4 Based on the box plots made in question 2.3, add a comment to
+your script interpreting the assumption of equal variance. Do these data
+appear to have equal variation between the groups? Why or why not?</p>
+<p>2.5 Check the assumption of the normality of residuals by making a
+QQ-plot of this data.</p>
+<p>2.6 Add a comment to your script interpreting the QQ-plot you made in
+2.5 above. Does it appear that the residuals are normally distributed?
+Why or why not?</p>
+<p>2.7 Make a box plot of the abundance observations, but this time
+group the data based solely on the <code>block</code> factor.</p>
+<p>2.8 Add a comment to your script assessing whether or not there is
+equal variance across the blocks. Why do you think there is (or is not)
+equal variance?</p>
+<p>2.9 Add a comment to your script estimating whether or not you think
+there will be a significant main effect of the blocking factor.</p>
+<ul>
+<li><strong>Hint</strong>: compare the means within each box</li>
+</ul>
+<p>2.10 Use <code>lm()</code> to fit a model to formally test the
+effects of this experiment. Note that you will be performing a 2-way
+ANOVA for the main and interactive effects of Selenium and Atrazine. In
+addition, you will need to test for the main effect of block. Save your
+model fit as a new object (i.e., <code>sel_lm</code>)</p>
+<ul>
+<li><strong>Hint</strong> your formula should include
+<code>~ block + Atrazine * Selenium</code></li>
+</ul>
+<p>2.11 Now, use the <code>anova()</code> function on your model fit
+object to print out an ANOVA table in your output.</p>
+<p>2.12 Add a comment to your script fully interpreting the results of
+the ANOVA table including the df’s, F- and p-values.</p>
+<p>2.13 You should have found a non-significant effect of block above
+(if you got a different result, you may want to double check your code
+above or ask me). To simplify the interpretation of the following
+questions, let’s fit a new model without the block factor in it, and
+print the summary results here.</p>
+<ul>
+<li><p><strong>Note</strong> there is debate in the statistical
+community on whether or not it’s OK to drop non-significant
+factors.</p></li>
+<li><p>We’re going to do it here to simplify the interpretation, and
+reduce the number of pairwise comparisons.</p></li>
+<li><p>If you do this for an analysis in a job/grad school etc., always
+be sure to just be very clear in your methods what decisions you made,
+and report your findings.</p></li>
+<li><p>new model should be:
+<code>sel_lm2 &lt;- lm(abundance ~ Selenium * Atrazine, data = selenium)</code></p></li>
+</ul>
+<p>2.14 Describe what the Intercept coefficient is estimating in your
+<code>sel_lm2</code> model. Also include the appropriate statistics, and
+how this relates to our null and alternative hypotheses for an intercept
+coefficient.</p>
+<p>2.15 Interpret the rest of the coefficients. For each, explain:</p>
+<ul>
+<li><p>What is the coefficient estimating?</p></li>
+<li><p>What is the statistical conclusion for each (include <em>t</em>-
+and <em>p</em>-values)?</p></li>
+<li><p>Explain what this means in plain language.</p></li>
+</ul>
+<p>2.16 Perform a Tukey HSD multiple comparison on the second linear
+model fit object that you created in problem 2.13.</p>
+<ul>
+<li><p>You will first need to create a new object with the
+<code>aov()</code> function</p></li>
+<li><p>You can then use <code>TukeyHSD()</code> on your aov
+object.</p></li>
+<li><p>print out the results of the Tukey HSD here.</p></li>
+</ul>
+<p>2.17 Plot the Tukey HSD results.</p>
+<p>2.18 Finally, interpret the results of the Tukey HSD here. Once
+again, you can be general. For example, list all the pairwise
+comparisons which were significant, and then say “all Tukey adjusted
+p-values &lt; 0.05”.</p>
+<ul>
+<li><p>For the interactions, you can simplify by calling:</p>
+<ul>
+<li><p>no:no = control</p></li>
+<li><p>yes:no = Selenium</p></li>
+<li><p>no:yes = Atrazine</p></li>
+<li><p>yes:yes = full treatment</p></li>
+</ul></li>
+</ul>
+</div>
+<div id="this-concludes-the-homework" class="section level3">
+<h3>This concludes the Homework</h3>
+</div>
 </div>
 </div>
 

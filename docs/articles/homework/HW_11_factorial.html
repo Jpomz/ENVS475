@@ -11,7 +11,7 @@
 
 
 
-<title>ENVS475 Homework 01: Setup</title>
+<title>ENVS475 Homework 11: Factorial</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,81 +348,173 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">ENVS475 Homework 01: Setup</h1>
-<h4 class="date">Spring 2024</h4>
+<h1 class="title toc-ignore">ENVS475 Homework 11: Factorial</h1>
+<h4 class="date">Spring, 2023</h4>
 
 </div>
 
 <div id="TOC">
 <ul>
-<li><a href="#complete-this-assignment-for-a-grade." id="toc-complete-this-assignment-for-a-grade.">Complete this assignment
-for a grade.</a>
+<li><a href="#assignment-format" id="toc-assignment-format">Assignment
+Format</a></li>
+<li><a href="#setup" id="toc-setup">Setup</a>
 <ul>
-<li><a href="#assignment-submission" id="toc-assignment-submission">Assignment submission</a></li>
+<li><a href="#load-packages" id="toc-load-packages">Load
+packages</a></li>
 </ul></li>
+<li><a href="#data" id="toc-data">Data</a></li>
+<li><a href="#problem-1-moth" id="toc-problem-1-moth">Problem 1:
+<code>moth</code></a></li>
+<li><a href="#problem-2-latin_square_crops" id="toc-problem-2-latin_square_crops">Problem 2:
+<code>latin_square_crops</code></a></li>
 </ul>
 </div>
 
-<div id="complete-this-assignment-for-a-grade." class="section level1">
-<h1>Complete this assignment for a grade.</h1>
-<div id="learning-objectives" class="section level3">
-<h3>Learning Objectives</h3>
-<blockquote>
-<p>Following this assignment students should:</p>
+<div id="assignment-format" class="section level1">
+<h1>Assignment Format</h1>
 <ul>
-<li>Have R and Rstudio downloaded</li>
-<li>Be able to access and open Rstudio</li>
-<li>Have an R-Project for the course</li>
-<li>Be able to download packages and load them into your working
-session</li>
-</ul>
-</blockquote>
-<ol style="list-style-type: decimal">
-<li>Download R and Rstudio</li>
-<li>Make a new Project called “ENVS475”</li>
-<li>In the console, enter the following command and run it:</li>
-</ol>
-<pre class="r"><code>install.packages(&quot;tidyverse&quot;)</code></pre>
-<p><strong>NOTE:</strong> Do <em>NOT</em> put
-<code>install.packages()</code> commands in your scripts. Only ever run
-them in the console.</p>
+<li>Open a new R script</li>
+<li>Save your R script in the <code>homework/</code> folder</li>
+<li>Name your script according to: <code>full_name_hw##.R</code>
 <ul>
-<li>You can also install packages by clicking <code>Tools</code> –&gt;
-<code>Install Packages</code> and then entering the package name in the
-text box and clicking <code>Install</code></li>
+<li>For example: <code>justin_pomeranz_hw11.R</code></li>
+</ul></li>
+<li>Comment before each problem, and each sub-problem</li>
+<li>Make sure your results print out on <code>Source with echo</code>
+<ul>
+<li>If you’re answer is saved in an object, make sure you print out that
+object afterwards</li>
+</ul></li>
 </ul>
-<ol start="4" style="list-style-type: decimal">
-<li><p>Make a new script called “lastname_first-assignment.R” and save
-it in your <code>homework</code> folder in your ENVS396
-Project.</p></li>
-<li><p>In your script, type in the following code and make sure it runs
-correctly:</p></li>
-</ol>
-<pre class="r"><code>library(tidyverse)
-data(&quot;starwars&quot;)
-starwars %&gt;% 
-    filter(homeworld == &quot;Tatooine&quot;) %&gt;%
-    select(name) %&gt;%
-    unique()</code></pre>
-<p>You should see the following output in your console:</p>
-<pre><code>#&gt; # A tibble: 10 × 1
-#&gt;    name              
-#&gt;    &lt;chr&gt;             
-#&gt;  1 Luke Skywalker    
-#&gt;  2 C-3PO             
-#&gt;  3 Darth Vader       
-#&gt;  4 Owen Lars         
-#&gt;  5 Beru Whitesun lars
-#&gt;  6 R5-D4             
-#&gt;  7 Biggs Darklighter 
-#&gt;  8 Anakin Skywalker  
-#&gt;  9 Shmi Skywalker    
-#&gt; 10 Cliegg Lars</code></pre>
 </div>
-<div id="assignment-submission" class="section level2">
-<h2>Assignment submission</h2>
-<p><strong>For full credit, you must show your instructor that you have
-accomplished all of the above tasks.</strong></p>
+<div id="setup" class="section level1">
+<h1>Setup</h1>
+<div id="load-packages" class="section level2">
+<h2>Load packages</h2>
+<pre class="r"><code># load libraries
+library(dplyr)
+library(ggplot2)</code></pre>
+</div>
+</div>
+<div id="data" class="section level1">
+<h1>Data</h1>
+<p>For this homework, you will need to download three .csv files from
+D2L: <code>moth_data.csv</code>, and
+<code>latin_square_crops.csv</code>.</p>
+</div>
+<div id="problem-1-moth" class="section level1">
+<h1>Problem 1: <code>moth</code></h1>
+<div id="load-the-data-into-r" class="section level3">
+<h3>Load the data into R</h3>
+<pre class="r"><code>moth &lt;- read.csv(&quot;data/moth_data.csv&quot;)</code></pre>
+<p>This is simulated data looking at the effects of different pesticides
+for controlling the abundance of a moth pest species. The experiment was
+blocked based on different regions in the SE US.</p>
+<p>You should always print out the <code>names()</code> and
+<code>head()</code> of data objects when you load them into your R
+environment.</p>
+<p>You may also want to look at the distinct/unique levels of each of
+the categorical/factor variables.</p>
+</div>
+<div id="wrangle-the-data" class="section level3">
+<h3>Wrangle the data</h3>
+<p>You may have noticed that the <code>Region</code> variable is a
+number. If we plug the data as-is into a linear model, R will treat this
+as a continuous variable. Since this represents different groups, we
+need to change the class of this variable to be a factor.</p>
+<p>Run the following code <strong>before</strong> answering the problems
+below.</p>
+<pre class="r"><code>moth &lt;- moth %&gt;%
+  mutate(Region = factor(Region))</code></pre>
+<p>1.1 Make a box plot of the response variable
+(<code>caterpillar</code>) grouped with the herbicide treatment.</p>
+<ul>
+<li><strong>Note</strong> do <strong>not</strong> include
+<code>Region</code> as a grouping variable. There is only one
+observation for each treatment in each region, and this is not enough to
+make a box plot.</li>
+</ul>
+<p>1.2 Interpret the box plots here. Does it appear that there is equal
+variance across the different treatments? Why or why not?</p>
+<p>1.3 Now, make a box plot of the response variable grouped by region
+(ignore the treatment variable)</p>
+<p>1.4 Interpret the box plots here. Does it appear that there is equal
+variance across the different regions? Why or why not?</p>
+<p>1.5 Fit a linear model using the <code>lm()</code> function, and save
+it as a new data object. Make sure to include both the
+<code>Treatment</code> and <code>Region</code> variables as main effects
+in the model.</p>
+<p>1.6 Write out the null and alternative hypotheses for this model.</p>
+<p>1.7 Print out the ANOVA table for the linear model you fit in problem
+2.5.</p>
+<p>1.8 Write out your statistical interpretation of the ANOVA table.
+Make sure to report all appropriate statistics.</p>
+<p>1.9 Write out an interpretation of these results using plain
+words.</p>
+<p>1.10 To see how accounting for blocking effects can affect our model,
+fit a linear model without the region factor, and save it as a new data
+object.</p>
+<p>1.11 Print out the ANOVA table for your second model (without
+region)</p>
+<p>1.12 Write out the statistical interpretation of this second
+model.</p>
+<p>1.13 What does this mean in your own words? What happened?</p>
+</div>
+</div>
+<div id="problem-2-latin_square_crops" class="section level1">
+<h1>Problem 2: <code>latin_square_crops</code></h1>
+<div id="read-in-the-data" class="section level3">
+<h3>Read in the data</h3>
+<pre class="r"><code>latin_ag &lt;- read.csv(&quot;data/latin_square_crops.csv&quot;)</code></pre>
+<p>This is a data set investigating the impact of tillage, fertilizer,
+and seed variety on yield (measured in cwt_year) in an agricultural
+setting.</p>
+<ul>
+<li><code>cwt_year</code> = this is the response variable (yield)
+measured in hundred-weight. (Hundred weight is a measurement in
+commodities trading. Basically, a higher number means more yield)</li>
+</ul>
+<p>You should always print out the <code>names()</code> and
+<code>head()</code> of data objects when you load them into your R
+environment.</p>
+<p>You may also want to look at the distinct/unique levels of each of
+the categorical/factor variables.</p>
+</div>
+<div id="experimental-design" class="section level3">
+<h3>Experimental design</h3>
+<p>Here is an illustration of how the experimental field was set up.</p>
+<p>Variables: * <code>treat</code> = each “column” in the field received
+a different tillage method<br />
+* <code>fertil</code> = each “row” in the field received a different
+fertilizer mix<br />
+* <code>seed</code> = “LETTER” = each “cell” in the field received a
+different seed variety</p>
+<p>You can see that each column and row has exactly one observation of
+each seed variety (A-E).</p>
+<p>2.1 Write out the null and alternative hypotheses for this
+experiemntal design.</p>
+<ul>
+<li><strong>Hint</strong> You should have one set of hypotheses for each
+factor: Fertilizer, Tillage, and Seed.</li>
+</ul>
+<p>2.2 Fit a linear model for this analysis, and save it as a new data
+object.</p>
+<p>2.3 Print out the ANOVA table for your linear model.</p>
+<p>2.4 Write out the statistical interpretation for the main effects
+tested in this model. Be sure to include all appropriate statistics and
+relate it back to your null and alternative hypotheses.</p>
+<p>2.5 Perform a Tukey HSD multiple comparison for this model.</p>
+<p>2.6 Interpret the output of the Tukey HSD here.</p>
+<ul>
+<li><strong>Note</strong> There are lots of pairwise comparisons here.
+To simplify, you can just list the pairs within each factor which were
+significantly different.</li>
+</ul>
+<p>2.7 Make a plot of the Tukey HSD results.</p>
+</div>
+<div id="coda" class="section level3">
+<h3>Coda</h3>
+<p>This concludes the homework assignment.</p>
 </div>
 </div>
 

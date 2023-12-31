@@ -11,7 +11,7 @@
 
 
 
-<title>ENVS475 Homework 01: Setup</title>
+<title>ENVS475 Homework 06: Linear Models</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,81 +348,266 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">ENVS475 Homework 01: Setup</h1>
-<h4 class="date">Spring 2024</h4>
+<h1 class="title toc-ignore">ENVS475 Homework 06: Linear Models</h1>
+<h4 class="date">Spring, 2024</h4>
 
 </div>
 
 <div id="TOC">
 <ul>
-<li><a href="#complete-this-assignment-for-a-grade." id="toc-complete-this-assignment-for-a-grade.">Complete this assignment
-for a grade.</a>
+<li><a href="#assignment-format" id="toc-assignment-format">Assignment
+Format</a></li>
+<li><a href="#setup" id="toc-setup">Setup</a>
 <ul>
-<li><a href="#assignment-submission" id="toc-assignment-submission">Assignment submission</a></li>
+<li><a href="#load-packages" id="toc-load-packages">Load
+packages</a></li>
+</ul></li>
+<li><a href="#data" id="toc-data">Data</a>
+<ul>
+<li><a href="#load-and-wrangle-the-data" id="toc-load-and-wrangle-the-data">Load and wrangle the data</a></li>
+</ul></li>
+<li><a href="#exercises-homework-06-linear-models" id="toc-exercises-homework-06-linear-models">Exercises Homework 06:
+Linear Models</a>
+<ul>
+<li><a href="#problem-1-intercept-only" id="toc-problem-1-intercept-only">Problem 1: Intercept only</a></li>
+<li><a href="#problem-2-categorical-predictor" id="toc-problem-2-categorical-predictor">Problem 2: Categorical
+predictor</a></li>
+<li><a href="#problem-3-confidence-intervals" id="toc-problem-3-confidence-intervals">Problem 3: Confidence
+Intervals</a></li>
+<li><a href="#problem-4-assumptions" id="toc-problem-4-assumptions">Problem 4: Assumptions</a></li>
+<li><a href="#problem-5-relevel-year-variable-optional" id="toc-problem-5-relevel-year-variable-optional">Problem 5: Relevel
+<code>year</code> variable (optional)</a></li>
 </ul></li>
 </ul>
 </div>
 
-<div id="complete-this-assignment-for-a-grade." class="section level1">
-<h1>Complete this assignment for a grade.</h1>
-<div id="learning-objectives" class="section level3">
-<h3>Learning Objectives</h3>
-<blockquote>
-<p>Following this assignment students should:</p>
+<div id="assignment-format" class="section level1">
+<h1>Assignment Format</h1>
 <ul>
-<li>Have R and Rstudio downloaded</li>
-<li>Be able to access and open Rstudio</li>
-<li>Have an R-Project for the course</li>
-<li>Be able to download packages and load them into your working
-session</li>
+<li>Open a new R script</li>
+<li>Save your R script in the <code>homework/</code> folder</li>
+<li>Name your script according to: <code>full_name_hw##.R</code>
+<ul>
+<li>For example: <code>justin_pomeranz_hw06.R</code></li>
+</ul></li>
+<li>Comment before each problem, and each sub-problem</li>
+<li>Make sure your results print out on <code>Source with echo</code>
+<ul>
+<li>If you’re answer is saved in an object, make sure you print out that
+object afterwards</li>
+</ul></li>
 </ul>
-</blockquote>
-<ol style="list-style-type: decimal">
-<li>Download R and Rstudio</li>
-<li>Make a new Project called “ENVS475”</li>
-<li>In the console, enter the following command and run it:</li>
-</ol>
-<pre class="r"><code>install.packages(&quot;tidyverse&quot;)</code></pre>
-<p><strong>NOTE:</strong> Do <em>NOT</em> put
-<code>install.packages()</code> commands in your scripts. Only ever run
-them in the console.</p>
+</div>
+<div id="setup" class="section level1">
+<h1>Setup</h1>
+<div id="load-packages" class="section level2">
+<h2>Load packages</h2>
 <ul>
-<li>You can also install packages by clicking <code>Tools</code> –&gt;
-<code>Install Packages</code> and then entering the package name in the
-text box and clicking <code>Install</code></li>
+<li>Make sure that the <code>dplyr</code>, <code>ggplot2</code>, and
+<code>arm</code> packages are downloaded on the machine you’re using
+<ul>
+<li>You can check this by clicking on the <code>Packages</code> tab in
+the <em>Files, Plots, Packages…</em> panel and scrolling down</li>
+<li>If you need to download the package, copy the following code into
+your Console panel and run it **Do not put it in your homework
+script*</li>
+<li><code>install.packages(&quot;dplyr&quot;)</code></li>
+</ul></li>
+<li>Copy the following code into the beginning of your homework script
+to load the <code>dplyr</code> package:</li>
+</ul>
+<pre class="r"><code># load libraries
+library(dplyr)
+library(ggplot2)
+library(arm)</code></pre>
+</div>
+</div>
+<div id="data" class="section level1">
+<h1>Data</h1>
+<p>For this homework assignment, we will once again be working with the
+real finch data from the Galapagos Islands collected by the Grants. This
+time, we will just focus on the <em>Geospiza scandens</em> data which
+was collected on Daphne Major Island in 1975 and 2012. We will use a
+simple linear model to determined of the beak depth changed across the
+time period.</p>
+<div id="load-and-wrangle-the-data" class="section level2">
+<h2>Load and wrangle the data</h2>
+<p>Be sure to download the data <code>galapago-finches.csv</code> and
+from D2L and place them both in your <code>data/</code> folder in your R
+project.</p>
+<p>Copy the following code and put it at the top of your homework
+script:</p>
+<pre class="r"><code># read in full data set
+finch &lt;- read.csv(&quot;data/galapago-finches.csv&quot;)
+# filter out scandens data and make a tibble
+scandens &lt;- finch %&gt;%
+  filter(species == &quot;scandens&quot;) %&gt;%
+  as_tibble()
+
+# change the year column to a character data type
+scandens$year &lt;- as.character(scandens$year)
+</code></pre>
+</div>
+</div>
+<div id="exercises-homework-06-linear-models" class="section level1">
+<h1>Exercises Homework 06: Linear Models</h1>
+<div id="problem-1-intercept-only" class="section level2">
+<h2>Problem 1: Intercept only</h2>
+<ol style="list-style-type: decimal">
+<li>Print out the <code>names()</code>, and <code>dim()</code> of the
+columns in your <code>scandens</code> data object.<br />
+</li>
+<li>Use <code>distinct()</code> or <code>unique()</code> to show each of
+the values in both the <code>year</code> and <code>species</code>
+column. Each value in both columns should only be printed once.<br />
+</li>
+<li>Make a scatter plot of the <code>blength</code> variable in the
+complete data set, ignoring any grouping variables (i.e., set
+<code>x = 0</code>)<br />
+</li>
+<li>Fit an intercept-only model using the <code>lm()</code> function,
+and save it in an object called <code>flm0</code> (short for “finch
+linear model 0”).<br />
+</li>
+<li>Use the <code>display()</code> function to show the results of
+<code>flm0</code>.<br />
+</li>
+</ol>
+<ul>
+<li>hint: if <code>display(flm0)</code> doesn’t work, either the
+<code>arm</code> package was not successfully installed or loaded, OR
+you did not save the output from the <code>lm()</code> function
+properly.</li>
+</ul>
+<ol start="6" style="list-style-type: decimal">
+<li>Write a comment in your script with the value for each of the
+following:</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>the global mean<br />
+</li>
+<li>the SE for the global mean<br />
+</li>
+<li>the sample size<br />
+</li>
+<li>the number of parameters estimated in the model<br />
+</li>
+<li>the residual standard deviation<br />
+</li>
+<li>the value of R^2</li>
+</ol>
+<ol start="7" style="list-style-type: decimal">
+<li><p>Calculate and print the global mean of <code>blength</code>. Is
+this in agreement with the global mean you wrote in problem 1.6a
+above?</p></li>
+<li><p>Calculate and print the sd for <code>blength</code>. Is this in
+agreement with the global mean you wrote in problem 1.6e above?</p></li>
+</ol>
+</div>
+<div id="problem-2-categorical-predictor" class="section level2">
+<h2>Problem 2: Categorical predictor</h2>
+<ol style="list-style-type: decimal">
+<li>Make a scatter plot of the <code>blength</code> observations
+separated by year.<br />
+</li>
+<li>Make the same plot as in 2.1 above but “jitter” the points. Make
+sure to set <code>width = 0.1</code> and <code>height = 0</code><br />
+</li>
+<li>Use <code>lm()</code> to fit a model which includes
+<code>year</code> as a predictor variable. Save this model output in an
+object called <code>flm1</code>, and use <code>display()</code> to print
+out the results in your console.<br />
+</li>
+<li>Based on the information from 2.4 above, what is the mean beak
+length for the <em>scandens</em> species in 1975?<br />
+</li>
+<li>Using the information displayed in 2.4 above, write out a
+calculation which shows the mean beak length for <em>scandens</em> in
+2012.<br />
+</li>
+<li>Make a scatter plot of this data which separates the observations by
+year, and includes an point for the estimated group means.<br />
+</li>
+</ol>
+<ul>
+<li>In the <code>stat_summary()</code> function, set
+<code>shape = 18</code> and <code>size = 6</code>.</li>
+</ul>
+</div>
+<div id="problem-3-confidence-intervals" class="section level2">
+<h2>Problem 3: Confidence Intervals</h2>
+<ol style="list-style-type: decimal">
+<li><p>Using <code>confint()</code>, calculate and display a 95%
+confidence interval for the estimated difference in beak length between
+1975 and 2012.<br />
+</p></li>
+<li><p>Use <code>coefplot()</code> to display a graphical representation
+of the approximate 95% CI for the estimated difference in beak length
+between 1975 and 2012.</p></li>
+<li><p>Use a comment in your script to interpret the results of problem
+3.1 and 3.2. Are these interpretations in agreement with each
+other?</p></li>
+<li><p>Use <code>confint()</code> to calculate and display a 99% CI for
+the estimated difference in beak length between 1975 and 2012.<br />
+</p></li>
+<li><p>Use <code>coefplot()</code> to display a graphical representation
+of the approximate 99% CI for the estimated difference in beak length
+between 1975 and 2012.<br />
+</p></li>
+<li><p>Use a comment to interpret the results of problem 4.4 and 4.5
+above. Are these results in agreement? Why do you think this is?<br />
+</p></li>
+</ol>
+<ul>
+<li><strong>Hint</strong> use <code>dplyr</code>,
+<code>group_by()</code> and <code>summarize(n())</code> to show the
+number of observations within each year.</li>
+</ul>
+</div>
+<div id="problem-4-assumptions" class="section level2">
+<h2>Problem 4: Assumptions</h2>
+<ol style="list-style-type: decimal">
+<li>Make a Q-Q plot to test the assumption of normally distributed
+residuals for the <code>blength</code> variable in the
+<code>scandens</code> data set.<br />
+</li>
+</ol>
+<ul>
+<li><strong>Hint</strong> make sure to use
+<code>aes(sample = blength)</code> inside the <code>ggplot()</code>
+function.<br />
+</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Use a comment to interpret the graph you made in problem 4.1
+above.<br />
+</li>
+<li>Test the assumption of equal variance in the <code>flm1</code> model
+output.<br />
+</li>
+</ol>
+<ul>
+<li><strong>Hint</strong> make sure to use the model output and not the
+raw data.<br />
+</li>
+<li>Be sure to include <code>aes(x = .fitted, y = .resid)</code> inside
+the <code>ggplot()</code> function.<br />
+</li>
 </ul>
 <ol start="4" style="list-style-type: decimal">
-<li><p>Make a new script called “lastname_first-assignment.R” and save
-it in your <code>homework</code> folder in your ENVS396
-Project.</p></li>
-<li><p>In your script, type in the following code and make sure it runs
-correctly:</p></li>
+<li>Use a comment to interpret the graph you made in problem 4.3
+above.</li>
 </ol>
-<pre class="r"><code>library(tidyverse)
-data(&quot;starwars&quot;)
-starwars %&gt;% 
-    filter(homeworld == &quot;Tatooine&quot;) %&gt;%
-    select(name) %&gt;%
-    unique()</code></pre>
-<p>You should see the following output in your console:</p>
-<pre><code>#&gt; # A tibble: 10 × 1
-#&gt;    name              
-#&gt;    &lt;chr&gt;             
-#&gt;  1 Luke Skywalker    
-#&gt;  2 C-3PO             
-#&gt;  3 Darth Vader       
-#&gt;  4 Owen Lars         
-#&gt;  5 Beru Whitesun lars
-#&gt;  6 R5-D4             
-#&gt;  7 Biggs Darklighter 
-#&gt;  8 Anakin Skywalker  
-#&gt;  9 Shmi Skywalker    
-#&gt; 10 Cliegg Lars</code></pre>
 </div>
-<div id="assignment-submission" class="section level2">
-<h2>Assignment submission</h2>
-<p><strong>For full credit, you must show your instructor that you have
-accomplished all of the above tasks.</strong></p>
+<div id="problem-5-relevel-year-variable-optional" class="section level2">
+<h2>Problem 5: Relevel <code>year</code> variable (optional)</h2>
+<ol style="list-style-type: decimal">
+<li>Copy the <code>scandens</code> data set into a new object called
+<code>scandens_factor</code>. Make the <code>year</code> column a factor
+and order the levels so that 2012 is first. Fit the same linear model as
+in problem 2.3 but use the new <code>scandens_factor</code> data object
+as the input, and display the results of this new model.</li>
+</ol>
 </div>
 </div>
 

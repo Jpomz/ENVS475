@@ -11,7 +11,7 @@
 
 
 
-<title>ENVS475 Homework 01: Setup</title>
+<title>ENVS475 Homework 3: Normal Distributions</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,81 +348,116 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">ENVS475 Homework 01: Setup</h1>
+<h1 class="title toc-ignore">ENVS475 Homework 3: Normal
+Distributions</h1>
 <h4 class="date">Spring 2024</h4>
 
 </div>
 
 <div id="TOC">
 <ul>
-<li><a href="#complete-this-assignment-for-a-grade." id="toc-complete-this-assignment-for-a-grade.">Complete this assignment
-for a grade.</a>
+<li><a href="#exercises" id="toc-exercises">Exercises</a>
 <ul>
-<li><a href="#assignment-submission" id="toc-assignment-submission">Assignment submission</a></li>
+<li><a href="#standard-normal-distribution-10-points" id="toc-standard-normal-distribution-10-points">1. Standard Normal
+Distribution (10 points)</a></li>
+<li><a href="#normal-distribution-age-at-childbirth-7-points" id="toc-normal-distribution-age-at-childbirth-7-points">2. Normal
+Distribution: Age at childbirth (7 points)</a></li>
+<li><a href="#triathlon-times.-8-points" id="toc-triathlon-times.-8-points">3. Triathlon times. (8
+points)</a></li>
 </ul></li>
 </ul>
 </div>
 
-<div id="complete-this-assignment-for-a-grade." class="section level1">
-<h1>Complete this assignment for a grade.</h1>
-<div id="learning-objectives" class="section level3">
-<h3>Learning Objectives</h3>
-<blockquote>
-<p>Following this assignment students should:</p>
-<ul>
-<li>Have R and Rstudio downloaded</li>
-<li>Be able to access and open Rstudio</li>
-<li>Have an R-Project for the course</li>
-<li>Be able to download packages and load them into your working
-session</li>
-</ul>
-</blockquote>
-<ol style="list-style-type: decimal">
-<li>Download R and Rstudio</li>
-<li>Make a new Project called “ENVS475”</li>
-<li>In the console, enter the following command and run it:</li>
+<div id="exercises" class="section level2">
+<h2>Exercises</h2>
+<p>In your homework script, make sure to include comments using the
+<code>#</code> for each problem and subproblem. For example:</p>
+<pre class="r"><code># Exercise 1
+# 1.a
+qnorm(0.9, mean = 0, sd = 1)
+# 1.b
+dnorm(3, mean = 10, sd = 4)</code></pre>
+<div id="standard-normal-distribution-10-points" class="section level3">
+<h3>1. Standard Normal Distribution (10 points)</h3>
+<p>Recall that the standard normal distribution has a
+<code>mean = 0</code> and <code>sd = 1</code>. Use these values to
+answer the following questions.</p>
+<p>You do not need to turn in your sketches of the distributions for
+credit, but you are stongly encouraged to draw these out to help check
+your answers.</p>
+<ol style="list-style-type: lower-alpha">
+<li>What is the probability of getting an observation of exactly
+1.25?</li>
+<li>What is the probability of getting an observation of exactly
+-0.33?</li>
+<li>What is the probability of getting an observation of exactly
+2.9?</li>
+<li>What is the probability of getting an observation of less than
+2.5?</li>
+<li>What is the probability of getting an observation of less than
+-0.9?</li>
+<li>What is the probability of getting an observation of greater than
+-1?</li>
+<li>What is the probability of getting an observation between 1.4 and
+3.5?</li>
+<li>What value represents the 10th percentile of this distribution?</li>
+<li>What value represents the 95th percentile of this distribution?</li>
+<li>What value represents the 5th percentile?</li>
 </ol>
-<pre class="r"><code>install.packages(&quot;tidyverse&quot;)</code></pre>
-<p><strong>NOTE:</strong> Do <em>NOT</em> put
-<code>install.packages()</code> commands in your scripts. Only ever run
-them in the console.</p>
-<ul>
-<li>You can also install packages by clicking <code>Tools</code> –&gt;
-<code>Install Packages</code> and then entering the package name in the
-text box and clicking <code>Install</code></li>
-</ul>
-<ol start="4" style="list-style-type: decimal">
-<li><p>Make a new script called “lastname_first-assignment.R” and save
-it in your <code>homework</code> folder in your ENVS396
-Project.</p></li>
-<li><p>In your script, type in the following code and make sure it runs
-correctly:</p></li>
-</ol>
-<pre class="r"><code>library(tidyverse)
-data(&quot;starwars&quot;)
-starwars %&gt;% 
-    filter(homeworld == &quot;Tatooine&quot;) %&gt;%
-    select(name) %&gt;%
-    unique()</code></pre>
-<p>You should see the following output in your console:</p>
-<pre><code>#&gt; # A tibble: 10 × 1
-#&gt;    name              
-#&gt;    &lt;chr&gt;             
-#&gt;  1 Luke Skywalker    
-#&gt;  2 C-3PO             
-#&gt;  3 Darth Vader       
-#&gt;  4 Owen Lars         
-#&gt;  5 Beru Whitesun lars
-#&gt;  6 R5-D4             
-#&gt;  7 Biggs Darklighter 
-#&gt;  8 Anakin Skywalker  
-#&gt;  9 Shmi Skywalker    
-#&gt; 10 Cliegg Lars</code></pre>
 </div>
-<div id="assignment-submission" class="section level2">
-<h2>Assignment submission</h2>
-<p><strong>For full credit, you must show your instructor that you have
-accomplished all of the above tasks.</strong></p>
+<div id="normal-distribution-age-at-childbirth-7-points" class="section level3">
+<h3>2. Normal Distribution: Age at childbirth (7 points)</h3>
+<p>In the last decade, the average age of a mother at childbirth is 26.4
+years, with standard deviation 5.8 years. The distribution of age at
+childbirth is approximately normal.</p>
+<ol style="list-style-type: lower-alpha">
+<li>What age at childbirth puts a woman in the upper 2.5% of the age
+distribution? In other words, what is the 97.5 percentile of this age
+distribution?</li>
+<li>What proportion of women who give birth are 21 years of age or
+older?</li>
+<li>What is the probability that a woman will have a child at exactly
+32.8 years old?</li>
+<li>What is the probability that a woman will have a child between the
+ages of 18 and 22?</li>
+<li>What is the probability that a woman will give birth at exactly the
+mean age of this distribution?</li>
+<li>What values bound the range 95% of the data?</li>
+<li>How many standard deviations (i.e., Z-score) from the mean is a
+woman who gives birth at the age of 35?</li>
+</ol>
+</div>
+<div id="triathlon-times.-8-points" class="section level3">
+<h3>3. Triathlon times. (8 points)</h3>
+<p>In triathlons, it is common for racers to be placed into age and
+gender groups. The finishing times of men ages 30-34 has mean of 4,313
+seconds with a standard deviation of 583 seconds. The finishing times of
+the women ages 25-29 has a mean of 5,261 seconds with a standard
+deviation of 807 seconds. The distribution of finishing times for both
+groups is approximately normal. Note that a better performance
+corresponds to a faster finish.</p>
+<ol style="list-style-type: lower-alpha">
+<li>If a man of the 30-34 age group finishes the race in 4,948 seconds,
+what percent of the triathletes in the group did he finish faster
+than?</li>
+<li>If a woman of the 25-29 age group finishes the race in 5,513
+seconds, what percent of the triathletes in the group did she finish
+faster than?</li>
+<li>Calculate the cutoff time for the fastest 5% of athletes in the
+men’s group.</li>
+<li>Calculate the cutoff time for the slowest 10% of athletes in the
+women’s group.</li>
+<li>What is the standardized Z-score for a man that finishes in 4,460
+seconds?</li>
+<li>What is the standardized Z-score for a woman that finishes in 5,105
+seconds?</li>
+<li>Compare the Z-scores calculated in part e and f. Which person
+performed better based on their age and gender group?
+<strong>note</strong> be sure to put a comment in front of the text for
+your explanation to part g.</li>
+<li>What is the probability that a man will finish between 4,500 and
+5,000 seconds?</li>
+</ol>
 </div>
 </div>
 

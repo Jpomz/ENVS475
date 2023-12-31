@@ -11,7 +11,7 @@
 
 
 
-<title>ENVS475 Homework 01: Setup</title>
+<title>Homework 4: dplyr + ggplot</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,81 +348,181 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">ENVS475 Homework 01: Setup</h1>
+<h1 class="title toc-ignore">Homework 4: dplyr + ggplot</h1>
+<h3 class="subtitle">ENVS475: Experimental Analysis and Design</h3>
 <h4 class="date">Spring 2024</h4>
 
 </div>
 
 <div id="TOC">
 <ul>
-<li><a href="#complete-this-assignment-for-a-grade." id="toc-complete-this-assignment-for-a-grade.">Complete this assignment
-for a grade.</a>
+<li><a href="#assignment-format" id="toc-assignment-format">Assignment
+Format</a></li>
+<li><a href="#setup" id="toc-setup">Setup</a>
 <ul>
-<li><a href="#assignment-submission" id="toc-assignment-submission">Assignment submission</a></li>
+<li><a href="#load-packages" id="toc-load-packages">Load
+packages</a></li>
+<li><a href="#data" id="toc-data">Data</a></li>
+</ul></li>
+<li><a href="#exercises-dplyr-and-ggplot2" id="toc-exercises-dplyr-and-ggplot2">Exercises: <code>dplyr</code> and
+<code>ggplot2</code></a>
+<ul>
+<li><a href="#problem-0-get-to-know-the-data" id="toc-problem-0-get-to-know-the-data">Problem 0: get to know the
+data</a></li>
+<li><a href="#problem-1-plot-one-continuous-variable" id="toc-problem-1-plot-one-continuous-variable">Problem: 1 Plot one
+continuous variable</a></li>
+<li><a href="#problem-2-plot-with-grouping-variables" id="toc-problem-2-plot-with-grouping-variables">Problem 2: Plot with
+grouping variables</a></li>
+<li><a href="#problem-3-plot-two-continuous-variables" id="toc-problem-3-plot-two-continuous-variables">Problem 3: Plot two
+continuous variables</a></li>
+<li><a href="#problem-4-dplyr-ggplot" id="toc-problem-4-dplyr-ggplot">Problem 4: dplyr + ggplot</a></li>
 </ul></li>
 </ul>
 </div>
 
-<div id="complete-this-assignment-for-a-grade." class="section level1">
-<h1>Complete this assignment for a grade.</h1>
-<div id="learning-objectives" class="section level3">
-<h3>Learning Objectives</h3>
-<blockquote>
-<p>Following this assignment students should:</p>
+<div id="assignment-format" class="section level1">
+<h1>Assignment Format</h1>
 <ul>
-<li>Have R and Rstudio downloaded</li>
-<li>Be able to access and open Rstudio</li>
-<li>Have an R-Project for the course</li>
-<li>Be able to download packages and load them into your working
-session</li>
-</ul>
-</blockquote>
-<ol style="list-style-type: decimal">
-<li>Download R and Rstudio</li>
-<li>Make a new Project called “ENVS475”</li>
-<li>In the console, enter the following command and run it:</li>
-</ol>
-<pre class="r"><code>install.packages(&quot;tidyverse&quot;)</code></pre>
-<p><strong>NOTE:</strong> Do <em>NOT</em> put
-<code>install.packages()</code> commands in your scripts. Only ever run
-them in the console.</p>
+<li>Open a new R script</li>
+<li>Save your R script in the <code>homework/</code> folder</li>
+<li>Name your script according to: <code>full_name_hw##.R</code>
 <ul>
-<li>You can also install packages by clicking <code>Tools</code> –&gt;
-<code>Install Packages</code> and then entering the package name in the
-text box and clicking <code>Install</code></li>
+<li>For example: <code>justin_pomeranz_hw01.R</code></li>
+</ul></li>
+<li>Comment before each problem, and each sub-problem</li>
+<li>Make sure your results print out on <code>Source with echo</code>
+<ul>
+<li>If you’re answer is saved in an object, make sure you print out that
+object afterwards</li>
+<li>See that <code>volume</code> is on the last line of the example
+below</li>
+</ul></li>
 </ul>
-<ol start="4" style="list-style-type: decimal">
-<li><p>Make a new script called “lastname_first-assignment.R” and save
-it in your <code>homework</code> folder in your ENVS396
-Project.</p></li>
-<li><p>In your script, type in the following code and make sure it runs
-correctly:</p></li>
-</ol>
-<pre class="r"><code>library(tidyverse)
-data(&quot;starwars&quot;)
-starwars %&gt;% 
-    filter(homeworld == &quot;Tatooine&quot;) %&gt;%
-    select(name) %&gt;%
-    unique()</code></pre>
-<p>You should see the following output in your console:</p>
-<pre><code>#&gt; # A tibble: 10 × 1
-#&gt;    name              
-#&gt;    &lt;chr&gt;             
-#&gt;  1 Luke Skywalker    
-#&gt;  2 C-3PO             
-#&gt;  3 Darth Vader       
-#&gt;  4 Owen Lars         
-#&gt;  5 Beru Whitesun lars
-#&gt;  6 R5-D4             
-#&gt;  7 Biggs Darklighter 
-#&gt;  8 Anakin Skywalker  
-#&gt;  9 Shmi Skywalker    
-#&gt; 10 Cliegg Lars</code></pre>
+<pre class="r"><code># 2.1 example
+w = 2
+h = 3
+l = 1.5
+w
+h
+l
+#2.2 example 
+volume = w * h * l
+volume</code></pre>
 </div>
-<div id="assignment-submission" class="section level2">
-<h2>Assignment submission</h2>
-<p><strong>For full credit, you must show your instructor that you have
-accomplished all of the above tasks.</strong></p>
+<div id="setup" class="section level1">
+<h1>Setup</h1>
+<div id="load-packages" class="section level2">
+<h2>Load packages</h2>
+<ul>
+<li><p>Make sure that <code>tidyverse</code> is downloaded on the
+machine you’re using</p>
+<ul>
+<li><p>You can check this by clicking on the <code>Packages</code> tab
+in the <em>Files, Plots, Packages…</em> panel and scrolling
+down</p></li>
+<li><p>If you need to download the package, copy the following code into
+your Console panel and run it **Do not put it in your homework
+script*</p></li>
+<li><p><code>install.packages(&quot;ggplot2&quot;)</code></p></li>
+</ul></li>
+<li><p>Copy the following code into the beginning of your homework
+script to load the <code>ggplot2</code> package:</p></li>
+</ul>
+<pre class="r"><code># load libraries
+library(tidyverse)</code></pre>
+</div>
+<div id="data" class="section level2">
+<h2>Data</h2>
+<p>Download the <code>galapagos-finches.csv</code> data from D2L and put
+it in your <code>data/</code> folder in your Class R project.</p>
+<p>Read the data file into R using the following command:</p>
+<pre class="r"><code># read in full data set
+finch &lt;- read.csv(&quot;data/galapago-finches.csv&quot;)</code></pre>
+</div>
+</div>
+<div id="exercises-dplyr-and-ggplot2" class="section level1">
+<h1>Exercises: <code>dplyr</code> and <code>ggplot2</code></h1>
+<div id="problem-0-get-to-know-the-data" class="section level2">
+<h2>Problem 0: get to know the data</h2>
+<p>0.1 Use <code>head()</code> to print out the first few rows of the
+<code>finch</code> data.</p>
+<p>0.2 Print out the <em>last</em> few rows of the <code>finch</code>
+data.</p>
+<p>0.3 Print out the names of the columns in the <code>finch</code>
+data.</p>
+<p>0.4 Use <code>select()</code> to print out only the
+<code>species</code> column.</p>
+<p>0.5 Use <code>select()</code> to print out the <code>year</code>,
+<code>species</code> and <code>blength</code> columns, in that
+order.</p>
+<p>0.6 Use <code>arrange()</code> to print out the <code>finch</code>
+data in order based on the <code>blength</code> column.</p>
+<p>0.7 Use <code>arrange()</code> to print out the <code>finch</code>
+data in order based on the <code>species</code>, <code>year</code>, and
+<code>bdepth</code> columns, in that order.</p>
+<p>0.8 Use <code>mutate()</code> to add a new column called
+<code>beak_area</code>, and have its value equal to
+<code>blength * bdepth</code>.</p>
+<p>0.9 Use <code>summarize</code> to calculate the average
+<code>blength</code> across the whole <code>finch</code> data set.</p>
+<p>0.10 Use <code>group_by()</code> and <code>summarize</code> to
+calculate the average <code>blength</code> for each <code>species</code>
+in <code>finch</code> data set.</p>
+</div>
+<div id="problem-1-plot-one-continuous-variable" class="section level2">
+<h2>Problem: 1 Plot one continuous variable</h2>
+<p>1.1 Make a histogram of the <code>blength</code> column.</p>
+<p>1.2 Make a histogram of the <code>blength</code> column and give it a
+descriptive title (5-7 words) and change the the x-axis label to be more
+easily read and include the units (mm).</p>
+<p>1.3 Make a histogram of the <code>blength</code> column with 100
+bins.</p>
+<p>1.4 Make a histogram of the <code>blength</code> column where the
+binwidth is 1.</p>
+<p>1.5 Make a boxplot of the <code>blength</code>.</p>
+<p>1.6 Make a boxplot of the <code>blength</code> but change the fill
+color to one of your choice. (See a <a href="https://derekogle.com/NCGraphing/resources/colors">list of color
+names</a> available in ggplot)</p>
+</div>
+<div id="problem-2-plot-with-grouping-variables" class="section level2">
+<h2>Problem 2: Plot with grouping variables</h2>
+<p>2.1 Make a boxplot of the <code>blength</code>, but have the fill
+color vary based on the species.</p>
+<p>2.2 Make a boxplot of the <code>blength</code>, but have the fill
+color vary based on the year collected. (Careful of continuous
+vs. categorical variables. )</p>
+<p>2.3 Make a boxplot of the <code>blength</code>, but have the fill
+color vary based on the year, and have species mapped to the y-axis.</p>
+</div>
+<div id="problem-3-plot-two-continuous-variables" class="section level2">
+<h2>Problem 3: Plot two continuous variables</h2>
+<p>3.1 Use <code>geom_point()</code> to make a scatter plot with
+<code>blength</code> on the x-axis, and <code>bdepth</code> on the
+y-axis.</p>
+<p>3.2 Use <code>geom_point()</code> to make a scatter plot with
+<code>blength</code> on the x-axis, and <code>bdepth</code> on the
+y-axis. Also include a linear regression on the plot for the whole data
+set (there should be one line on your graph).</p>
+<p>3.3 Use <code>geom_point()</code> to make a scatter plot with
+<code>blength</code> on the x-axis, and <code>bdepth</code> on the
+y-axis. Also have the color of the points relate to the species, and
+include a linear regression on the plot for each species separately
+(there should be 2 lines on your graph).</p>
+<p>3.4 Repeat the graph you made in 3.3 above but include a separate
+facet for each year of data.</p>
+</div>
+<div id="problem-4-dplyr-ggplot" class="section level2">
+<h2>Problem 4: dplyr + ggplot</h2>
+<p>4.1 Use <code>mutate()</code> to create a new variable in the
+<code>finch</code> data set. This new variable should be equal to beak
+length <span class="math inline">\(\times\)</span> beak depth. Make a
+plain histogram showing the distribution of your new variable.</p>
+<p>4.2 Do the same thing as in 4.1, but this time, only plot the data
+from 1975, and map the fill color to the species variable.</p>
+<p>4.3 Do the same thing as in 4.2, but add a descriptive title and
+x-axis label.</p>
+<p>4.4 Do the same thing as in 4.1, but this time have the fill color
+mapped to species, and have a facet for each year.</p>
 </div>
 </div>
 

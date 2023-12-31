@@ -1,7 +1,6 @@
 ---
 title: "ENVS475 Homework 01: Setup"
-subtitle: "Complete for a grade"
-date: "`r format(Sys.time(), '%B, %Y')`"
+date: "Spring 2024"
 output: 
   html_document:
     toc: true

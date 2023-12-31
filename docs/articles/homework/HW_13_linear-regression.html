@@ -11,7 +11,7 @@
 
 
 
-<title>ENVS475 Homework 01: Setup</title>
+<title>ENVS475 Homework 13: Linear Regression</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,81 +348,231 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">ENVS475 Homework 01: Setup</h1>
-<h4 class="date">Spring 2024</h4>
+<h1 class="title toc-ignore">ENVS475 Homework 13: Linear Regression</h1>
+<h4 class="date">Spring, 2024</h4>
 
 </div>
 
 <div id="TOC">
 <ul>
-<li><a href="#complete-this-assignment-for-a-grade." id="toc-complete-this-assignment-for-a-grade.">Complete this assignment
-for a grade.</a>
+<li><a href="#assignment-format" id="toc-assignment-format">Assignment
+Format</a></li>
+<li><a href="#setup" id="toc-setup">Setup</a>
 <ul>
-<li><a href="#assignment-submission" id="toc-assignment-submission">Assignment submission</a></li>
+<li><a href="#load-packages" id="toc-load-packages">Load
+packages</a></li>
+</ul></li>
+<li><a href="#data" id="toc-data">Data</a>
+<ul>
+<li><a href="#download-the-data-and-read-into-r" id="toc-download-the-data-and-read-into-r">Download the data and read
+into R</a></li>
+</ul></li>
+<li><a href="#exercises-homework-13-linear-regression" id="toc-exercises-homework-13-linear-regression">Exercises Homework 13:
+Linear Regression</a>
+<ul>
+<li><a href="#problem-1-trout_cu" id="toc-problem-1-trout_cu">Problem 1:
+<code>trout_cu</code></a></li>
+<li><a href="#problem-2-island_plants" id="toc-problem-2-island_plants">Problem 2:
+<code>island_plants</code></a></li>
+<li><a href="#we-will-continue-this-analysis-using-the-log10-transformed-data." id="toc-we-will-continue-this-analysis-using-the-log10-transformed-data.">We
+will continue this analysis using the log10 transformed data.</a></li>
 </ul></li>
 </ul>
 </div>
 
-<div id="complete-this-assignment-for-a-grade." class="section level1">
-<h1>Complete this assignment for a grade.</h1>
-<div id="learning-objectives" class="section level3">
-<h3>Learning Objectives</h3>
-<blockquote>
-<p>Following this assignment students should:</p>
+<div id="assignment-format" class="section level1">
+<h1>Assignment Format</h1>
 <ul>
-<li>Have R and Rstudio downloaded</li>
-<li>Be able to access and open Rstudio</li>
-<li>Have an R-Project for the course</li>
-<li>Be able to download packages and load them into your working
-session</li>
-</ul>
-</blockquote>
-<ol style="list-style-type: decimal">
-<li>Download R and Rstudio</li>
-<li>Make a new Project called “ENVS475”</li>
-<li>In the console, enter the following command and run it:</li>
-</ol>
-<pre class="r"><code>install.packages(&quot;tidyverse&quot;)</code></pre>
-<p><strong>NOTE:</strong> Do <em>NOT</em> put
-<code>install.packages()</code> commands in your scripts. Only ever run
-them in the console.</p>
+<li>Open a new R script</li>
+<li>Save your R script in the <code>homework/</code> folder</li>
+<li>Name your script according to: <code>full_name_hw##.R</code>
 <ul>
-<li>You can also install packages by clicking <code>Tools</code> –&gt;
-<code>Install Packages</code> and then entering the package name in the
-text box and clicking <code>Install</code></li>
+<li>For example: <code>justin_pomeranz_hw13.R</code></li>
+</ul></li>
+<li>Comment before each problem, and each sub-problem</li>
+<li>Make sure your results print out on <code>Source with echo</code>
+<ul>
+<li>If you’re answer is saved in an object, make sure you print out that
+object afterwards</li>
+</ul></li>
 </ul>
-<ol start="4" style="list-style-type: decimal">
-<li><p>Make a new script called “lastname_first-assignment.R” and save
-it in your <code>homework</code> folder in your ENVS396
-Project.</p></li>
-<li><p>In your script, type in the following code and make sure it runs
-correctly:</p></li>
-</ol>
-<pre class="r"><code>library(tidyverse)
-data(&quot;starwars&quot;)
-starwars %&gt;% 
-    filter(homeworld == &quot;Tatooine&quot;) %&gt;%
-    select(name) %&gt;%
-    unique()</code></pre>
-<p>You should see the following output in your console:</p>
-<pre><code>#&gt; # A tibble: 10 × 1
-#&gt;    name              
-#&gt;    &lt;chr&gt;             
-#&gt;  1 Luke Skywalker    
-#&gt;  2 C-3PO             
-#&gt;  3 Darth Vader       
-#&gt;  4 Owen Lars         
-#&gt;  5 Beru Whitesun lars
-#&gt;  6 R5-D4             
-#&gt;  7 Biggs Darklighter 
-#&gt;  8 Anakin Skywalker  
-#&gt;  9 Shmi Skywalker    
-#&gt; 10 Cliegg Lars</code></pre>
 </div>
-<div id="assignment-submission" class="section level2">
-<h2>Assignment submission</h2>
-<p><strong>For full credit, you must show your instructor that you have
-accomplished all of the above tasks.</strong></p>
+<div id="setup" class="section level1">
+<h1>Setup</h1>
+<div id="load-packages" class="section level2">
+<h2>Load packages</h2>
+<pre class="r"><code># load libraries
+library(dplyr)
+library(ggplot2)</code></pre>
+</div>
+</div>
+<div id="data" class="section level1">
+<h1>Data</h1>
+<div id="download-the-data-and-read-into-r" class="section level2">
+<h2>Download the data and read into R</h2>
+<p>Download the <code>trout_cu.csv</code> and
+<code>island_plants.csv</code> files from D2L and put it in your “data”
+folder. Read it in to R and convert it to a <code>tibble</code> with the
+following command.</p>
+<pre class="r"><code># read in data for problem 1
+trout &lt;- read.csv(&quot;data/trout_cu.csv&quot;) %&gt;%
+  as_tibble()
+
+# data for problem 2
+island &lt;- read.csv(&quot;data/island_plants.csv&quot;) %&gt;%
+  as_tibble()</code></pre>
+</div>
+</div>
+<div id="exercises-homework-13-linear-regression" class="section level1">
+<h1>Exercises Homework 13: Linear Regression</h1>
+<div id="problem-1-trout_cu" class="section level2">
+<h2>Problem 1: <code>trout_cu</code></h2>
+<p>This is a simulated data set illustrating the impacts of increasing
+copper concentration <code>cu_ppb</code> measured in parts per billion
+on the number of trout surviving after chronic exposure. All treatments
+began with 100 trout, and the number surviving at the end of the
+experiment are recorded in the <code>trout</code> variable.</p>
+<p>1.1 Print the <code>names()</code> and <code>head()</code> of your
+data object here.</p>
+<p>1.2 What class are the two variables in this data set? Is this
+appropriate for a linear regression? Why or why not?</p>
+<p>1.3 Produce a scatter plot of the data with <code>trout</code> as the
+response variable and <code>cu_ppb</code> as the predictor variable.</p>
+<p>1.4 Does there appear to be a linear relationship between trout
+survival and increasing copper concentration? Why or why not?</p>
+<p>1.5 Does the distribution of the x-variable ( <code>cu_ppb</code> )
+appear to be uniformly distributed? In other words, are there “clumps”
+of observations across the x-axis?</p>
+<p>1.6 Add a comment to your homework script stating the null and
+alternative hypotheses for a linear regression.</p>
+<ul>
+<li><strong>Hint</strong>: you should have two pairs of hypotheses, one
+for the intercept (<span class="math inline">\(\beta_0\)</span>) and one
+for the regression coefficient (<span class="math inline">\(\beta_1\)</span>).</li>
+</ul>
+<p>1.7 Check the assumption of the normality of residuals by making a
+QQ-plot of this data.</p>
+<p>1.8 Add a comment to your script interpreting the QQ-plot you made in
+1.7 above. Does it appear that the residuals are normally distributed?
+Why or why not?</p>
+<p>1.9 Regardless of your answer to 1.8 above, we will continue with a
+simple linear regression analysis of this data. Fit a model using
+<code>lm()</code> for the trout data, and save it as a new data
+object.</p>
+<p>1.10 Before we look at the model output, let’s make a fitted
+vs. residual plot to check our assumption of Equal variance of
+residuals.</p>
+<ul>
+<li>Use the model-fit object you made in 1.9 above to make a fitted vs
+residual plot.</li>
+</ul>
+<p>1.11 Add a comment to Interpret the fitted vs residual plot made
+above. Does this model appear to have equal variance in the residuals?
+Why or why not?</p>
+<p>1.12 Now, use the <code>anova()</code> function on your model fit
+object above to print out an ANOVA table for your linear regression.</p>
+<p>1.13 Add a comment to your script interpreting the ANOVA table for
+our linear regression analysis. Which of the two hypotheses stated above
+does this table refer to? Do we reject or fail to reject that null
+hypotheses?</p>
+<p>1.14 Print out the <code>summary()</code> of the linear model object
+you created.</p>
+<p>1.15 Add a comment to your script describing what each coefficient
+means.</p>
+<p>1.16 Add a comment which has the adjusted R-squared value from our
+model as well as an interpretation for what it means.</p>
+<p>1.17 Add a comment to your script writing out the full equation for
+our linear model.</p>
+<p>1.18 Make a scatter plot of the data which includes a line of best
+fit on the plot.</p>
+<ul>
+<li>hint: you will need to add a <code>geom_smooth(method = &quot;lm&quot;)</code>
+argument to your ggplot code above.</li>
+</ul>
+<p>1.19 Use the coefficient estimates from the <code>lm()</code> model
+to estimate the number of surviving trout when copper concentration is 5
+ppb.</p>
+<p>1.20 Estimate the copper concentration for an experiment which has 35
+trout surviving at the conclusion of the experiment.</p>
+<ul>
+<li>Hint: You will need to rearrange your linear model equation to have
+<code>cu_ppb</code> on its own on the left side of the equation.</li>
+</ul>
+</div>
+<div id="problem-2-island_plants" class="section level2">
+<h2>Problem 2: <code>island_plants</code></h2>
+<div id="load-data" class="section level3">
+<h3>Load data</h3>
+<p>If you haven’t already done so, load the data for problem 2.</p>
+<pre class="r"><code># data for problem 2
+island &lt;- read.csv(&quot;data/island_plants.csv&quot;) %&gt;%
+  as_tibble()</code></pre>
+</div>
+<div id="data-background" class="section level3">
+<h3>Data background</h3>
+<p>The theory of island biogeography predicts that the number of species
+will increase with island area. This data set is from an observational
+study of the number of plants occuring on islands of different
+sizes.</p>
+</div>
+<div id="problem-2-questions" class="section level3">
+<h3>Problem 2 questions</h3>
+<p>2.1 You should always get to know your data by looking at
+<code>names()</code>, <code>head()</code>.</p>
+<p>2.2 Produce a scatter plot of the data with <code>Nspecies</code> as
+the response variable and <code>Area</code> as the predictor
+variable.</p>
+<p>2.3 Add a comment to your script interpreting this scatter plot. Does
+it appear that there is a linear relationship between the number of
+species and island area?</p>
+<p>2.4 Make another scatter plot but this time use
+<code>log10_Nspp</code> as the response variable and
+<code>log10_area</code> as the predictor variable.</p>
+<p>2.5 Add a comment to your script interpreting this scatter plot. Does
+it appear that there is a linear relationship between the
+log10-transformed number of species and island area?</p>
+</div>
+</div>
+<div id="we-will-continue-this-analysis-using-the-log10-transformed-data." class="section level2">
+<h2>We will continue this analysis using the log10 transformed
+data.</h2>
+<div id="a-brief-note" class="section level3">
+<h3>A Brief note</h3>
+<p>The transformation of data is a very common thing to do in an
+analysis. Technically speaking, our assumptions of normality, equal
+variance, etc. also apply to data which has been transformed. In other
+words, if our assumptions are met <em>after</em> transformation, this
+constitutes a legitimate statistical analysis. You will often see
+language in publications that say “we transformed the variable(s) to
+meet the assumptions of normality” or similar.</p>
+<p>Unfortunately, I ran out of time in class to go over this in detail,
+but just know that this is OK, and that there are a number of other
+common transformations out there.</p>
+</div>
+<div id="continuing-on-with-the-homework" class="section level3">
+<h3>Continuing on with the homework…</h3>
+<p>2.6 Perform a linear regression using the <code>lm()</code> function
+using the log10 variables and save this model in a new data object.</p>
+<p>2.7 Make a fitted vs. residual plot to check our assumption of equal
+variance in the residuals.</p>
+<p>2.8 Add a comment to your script interpreting the fitted vs. residual
+plot.</p>
+<p>2.9 Print out an ANOVA table of the <code>lm</code> object and
+interpret it here.</p>
+<p>2.10 Print out the <code>summary()</code> of your lm object here.</p>
+<p>2.11 For each coefficient, write out the estimate and standard error
+and interpret the results. Be sure to list all appropriate statistics,
+and relate it back to the null and alternative hypotheses for each.</p>
+<p>2.12 what is the adjusted R-squared for this model, and what does it
+mean?</p>
+<p>2.13 Write out the full equation for this linear model. Be sure to
+put “log10” in the appropriate places for these variables.</p>
+<p>2.14 Make another scatter plot of the transformed data and include a
+line of best fit.</p>
+</div>
+<div id="this-concludes-the-homework" class="section level3">
+<h3>This concludes the Homework</h3>
+</div>
 </div>
 </div>
 
