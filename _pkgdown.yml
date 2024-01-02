@@ -24,7 +24,7 @@ navbar:
       icon: fa-desktop
       menu:
         - text: "Lecture 01: Course introduction"
-          href: articles/lectures/lecture_01/lecture_01_course_overview.html
+          href: articles/lectures/lecture_01/lecture_01.html
         - text: "Lecture 02: Normal Distributions"
           href: articles/lectures/lecture_02_normal/lecture_02_normal.html
         - text: "Lecture 03: Basic Statistics"
@@ -54,10 +54,10 @@ navbar:
           href: articles/lab_05_point-estimates.html
         - text: "lab 06: linear models"
           href: articles/lab_06_linear-models.html
-        - text: "lab 07: intro to R markdown"
-          href: articles/lab_07_intro_markdown.html
-        - text: "lab 08: t-tests"
+        - text: "lab 07: t-tests"
           href: articles/lab_08_t-tests.html
+        - text: "lab 09: intro to R markdown"
+          href: articles/lab_07_intro_markdown.html
         - text: "lab 10: ANOVA"
           href: articles/lab_10_anova.html
         - text: "lab 11: Factorial ANOVA"

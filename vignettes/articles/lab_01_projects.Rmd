@@ -16,6 +16,10 @@ knitr::opts_chunk$set(
 )
 ```
 
+## The following is mostly provided for self-guided students.  
+
+## Students that are enrolled in the course and were present in the class period do not need to read this in detail.  
+
 Everything that follows in this tutorial should be a viewed as *suggestions* for how to organize your data, code, and results. These suggestions are based on hard-won lessons from my own work as well as advice from people who spend a lot of time thinking about efficient and reproducible workflows. The lessons below are unabashedly R/RStudio focused. However, they are just suggestions. There are many other ways of accomplishing these objectives so you are free to use whatever workflow works best for you. Even if you choose to use different workflows or tools that are not as R-focused, hopefully the concepts presented here will help make your process more efficient and organized.
 
 **One exception:** Everything here is a suggestion *EXCEPT* for creating a folder in your project called "data". This is required. For future homework assignments, you will have to load data objects into R. In order for your code to work on my computer, your folder structure must match mine. In other words, if you don't have a folder called "data", or if you name it something differently or have it in another sub folder, I won't be able to correctly run/grade your homework script and you will then receive a zero on that assignment. Please help us avoid this by making a folder claled "data". THANKS!

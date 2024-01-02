@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">ENVS475</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2024.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2024.1.0</span>
       </span>
     </div>
 
@@ -71,10 +71,10 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="articles/lectures/lecture_00/lecture_00_course_overview.html">Lecture 01: Course introduction</a>
+      <a href="articles/lectures/lecture_01/lecture_01.html">Lecture 01: Course introduction</a>
     </li>
     <li>
-      <a href="articles/lectures/lecture_02_normal-distributions/lecture_02_normal-distributions.html">Lecture 02: Normal Distributions</a>
+      <a href="articles/lectures/lecture_02_normal/lecture_02_normal.html">Lecture 02: Normal Distributions</a>
     </li>
     <li>
       <a href="articles/lectures/lecture_03_basic-stats/lecture_03_basic-stats.html">Lecture 03: Basic Statistics</a>
@@ -124,10 +124,10 @@
       <a href="articles/lab_06_linear-models.html">lab 06: linear models</a>
     </li>
     <li>
-      <a href="articles/lab_07_intro_markdown.html">lab 07: intro to R markdown</a>
+      <a href="articles/lab_08_t-tests.html">lab 07: t-tests</a>
     </li>
     <li>
-      <a href="articles/lab_08_t-tests.html">lab 08: t-tests</a>
+      <a href="articles/lab_07_intro_markdown.html">lab 09: intro to R markdown</a>
     </li>
     <li>
       <a href="articles/lab_10_anova.html">lab 10: ANOVA</a>
@@ -162,7 +162,7 @@
       <a href="articles/homework/HW_02_intro_R.html">Homework 02 Intro to R</a>
     </li>
     <li>
-      <a href="articles/homework/HW_03_normal-distriburions.html">Homework 03 Normal Distributions</a>
+      <a href="articles/homework/HW_03_normal-distributions.html">Homework 03 Normal Distributions</a>
     </li>
     <li>
       <a href="articles/homework/HW_04_dplyr_ggplot.html">Homework 04 dplyr + ggplot2</a>
@@ -225,19 +225,12 @@
 <div class="section level1">
 <div class="page-header"><h1 id="envs475">ENVS475<a class="anchor" aria-label="anchor" href="#envs475"></a>
 </h1></div>
-<p>Course materials for ENVS475 at CO Mesa University</p>
+<p>Course materials for ENVS475 at Colorado Mesa University</p>
 <div class="section level2">
 <h2 id="about">About<a class="anchor" aria-label="anchor" href="#about"></a>
 </h2>
 <p>This repository will serve as the unofficial collection of materials for ENVS475 Experimental Analysis and Design at Colorado Mesa University.</p>
 <p>The goal of this website is to create a central repository for students registered in the class as well as other interested persons to access all course materials. If you have any issues or problems, feel free to contact me at jpomeranz [at] coloradomesa [dot] edu</p>
-</div>
-<div class="section level2">
-<h2 id="acknowledgements">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
-</h2>
-<p>I thank the maintainers and developers of the R ecosystem for fostering and encouraging an open science framework, as well as all the R practitioners around the world which make their code freely and openly available to everyone.</p>
-<p>In particular, the development of this course was strongly influenced by materials from - Clark Rushing <a href="https://rushinglab.github.io/FANR6750/index.html" class="external-link uri">https://rushinglab.github.io/FANR6750/index.html</a> - Ethan White and others <a href="https://datacarpentry.org/semester-biology/" class="external-link uri">https://datacarpentry.org/semester-biology/</a> and - Mark Scheuerell <a href="https://qerm514.github.io/website/index.html" class="external-link uri">https://qerm514.github.io/website/index.html</a>.</p>
-<p>The goal of ENVS475 is to …</p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -248,8 +241,25 @@
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"Jpomz/ENVS475"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+<h2 id="cmu-students">CMU Students<a class="anchor" aria-label="anchor" href="#cmu-students"></a>
 </h2>
+<p>All course materials will be available on this website. Course communications and assignment submissions will occur through our D2L page.</p>
+</div>
+<div class="section level2">
+<h2 id="self-guided-students">Self-guided students<a class="anchor" aria-label="anchor" href="#self-guided-students"></a>
+</h2>
+<p>The materials presented here are free for your use. Each week there is generally one lecture, lab, and homework assignment, all numbered by the week of the course. Exams are in week 8 and 15 (no materials on the website). All data objects will eventually be included in the <code>ENVS475</code> package and can be loaded into your RStudio session by running <code>data("data-object-name")</code>. In the meantime, you can download the data objects individually from the <a href="https://github.com/Jpomz/ENVS475/tree/master/data" class="external-link">repository hosted on GitHub.</a></p>
+</div>
+<div class="section level2">
+<h2 id="educators">Educators<a class="anchor" aria-label="anchor" href="#educators"></a>
+</h2>
+<p>Materials included in this course is purposefully made available to anyone who finds it useful. Users are free to use, adapt, distribute, display, and communicate these materials freely. If you have any questions you can reach out to me. Likewise, if you are going to use or modify these materials in your own classes or labs, please let me know. Tracking use of these materials is a helpful non-standard metric for tenure and promotion in my position.</p>
+</div>
+<div class="section level2">
+<h2 id="acknowledgements">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
+</h2>
+<p>I thank the maintainers and developers of the R ecosystem for fostering and encouraging an open science framework, as well as all the R practitioners around the world which make their code freely and openly available to everyone.</p>
+<p>In particular, the development of this course was strongly influenced by materials from - Clark Rushing <a href="https://rushinglab.github.io/FANR6750/index.html" class="external-link uri">https://rushinglab.github.io/FANR6750/index.html</a> - Ethan White and others <a href="https://datacarpentry.org/semester-biology/" class="external-link uri">https://datacarpentry.org/semester-biology/</a> and - Mark Scheuerell <a href="https://qerm514.github.io/website/index.html" class="external-link uri">https://qerm514.github.io/website/index.html</a>.</p>
 </div>
 </div>
   </div>

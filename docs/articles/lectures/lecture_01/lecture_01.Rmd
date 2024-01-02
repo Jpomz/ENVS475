@@ -40,31 +40,61 @@ ul {
 
 * Tuesday: Zoom, by appointment.
 
+---
+
 ## About me
 
+
 * Grew up in Leadville, CO  
+
 * Red Rocks Community College  
+
   + AS Biology  
+
 * Colorado State University  
+
   + BS Biology  
+
   + MS Ecology  
+
 * University of Canterbury, New Zealand  
+
   + PhD Ecology  
   
+---
+
 ## About me  
+
 * Undergrad: Hated math, wanted to work outside  
+
 * PhD: math intensive thesis  
+
 * Taught myself R and programming  
+
 * Fell in love with it  
+
 * I hope you do too!  
+
 * Even if you don't, the skills in this course will benefit your future career, regardless of what you do  
+
+  
+---
 
 
 ## About you  
+
 * Name  
+
 * Year (Junior, Senior, other?)  
+
+  + I assume your an ENVS major, but let me know if not!  
+
 * Favorite song or animal (or both)  
+
 * What you want to do next (Grad school, job, \#vanlife)  
+
+  
+---
 
 ## Course schedule and materials
 
@@ -77,10 +107,19 @@ ul {
 * *R for Data Science* by Hadley Wickham & Garrett Grolemund
 
   + Available for free online: [https://r4ds.had.co.nz/index.html](https://r4ds.had.co.nz/index.html)
+  
+  
+---
 
-All learning materials on D2L
+## Course Website  
 
-* Brief tour of D2L site
+All learning materials on website
+
+* Brief tour <https://jpomz.github.io/ENVS475/>
+
+  
+---
+
 
 ## Course Objectives: *Applied* Statistics
 
@@ -100,12 +139,18 @@ All learning materials on D2L
   
   + **Statistical Analyses and interpretation**
   
+  
+---
+
 
 ## Program Student Learning Outcomes: 
 
 1. Design an environmental study. (Quantitative skills, critical thinking skills)
 
 2.  Work with data to visualize, analyze, and interpret the results. (Quantitative skills, critical thinking skills)
+
+  
+---
 
 ## Software
 
@@ -121,19 +166,33 @@ All learning materials on D2L
 
 * If using your own computer, ensure that R and R Studio are downloaded before next class
   
-  + See instructions on D2L
+  + See instructions on website
   
+  
+---
+
 ## Why R?
 
+
 * R is free and open source
+
 * Runs on all platforms (Windows, Mac, Linux, etc.)
+
 * Promotes "Open Science"
+
   + e.g., combats the ["replication crisis"](https://en.wikipedia.org/wiki/Replication_crisis)
+
 * Widely used in Env Sci, Ecology, etc.
+
   + e.g., Grad School!
+
 * R is an in-demand skill used across industries
+
   + Search for "R Programmer" on Indeed.com
+
 * It's 2023, knowing some computer programming will help
+  
+---
 
 ## General Course Structure
 
@@ -149,51 +208,55 @@ This course broadly follows the I do, we do, you do methodology.
 
 * Friday - Open to work on assignments (You do)
 
-Exception: First couple of weeks
+  
+---
 
-## Grading
 
-(Approximately) Weekly homework assignments (60% of grade) 
+## Course Grade
 
-* 6 graded: 10% each
+Weekly homework assignments (60% of grade) 
 
-Meant to help with:
-
-* Understanding lecture/lab concepts
-      
-* Implementing models in R
-      
-* Interpreting and presenting results
 
 Two exams (40% of grade)
 
+
 * Take-home, open-note format
+
 * You will have 1-2 weeks to complete exam
+
 * Class time will be provided to work on it and ask questions
+
+  
+---
   
 ## Homework
-* There will be approximately 14 assignments (16 weeks - 2 exam weeks). 
-* A minimum of 6 will be graded ($\sim$ 10% each).
-  + Assignments for a grade will be approximately every-other-week
-  + It will be explicit which ones are graded and not. 
+* There will be 14 assignments (16 weeks - 2 exam weeks). 
 
-* Material builds on itself throughout semester. You are strongly encouraged to complete **ALL** assignments. 
+* Assignments are due Friday at 5 pm 
 
-  + If you turn in all ungraded assignments, you can "replace" one graded assignment  
-
-* Assignments are due Friday at 5 pm of the following week
   + Automatic 2 day grace period, afterwards - 50% 
+
   + Assignments will not be accepted after 5 days (Wednesday) passed due date 
+
+* Solutions to assignments will be posted on D2L and/or will be gone over in class.   
   
+---
+
 ## Homework Grading Rubric
-* Produces the correct answer using the requested approach: 100%
-* Generally uses the right approach, but a minor mistake results in an incorrect answer: 90%
-* Attempts to solve the problem and makes some progress using the core concept; OR complete assignment submitted after 2-day grace period: 50%
-* Answer demonstrates a lack of understanding of the core concept; OR mostly incomplete: 0%
+Produces the correct answer using the requested approach: 100%
 
-Solutions to assignments will be posted on D2L and/or will be gone over in class. 
+Generally uses the right approach, but a minor mistake results in an incorrect answer: 90%
 
-## Basic Outline
+Attempts to solve the problem and makes some progress using the core concept: 75%
+
+Incomplete assignment submitted; OR complete assignment submitted after 2-day grace period: 50%
+
+Answer demonstrates a lack of understanding of the core concept; OR mostly incomplete: 0%
+
+---
+
+
+## General course Outline
 
 1) Introduction to R and Rstudio
 
@@ -209,13 +272,17 @@ Solutions to assignments will be posted on D2L and/or will be gone over in class
 
 7) Regressions 
 
+---
+
+
 ## Looking Forward
 
 **Homework:**
 
 * Download R and RStudio (in that order) on personal computer (if using)
 
-* Next class: Introduction to R and Rstudio (Lab 01A and 01B on D2l)
+* Next class: Rstudio Projects
   
 * If time allows: Brief tour of Rstudio
+
   + Follow along on ENVS laptops or personal if software already downloaded
