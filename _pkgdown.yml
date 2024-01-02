@@ -24,9 +24,9 @@ navbar:
       icon: fa-desktop
       menu:
         - text: "Lecture 01: Course introduction"
-          href: articles/lectures/lecture_00/lecture_00_course_overview.html
+          href: articles/lectures/lecture_00/lecture_01_course_overview.html
         - text: "Lecture 02: Normal Distributions"
-          href: articles/lectures/lecture_02_normal-distributions/lecture_02_normal-distributions.html
+          href: articles/lectures/lecture_02-notes_normal-distributions/lecture_02_normal-distributions.html
         - text: "Lecture 03: Basic Statistics"
           href: articles/lectures/lecture_03_basic-stats/lecture_03_basic-stats.html
         - text: "Lecture 05: Point Estimates"
