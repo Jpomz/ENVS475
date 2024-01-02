@@ -1,11 +1,14 @@
 ---
 title: 'LECTURE 01: Course Overview'
-subtitle: "ENVS475 Experimental Analysis and Design"
-author: "Dr. Justin Pomeranz"
-date: "Spring 2024"
-output: 
-  ioslides_presentation:
-    widescreen: true
+subtitle: "ENVS475: Exp. Design and Analysis"
+author: "<br/><br/><br/>Spring 2024"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: true
 ---
 
 ```{r setup, include=FALSE}
