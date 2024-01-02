@@ -1,7 +1,6 @@
 ---
-title: 'Lab 07: Introduction to R Markdown'
+title: 'Lab 09: Introduction to R Markdown'
 subtitle: "ENVS475: Experimental Analysis and Design"
-date: "Spring, 2023"
 output: 
   html_document:
     toc: true

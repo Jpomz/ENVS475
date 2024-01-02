@@ -1,5 +1,5 @@
 ---
-title: "Lab 08: t-tests"
+title: "Lab 07: t-tests"
 subtitle: "ENVS475: Experimental Analysis and Design"
 date: "Spring, 2023"
 output: 
