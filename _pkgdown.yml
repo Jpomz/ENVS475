@@ -76,7 +76,7 @@ navbar:
         - text: "Homework 02 Intro to R"
           href: articles/homework/HW_02_intro_R.html
         - text: "Homework 03 Normal Distributions"
-          href: articles/homework/HW_03_normal-distriburions.html
+          href: articles/homework/HW_03_normal-distributions.html
         - text: "Homework 04 dplyr + ggplot2"
           href: articles/homework/HW_04_dplyr_ggplot.html
         - text: "Homework 05 Point Estimates"
