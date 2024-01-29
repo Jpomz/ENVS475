@@ -40,7 +40,7 @@ library(tidyverse)
 * * *Right-Click on invert.csv in your file explorer program to Open With Notepad or text editor*  
 * This data is comma separated, which is the default type in the `read_csv()` function. `read_csv()` is a part of the `tidyverse` and is the the main function that we will throughout this course.  
   * There is also a `read.csv()` function that comes with the base installation of R. It behaves very similarly but is slightly less "smart" than `read_csv()`. 
-* We'll call our data frame `invert` and assign it the output from `read-csv()`
+* We'll call our data frame `invert` and assign it the output from `read_csv()`
 * We still to supply the file name in quotes as the first argument  
 * to tell R that it's located in the `data/` folder, we add this to the beginning of the filename
 
