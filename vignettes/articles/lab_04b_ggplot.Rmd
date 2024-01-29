@@ -3,7 +3,7 @@ title: "Lab 04b: Graphing using ggplot"
 subtitle: "ENVS475: Experimental Analysis and Design"
 date: "`r format(Sys.time(), '%B, %Y')`"
 resource_files:
-  - data/ggplot_lab_invert_survey.csv
+- data/ggplot_lab_invert_survey.csv
 output: 
   html_document:
     toc: true
