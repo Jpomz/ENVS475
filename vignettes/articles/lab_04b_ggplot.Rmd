@@ -11,9 +11,9 @@ output:
 ---
 
 ```{r setup, include=FALSE, message=FALSE, warning=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
 library(tidyverse)
-invert <- read_csv(here::here("data/ggplot_lab_invert_survey.csv"))
+#invert <- read_csv(here::here("data/ggplot_lab_invert_survey.csv"))
 ```
 
 ## About
