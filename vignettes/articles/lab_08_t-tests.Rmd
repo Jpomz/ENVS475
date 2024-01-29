@@ -12,8 +12,8 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
 library(ggplot2)
-bt_samp <- read.csv(here::here("data/body_temp_hr.csv"))
-caterpillar <- read.csv(here::here("data/caterpillar.csv"))
+bt_samp <- read.csv(here::here("inst/extdata/body_temp_hr.csv"))
+caterpillar <- read.csv(here::here("inst/extdata/caterpillar.csv"))
 ```
 
 ## About

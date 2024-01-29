@@ -12,8 +12,8 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
 library(ggplot2)
-crop <- read.csv(here::here('data/crop_anova.csv'))
-latin_ag <- read.csv(here::here("data/latin_square_crops.csv"))
+crop <- read.csv(here::here('inst/extdata/crop_anova.csv'))
+latin_ag <- read.csv(here::here("inst/extdata/latin_square_crops.csv"))
 ```
 
 # About
