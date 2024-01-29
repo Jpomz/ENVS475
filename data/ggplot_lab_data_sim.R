@@ -22,7 +22,7 @@ plot(body_length_mm, body_mass_mg)
 (dat <- dplyr::bind_cols(dat,
                         #count = count,
                         #temp = temp,
-                        body_length = body_length_mm,
+                        body_length_mm = body_length,
                         body_mass_g = body_mass_mg))
 
 readr::write_csv(dat, "data/ggplot_lab_invert_survey.csv")
@@ -30,80 +30,80 @@ readr::write_csv(dat, "data/ggplot_lab_invert_survey.csv")
 library(ggplot2)
 
 ggplot(dat,
-       aes(x = body_length))+
+       aes(x = body_length_mm))+
   geom_density()
 
 ggplot(dat,
-       aes(x = body_length))+
+       aes(x = body_length_mm))+
   geom_histogram()
 
 ggplot(dat,
-       aes(x = body_length))+
+       aes(x = body_length_mm))+
   geom_boxplot()
 
 
 ggplot(dat,
-       aes(x = body_length,
+       aes(x = body_length_mm,
            fill = taxa))+
   geom_density(alpha = 0.5)
 
 ggplot(dat,
-       aes(x = body_length,
+       aes(x = body_length_mm,
            fill = taxa))+
   geom_histogram(position = "identity",
                  alpha = 0.5)
 
 ggplot(dat,
-       aes(x = body_length,
+       aes(x = body_length_mm,
            fill = taxa))+
   geom_boxplot()
 
 ggplot(dat,
-       aes(y = body_length,
+       aes(y = body_length_mm,
            x = as.factor(month),
            fill = taxa))+
   geom_boxplot()
 
 ggplot(dat,
-       aes(x = body_length,
+       aes(x = body_length_mm,
            y = body_mass_mg))+
   geom_point()+
   geom_smooth(method = "lm")
 
 ggplot(dat,
-       aes(x = body_length,
+       aes(x = body_length_mm,
            y = body_mass_mg,
            color = taxa))+
   geom_point()
 
 ggplot(dat,
-       aes(x = body_length,
+       aes(x = body_length_mm,
            y = body_mass_mg,
            color = taxa))+
   geom_point() +
   geom_smooth(method = "lm")
 
 ggplot(dat,
-       aes(x = body_length,
+       aes(x = body_length_mm,
            y = body_mass_mg,
            color = taxa))+
   geom_point() +
   facet_wrap(~month)
 
 ggplot(dat,
-       aes(x = body_length,
+       aes(x = body_length_mm,
            y = body_mass_mg,
            color = month))+
   geom_point()
 
 ggplot(dat,
-       aes(x = body_length,
+       aes(x = body_length_mm,
            y = body_mass_mg,
            color = as.factor(month)))+
   geom_point()
 
 ggplot(dat,
-       aes(x = body_length,
+       aes(x = body_length_mm,
            y = body_mass_mg,
            color = as.factor(month)))+
   geom_point() +
