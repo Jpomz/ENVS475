@@ -49,9 +49,9 @@ schedule <- data.frame(WK = c("1",
                        #Week = MWF(first.day = "2024/01/22", last.day = "2024/05/13"),
                        Lecture = c(
                          "Course introduction",#1
-                         "Introduction to R",#2
+                         "Introduction to R Lab",#2
                          "Basic Statistics", #3
-                         "dplyr + ggplot2", # 4
+                         "Lab 04a: dplyr", # 4
                          "Estimation", #5
                          "Intro to Models", #6
                          "t-tests", #7
@@ -70,7 +70,7 @@ schedule <- data.frame(WK = c("1",
                          "Lab 01: RStudio Projects",#1
                          "Lab 02: Introduction to R",#2
                          "Lab 03: Normal Distributions", #3
-                         "Lab 04: dplyr + ggplot2", # 4
+                         "Lab 04b: ggplot2", # 4
                          "Lab 05: Estimation", #5
                          "Lab 06: Intro to Models", #6
                          "Lab 07: t-tests", #7
