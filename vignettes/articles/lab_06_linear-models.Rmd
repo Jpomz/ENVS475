@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
 library(ggplot2)
 library(arm)
-darwin_maize <- read.csv(here::here("data/darwin_maize.csv"))
+darwin_maize <- read.csv(here::here("inst/extdata/darwin_maize.csv"))
 ```
 
 # About  

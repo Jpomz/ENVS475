@@ -2,6 +2,8 @@
 title: "Lab 04b: Graphing using ggplot"
 subtitle: "ENVS475: Experimental Analysis and Design"
 date: "`r format(Sys.time(), '%B, %Y')`"
+resource_files:
+- inst/extdata/ggplot_lab_invert_survey.csv
 output: 
   html_document:
     toc: true
@@ -11,7 +13,7 @@ output:
 ```{r setup, include=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
 library(tidyverse)
-#invert <- read_csv(here::here("data/ggplot_lab_invert_survey.csv"))
+invert <- read_csv(here::here("inst/extdata/ggplot_lab_invert_survey.csv"))
 ```
 
 ## About
