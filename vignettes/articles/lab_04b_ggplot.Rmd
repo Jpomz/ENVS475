@@ -108,7 +108,7 @@ ggplot()
 * Let's plot the relationship between the `body_length_mm` of invertebrates to their `body_mass_g`  
 * note that I start a new line after each `,` and that Rstudio automatically indents for us. This improves readability and makes it easier to look for typos.  
 
-```{r}
+```{r, eval=FALSE}
 ggplot(data = invert,
        mapping = aes(x = body_length_mm,
                      y = body_mass_g))
@@ -125,7 +125,7 @@ ggplot(data = invert,
 
 * To make a scatter plot we use `geom_point()`
 
-```{r}
+```{r, eval=FALSE}
 ggplot(data = invert,
        mapping = aes(x = body_length_mm,
                      y = body_mass_g)) +
@@ -145,7 +145,7 @@ ggplot(data = invert,
   * the transparency of the points, which is called `alpha`, we'll set it to 0.5  
   
 
-```{r}
+```{r, eval=FALSE}
 ggplot(data = invert,
        mapping = aes(x = body_length_mm,
                      y = body_mass_g)) +
@@ -154,7 +154,7 @@ ggplot(data = invert,
 
 * To add labels (like documentation for your graphs!) we use the `labs` function  
 
-```{r}
+```{r, eval=FALSE}
 ggplot(data = invert,
        mapping = aes(x = body_length_mm,
                      y = body_mass_g)) +
@@ -405,7 +405,7 @@ ggplot(data = invert,
 ## Scatter Plots  
 * Display two continuous variables by mapping them to `x` and `y`  
 
-```{r}
+```{r, eval=FALSE}
 ggplot(data = invert,
        mapping = aes(x = body_length_mm,
                      y = body_mass_g)) +
@@ -423,7 +423,7 @@ ggplot(data = invert,
   * i.e., "red", or "blue"  
   
   
-```{r}
+```{r, eval=FALSE}
 ggplot(data = invert,
        mapping = aes(x = body_length_mm,
                      y = body_mass_g,
@@ -436,7 +436,7 @@ ggplot(data = invert,
 * gives "shades" of one color, based on value  
 
 
-```{r}
+```{r, eval=FALSE}
 ggplot(data = invert,
        mapping = aes(x = body_length_mm,
                      y = body_mass_g,
@@ -445,7 +445,7 @@ ggplot(data = invert,
 ```
 
 #### Shape  
-```{r}
+```{r, eval=FALSE}
 ggplot(data = invert,
        mapping = aes(x = body_length_mm,
                      y = body_mass_g,
@@ -455,7 +455,7 @@ ggplot(data = invert,
 
 #### Shape + color  
 
-```{r}
+```{r, eval=FALSE}
 ggplot(data = invert,
        mapping = aes(x = body_length_mm,
                      y = body_mass_g,
@@ -471,7 +471,7 @@ ggplot(data = invert,
 
 * do this with `geom_smooth()`
 
-```{r}
+```{r, eval=FALSE}
 ggplot(data = invert,
        mapping = aes(x = body_length_mm,
                      y = body_mass_g)) +
@@ -483,7 +483,7 @@ ggplot(data = invert,
 
 * we will limit ourselves to linear relationships, so add `method = "lm"`  
 
-```{r}
+```{r, eval=FALSE}
 ggplot(data = invert,
        mapping = aes(x = body_length_mm,
                      y = body_mass_g)) +
@@ -496,7 +496,7 @@ ggplot(data = invert,
 * add a smooth for both taxa:  
 
 
-```{r}
+```{r, eval=FALSE}
 ggplot(data = invert,
        mapping = aes(x = body_length_mm,
                      y = body_mass_g,
@@ -509,7 +509,7 @@ ggplot(data = invert,
 
 In any of the plots, it is also possible to add facets, which gives each group their own panel:  
 
-```{r}
+```{r, eval=FALSE}
 ggplot(data = invert,
        mapping = aes(x = body_length_mm,
                      y = body_mass_g,
