@@ -17,7 +17,7 @@ temp <- c(
 body_length <- rnorm(30, 25, 5)
 body_mass_mg <- body_length^0.79
 body_mass_mg <- body_mass_mg + rnorm(30, 0, 5)
-plot(body_length_mm, body_mass_mg)
+plot(body_length, body_mass_mg)
 
 (dat <- dplyr::bind_cols(dat,
                         #count = count,
