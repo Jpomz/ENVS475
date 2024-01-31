@@ -43,7 +43,7 @@ All course materials will be available on this website. Course communications an
 
 ## Self-guided students  
 
-The materials presented here are free for your use. Each week there is generally one lecture, lab, and homework assignment, all numbered by the week of the course. Exams are in week 8 and 15 (no materials on the website). All data objects will eventually be included in the `ENVS475` package and can be loaded into your RStudio session by running `data("data-object-name")`. In the meantime, you can download the data objects individually from the [repository hosted on GitHub.](https://github.com/Jpomz/ENVS475/tree/master/data) 
+The materials presented here are free for your use. Each week there is generally one lecture, lab, and homework assignment, all numbered by the week of the course. Exams are in week 8 and 15 (no materials on the website). All data objects will eventually be included in the `ENVS475` package and can be loaded into your RStudio session by running `data("data-object-name")`. In the meantime, you can download the data objects individually from the [repository hosted on GitHub.](https://github.com/Jpomz/ENVS475/tree/master/inst/extdata) 
 
 ## Educators  
 
