@@ -314,11 +314,54 @@ a look at it to familiarize yourself with the structure. Run the
 following lines of code in RStudio one by one (I have removed the output
 to save space here):</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">invert</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">invert</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">tail</a></span><span class="op">(</span><span class="va">invert</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">invert</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">invert</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">invert</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## [1] "month"          "taxa"           "body_length_mm" "body_mass_g"</span></span></code></pre>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">invert</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 6 × 4</span></span></span>
+<span><span class="co">##   month taxa   body_length_mm body_mass_g</span></span>
+<span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">1</span>     3 beetle           26.9       17.4 </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">2</span>     7 beetle           32.1       11.3 </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">3</span>    11 beetle           21.4        4.40</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">4</span>     3 beetle           25.0       26.2 </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">5</span>     7 beetle           17.7       12.6 </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">6</span>    11 beetle           31.9       15.2</span></span></code></pre>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">tail</a></span><span class="op">(</span><span class="va">invert</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 6 × 4</span></span></span>
+<span><span class="co">##   month taxa   body_length_mm body_mass_g</span></span>
+<span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">1</span>     3 spider           23.2       15.2 </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">2</span>     7 spider           20.2        2.02</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">3</span>    11 spider           25.3       16.0 </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">4</span>     3 spider           27.4        9.77</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">5</span>     7 spider           25.4       12.6 </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">6</span>    11 spider           26.5       11.9</span></span></code></pre>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">invert</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## spc_tbl_ [30 × 4] (S3: spec_tbl_df/tbl_df/tbl/data.frame)</span></span>
+<span><span class="co">##  $ month         : num [1:30] 3 7 11 3 7 11 3 7 11 3 ...</span></span>
+<span><span class="co">##  $ taxa          : chr [1:30] "beetle" "beetle" "beetle" "beetle" ...</span></span>
+<span><span class="co">##  $ body_length_mm: num [1:30] 26.9 32.1 21.4 25 17.7 ...</span></span>
+<span><span class="co">##  $ body_mass_g   : num [1:30] 17.4 11.3 4.4 26.2 12.6 ...</span></span>
+<span><span class="co">##  - attr(*, "spec")=</span></span>
+<span><span class="co">##   .. cols(</span></span>
+<span><span class="co">##   ..   month = <span style="color: #00BB00;">col_double()</span>,</span></span>
+<span><span class="co">##   ..   taxa = <span style="color: #BB0000;">col_character()</span>,</span></span>
+<span><span class="co">##   ..   body_length_mm = <span style="color: #00BB00;">col_double()</span>,</span></span>
+<span><span class="co">##   ..   body_mass_g = <span style="color: #00BB00;">col_double()</span></span></span>
+<span><span class="co">##   .. )</span></span>
+<span><span class="co">##  - attr(*, "problems")=&lt;externalptr&gt;</span></span></code></pre>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">invert</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">##      month        taxa           body_length_mm   body_mass_g    </span></span>
+<span><span class="co">##  Min.   : 3   Length:30          Min.   :11.01   Min.   : 2.020  </span></span>
+<span><span class="co">##  1st Qu.: 3   Class :character   1st Qu.:20.89   1st Qu.: 6.397  </span></span>
+<span><span class="co">##  Median : 7   Mode  :character   Median :26.02   Median :11.931  </span></span>
+<span><span class="co">##  Mean   : 7                      Mean   :25.00   Mean   :11.671  </span></span>
+<span><span class="co">##  3rd Qu.:11                      3rd Qu.:28.35   3rd Qu.:15.630  </span></span>
+<span><span class="co">##  Max.   :11                      Max.   :33.83   Max.   :26.195</span></span></code></pre>
 <ul>
 <li><p>You can see the entire <code>invert</code> object by running the
 following command:<br><code>View(invert)</code></p></li>
@@ -358,8 +401,9 @@ plot}(\underbrace{data = df}_{data\;frame},\; \underbrace{aes(x =\; , y
 = \;, color = \;)}_{plot\; attributes}) +
 \underbrace{geom\_line()}_{geometry}\]</span> * To build a plot using
 <code>ggplot</code> we start with the <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot()</a></code> function</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
 <ul>
 <li>
 <p><code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot()</a></code> creates a base ggplot object that we can
@@ -396,10 +440,11 @@ of invertebrates to their <code>body_mass_g</code><br>
 Rstudio automatically indents for us. This improves readability and
 makes it easier to look for typos.</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_length_mm</span>,</span>
 <span>                     y <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
 <ul>
 <li>Notice we now have “CIRC” on the x-axis and “HEIGHT” on the
 y-axis</li>
@@ -418,11 +463,12 @@ to axes of the plots</li>
 <code>geom</code>, which stands for <code>geometry</code></p></li>
 <li><p>To make a scatter plot we use <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point()</a></code></p></li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_length_mm</span>,</span>
 <span>                     y <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-6-1.png" width="700"></p>
 <ul>
 <li><p>It is standard to hit <code>Enter</code> after the plus so that
 each layer shows up on its own line</p></li>
@@ -440,16 +486,17 @@ to the <code>geom</code></p></li>
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_length_mm</span>,</span>
 <span>                     y <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span>, color <span class="op">=</span> <span class="st">"blue"</span>, alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-7-1.png" width="700"></p>
 <ul>
 <li>To add labels (like documentation for your graphs!) we use the
 <code>labs</code> function</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_length_mm</span>,</span>
 <span>                     y <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -457,6 +504,7 @@ to the <code>geom</code></p></li>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Body length [mm]"</span>,</span>
 <span>       y <span class="op">=</span> <span class="st">"Body mass [g]"</span>,</span>
 <span>       title <span class="op">=</span> <span class="st">"Simulated ground-dwelling invertebrate survey"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-8-1.png" width="700"></p>
 </div>
 </div>
 </div>
@@ -480,10 +528,12 @@ our earlier code.</p></li>
 <li><p>We also change <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point()</a></code> to
 <code>geom_histogram</code></p></li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html" class="external-link">geom_histogram</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></span></code></pre>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-9-1.png" width="700"></p>
 <ul>
 <li>
 <p><code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html" class="external-link">geom_histogram()</a></code> groups observations into bins</p>
@@ -498,10 +548,11 @@ our earlier code.</p></li>
 <div class="section level4">
 <h4 id="bins">5 bins<a class="anchor" aria-label="anchor" href="#bins"></a>
 </h4>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html" class="external-link">geom_histogram</a></span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-10-1.png" width="700"></p>
 <ul>
 <li>see that there are now 5 bins, but the “edges” of the bins are
 unclear</li>
@@ -516,10 +567,11 @@ argument</p></li>
 <li><p>for example, let’s say we want bins that are 2.5 g
 across</p></li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html" class="external-link">geom_histogram</a></span><span class="op">(</span>binwidth <span class="op">=</span> <span class="fl">2.5</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-11-1.png" width="700"></p>
 </div>
 <div class="section level4">
 <h4 id="histogram-attributes">Histogram attributes<a class="anchor" aria-label="anchor" href="#histogram-attributes"></a>
@@ -538,7 +590,7 @@ ways as above</p>
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html" class="external-link">geom_histogram</a></span><span class="op">(</span>binwidth <span class="op">=</span> <span class="fl">2.5</span>,</span>
@@ -547,6 +599,12 @@ ways as above</p>
 <span>                 size <span class="op">=</span> <span class="fl">2</span>,</span>
 <span>                 alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.</span></span>
+<span><span class="co">## <span style="color: #00BBBB;">ℹ</span> Please use `linewidth` instead.</span></span>
+<span><span class="co">## <span style="color: #555555;">This warning is displayed once every 8 hours.</span></span></span>
+<span><span class="co">## <span style="color: #555555;">Call `lifecycle::last_lifecycle_warnings()` to see where this warning was</span></span></span>
+<span><span class="co">## <span style="color: #555555;">generated.</span></span></span></code></pre>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-12-1.png" width="700"></p>
 </div>
 </div>
 <div class="section level3">
@@ -556,13 +614,14 @@ ways as above</p>
 <li><p>Boxplots summarize the data distribution</p></li>
 <li><p>AKA “Cat and Whisker” Plots</p></li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-13-1.png" width="700">
+* whiskers: show minimum (left side) and maximum (right side) of
+data</p>
 <ul>
-<li><p>whiskers: show minimum (left side) and maximum (right side) of
-data</p></li>
 <li><p>Box: shows where 50% of the data lies</p></li>
 <li><p>Line in middle of box is the median</p></li>
 <li>
@@ -575,11 +634,12 @@ data</p></li>
 <div class="section level4">
 <h4 id="boxplot-attributes">Boxplot attributes<a class="anchor" aria-label="anchor" href="#boxplot-attributes"></a>
 </h4>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"red"</span>,</span>
 <span>               color <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-14-1.png" width="700"></p>
 </div>
 </div>
 <div class="section level3">
@@ -590,12 +650,13 @@ data</p></li>
 <li><p>i.e., a histogram has discrete bins, but a density plot is
 continuous</p></li>
 </ul>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_density.html" class="external-link">geom_density</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"pink"</span>,</span>
 <span>               alpha <span class="op">=</span> <span class="fl">0.75</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_dark</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-15-1.png" width="700"></p>
 <p><strong>You should now be able to complete problem 01 in the homework
 assignment</strong></p>
 </div>
@@ -610,21 +671,23 @@ assignment</strong></p>
 We can do this by modifying our boxplot code above by adding a grouping
 variable as our <code>y = ...</code> in the <code><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes()</a></code>
 function</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_mass_g</span>,</span>
 <span>                     y <span class="op">=</span> <span class="va">taxa</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-16-1.png" width="700"></p>
 <ul>
 <li>we can also vary the color/fill by taxa by including it in the
 <code><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes()</a></code> function</li>
 </ul>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_mass_g</span>,</span>
 <span>                     y <span class="op">=</span> <span class="va">taxa</span>,</span>
 <span>                     fill <span class="op">=</span> <span class="va">taxa</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-17-1.png" width="700"></p>
 <ul>
 <li>ggplot automatically picked two colors for us based on the values in
 the <code>taxa</code> column</li>
@@ -638,18 +701,19 @@ the <code>taxa</code> column</li>
 </h4>
 <p>See a <a href="https://derekogle.com/NCGraphing/resources/colors" class="external-link">list of
 colors</a> available in ggplot</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_mass_g</span>,</span>
 <span>                     y <span class="op">=</span> <span class="va">taxa</span>,</span>
 <span>                     fill <span class="op">=</span> <span class="va">taxa</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"dodgerblue"</span>, <span class="st">"hotpink"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-18-1.png" width="700"></p>
 <ul>
 <li>note that this <strong>does not</strong> work if you put it in the
 <code><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot()</a></code> argument:</li>
 </ul>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_mass_g</span>,</span>
 <span>                     y <span class="op">=</span> <span class="va">taxa</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -659,12 +723,13 @@ colors</a> available in ggplot</p>
 <code><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot()</a></code> function, it will overwrite what you mapped
 above</li>
 </ul>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_mass_g</span>,</span>
 <span>                     y <span class="op">=</span> <span class="va">taxa</span>,</span>
 <span>                     fill <span class="op">=</span> <span class="va">taxa</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-20-1.png" width="700"></p>
 </div>
 <div class="section level4">
 <h4 id="categorical-vs--continuous-variables">Categorical vs. continuous variables<a class="anchor" aria-label="anchor" href="#categorical-vs--continuous-variables"></a>
@@ -674,11 +739,17 @@ above</li>
 <li><p>we may want to see if there are different distributions across
 months</p></li>
 </ul>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_mass_g</span>,</span>
 <span>                     fill <span class="op">=</span> <span class="va">month</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## Warning: The following aesthetics were dropped during statistical transformation: <span style="color: #00BB00;">fill</span></span></span>
+<span><span class="co">## <span style="color: #00BBBB;">ℹ</span> This can happen when ggplot fails to infer the correct grouping structure in</span></span>
+<span><span class="co">##   the data.</span></span>
+<span><span class="co">## <span style="color: #00BBBB;">ℹ</span> Did you forget to specify a `group` aesthetic or to convert a numerical</span></span>
+<span><span class="co">##   variable into a factor?</span></span></code></pre>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-21-1.png" width="700"></p>
 <ul>
 <li><p>this didn’t work because <code>month</code> is a number, which R
 interprets as a continuous variable.</p></li>
@@ -688,11 +759,12 @@ data</p></li>
 <li><p>the easiest at this point is to force month to be a
 <code>factor</code> (what R calls a categorical variable).</p></li>
 </ul>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_mass_g</span>,</span>
 <span>                     fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">as.factor</a></span><span class="op">(</span><span class="va">month</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-22-1.png" width="700"></p>
 </div>
 </div>
 <div class="section level3">
@@ -710,7 +782,7 @@ misleading</li>
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_mass_g</span>,</span>
 <span>                     fill <span class="op">=</span> <span class="va">taxa</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -718,6 +790,8 @@ misleading</li>
 <span>                 alpha <span class="op">=</span> <span class="fl">0.75</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"grey30"</span>, <span class="st">"goldenrod"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></span></code></pre>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-23-1.png" width="700"></p>
 <p><strong>You should now be able to complete problem 02 in the homework
 assignment</strong></p>
 </div>
@@ -733,11 +807,12 @@ assignment</strong></p>
 and <code>y</code>
 </li>
 </ul>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_length_mm</span>,</span>
 <span>                     y <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-24-1.png" width="700"></p>
 <div class="section level4">
 <h4 id="map-attributes-to-other-columns">map attributes to other columns<a class="anchor" aria-label="anchor" href="#map-attributes-to-other-columns"></a>
 </h4>
@@ -753,43 +828,47 @@ and <code>y</code>
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_length_mm</span>,</span>
 <span>                     y <span class="op">=</span> <span class="va">body_mass_g</span>,</span>
 <span>                     color <span class="op">=</span> <span class="va">taxa</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-25-1.png" width="700"></p>
 <ul>
 <li><p>Using a continuous variable</p></li>
 <li><p>gives “shades” of one color, based on value</p></li>
 </ul>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_length_mm</span>,</span>
 <span>                     y <span class="op">=</span> <span class="va">body_mass_g</span>,</span>
 <span>                     color <span class="op">=</span> <span class="va">month</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-26-1.png" width="700"></p>
 </div>
 <div class="section level5">
 <h5 id="shape">Shape<a class="anchor" aria-label="anchor" href="#shape"></a>
 </h5>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_length_mm</span>,</span>
 <span>                     y <span class="op">=</span> <span class="va">body_mass_g</span>,</span>
 <span>                     shape <span class="op">=</span> <span class="va">taxa</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-27-1.png" width="700"></p>
 </div>
 <div class="section level5">
 <h5 id="shape-color">Shape + color<a class="anchor" aria-label="anchor" href="#shape-color"></a>
 </h5>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_length_mm</span>,</span>
 <span>                     y <span class="op">=</span> <span class="va">body_mass_g</span>,</span>
 <span>                     color <span class="op">=</span> <span class="va">taxa</span>, </span>
 <span>                     shape <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">as.factor</a></span><span class="op">(</span><span class="va">month</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-28-1.png" width="700"></p>
 </div>
 </div>
 </div>
@@ -802,42 +881,48 @@ and <code>y</code>
 predictor (<code>x</code>) and our response (<code>y</code>).</p></li>
 <li><p>do this with <code><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html" class="external-link">geom_smooth()</a></code></p></li>
 </ul>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_length_mm</span>,</span>
 <span>                     y <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">4</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html" class="external-link">geom_smooth</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## `geom_smooth()` using method = 'loess' and formula = 'y ~ x'</span></span></code></pre>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-29-1.png" width="700"></p>
 <ul>
 <li><p>the default is a “squiggly line”</p></li>
 <li><p>we will limit ourselves to linear relationships, so add
 <code>method = "lm"</code></p></li>
 </ul>
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_length_mm</span>,</span>
 <span>                     y <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">4</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html" class="external-link">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## `geom_smooth()` using formula = 'y ~ x'</span></span></code></pre>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-30-1.png" width="700"></p>
 <ul>
 <li><p><code><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html" class="external-link">geom_smooth()</a></code> inherits other aspects from
 aes.</p></li>
 <li><p>add a smooth for both taxa:</p></li>
 </ul>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_length_mm</span>,</span>
 <span>                     y <span class="op">=</span> <span class="va">body_mass_g</span>,</span>
 <span>                     color <span class="op">=</span> <span class="va">taxa</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">4</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html" class="external-link">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## `geom_smooth()` using formula = 'y ~ x'</span></span></code></pre>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-31-1.png" width="700"></p>
 </div>
 <div class="section level3">
 <h3 id="facets">Facets<a class="anchor" aria-label="anchor" href="#facets"></a>
 </h3>
 <p>In any of the plots, it is also possible to add facets, which gives
 each group their own panel:</p>
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_length_mm</span>,</span>
 <span>                     y <span class="op">=</span> <span class="va">body_mass_g</span>,</span>
@@ -845,7 +930,9 @@ each group their own panel:</p>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">4</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html" class="external-link">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">taxa</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<pre><code><span><span class="co">## `geom_smooth()` using formula = 'y ~ x'</span></span></code></pre>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-32-1.png" width="700"></p>
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_mass_g</span>,</span>
 <span>                     y <span class="op">=</span> <span class="va">taxa</span>,</span>
@@ -853,12 +940,13 @@ each group their own panel:</p>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"dodgerblue"</span>, <span class="st">"hotpink"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">taxa</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-33-1.png" width="700"></p>
 <ul>
 <li><p>can also add a different variable</p></li>
 <li><p>this helps to visualize when we have 2+ grouping
 variables</p></li>
 </ul>
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_mass_g</span>,</span>
 <span>                     y <span class="op">=</span> <span class="va">taxa</span>,</span>
@@ -866,9 +954,7 @@ variables</p></li>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"dodgerblue"</span>, <span class="st">"hotpink"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">month</span><span class="op">)</span></span></code></pre></div>
-<blockquote>
-<p>Do Tasks XXX in the homework for this week</p>
-</blockquote>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-34-1.png" width="700"></p>
 </div>
 <div class="section level3">
 <h3 id="coda">Coda<a class="anchor" aria-label="anchor" href="#coda"></a>
@@ -905,7 +991,7 @@ zooming)</p></li>
 made was.</p></li>
 <li><p>let’s rerun this code:</p></li>
 </ul>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">invert</span>,</span>
 <span>       mapping <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_mass_g</span>,</span>
 <span>                     y <span class="op">=</span> <span class="va">taxa</span>,</span>
@@ -913,16 +999,17 @@ made was.</p></li>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"dodgerblue"</span>, <span class="st">"hotpink"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html" class="external-link">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">month</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_04b_ggplot_files/figure-html/unnamed-chunk-35-1.png" width="700"></p>
 <ul>
 <li>we will now save it into the home directory of our project and name
 the file:</li>
 </ul>
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html" class="external-link">ggsave</a></span><span class="op">(</span><span class="st">"invert_by_month_taxa.jpg"</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>The type of the file is determined by the file extension</li>
 </ul>
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html" class="external-link">ggsave</a></span><span class="op">(</span><span class="st">"invert_by_month_taxa.jpg"</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>
@@ -937,7 +1024,7 @@ this course, you should have a <code>homework</code> folder.</p></li>
 <li><p>to save the last <code>ggplot</code> figure you made as a .png
 file to your homework folder, enter the following:</p></li>
 </ul>
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html" class="external-link">ggsave</a></span><span class="op">(</span><span class="st">"homework/invert_by_month_taxa.png"</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li><p>Check your folder to make sure the file is there.</p></li>
