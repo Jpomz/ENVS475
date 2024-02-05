@@ -66,25 +66,6 @@ schedule <- data.frame(WK = c("1",
                          "Exam 2", #15
                          "Monday 3-4:50 pm" #16
                        ),
-                       Reading = c(
-                         "Hector Ch. 1, 2, 20",#1
-                         "Hector Ch. 1, 2, 20",#2
-                         "Hector Ch. 5", #3
-                         "R4DS Ch. 3", # 4
-                         "Hector Ch. 3, 5, 10",#5
-                         "Hector Ch. 6", #6
-                         "Hector Ch. 6, 9", #7
-                         "None", #8 exam 1 
-                         "None", # Spring break 
-                         "Hector Ch. 4; R4DS Ch. 3", #9
-                         "Hector Ch. 11, 12", # 10
-                         "Hector Ch. 11, 12", #11
-                         "Hector Ch. 11, 12", #12
-                         "Hector Ch. 7", #13    
-                         "Hector Ch. 14, 15", #14
-                         "None", #15
-                         "None" #16
-                       ),
                        Lab = c(
                          "Lab 01: RStudio Projects",#1
                          "Lab 02: Introduction to R",#2
@@ -122,10 +103,29 @@ schedule <- data.frame(WK = c("1",
                          "HW 14: ANCOVA", #14
                          "Exam 2", #15
                          "" #16),
+                       ),
+                       Reading = c(
+                         "Hector Ch. 1, 2, 20",#1
+                         "Hector Ch. 1, 2, 20",#2
+                         "Hector Ch. 5", #3
+                         "R4DS Ch. 3", # 4
+                         "Hector Ch. 3, 5, 10",#5
+                         "Hector Ch. 6", #6
+                         "Hector Ch. 6, 9", #7
+                         "None", #8 exam 1 
+                         "None", # Spring break 
+                         "Hector Ch. 4; R4DS Ch. 3", #9
+                         "Hector Ch. 11, 12", # 10
+                         "Hector Ch. 11, 12", #11
+                         "Hector Ch. 11, 12", #12
+                         "Hector Ch. 7", #13    
+                         "Hector Ch. 14, 15", #14
+                         "None", #15
+                         "None" #16
                        ))
 
 schedule %>%
-  kable("html", col.names = c("Week", "Monday (Lecture)", "Wednesday (Lab)", "Friday (Homework"), align = 'c') %>%
+  kable("html", col.names = c("Week", "Monday (Lecture)", "Wednesday (Lab)", "Friday (Homework", "Reading"), align = 'c') %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = TRUE)
 
 ```
