@@ -15,10 +15,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-library(dplyr)
-library(ggplot2)
-limp <- read.csv(here::here("data/limpet.csv")) %>%
-  as_tibble()
+library(tidyverse)
+limp <- read_csv(here::here("data/limpet.csv")) 
 ```
 
 
@@ -44,8 +42,7 @@ Here we go for our final linear-model example. It is unique in that it combines 
 
 ```{r, eval=FALSE}
 # load libraries
-library(dplyr)
-library(ggplot2)
+library(tidyverse)
 ```
 
 # Data
@@ -56,8 +53,7 @@ Download the `limpet.csv` file from D2L and put it in your "data" folder. Read i
 
 ```{r, eval = FALSE}
 # read in data for problem 1
-limp <- read.csv("data/limpet.csv") %>%
-  as_tibble()
+limp <- read_csv("data/limpet.csv") 
 ```
 
 The dataset we will use is `limpet.csv` and is originally from Quinn and Keough’s 2002 book Experimental Design and Data Analysis for Biologists.  The data relate egg production by limpets to four density conditions in two seasons. The response variable (y) is egg production (`EGGS`) and the independent variables (x’s) are `DENSITY` (continuous) and `SEASON` (categorical). Because we are examining egg production along a continuous density gradient, this is essentially a study of density-dependent reproduction. The experimental manipulation of density was implemented in spring and in summer. Thus, a motivation for collecting these data could be ‘does the density dependence of egg production differ between spring and summer’?

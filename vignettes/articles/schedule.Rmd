@@ -125,7 +125,7 @@ schedule <- data.frame(WK = c("1",
                        ))
 
 schedule %>%
-  kable("html", col.names = c("Week", "Monday (Lecture)", "Wednesday (Lab)", "Friday (Homework", "Reading"), align = 'c') %>%
+  kable("html", col.names = c("Week", "Monday (Lecture)", "Wednesday (Lab)", "Friday (Homework)", "Reading"), align = 'c') %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = TRUE)
 
 ```

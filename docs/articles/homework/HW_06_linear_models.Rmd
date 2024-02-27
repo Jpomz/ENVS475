@@ -40,9 +40,8 @@ knitr::opts_chunk$set(
 * Copy the following code into the beginning of your homework script to load the `dplyr` package:
 ```{r, eval=FALSE}
 # load libraries
-library(dplyr)
-library(ggplot2)
 library(arm)
+library(tidyverse)
 ```
 
 # Data
@@ -57,11 +56,10 @@ Copy the following code and put it at the top of your homework script:
 
 ```{r}
 # read in full data set
-finch <- read.csv("data/galapago-finches.csv")
+finch <- read_csv("data/galapago-finches.csv")
 # filter out scandens data and make a tibble
 scandens <- finch %>%
-  filter(species == "scandens") %>%
-  as_tibble()
+  filter(species == "scandens") 
 
 # change the year column to a character data type
 scandens$year <- as.character(scandens$year)

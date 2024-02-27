@@ -10,10 +10,9 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(dplyr)
-library(ggplot2)
-bt_samp <- read.csv(here::here("inst/extdata/body_temp_hr.csv"))
-caterpillar <- read.csv(here::here("inst/extdata/caterpillar.csv"))
+library(tidyverse)
+bt_samp <- read_csv(here::here("inst/extdata/body_temp_hr.csv"))
+caterpillar <- read_csv(here::here("inst/extdata/caterpillar.csv"))
 ```
 
 ## About
@@ -31,8 +30,7 @@ $$\large t = \frac{difference}{SE}$$
 For this lab, we will be using the `dplyr` and `ggplot2` packages. Make sure both packages are installed on your computer, and then run the following code:
 
 ```{r, eval=FALSE}
-library(dplyr)
-library(ggplot2)
+library(tidyverse)
 ```
 
 
@@ -296,7 +294,7 @@ The summary of the `lm()` has a lot of information. What we are primarily focuse
 For this section of the lab, you will need to download the `caterpillar.csv` file from D2L. 
 
 ```{r, eval=FALSE}
-caterpillar <- read.csv("data/caterpillar.csv")
+caterpillar <- read_csv("data/caterpillar.csv")
 
 ```
 

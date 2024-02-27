@@ -15,7 +15,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-finch <- read.csv(here::here("data/galapago-finches.csv"))
+library(tidyverse)
+finch <- read_csv(here::here("data/galapago-finches.csv"))
 ```
 
 # Assignment Format
@@ -69,7 +70,7 @@ Read the data file into R using the following command:
 
 ```{r, eval=FALSE}
 # read in full data set
-finch <- read.csv("data/galapago-finches.csv")
+finch <- read_csv("data/galapago-finches.csv")
 ```
 
 # Exercises: `dplyr` and `ggplot2`

@@ -10,8 +10,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(dplyr)
-library(ggplot2)
+library(tidyverse)
 data("PlantGrowth")
 ```
 
@@ -26,8 +25,7 @@ This lab will demonstrate how to perform a one-way ANOVA in R. This includes che
 For this lab, we will be using the `dplyr` and `ggplot2` packages. Make sure both packages are installed on your computer, and then run the following code:
 
 ```{r, eval=FALSE}
-library(dplyr)
-library(ggplot2)
+library(tidyverse)
 ```
 
 

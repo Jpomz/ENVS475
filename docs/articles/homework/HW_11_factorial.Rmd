@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-library(dplyr)
+library(tidyverse)
 
 ```
 
@@ -37,8 +37,7 @@ library(dplyr)
 
 ```{r, eval=FALSE}
 # load libraries
-library(dplyr)
-library(ggplot2)
+library(tidyverse)
 ```
 
 # Data
@@ -49,7 +48,7 @@ For this homework, you will need to download three .csv files from D2L: `moth_da
 
 ### Load the data into R  
 ```{r}
-moth <- read.csv("data/moth_data.csv")
+moth <- read_csv("data/moth_data.csv")
 ```
 
 This is simulated data looking at the effects of different pesticides for controlling the abundance of a moth pest species. The experiment was blocked based on different regions in the SE US. 
@@ -106,7 +105,7 @@ moth <- moth %>%
 ### Read in the data
 
 ```{r}
-latin_ag <- read.csv("data/latin_square_crops.csv")
+latin_ag <- read_csv("data/latin_square_crops.csv")
 ```
 
 This is a data set investigating the impact of tillage, fertilizer, and seed variety on yield (measured in cwt_year) in an agricultural setting. 
@@ -122,7 +121,7 @@ You may also want to look at the distinct/unique levels of each of the categoric
 Here is an illustration of how the experimental field was set up. 
 
 ```{r, echo=FALSE}
-latin_ag <- read.csv(here::here("data/latin_square_crops.csv"))
+latin_ag <- read_csv(here::here("inst/extdata/latin_square_crops.csv"))
 ls_mat <- matrix(latin_ag$seed, 5, 5)
 row.names(ls_mat) <- unique(latin_ag$fertil)
 colnames(ls_mat) <- unique(latin_ag$treat)

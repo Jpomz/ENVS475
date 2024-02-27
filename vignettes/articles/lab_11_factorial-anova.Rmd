@@ -10,10 +10,9 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(dplyr)
-library(ggplot2)
-crop <- read.csv(here::here('inst/extdata/crop_anova.csv'))
-latin_ag <- read.csv(here::here("inst/extdata/latin_square_crops.csv"))
+library(tidyverse)
+crop <- read_csv(here::here('inst/extdata/crop_anova.csv'))
+latin_ag <- read_csv(here::here("inst/extdata/latin_square_crops.csv"))
 ```
 
 # About
@@ -27,8 +26,7 @@ This lab will demonstrate how to perform a two-way ANOVA's (without interaction)
 For this lab, we will be using the `dplyr` and `ggplot2` packages. Make sure both packages are installed on your computer, and then run the following code:
 
 ```{r, eval=FALSE}
-library(dplyr)
-library(ggplot2)
+library(tidyverse)
 ```
 
 
@@ -37,7 +35,7 @@ library(ggplot2)
 We will use the `crop_anova.csv` data which can be downloaded on D2L. Load the data by running the following command:
 
 ```{r, eval = FALSE}
-crop <- read.csv("data/crop_anova.csv")
+crop <- read_csv("data/crop_anova.csv")
 ```
 
 # Analysis

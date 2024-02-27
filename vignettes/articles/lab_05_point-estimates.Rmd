@@ -10,9 +10,8 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(dplyr)
-library(ggplot2)
-bt_samp <- read.csv(here::here("inst/extdata/body_temp_hr.csv"))
+library(tidyverse)
+bt_samp <- read_csv(here::here("inst/extdata/body_temp_hr.csv"))
 ```
 
 ## About
@@ -26,8 +25,7 @@ This lab will explore concepts of point estimates and confidence intervals in R.
 For this lab, we will be using the `dplyr` and `ggplot2` packages. Make sure both packages are installed on your computer, and then run the following code:
 
 ```{r, eval=FALSE}
-library(dplyr)
-library(ggplot2)
+library(tidyverse)
 ```
 
 
@@ -36,7 +34,7 @@ library(ggplot2)
 For this lab, we will be using the `body_temp_hr.csv` data. You can download the csv file from D2L. Be sure to put it into your `data/` folder. When we read in the data, we will assign it to the object called `bt_samp` which stands for "body temperature sample". 
 
 ```{r load-body-temp, eval=FALSE}
-bt_samp <- read.csv("data/body_temp_hr.csv")
+bt_samp <- read_csv("data/body_temp_hr.csv")
 ```
 
 You should always look at the data after you load it:

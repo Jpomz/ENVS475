@@ -247,9 +247,8 @@ R</em> 2nd ed. by Andy Hector.</p>
 packages are installed on your computer, and then run the following
 code:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://CRAN.R-project.org/package=arm" class="external-link">arm</a></span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://CRAN.R-project.org/package=arm" class="external-link">arm</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="data">Data<a class="anchor" aria-label="anchor" href="#data"></a>
@@ -267,7 +266,7 @@ can download from D2L. Be sure to put it into your <code>data/</code>
 folder. When we read in the data, we will assign it to the object called
 <code>darwin_maize</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">darwin_maize</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="st">"data/darwin_maize.csv"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">darwin_maize</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv</a></span><span class="op">(</span><span class="st">"data/darwin_maize.csv"</span><span class="op">)</span></span></code></pre></div>
 <p>Let’s take a brief look at the data:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">darwin_maize</span><span class="op">)</span></span></code></pre></div>
@@ -277,13 +276,15 @@ folder. When we read in the data, we will assign it to the object called
 <pre><code><span><span class="co">## [1] 30  4</span></span></code></pre>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">darwin_maize</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##   pot pair  type height</span></span>
-<span><span class="co">## 1   I    1 Cross 23.500</span></span>
-<span><span class="co">## 2   I    1  Self 17.375</span></span>
-<span><span class="co">## 3   I    2 Cross 12.000</span></span>
-<span><span class="co">## 4   I    2  Self 20.375</span></span>
-<span><span class="co">## 5   I    3 Cross 21.000</span></span>
-<span><span class="co">## 6   I    3  Self 20.000</span></span></code></pre>
+<pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 6 × 4</span></span></span>
+<span><span class="co">##   pot    pair type  height</span></span>
+<span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">1</span> I         1 Cross   23.5</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">2</span> I         1 Self    17.4</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">3</span> I         2 Cross   12  </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">4</span> I         2 Self    20.4</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">5</span> I         3 Cross   21  </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">6</span> I         3 Self    20</span></span></code></pre>
 <ul>
 <li>This data contains 30 observations in 4 columns.<br>
 </li>
@@ -299,9 +300,11 @@ variable with the following code. Note that these return the same values
 but in different formats.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html" class="external-link">distinct</a></span><span class="op">(</span><span class="va">darwin_maize</span>, <span class="va">type</span><span class="op">)</span> <span class="co"># returns data frame</span></span></code></pre></div>
-<pre><code><span><span class="co">##    type</span></span>
-<span><span class="co">## 1 Cross</span></span>
-<span><span class="co">## 2  Self</span></span></code></pre>
+<pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 2 × 1</span></span></span>
+<span><span class="co">##   type </span></span>
+<span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">1</span> Cross</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">2</span> Self</span></span></code></pre>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">darwin_maize</span><span class="op">$</span><span class="va">type</span><span class="op">)</span> <span class="co"># returns a vector</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] "Cross" "Self"</span></span></code></pre>
@@ -401,8 +404,10 @@ with <code>dplyr</code>:</p>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">darwin_maize</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarize</a></span><span class="op">(</span>global_avg <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">height</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##   global_avg</span></span>
-<span><span class="co">## 1   18.88333</span></span></code></pre>
+<pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 1 × 1</span></span></span>
+<span><span class="co">##   global_avg</span></span>
+<span><span class="co">##        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">1</span>       18.9</span></span></code></pre>
 <p>The number of observations is displayed in the table of coefficients
 as <code>n</code>, and the number of parameters estimated is shown with
 <code>k</code>. It also shows us the <span class="math inline">\(R^2\)</span> value, tells us how much variation is

@@ -252,8 +252,7 @@ classic t-tests from a linear modelling perspective.</p>
 <code>ggplot2</code> packages. Make sure both packages are installed on
 your computer, and then run the following code:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="data">Data<a class="anchor" aria-label="anchor" href="#data"></a>
@@ -644,7 +643,7 @@ assignment</strong><a class="anchor" aria-label="anchor" href="#you-should-now-b
 <p>For this section of the lab, you will need to download the
 <code>caterpillar.csv</code> file from D2L.</p>
 <div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">caterpillar</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="st">"data/caterpillar.csv"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">caterpillar</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv</a></span><span class="op">(</span><span class="st">"data/caterpillar.csv"</span><span class="op">)</span></span></code></pre></div>
 <p>Briefly, this is data from a controlled experiment looking herbicide
 effects on non-target caterpillars. Twelve plots were split, and each
 side was randomly assigned as a control or herbicide treatment. Each
@@ -652,13 +651,15 @@ plot is an experimental unit and the treatments are “paired” within
 it.</p>
 <div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">caterpillar</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##   plot_number    treatment caterpillar_count</span></span>
-<span><span class="co">## 1           1      control                23</span></span>
-<span><span class="co">## 2           1 bt_herbicide                19</span></span>
-<span><span class="co">## 3           2      control                18</span></span>
-<span><span class="co">## 4           2 bt_herbicide                18</span></span>
-<span><span class="co">## 5           3      control                29</span></span>
-<span><span class="co">## 6           3 bt_herbicide                24</span></span></code></pre>
+<pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 6 × 3</span></span></span>
+<span><span class="co">##   plot_number treatment    caterpillar_count</span></span>
+<span><span class="co">##         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">1</span>           1 control                     23</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">2</span>           1 bt_herbicide                19</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">3</span>           2 control                     18</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">4</span>           2 bt_herbicide                18</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">5</span>           3 control                     29</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">6</span>           3 bt_herbicide                24</span></span></code></pre>
 <p>Plots were arranged in pairs at 12 different locations
 (<code>plot_number</code>). One plot in each pair was randomly selected
 for treatment with the microbial pesticide <em>Bacillus
@@ -694,31 +695,20 @@ organized, there is not a simple solution using <code>dplyr</code>
 functions.</p>
 <div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">caterpillar</span></span></code></pre></div>
-<pre><code><span><span class="co">##    plot_number    treatment caterpillar_count</span></span>
-<span><span class="co">## 1            1      control                23</span></span>
-<span><span class="co">## 2            1 bt_herbicide                19</span></span>
-<span><span class="co">## 3            2      control                18</span></span>
-<span><span class="co">## 4            2 bt_herbicide                18</span></span>
-<span><span class="co">## 5            3      control                29</span></span>
-<span><span class="co">## 6            3 bt_herbicide                24</span></span>
-<span><span class="co">## 7            4      control                22</span></span>
-<span><span class="co">## 8            4 bt_herbicide                23</span></span>
-<span><span class="co">## 9            5      control                33</span></span>
-<span><span class="co">## 10           5 bt_herbicide                31</span></span>
-<span><span class="co">## 11           6      control                20</span></span>
-<span><span class="co">## 12           6 bt_herbicide                22</span></span>
-<span><span class="co">## 13           7      control                17</span></span>
-<span><span class="co">## 14           7 bt_herbicide                16</span></span>
-<span><span class="co">## 15           8      control                25</span></span>
-<span><span class="co">## 16           8 bt_herbicide                23</span></span>
-<span><span class="co">## 17           9      control                27</span></span>
-<span><span class="co">## 18           9 bt_herbicide                24</span></span>
-<span><span class="co">## 19          10      control                30</span></span>
-<span><span class="co">## 20          10 bt_herbicide                26</span></span>
-<span><span class="co">## 21          11      control                25</span></span>
-<span><span class="co">## 22          11 bt_herbicide                24</span></span>
-<span><span class="co">## 23          12      control                27</span></span>
-<span><span class="co">## 24          12 bt_herbicide                28</span></span></code></pre>
+<pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 24 × 3</span></span></span>
+<span><span class="co">##    plot_number treatment    caterpillar_count</span></span>
+<span><span class="co">##          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 1</span>           1 control                     23</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 2</span>           1 bt_herbicide                19</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 3</span>           2 control                     18</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 4</span>           2 bt_herbicide                18</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 5</span>           3 control                     29</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 6</span>           3 bt_herbicide                24</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 7</span>           4 control                     22</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 8</span>           4 bt_herbicide                23</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 9</span>           5 control                     33</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">10</span>           5 bt_herbicide                31</span></span>
+<span><span class="co">## <span style="color: #949494;"># ℹ 14 more rows</span></span></span></code></pre>
 <div class="section level4">
 <h4 id="data-wrangling">Data Wrangling<a class="anchor" aria-label="anchor" href="#data-wrangling"></a>
 </h4>
@@ -734,7 +724,7 @@ Here, we want to know what the effect is within plots, so we will use
 <pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 24 × 4</span></span></span>
 <span><span class="co">## <span style="color: #949494;"># Groups:   plot_number [12]</span></span></span>
 <span><span class="co">##    plot_number treatment    caterpillar_count difference</span></span>
-<span><span class="co">##          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
+<span><span class="co">##          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
 <span><span class="co">## <span style="color: #BCBCBC;"> 1</span>           1 control                     23          4</span></span>
 <span><span class="co">## <span style="color: #BCBCBC;"> 2</span>           1 bt_herbicide                19          4</span></span>
 <span><span class="co">## <span style="color: #BCBCBC;"> 3</span>           2 control                     18          0</span></span>
@@ -766,7 +756,7 @@ object which we can use for our formal analysis.</p>
 <pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 12 × 2</span></span></span>
 <span><span class="co">## <span style="color: #949494;"># Groups:   plot_number [12]</span></span></span>
 <span><span class="co">##    plot_number difference</span></span>
-<span><span class="co">##          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
+<span><span class="co">##          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
 <span><span class="co">## <span style="color: #BCBCBC;"> 1</span>           1          4</span></span>
 <span><span class="co">## <span style="color: #BCBCBC;"> 2</span>           2          0</span></span>
 <span><span class="co">## <span style="color: #BCBCBC;"> 3</span>           3          5</span></span>
