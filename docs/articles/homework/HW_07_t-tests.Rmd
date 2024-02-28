@@ -172,7 +172,7 @@ darwin_maize <- read_csv("data/darwin_maize.csv")
 3.4 Add a comment to your script interpreting the results of your analysis.
 ```{r}
 # read in the data
-darwin_maize <- read.csv(here::here("data/darwin_maize.csv"))
+darwin_maize <- read_csv(here::here("data/darwin_maize.csv"))
 ```
 
 3.1 Add a comment to your script describing the null and alternative hypotheses. Put each hypothesis on its own line.  

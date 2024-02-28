@@ -75,7 +75,7 @@ ggplot(data = data.frame(y = y),
        aes(y = y)) +
   geom_boxplot() +
   geom_hline(yintercept = 7,
-             size = 1.5,
+             linewidth = 1.5,
              linetype = "dashed",
              color = "pink") +
   theme_bw()
@@ -397,7 +397,7 @@ ggplot(cat_diff,
   geom_boxplot() +
   geom_hline(yintercept = 0,
              color = "dodgerblue",
-             size = 1.5,
+             linewidth = 1.5,
              linetype = "dashed") +
   theme_bw()
   
@@ -413,7 +413,7 @@ cat_diff %>%
   geom_boxplot(fill = "mediumorchid1") +
   geom_hline(yintercept = 0,
              linetype = "dashed",
-             size = 1.5) +
+             linewidth = 1.5) +
   theme_bw()
 ```
 
