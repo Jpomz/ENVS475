@@ -599,10 +599,22 @@ at-a-time we can see there’s not much different.</p>
 <p>The intercept is the mean estimate for our reference group, which in
 this case is the OJ supplement at D0.5. We will need to keep this in
 mind when we look at all of the other coefficient estimates.</p>
-<p>Other Coefficients:<br>
-* <code>suppVC</code> = <code>OJ:D0.5</code> -
-<code>VC:D0.5   *</code>doseD1<code>=</code>OJ:D0.5<code>-</code>OJ:D1<code>*</code>doseD2<code>=</code>OJ:D0.5<code>-</code>OJ:D2<code>*</code>suppVC:doseD1<code>=</code>OJ:D0.5<code>-</code>VC:D1<code>*</code>suppVC:doseD2<code>=</code>OJ:D0.5<code>-</code>VC:D2`<br>
-### Interpretation of p-values</p>
+<p>Other Coefficients:</p>
+<ul>
+<li><p><code>suppVC</code> = <code>OJ:D0.5</code> -
+<code>VC:D0.5</code></p></li>
+<li><p><code>doseD1</code> = <code>OJ:D0.5</code> -
+<code>OJ:D1</code></p></li>
+<li><p><code>doseD2</code> = <code>OJ:D0.5</code> -
+<code>OJ:D2</code></p></li>
+<li><p><code>suppVC:doseD1</code> = <code>OJ:D0.5</code> -
+<code>VC:D1</code></p></li>
+<li><p><code>suppVC:doseD2</code> = <code>OJ:D0.5</code> -
+<code>VC:D2</code></p></li>
+</ul>
+<div class="section level4">
+<h4 id="interpretation-of-p-values">Interpretation of p-values<a class="anchor" aria-label="anchor" href="#interpretation-of-p-values"></a>
+</h4>
 <ul>
 <li>Intercept: Is mean length of <code>OJ:D0.5</code> = 0?
 <ul>
@@ -626,6 +638,7 @@ hypothesis that those differences = 0. (In other words, there
 </ul>
 </li>
 </ul>
+</div>
 </div>
 <div class="section level3">
 <h3 id="tukeys-hsd">Tukey’s HSD<a class="anchor" aria-label="anchor" href="#tukeys-hsd"></a>
