@@ -3,7 +3,9 @@
 
 # ENVS475
 
-Course materials for ENVS475 at Colorado Mesa University
+Course materials for ENVS475 at Colorado Mesa University. 
+
+The course website can be found here: [https://jpomz.github.io/ENVS475/](https://jpomz.github.io/ENVS475/)
 
 ## About
 
