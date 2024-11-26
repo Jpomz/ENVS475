@@ -37,6 +37,8 @@ navbar:
           href: articles/lectures/lecture_07_t-tests/lecture_07_t-tests.html
         - text: "Lecture 10: ANOVA"
           href: articles/lectures/lecture_10_anova/lecture_10_anova.html
+        - text: "Lecture 11: Factorial"
+          href: articles/lectures/lecture_11_factorial/lecture_11_factorial_anova.pdf
     - text: "Labs"
       icon: fa-laptop-code
       menu:
