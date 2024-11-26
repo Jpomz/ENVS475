@@ -15,9 +15,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-library(dplyr)
-library(ggplot2)
-crop <- read.csv(here::here("data/crop_anova.csv"))
+library(tidyverse)
+crop <- read_csv(here::here("data/crop_anova.csv"))
 
 ```
 
@@ -39,8 +38,7 @@ crop <- read.csv(here::here("data/crop_anova.csv"))
 
 ```{r, eval=FALSE}
 # load libraries
-library(dplyr)
-library(ggplot2)
+library(tidyverse)
 ```
 
 # Data
@@ -52,7 +50,7 @@ library(ggplot2)
 
 ```{r, eval = FALSE}
 # read in data
-crop <- read.csv("data/crop_anova.csv")
+crop <- read_csv("data/crop_anova.csv")
 ```
 
 

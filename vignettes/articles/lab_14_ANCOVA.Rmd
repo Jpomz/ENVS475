@@ -10,8 +10,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(dplyr)
-library(ggplot2)
+library(tidyverse)
 library(Sleuth3)
 df <- case1402
 ```
@@ -32,9 +31,8 @@ This week, we will be using the `lm()` function to fit a linear regression to da
 For this lab, we will be using the `dplyr`, `ggplot2`, and `Sleuth3` packages. Make sure all packages are installed on your computer (you may need to install `Sleuth3`), and then run the following code:
 
 ```{r, eval=FALSE}
+library(tidyverse)
 library(Sleuth3)
-library(dplyr)
-library(ggplot2)
 ```
 
 ## Hypotheses, plain words  

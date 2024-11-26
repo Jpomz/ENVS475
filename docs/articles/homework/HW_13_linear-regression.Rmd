@@ -15,11 +15,10 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-library(dplyr)
-library(ggplot2)
-trout <- read.csv(here::here("data/trout_cu.csv")) %>%
+library(tidyverse)
+trout <- read_csv(here::here("data/trout_cu.csv")) %>%
   as_tibble()
-island <- read.csv(here::here("data/island_plants.csv")) %>%
+island <- read_csv(here::here("data/island_plants.csv")) %>%
   as_tibble()
 ```
 
@@ -41,8 +40,7 @@ island <- read.csv(here::here("data/island_plants.csv")) %>%
 
 ```{r, eval=FALSE}
 # load libraries
-library(dplyr)
-library(ggplot2)
+library(tidyverse)
 ```
 
 # Data
@@ -53,12 +51,9 @@ Download the `trout_cu.csv` and `island_plants.csv` files from D2L and put it in
 
 ```{r, eval = FALSE}
 # read in data for problem 1
-trout <- read.csv("data/trout_cu.csv") %>%
-  as_tibble()
-
+trout <- read_csv("data/trout_cu.csv") 
 # data for problem 2
-island <- read.csv("data/island_plants.csv") %>%
-  as_tibble()
+island <- read_csv("data/island_plants.csv") 
 ```
 
 
@@ -140,8 +135,7 @@ If you haven't already done so, load the data for problem 2.
 
 ```{r, eval = FALSE}
 # data for problem 2
-island <- read.csv("data/island_plants.csv") %>%
-  as_tibble()
+island <- read_csv("data/island_plants.csv") 
 ```
 ### Data background  
 

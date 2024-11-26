@@ -15,10 +15,9 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-library(dplyr)
-library(ggplot2)
-wheat <- read.csv(here::here("data/wheat_2-way.csv"))
-selenium <-read.csv(here::here("data/selenium_2-way-anova.csv")) 
+library(tidyverse)
+wheat <- read_csv(here::here("data/wheat_2-way.csv"))
+selenium <-read_csv(here::here("data/selenium_2-way-anova.csv")) 
 ```
 
 
@@ -39,8 +38,7 @@ selenium <-read.csv(here::here("data/selenium_2-way-anova.csv"))
 
 ```{r, eval=FALSE}
 # load libraries
-library(dplyr)
-library(ggplot2)
+library(tidyverse)
 ```
 
 # Data
@@ -52,8 +50,8 @@ library(ggplot2)
 
 ```{r, eval = FALSE}
 # read in data
-wheat <- read.csv("data/wheat_2-way.csv")
-selenium <-read.csv("data/selenium_2-way-anova.csv")
+wheat <- read_csv("data/wheat_2-way.csv")
+selenium <-read_csv("data/selenium_2-way-anova.csv")
 ```
 
 
@@ -137,7 +135,7 @@ For this problem, we will be using a simulated data set comparing the effects of
 Download the data from D2L and load it into your R session. 
 
 ```{r, eval = FALSE}
-selenium <-read.csv("data/selenium_2-way-anova.csv")
+selenium <-read_csv("data/selenium_2-way-anova.csv")
 ```
 
 ### Data background  

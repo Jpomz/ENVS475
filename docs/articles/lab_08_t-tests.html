@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lab 08: t-tests • ENVS475</title>
+<title>Lab 07: t-tests • ENVS475</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/spacelab/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Lab 08: t-tests">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Lab 07: t-tests">
 <meta property="og:description" content="ENVS475">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -72,9 +72,6 @@
   <ul class="dropdown-menu" role="menu">
 <li>
       <a href="../articles/lectures/lecture_01/lecture_01.html">Lecture 01: Course introduction</a>
-    </li>
-    <li>
-      <a href="../articles/lectures/lecture_02_normal/lecture_02_normal.html">Lecture 02: Normal Distributions</a>
     </li>
     <li>
       <a href="../articles/lectures/lecture_03_basic-stats/lecture_03_basic-stats.html">Lecture 03: Basic Statistics</a>
@@ -223,7 +220,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Lab 08: t-tests</h1>
+      <h1 data-toc-skip>Lab 07: t-tests</h1>
             <h3 data-toc-skip class="subtitle">ENVS475: Experimental
 Analysis and Design</h3>
             
@@ -255,8 +252,7 @@ classic t-tests from a linear modelling perspective.</p>
 <code>ggplot2</code> packages. Make sure both packages are installed on
 your computer, and then run the following code:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="data">Data<a class="anchor" aria-label="anchor" href="#data"></a>
@@ -310,15 +306,10 @@ indicate where our value of interest (7) is.</p>
 <span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">y</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html" class="external-link">geom_hline</a></span><span class="op">(</span>yintercept <span class="op">=</span> <span class="fl">7</span>,</span>
-<span>             size <span class="op">=</span> <span class="fl">1.5</span>,</span>
+<span>             linewidth <span class="op">=</span> <span class="fl">1.5</span>,</span>
 <span>             linetype <span class="op">=</span> <span class="st">"dashed"</span>,</span>
 <span>             color <span class="op">=</span> <span class="st">"pink"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.</span></span>
-<span><span class="co">## <span style="color: #00BBBB;">ℹ</span> Please use `linewidth` instead.</span></span>
-<span><span class="co">## <span style="color: #555555;">This warning is displayed once every 8 hours.</span></span></span>
-<span><span class="co">## <span style="color: #555555;">Call `lifecycle::last_lifecycle_warnings()` to see where this warning was</span></span></span>
-<span><span class="co">## <span style="color: #555555;">generated.</span></span></span></code></pre>
 <p><img src="lab_08_t-tests_files/figure-html/unnamed-chunk-3-1.png" width="700"></p>
 <p>For the one-sample t-test, we will calculate all necessary variables
 manually, and then compare it to using the <code><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm()</a></code>
@@ -330,24 +321,24 @@ following:</p>
 <p>Where <span class="math inline">\(\bar{y}\)</span> is the mean, <span class="math inline">\(\mu_0\)</span> is the value of interest (pH = 7)
 and <span class="math inline">\(SEM\)</span> is calculated as <span class="math inline">\(s / \sqrt(n)\)</span>. Let’s calculate these
 values in R and store them as objects.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">y_bar</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span></span>
 <span><span class="va">y_bar</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 6.6</span></span></code></pre>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mu_0</span> <span class="op">&lt;-</span> <span class="fl">7</span></span>
 <span><span class="va">mu_0</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 7</span></span></code></pre>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">y_sd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html" class="external-link">sd</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span></span>
 <span><span class="va">y_sd</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 0.4527693</span></span></code></pre>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">y_sem</span> <span class="op">&lt;-</span> <span class="va">y_sd</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">sqrt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">y_sem</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 0.2024846</span></span></code></pre>
 <p>Now let’s calculate the t-statistic</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">t_stat</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">y_bar</span> <span class="op">-</span> <span class="va">mu_0</span><span class="op">)</span> <span class="op">/</span> <span class="va">y_sem</span></span>
 <span><span class="va">t_stat</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] -1.975459</span></span></code></pre>
@@ -359,14 +350,14 @@ normal distribution, but now we are looking at the t-distribution. for
 degrees of freedom (df = n - 1 = 4). The standard <span class="math inline">\(\alpha\)</span> value is 0.05, but since this is a
 2-tailed test we have to divide it by 2 (hence 0.025) in order to
 account for both tails.</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">t_crit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/TDist.html" class="external-link">qt</a></span><span class="op">(</span><span class="fl">0.025</span>, df <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">t_crit</span>, <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] -2.78</span></span></code></pre>
 <p>Is our <code>t_stat</code> value <span class="math inline">\(\ge\)</span> our critical value? Note that we are
 going to use the absolute values so that we do not need to worry about
 using the proper &gt; or &lt; with negative numbers.</p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">t_stat</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">t_crit</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] FALSE</span></span></code></pre>
 <p>It is not, so we would fail to reject our null hypothesis. We can
@@ -377,7 +368,7 @@ is a 2-tailed test. Also, we are going to use the absolute value of our
 <code>t_stat</code> and set the <code>lower.tail = FALSE</code> argument
 within <code><a href="https://rdrr.io/r/stats/TDist.html" class="external-link">pt()</a></code>. This ensures that we don’t need to worry about
 mixing up our + and - signs when calculating a p-value.</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">one_samp_p_val</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/TDist.html" class="external-link">pt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">t_stat</span><span class="op">)</span>, df <span class="op">=</span> <span class="fl">4</span>, lower.tail <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">*</span> <span class="fl">2</span></span>
 <span><span class="va">one_samp_p_val</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 0.1194206</span></span></code></pre>
@@ -399,7 +390,7 @@ our values and test the hypothesis formally.</p>
 value is 7. When we run a one-sample t-test in <code><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm()</a></code>, we
 have to subtract the value of interest from our data. Review the
 numerator in the formula for the one-sample t-statistic above.</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">one_sample_fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">y</span> <span class="op">-</span> <span class="va">mu_0</span> <span class="op">~</span> <span class="fl">1</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">one_sample_fit</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## </span></span>
@@ -419,19 +410,19 @@ numerator in the formula for the one-sample t-statistic above.</p>
 in the output table (note that we are subtracting mu_0 from y_bar to put
 it on the same scale as our <code>(Intercept)</code> estimate in the
 table):</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">y_bar</span> <span class="op">-</span> <span class="va">mu_0</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] -0.4</span></span></code></pre>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">y_sd</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 0.4527693</span></span></code></pre>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">y_sem</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 0.2024846</span></span></code></pre>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">t_crit</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] -2.776445</span></span></code></pre>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">one_samp_p_val</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 0.1194206</span></span></code></pre>
 <div class="section level4">
@@ -453,14 +444,14 @@ Data</p>
 <p>We will make a data.frame and call it <code>tree</code>. Normally,
 you should type out everything in this class for practice, but copy and
 paste the following code in order to avoid typing a mistake.</p>
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tree</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
 <span>  elevation <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Low"</span>, <span class="st">"High"</span><span class="op">)</span>, each <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>,</span>
 <span>  dens <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">18</span>, <span class="fl">17</span>, <span class="fl">29</span>, <span class="fl">31</span>, <span class="fl">14</span>, <span class="fl">16</span>, <span class="fl">22</span>, <span class="fl">15</span>, <span class="fl">2</span>, <span class="fl">11</span>, <span class="fl">6</span>, <span class="fl">8</span>, <span class="fl">0</span>, <span class="fl">3</span>, <span class="fl">19</span>, <span class="fl">1</span>, <span class="fl">6</span>, <span class="fl">5</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>Here, <code>dens</code> is the density of trees, and was simulated
 for this exercise. Let’s once again plot our data to visualize how they
 are distributed.</p>
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">tree</span>,</span>
 <span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">elevation</span>, </span>
 <span>           y <span class="op">=</span> <span class="va">dens</span>,</span>
@@ -498,7 +489,7 @@ call. After summarizing, we will use a <code><a href="https://dplyr.tidyverse.or
 add a new column/variable for the SEM. Finally, I will also modify the
 data.frame into a tibble to make the display in future calls easier to
 read.</p>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tree_summary</span> <span class="op">&lt;-</span> <span class="va">tree</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">elevation</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarise</a></span><span class="op">(</span>mean_density <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">dens</span><span class="op">)</span>,</span>
@@ -529,26 +520,26 @@ in the square brackets in the following code?</p>
 tree_summary[?,?]</code></pre>
 <p>The following code will extract the means and SEMs from the
 <code>tree_summary</code> object.</p>
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">y_high</span> <span class="op">&lt;-</span> <span class="va">tree_summary</span><span class="op">[</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">]</span></span>
 <span><span class="va">y_high</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 6.1</span></span></code></pre>
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">y_low</span> <span class="op">&lt;-</span> <span class="va">tree_summary</span><span class="op">[</span><span class="fl">2</span>,<span class="fl">2</span><span class="op">]</span></span>
 <span><span class="va">y_low</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 19.2</span></span></code></pre>
-<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sem_high</span> <span class="op">&lt;-</span> <span class="va">tree_summary</span><span class="op">[</span><span class="fl">1</span>,<span class="fl">5</span><span class="op">]</span></span>
 <span><span class="va">sem_high</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 1.779201</span></span></code></pre>
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sem_low</span> <span class="op">&lt;-</span> <span class="va">tree_summary</span><span class="op">[</span><span class="fl">2</span>,<span class="fl">5</span><span class="op">]</span></span>
 <span><span class="va">sem_low</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 1.948219</span></span></code></pre>
 <p>Now, we will calculate the <span class="math inline">\(t_{statistic}\)</span> using this equation:</p>
 <p><span class="math display">\[\large t = \frac{\bar{y}_{low}
 -\bar{y}_{high}}{\sqrt{SEM_{low}^2 + SEM^2_{high}}}\]</span></p>
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">t_stat_trees</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">y_low</span> <span class="op">-</span> <span class="va">y_high</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">sqrt</a></span><span class="op">(</span><span class="va">sem_high</span><span class="op">^</span><span class="fl">2</span> <span class="op">+</span> <span class="va">sem_low</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="va">t_stat_trees</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 4.965146</span></span></code></pre>
@@ -558,16 +549,16 @@ reject our null hypothesis. To calculate the t-critical value, we will
 once again use <code><a href="https://rdrr.io/r/stats/TDist.html" class="external-link">qt()</a></code> funciton. Our degrees of freedom here
 is 18 (total n = 20, but we need to subtract 1 for each group: 20 - (1 +
 1) = 18).</p>
-<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">t_crit_trees</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/TDist.html" class="external-link">qt</a></span><span class="op">(</span><span class="fl">0.025</span>, df <span class="op">=</span> <span class="fl">18</span><span class="op">)</span></span>
 <span><span class="va">t_crit_trees</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] -2.100922</span></span></code></pre>
 <p>To compare our t-critical and t-statistic, we will once again use the
 absolute values to avoid mixing up our signs.</p>
-<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">t_stat_trees</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">t_crit_trees</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] TRUE</span></span></code></pre>
-<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">two_samp_p_val</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/TDist.html" class="external-link">pt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">t_stat_trees</span><span class="op">)</span>, df <span class="op">=</span> <span class="fl">18</span>, lower.tail <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">*</span> <span class="fl">2</span></span>
 <span><span class="va">two_samp_p_val</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 0.0001001215</span></span></code></pre>
@@ -593,7 +584,7 @@ that tree densities differ based on elevation (<span class="math inline">\(t_{st
 <p>The hand calculations for a 2-sample t-test are tedious. Luckily we
 can run the same analysis in just a few lines of code using the
 <code><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm()</a></code> function.</p>
-<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">two_sample_fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">dens</span> <span class="op">~</span> <span class="va">elevation</span>, data <span class="op">=</span> <span class="va">tree</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">two_sample_fit</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## </span></span>
@@ -646,22 +637,24 @@ assignment</strong><a class="anchor" aria-label="anchor" href="#you-should-now-b
 </h3>
 <p>For this section of the lab, you will need to download the
 <code>caterpillar.csv</code> file from D2L.</p>
-<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">caterpillar</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="st">"data/caterpillar.csv"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">caterpillar</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv</a></span><span class="op">(</span><span class="st">"data/caterpillar.csv"</span><span class="op">)</span></span></code></pre></div>
 <p>Briefly, this is data from a controlled experiment looking herbicide
 effects on non-target caterpillars. Twelve plots were split, and each
 side was randomly assigned as a control or herbicide treatment. Each
 plot is an experimental unit and the treatments are “paired” within
 it.</p>
-<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">caterpillar</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##   plot_number    treatment caterpillar_count</span></span>
-<span><span class="co">## 1           1      control                23</span></span>
-<span><span class="co">## 2           1 bt_herbicide                19</span></span>
-<span><span class="co">## 3           2      control                18</span></span>
-<span><span class="co">## 4           2 bt_herbicide                18</span></span>
-<span><span class="co">## 5           3      control                29</span></span>
-<span><span class="co">## 6           3 bt_herbicide                24</span></span></code></pre>
+<pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 6 × 3</span></span></span>
+<span><span class="co">##   plot_number treatment    caterpillar_count</span></span>
+<span><span class="co">##         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">1</span>           1 control                     23</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">2</span>           1 bt_herbicide                19</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">3</span>           2 control                     18</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">4</span>           2 bt_herbicide                18</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">5</span>           3 control                     29</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">6</span>           3 bt_herbicide                24</span></span></code></pre>
 <p>Plots were arranged in pairs at 12 different locations
 (<code>plot_number</code>). One plot in each pair was randomly selected
 for treatment with the microbial pesticide <em>Bacillus
@@ -695,33 +688,22 @@ the same, there should be a <em>difference</em>.</p>
 each plot or experimental unit. If we look at the way the data is
 organized, there is not a simple solution using <code>dplyr</code>
 functions.</p>
-<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">caterpillar</span></span></code></pre></div>
-<pre><code><span><span class="co">##    plot_number    treatment caterpillar_count</span></span>
-<span><span class="co">## 1            1      control                23</span></span>
-<span><span class="co">## 2            1 bt_herbicide                19</span></span>
-<span><span class="co">## 3            2      control                18</span></span>
-<span><span class="co">## 4            2 bt_herbicide                18</span></span>
-<span><span class="co">## 5            3      control                29</span></span>
-<span><span class="co">## 6            3 bt_herbicide                24</span></span>
-<span><span class="co">## 7            4      control                22</span></span>
-<span><span class="co">## 8            4 bt_herbicide                23</span></span>
-<span><span class="co">## 9            5      control                33</span></span>
-<span><span class="co">## 10           5 bt_herbicide                31</span></span>
-<span><span class="co">## 11           6      control                20</span></span>
-<span><span class="co">## 12           6 bt_herbicide                22</span></span>
-<span><span class="co">## 13           7      control                17</span></span>
-<span><span class="co">## 14           7 bt_herbicide                16</span></span>
-<span><span class="co">## 15           8      control                25</span></span>
-<span><span class="co">## 16           8 bt_herbicide                23</span></span>
-<span><span class="co">## 17           9      control                27</span></span>
-<span><span class="co">## 18           9 bt_herbicide                24</span></span>
-<span><span class="co">## 19          10      control                30</span></span>
-<span><span class="co">## 20          10 bt_herbicide                26</span></span>
-<span><span class="co">## 21          11      control                25</span></span>
-<span><span class="co">## 22          11 bt_herbicide                24</span></span>
-<span><span class="co">## 23          12      control                27</span></span>
-<span><span class="co">## 24          12 bt_herbicide                28</span></span></code></pre>
+<pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 24 × 3</span></span></span>
+<span><span class="co">##    plot_number treatment    caterpillar_count</span></span>
+<span><span class="co">##          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 1</span>           1 control                     23</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 2</span>           1 bt_herbicide                19</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 3</span>           2 control                     18</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 4</span>           2 bt_herbicide                18</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 5</span>           3 control                     29</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 6</span>           3 bt_herbicide                24</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 7</span>           4 control                     22</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 8</span>           4 bt_herbicide                23</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;"> 9</span>           5 control                     33</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">10</span>           5 bt_herbicide                31</span></span>
+<span><span class="co">## <span style="color: #949494;"># ℹ 14 more rows</span></span></span></code></pre>
 <div class="section level4">
 <h4 id="data-wrangling">Data Wrangling<a class="anchor" aria-label="anchor" href="#data-wrangling"></a>
 </h4>
@@ -730,14 +712,14 @@ functions.</p>
 First, we need to group the data so that it uses the correct numbers.
 Here, we want to know what the effect is within plots, so we will use
 <code>group_by(plot_number)</code>.</p>
-<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">caterpillar</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">plot_number</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>difference <span class="op">=</span> <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/diff.html" class="external-link">diff</a></span><span class="op">(</span><span class="va">caterpillar_count</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 24 × 4</span></span></span>
 <span><span class="co">## <span style="color: #949494;"># Groups:   plot_number [12]</span></span></span>
 <span><span class="co">##    plot_number treatment    caterpillar_count difference</span></span>
-<span><span class="co">##          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
+<span><span class="co">##          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
 <span><span class="co">## <span style="color: #BCBCBC;"> 1</span>           1 control                     23          4</span></span>
 <span><span class="co">## <span style="color: #BCBCBC;"> 2</span>           1 bt_herbicide                19          4</span></span>
 <span><span class="co">## <span style="color: #BCBCBC;"> 3</span>           2 control                     18          0</span></span>
@@ -759,7 +741,7 @@ observation per plot). We can modify our data pipeline above to
 <code><a href="https://dplyr.tidyverse.org/reference/distinct.html" class="external-link">distinct()</a></code> to only keep unique, individual observations. In
 this step we will also save the output of this data pipeline as a new
 object which we can use for our formal analysis.</p>
-<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cat_diff</span> <span class="op">&lt;-</span> <span class="va">caterpillar</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">plot_number</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>difference <span class="op">=</span> <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/diff.html" class="external-link">diff</a></span><span class="op">(</span><span class="va">caterpillar_count</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
@@ -769,7 +751,7 @@ object which we can use for our formal analysis.</p>
 <pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 12 × 2</span></span></span>
 <span><span class="co">## <span style="color: #949494;"># Groups:   plot_number [12]</span></span></span>
 <span><span class="co">##    plot_number difference</span></span>
-<span><span class="co">##          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
+<span><span class="co">##          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
 <span><span class="co">## <span style="color: #BCBCBC;"> 1</span>           1          4</span></span>
 <span><span class="co">## <span style="color: #BCBCBC;"> 2</span>           2          0</span></span>
 <span><span class="co">## <span style="color: #BCBCBC;"> 3</span>           3          5</span></span>
@@ -785,7 +767,7 @@ object which we can use for our formal analysis.</p>
 <p><strong>REMEMBER</strong> that when you are developing and working
 out a pipeline like this you should add only one command at a time. For
 example:</p>
-<div class="sourceCode" id="cb65"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># first step</span></span>
 <span><span class="va">caterpillar</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">plot_number</span><span class="op">)</span></span>
@@ -829,13 +811,13 @@ deviation of the difference which is more tedious to calculate. Another
 good reason to use the <code><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm()</a></code> function - less chance to make
 mistakes!</p>
 <p>But once again let’s start by plotting our data.</p>
-<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb65"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">cat_diff</span>, </span>
 <span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">difference</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html" class="external-link">geom_hline</a></span><span class="op">(</span>yintercept <span class="op">=</span> <span class="fl">0</span>,</span>
 <span>             color <span class="op">=</span> <span class="st">"dodgerblue"</span>,</span>
-<span>             size <span class="op">=</span> <span class="fl">1.5</span>,</span>
+<span>             linewidth <span class="op">=</span> <span class="fl">1.5</span>,</span>
 <span>             linetype <span class="op">=</span> <span class="st">"dashed"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="lab_08_t-tests_files/figure-html/unnamed-chunk-26-1.png" width="700"></p>
@@ -847,13 +829,13 @@ the default in the <code><a href="https://rdrr.io/r/stats/lm.html" class="extern
 subtract anything from the response side of the formula.</p>
 <p>We can quickly plot these differences to get an idea of the overall
 effect.</p>
-<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cat_diff</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">difference</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"mediumorchid1"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html" class="external-link">geom_hline</a></span><span class="op">(</span>yintercept <span class="op">=</span> <span class="fl">0</span>,</span>
 <span>             linetype <span class="op">=</span> <span class="st">"dashed"</span>,</span>
-<span>             size <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span> <span class="op">+</span></span>
+<span>             linewidth <span class="op">=</span> <span class="fl">1.5</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="lab_08_t-tests_files/figure-html/unnamed-chunk-27-1.png" width="700"></p>
 <p>In this plot, the reference value (<span class="math inline">\(\mu_0
@@ -871,7 +853,7 @@ example, we will skip the hand calculation and jump straight to using
 <code>cat_diff</code> object. We will use that object to calculate a
 one-sample t-test. Using the <code><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm()</a></code> function, a one sample
 t-test is the same as an intercept-only model.</p>
-<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">paired_fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">difference</span> <span class="op">~</span> <span class="fl">1</span>, data <span class="op">=</span> <span class="va">cat_diff</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">paired_fit</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## </span></span>
@@ -924,7 +906,7 @@ treats it as continuous which is not in fact correct. It’s always
 important to think about the class or type of your individual variables
 to ensure you are running the analysis that you think you are
 running.</p>
-<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">caterpillar_count</span> <span class="op">~</span> </span>
 <span>             <span class="va">treatment</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">as.factor</a></span><span class="op">(</span><span class="va">plot_number</span><span class="op">)</span>,</span>
 <span>           data <span class="op">=</span> <span class="va">caterpillar</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>

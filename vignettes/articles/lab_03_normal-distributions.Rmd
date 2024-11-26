@@ -1,5 +1,5 @@
 ---
-title: "Lecture 02b notes: Normal Distributions"
+title: "Lab 03: Normal Distributions"
 author: "Justin Pomeranz"
 date: "`r format(Sys.time(), '%B, %Y')`"
 output: 

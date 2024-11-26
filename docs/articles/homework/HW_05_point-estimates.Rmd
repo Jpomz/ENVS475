@@ -69,7 +69,7 @@ Be sure to download the data `galapago-finches.csv` and from D2L and place them 
 Copy the following code and put it at the top of your homework script:
 
 ```{r}
-finch <- read.csv("data/galapago-finches.csv")
+finch <- read_csv("data/galapago-finches.csv")
 ```
 
 

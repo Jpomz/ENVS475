@@ -40,9 +40,8 @@ knitr::opts_chunk$set(
 * Copy the following code into the beginning of your homework script to load the `dplyr` package:
 ```{r, eval=FALSE}
 # load libraries
-library(dplyr)
-library(ggplot2)
 library(arm)
+library(tidyverse)
 ```
 
 # Data
@@ -57,11 +56,10 @@ Copy the following code and put it at the top of your homework script:
 
 ```{r}
 # read in full data set
-finch <- read.csv("data/galapago-finches.csv")
+finch <- read_csv("data/galapago-finches.csv")
 # filter out scandens data and make a tibble
 scandens <- finch %>%
-  filter(species == "scandens") %>%
-  as_tibble()
+  filter(species == "scandens") 
 
 # change the year column to a character data type
 scandens$year <- as.character(scandens$year)
@@ -104,14 +102,15 @@ scandens$year <- as.character(scandens$year)
   + In the `stat_summary()` function, set `shape = 18` and `size = 6`.  
   
 ## Problem 3: Confidence Intervals  
+
 1. Using `confint()`, calculate and display a 95% confidence interval for the estimated difference in beak length between 1975 and 2012.  
 2. Use `coefplot()` to display a graphical representation of the approximate 95% CI for the estimated difference in beak length between 1975 and 2012.  
 
 3. Use a comment in your script to interpret the results of problem 3.1 and 3.2. Are these interpretations in agreement with each other?  
 
 4. Use `confint()` to calculate and display a 99% CI for the estimated difference in beak length between 1975 and 2012.  
-5. Use `coefplot()` to display a graphical representation of the approximate 99% CI for the estimated difference in beak length between 1975 and 2012.  
-6. Use a comment to interpret the results of problem 4.4 and 4.5 above. Are these results in agreement? Why do you think this is?  
+
+5. Use a comment to interpret the results of problem 3.4 above. Are these results in agreement? Why do you think this is?  
 + **Hint** use `dplyr`, `group_by()` and `summarize(n())` to show the number of observations within each year.  
 
 ## Problem 4: Assumptions  

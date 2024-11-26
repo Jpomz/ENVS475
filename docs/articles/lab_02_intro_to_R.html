@@ -74,9 +74,6 @@
       <a href="../articles/lectures/lecture_01/lecture_01.html">Lecture 01: Course introduction</a>
     </li>
     <li>
-      <a href="../articles/lectures/lecture_02_normal/lecture_02_normal.html">Lecture 02: Normal Distributions</a>
-    </li>
-    <li>
       <a href="../articles/lectures/lecture_03_basic-stats/lecture_03_basic-stats.html">Lecture 03: Basic Statistics</a>
     </li>
     <li>
@@ -1231,12 +1228,12 @@ rows of the data frame:</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 14</span></span></span>
 <span><span class="co">#&gt;   name      height  mass hair_color skin_color eye_color birth_year sex   gender</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Finn          <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> black      dark       dark              <span style="color: #BB0000;">NA</span> male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Rey           <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> brown      light      hazel             <span style="color: #BB0000;">NA</span> fema… femin…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Poe Dame…     <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> brown      light      brown             <span style="color: #BB0000;">NA</span> male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> BB8           <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> none       none       black             <span style="color: #BB0000;">NA</span> none  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Captain …     <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> unknown    unknown    unknown           <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Padmé Am…    165    45 brown      light      brown             46 fema… femin…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Tion Med…    206    80 none       grey       black             <span style="color: #BB0000;">NA</span> male  mascu…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Finn          <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> black      dark       dark              <span style="color: #BB0000;">NA</span> male  mascu…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Rey           <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> brown      light      hazel             <span style="color: #BB0000;">NA</span> fema… femin…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Poe Dame…     <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> brown      light      brown             <span style="color: #BB0000;">NA</span> male  mascu…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> BB8           <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> none       none       black             <span style="color: #BB0000;">NA</span> none  mascu…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Captain …     <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> none       none       unknown           <span style="color: #BB0000;">NA</span> fema… femin…</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   vehicles &lt;list&gt;, starships &lt;list&gt;</span></span></span></code></pre></div>
 <p><code><a href="https://rdrr.io/r/base/names.html" class="external-link">names()</a></code> just tells us the names of the columns (aka
@@ -1272,12 +1269,12 @@ rows for all the columns:</p>
 <span><span class="co">#&gt; 5 female  feminine  Alderaan   Human</span></span>
 <span><span class="co">#&gt; 6   male masculine  Tatooine   Human</span></span>
 <span><span class="co">#&gt;                                                                                                                                       films</span></span>
-<span><span class="co">#&gt; 1                                           The Empire Strikes Back, Revenge of the Sith, Return of the Jedi, A New Hope, The Force Awakens</span></span>
-<span><span class="co">#&gt; 2                    The Empire Strikes Back, Attack of the Clones, The Phantom Menace, Revenge of the Sith, Return of the Jedi, A New Hope</span></span>
-<span><span class="co">#&gt; 3 The Empire Strikes Back, Attack of the Clones, The Phantom Menace, Revenge of the Sith, Return of the Jedi, A New Hope, The Force Awakens</span></span>
-<span><span class="co">#&gt; 4                                                              The Empire Strikes Back, Revenge of the Sith, Return of the Jedi, A New Hope</span></span>
-<span><span class="co">#&gt; 5                                           The Empire Strikes Back, Revenge of the Sith, Return of the Jedi, A New Hope, The Force Awakens</span></span>
-<span><span class="co">#&gt; 6                                                                                     Attack of the Clones, Revenge of the Sith, A New Hope</span></span>
+<span><span class="co">#&gt; 1                                           A New Hope, The Empire Strikes Back, Return of the Jedi, Revenge of the Sith, The Force Awakens</span></span>
+<span><span class="co">#&gt; 2                    A New Hope, The Empire Strikes Back, Return of the Jedi, The Phantom Menace, Attack of the Clones, Revenge of the Sith</span></span>
+<span><span class="co">#&gt; 3 A New Hope, The Empire Strikes Back, Return of the Jedi, The Phantom Menace, Attack of the Clones, Revenge of the Sith, The Force Awakens</span></span>
+<span><span class="co">#&gt; 4                                                              A New Hope, The Empire Strikes Back, Return of the Jedi, Revenge of the Sith</span></span>
+<span><span class="co">#&gt; 5                                           A New Hope, The Empire Strikes Back, Return of the Jedi, Revenge of the Sith, The Force Awakens</span></span>
+<span><span class="co">#&gt; 6                                                                                     A New Hope, Attack of the Clones, Revenge of the Sith</span></span>
 <span><span class="co">#&gt;                             vehicles                starships</span></span>
 <span><span class="co">#&gt; 1 Snowspeeder, Imperial Speeder Bike X-wing, Imperial shuttle</span></span>
 <span><span class="co">#&gt; 2                                                            </span></span>
@@ -1366,19 +1363,19 @@ do actually need to type the <code>$</code>. For example,</p>
 <span><span class="co">#&gt; [25] "Bespin"         "Mon Cala"       "Chandrila"      NA              </span></span>
 <span><span class="co">#&gt; [29] "Endor"          "Sullust"        NA               "Cato Neimoidia"</span></span>
 <span><span class="co">#&gt; [33] "Coruscant"      "Naboo"          "Naboo"          "Naboo"         </span></span>
-<span><span class="co">#&gt; [37] "Naboo"          "Toydaria"       "Malastare"      "Naboo"         </span></span>
-<span><span class="co">#&gt; [41] "Tatooine"       "Dathomir"       "Ryloth"         "Ryloth"        </span></span>
-<span><span class="co">#&gt; [45] "Vulpter"        "Troiken"        "Tund"           "Haruun Kal"    </span></span>
-<span><span class="co">#&gt; [49] "Cerea"          "Glee Anselm"    "Iridonia"       "Coruscant"     </span></span>
-<span><span class="co">#&gt; [53] "Iktotch"        "Quermia"        "Dorin"          "Champala"      </span></span>
-<span><span class="co">#&gt; [57] "Naboo"          "Naboo"          "Tatooine"       "Geonosis"      </span></span>
-<span><span class="co">#&gt; [61] "Mirial"         "Mirial"         "Naboo"          "Serenno"       </span></span>
-<span><span class="co">#&gt; [65] "Alderaan"       "Concord Dawn"   "Zolan"          "Ojom"          </span></span>
-<span><span class="co">#&gt; [69] "Kamino"         "Kamino"         "Coruscant"      "Aleen Minor"   </span></span>
-<span><span class="co">#&gt; [73] NA               "Skako"          "Muunilinst"     "Shili"         </span></span>
-<span><span class="co">#&gt; [77] "Kalee"          "Kashyyyk"       "Alderaan"       "Umbara"        </span></span>
-<span><span class="co">#&gt; [81] "Utapau"         NA               NA               NA              </span></span>
-<span><span class="co">#&gt; [85] NA               NA               "Naboo"</span></span></code></pre></div>
+<span><span class="co">#&gt; [37] "Naboo"          "Naboo"          "Toydaria"       "Malastare"     </span></span>
+<span><span class="co">#&gt; [41] "Naboo"          "Tatooine"       "Dathomir"       "Ryloth"        </span></span>
+<span><span class="co">#&gt; [45] "Ryloth"         "Aleen Minor"    "Vulpter"        "Troiken"       </span></span>
+<span><span class="co">#&gt; [49] "Tund"           "Haruun Kal"     "Cerea"          "Glee Anselm"   </span></span>
+<span><span class="co">#&gt; [53] "Iridonia"       "Coruscant"      "Iktotch"        "Quermia"       </span></span>
+<span><span class="co">#&gt; [57] "Dorin"          "Champala"       "Naboo"          "Naboo"         </span></span>
+<span><span class="co">#&gt; [61] "Tatooine"       "Geonosis"       "Mirial"         "Mirial"        </span></span>
+<span><span class="co">#&gt; [65] "Naboo"          "Serenno"        "Alderaan"       "Concord Dawn"  </span></span>
+<span><span class="co">#&gt; [69] "Zolan"          "Ojom"           "Kamino"         "Kamino"        </span></span>
+<span><span class="co">#&gt; [73] "Coruscant"      NA               "Skako"          "Muunilinst"    </span></span>
+<span><span class="co">#&gt; [77] "Shili"          "Kalee"          "Kashyyyk"       "Alderaan"      </span></span>
+<span><span class="co">#&gt; [81] "Umbara"         "Utapau"         NA               NA              </span></span>
+<span><span class="co">#&gt; [85] NA               NA               NA</span></span></code></pre></div>
 <p>Notice that if you hit <code>tab</code> after you type the
 <code>$</code>, RStudio will bring up all of the column names in that
 dataframe and you can use the up or down buttons to find the one you
@@ -1571,7 +1568,7 @@ want observations of less than 80 <em>OR</em> &gt; 200:</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Yoda          66    17 white      green      brown          896   male  mascu…</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Roos Tar…    224    82 none       grey       orange          <span style="color: #BB0000;">NA</span>   male  mascu…</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Rugor Na…    206    <span style="color: #BB0000;">NA</span> none       green      orange          <span style="color: #BB0000;">NA</span>   male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Yarael P…    264    <span style="color: #BB0000;">NA</span> none       white      yellow          <span style="color: #BB0000;">NA</span>   male  mascu…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Ratts Ty…     79    15 none       grey, blue unknown         <span style="color: #BB0000;">NA</span>   male  mascu…</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   vehicles &lt;list&gt;, starships &lt;list&gt;</span></span></span></code></pre></div>
 <p>We can also filter out observations based on multiple columns using

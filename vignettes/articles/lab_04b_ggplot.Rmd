@@ -3,7 +3,7 @@ title: "Lab 04b: Graphing using ggplot"
 subtitle: "ENVS475: Experimental Analysis and Design"
 date: "`r format(Sys.time(), '%B, %Y')`"
 resource_files:
-  - data/ggplot_lab_invert_survey.csv
+- inst/extdata/ggplot_lab_invert_survey.csv
 output: 
   html_document:
     toc: true
@@ -13,7 +13,7 @@ output:
 ```{r setup, include=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
-invert <- read_csv(here::here("data/ggplot_lab_invert_survey.csv"))
+invert <- read_csv(here::here("inst/extdata/ggplot_lab_invert_survey.csv"))
 ```
 
 ## About
@@ -40,7 +40,7 @@ library(tidyverse)
 * * *Right-Click on invert.csv in your file explorer program to Open With Notepad or text editor*  
 * This data is comma separated, which is the default type in the `read_csv()` function. `read_csv()` is a part of the `tidyverse` and is the the main function that we will throughout this course.  
   * There is also a `read.csv()` function that comes with the base installation of R. It behaves very similarly but is slightly less "smart" than `read_csv()`. 
-* We'll call our data frame `invert` and assign it the output from `read-csv()`
+* We'll call our data frame `invert` and assign it the output from `read_csv()`
 * We still to supply the file name in quotes as the first argument  
 * to tell R that it's located in the `data/` folder, we add this to the beginning of the filename
 
@@ -55,7 +55,7 @@ invert <- read_csv("data/ggplot_lab_invert_survey.csv")
   
   
 Whenever you load a dataset into R, it is always a good idea to take a look at it to familiarize yourself with the structure. Run the following lines of code in RStudio one by one (I have removed the output to save space here): 
-```{r, eval=FALSE}
+```{r}
 names(invert)
 head(invert)
 tail(invert)
@@ -544,7 +544,6 @@ ggplot(data = invert,
   scale_fill_manual(values = c("dodgerblue", "hotpink")) +
   facet_wrap(~month)
 ```
-> Do Tasks XXX in the homework for this week 
 
 ## Coda  
 

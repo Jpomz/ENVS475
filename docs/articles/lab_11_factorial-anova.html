@@ -74,9 +74,6 @@
       <a href="../articles/lectures/lecture_01/lecture_01.html">Lecture 01: Course introduction</a>
     </li>
     <li>
-      <a href="../articles/lectures/lecture_02_normal/lecture_02_normal.html">Lecture 02: Normal Distributions</a>
-    </li>
-    <li>
       <a href="../articles/lectures/lecture_03_basic-stats/lecture_03_basic-stats.html">Lecture 03: Basic Statistics</a>
     </li>
     <li>
@@ -253,8 +250,7 @@ linear model, interpreting and visualizing the results.</p>
 <code>ggplot2</code> packages. Make sure both packages are installed on
 your computer, and then run the following code:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="data">Data<a class="anchor" aria-label="anchor" href="#data"></a>
@@ -262,7 +258,7 @@ your computer, and then run the following code:</p>
 <p>We will use the <code>crop_anova.csv</code> data which can be
 downloaded on D2L. Load the data by running the following command:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">crop</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="st">"data/crop_anova.csv"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">crop</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv</a></span><span class="op">(</span><span class="st">"data/crop_anova.csv"</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -284,24 +280,30 @@ are.</p>
 <pre><code><span><span class="co">## [1] 96  4</span></span></code></pre>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">crop</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##   density block fertilizer    yield</span></span>
-<span><span class="co">## 1     low     I    control 177.2287</span></span>
-<span><span class="co">## 2     low     I    control 177.1255</span></span>
-<span><span class="co">## 3     low     I    control 176.2749</span></span>
-<span><span class="co">## 4     low     I    control 177.4795</span></span>
-<span><span class="co">## 5     low     I    control 176.1083</span></span>
-<span><span class="co">## 6     low     I    control 176.2390</span></span></code></pre>
+<pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 6 × 4</span></span></span>
+<span><span class="co">##   density block fertilizer yield</span></span>
+<span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">1</span> low     I     control     177.</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">2</span> low     I     control     177.</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">3</span> low     I     control     176.</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">4</span> low     I     control     177.</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">5</span> low     I     control     176.</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">6</span> low     I     control     176.</span></span></code></pre>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html" class="external-link">distinct</a></span><span class="op">(</span><span class="va">crop</span>, <span class="va">density</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##   density</span></span>
-<span><span class="co">## 1     low</span></span>
-<span><span class="co">## 2    high</span></span></code></pre>
+<pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 2 × 1</span></span></span>
+<span><span class="co">##   density</span></span>
+<span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">1</span> low    </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">2</span> high</span></span></code></pre>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html" class="external-link">distinct</a></span><span class="op">(</span><span class="va">crop</span>, <span class="va">fertilizer</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##   fertilizer</span></span>
-<span><span class="co">## 1    control</span></span>
-<span><span class="co">## 2          N</span></span>
-<span><span class="co">## 3          P</span></span></code></pre>
+<pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 3 × 1</span></span></span>
+<span><span class="co">##   fertilizer</span></span>
+<span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">1</span> control   </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">2</span> N         </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">3</span> P</span></span></code></pre>
 <p>For this analysis, we have two <em>factors</em> (density and
 fertilizer). The <strong>Density</strong> factor has two levels: High,
 and the <strong>Fertilizer</strong> factor has three levels: control, N

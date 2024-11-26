@@ -410,7 +410,7 @@ library(ggplot2)</code></pre>
 <div id="download-the-data-and-read-into-r" class="section level2">
 <h2>Download the data and read into R</h2>
 <pre class="r"><code># read in data
-bt_samp &lt;- read.csv(&quot;data/body_temp_hr.csv&quot;)</code></pre>
+bt_samp &lt;- read_csv(&quot;data/body_temp_hr.csv&quot;)</code></pre>
 </div>
 </div>
 <div id="exercises-homework-08-t-tests" class="section level1">
@@ -466,11 +466,10 @@ Major in the Galapagos islands between 1975 and 2012.</p>
 <p>We will once again be using the <em>Geospiza scandens</em> data from
 the <code>darwin-finches.csv</code>.</p>
 <pre class="r"><code># read in full data set
-finch &lt;- read.csv(&quot;data/galapago-finches.csv&quot;)
+finch &lt;- read_csv(&quot;data/galapago-finches.csv&quot;)
 # filter out scandens data and make a tibble
 scandens &lt;- finch %&gt;%
-  filter(species == &quot;scandens&quot;) %&gt;%
-  as_tibble()
+  filter(species == &quot;scandens&quot;) 
 
 # change the year column to a character data type
 # this is necessary to run a 2-sample t-test
@@ -533,7 +532,7 @@ Cross <code>type</code>.</p>
 <p>For this problem, we will be using the <code>darwin_maize.csv</code>
 available on D2L. Download this csv file into your <code>data/</code>
 folder and read it into R.</p>
-<pre class="r"><code>darwin_maize &lt;- read.csv(&quot;data/darwin_maize.csv&quot;)</code></pre>
+<pre class="r"><code>darwin_maize &lt;- read_csv(&quot;data/darwin_maize.csv&quot;)</code></pre>
 <p>3.1 Add a comment to your homework script stating the null and
 alternative hypotheses. Make sure to put each hypothesis on its own
 line. Make sure that your alternative hypothesis is 2-tailed.</p>
@@ -555,7 +554,7 @@ use the <code>summary()</code> function to print out the results.</p>
 <p>3.4 Add a comment to your script interpreting the results of your
 analysis.</p>
 <pre class="r"><code># read in the data
-darwin_maize &lt;- read.csv(here::here(&quot;data/darwin_maize.csv&quot;))</code></pre>
+darwin_maize &lt;- read_csv(here::here(&quot;data/darwin_maize.csv&quot;))</code></pre>
 <p>3.1 Add a comment to your script describing the null and alternative
 hypotheses. Put each hypothesis on its own line.</p>
 <p>3.2 You will need to modify the structure of the

@@ -10,10 +10,9 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(dplyr)
-library(ggplot2)
 library(arm)
-darwin_maize <- read.csv(here::here("data/darwin_maize.csv"))
+library(tidyverse)
+darwin_maize <- read_csv(here::here("inst/extdata/darwin_maize.csv"))
 ```
 
 # About  
@@ -24,9 +23,8 @@ This lab introduces the analysis of data using a linear model framework. It clos
 For this lab, we will be using the `dplyr`, `ggplot2`, and `arm` packages. Make sure all packages are installed on your computer, and then run the following code:
 
 ```{r, eval=FALSE}
-library(dplyr)
-library(ggplot2)
 library(arm)
+library(tidyverse)
 ```
 
 ## Data  
@@ -36,7 +34,7 @@ For this lab, we will be using data from an experiment that Charles Darwin perfo
 We will be using the `darwin_maize.csv` data, which you can download from D2L. Be sure to put it into your `data/` folder. When we read in the data, we will assign it to the object called `darwin_maize`. 
 
 ```{r load-data, eval=FALSE}
-darwin_maize <- read.csv("data/darwin_maize.csv")
+darwin_maize <- read_csv("data/darwin_maize.csv")
 ```
 
 Let's take a brief look at the data:

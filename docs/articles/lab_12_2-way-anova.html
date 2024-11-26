@@ -74,9 +74,6 @@
       <a href="../articles/lectures/lecture_01/lecture_01.html">Lecture 01: Course introduction</a>
     </li>
     <li>
-      <a href="../articles/lectures/lecture_02_normal/lecture_02_normal.html">Lecture 02: Normal Distributions</a>
-    </li>
-    <li>
       <a href="../articles/lectures/lecture_03_basic-stats/lecture_03_basic-stats.html">Lecture 03: Basic Statistics</a>
     </li>
     <li>
@@ -253,8 +250,7 @@ model, interpreting and visualizing the results.</p>
 <code>ggplot2</code> packages. Make sure both packages are installed on
 your computer, and then run the following code:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="data">Data<a class="anchor" aria-label="anchor" href="#data"></a>
@@ -603,10 +599,22 @@ at-a-time we can see there’s not much different.</p>
 <p>The intercept is the mean estimate for our reference group, which in
 this case is the OJ supplement at D0.5. We will need to keep this in
 mind when we look at all of the other coefficient estimates.</p>
-<p>Other Coefficients:<br>
-* <code>suppVC</code> = <code>OJ:D0.5</code> -
-<code>VC:D0.5   *</code>doseD1<code>=</code>OJ:D0.5<code>-</code>OJ:D1<code>*</code>doseD2<code>=</code>OJ:D0.5<code>-</code>OJ:D2<code>*</code>suppVC:doseD1<code>=</code>OJ:D0.5<code>-</code>VC:D1<code>*</code>suppVC:doseD2<code>=</code>OJ:D0.5<code>-</code>VC:D2`<br>
-### Interpretation of p-values</p>
+<p>Other Coefficients:</p>
+<ul>
+<li><p><code>suppVC</code> = <code>OJ:D0.5</code> -
+<code>VC:D0.5</code></p></li>
+<li><p><code>doseD1</code> = <code>OJ:D0.5</code> -
+<code>OJ:D1</code></p></li>
+<li><p><code>doseD2</code> = <code>OJ:D0.5</code> -
+<code>OJ:D2</code></p></li>
+<li><p><code>suppVC:doseD1</code> = <code>OJ:D0.5</code> -
+<code>VC:D1</code></p></li>
+<li><p><code>suppVC:doseD2</code> = <code>OJ:D0.5</code> -
+<code>VC:D2</code></p></li>
+</ul>
+<div class="section level4">
+<h4 id="interpretation-of-p-values">Interpretation of p-values<a class="anchor" aria-label="anchor" href="#interpretation-of-p-values"></a>
+</h4>
 <ul>
 <li>Intercept: Is mean length of <code>OJ:D0.5</code> = 0?
 <ul>
@@ -630,6 +638,7 @@ hypothesis that those differences = 0. (In other words, there
 </ul>
 </li>
 </ul>
+</div>
 </div>
 <div class="section level3">
 <h3 id="tukeys-hsd">Tukey’s HSD<a class="anchor" aria-label="anchor" href="#tukeys-hsd"></a>

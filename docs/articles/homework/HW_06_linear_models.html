@@ -417,9 +417,8 @@ script*</li>
 to load the <code>dplyr</code> package:</li>
 </ul>
 <pre class="r"><code># load libraries
-library(dplyr)
-library(ggplot2)
-library(arm)</code></pre>
+library(arm)
+library(tidyverse)</code></pre>
 </div>
 </div>
 <div id="data" class="section level1">
@@ -438,11 +437,10 @@ project.</p>
 <p>Copy the following code and put it at the top of your homework
 script:</p>
 <pre class="r"><code># read in full data set
-finch &lt;- read.csv(&quot;data/galapago-finches.csv&quot;)
+finch &lt;- read_csv(&quot;data/galapago-finches.csv&quot;)
 # filter out scandens data and make a tibble
 scandens &lt;- finch %&gt;%
-  filter(species == &quot;scandens&quot;) %&gt;%
-  as_tibble()
+  filter(species == &quot;scandens&quot;) 
 
 # change the year column to a character data type
 scandens$year &lt;- as.character(scandens$year)
@@ -548,14 +546,9 @@ between 1975 and 2012.</p></li>
 3.1 and 3.2. Are these interpretations in agreement with each
 other?</p></li>
 <li><p>Use <code>confint()</code> to calculate and display a 99% CI for
-the estimated difference in beak length between 1975 and 2012.<br />
-</p></li>
-<li><p>Use <code>coefplot()</code> to display a graphical representation
-of the approximate 99% CI for the estimated difference in beak length
-between 1975 and 2012.<br />
-</p></li>
-<li><p>Use a comment to interpret the results of problem 4.4 and 4.5
-above. Are these results in agreement? Why do you think this is?<br />
+the estimated difference in beak length between 1975 and 2012.</p></li>
+<li><p>Use a comment to interpret the results of problem 4.4 above. Are
+these results in agreement? Why do you think this is?<br />
 </p></li>
 </ol>
 <ul>
