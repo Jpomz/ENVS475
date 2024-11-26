@@ -1,7 +1,7 @@
 Package: ENVS475
 Type: Package
 Title: Course Materials For ENVS475
-Version: 2024.1.0
+Version: 2025.1.0
 Author: person("Justin", "Pomeranz", role = c("aut", "cre"), email = "jpomeranz@coloradomesa.edu")
 Maintainer: Justin Pomeranz <jpomeranz@coloradomesa.edu>
 Description: Course Materials For ENVS475: Experimental Analysis and Design at Colorado Mesa University. 
