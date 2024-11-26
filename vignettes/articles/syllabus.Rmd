@@ -1,7 +1,7 @@
 ---
 title: "Syllabus"
 subtitle: "ENVS475"
-author: "Spring 2024"
+author: "Spring 2025"
 output: 
   rmarkdown::html_vignette:
     keep_md: yes
@@ -29,7 +29,7 @@ Email: <jpomeranz@coloradomesa.edu>
 
 Office: Wubben 230E
 
-Office Hours: MWF 11-11:50 am, or by appointment
+Office Hours: MWF 2-2:50 pm, or by appointment
 
 ## Course Information
 
@@ -37,13 +37,13 @@ Course Title: Experimental Design and Analysis, ENVS 475
 
 Course Delivery Method: Campus
 
-Class Time: Monday, Wednesday, and Friday 2-2:50 pm
+Class Time: Monday, Wednesday, and Friday 3-3:50 pm
 
 Classroom: Wubben 245
 
 Prerequisites: ENVS 204 or ENVS 221, STAT 200
 
-Drop Date: April 8th. 2024
+Drop Date: April 7th. 2025
 
 Lecture Hours: 3
 
@@ -122,33 +122,30 @@ Take Home Exams (2) 40%
 
 ### Grading Scale 
 
-A = 89.5 - 100%
+A = 90 - 100%
 
-B = 79.5 - 89.4%
+B = 80 - 89.9%
 
-C = 69.5 - 79.4%
+C = 70 - 79.9%
 
-D = 59.5 - 69.4%
+D = 60 - 69.9%
 
-F = < 59.4%
+F = < 60%
 
 ## ASSIGNMENT EXPECTATIONS 
 
 ### Homework 
 
-*Homework*: There will be weekly homework assignments.  Homework assignments need to be turned in on an individual basis, but you are allowed (and encouraged!) to work on them in groups. Homework assignments will all be turned in via the appropriate links in D2L. Homework is assigned weekly on Mondays and due the following Friday, with a grace period of 2 days (i.e., as long as homework is submitted by Sunday night, you do not need to request an extension). Homework turned in after the grace period will be docked 50%, and late work will not be accepted after 5 days late (i.e. Wednesday). Solutions to homework will generally be posted on the Wednesday after they are due (i.e., after the late submission window closes).
+*Homework*: There will be weekly homework assignments.  Homework assignments need to be turned in on an individual basis, but you are allowed (and encouraged!) to work on them in groups. Homework assignments will all be turned in via the appropriate links in D2L. Homework is assigned weekly on Mondays and due the following Friday, with a grace period of 2 days (i.e., as long as homework is submitted before class on Monday, you do not need to request an extension). Homework turned in after the grace period will be docked 50%, and late work will not be accepted after 5 days late (i.e. Wednesday). Solutions to homework will generally be posted on the Wednesday after they are due (i.e., after the late submission window closes).
 
 ### Homework Grade Rubric 
 
-Produces the correct answer using the requested approach: 100%
+* Produces the correct answer using the requested approach: 100%  
+* Generally uses the right approach, but a minor mistake results in an incorrect answer: 90%  
+* Attempts to solve the problem and makes some progress using the core concept: 75%   
+* Incomplete assignment submitted; OR complete assignment submitted after 2-day grace period: 50%  
+* Answer demonstrates a lack of understanding of the core concept; OR mostly incomplete: 0%  
 
-Generally uses the right approach, but a minor mistake results in an incorrect answer: 90%
-
-Attempts to solve the problem and makes some progress using the core concept: 75% 
-
-Incomplete assignment submitted; OR complete assignment submitted after 2-day grace period: 50%
-
-Answer demonstrates a lack of understanding of the core concept; OR mostly incomplete: 0%
 
 Solutions to assignments will be posted on D2L and/or will be gone over in class. Solutions will generally be posted on Wednesdays, after the late submission window closes.
 
