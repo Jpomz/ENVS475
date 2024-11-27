@@ -11,6 +11,7 @@ articles:
   lab_06_linear-models: lab_06_linear-models.html
   lab_07_intro_markdown: lab_07_intro_markdown.html
   lab_08_t-tests: lab_08_t-tests.html
+  lab_09_tidy-data-entry: lab_09_tidy-data-entry.html
   lab_10_anova: lab_10_anova.html
   lab_11_factorial-anova: lab_11_factorial-anova.html
   lab_12_2-way-anova: lab_12_2-way-anova.html
@@ -19,5 +20,5 @@ articles:
   schedule: schedule.html
   syllabus: syllabus.html
   term-list: term-list.html
-last_built: 2024-11-26T17:33Z
+last_built: 2024-11-27T22:43Z
 

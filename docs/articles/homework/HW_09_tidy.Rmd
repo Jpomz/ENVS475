@@ -53,14 +53,21 @@ Two files will need to be submitted on D2L this week.
 
 A. Create a tidy .csv file with the TB information from Argentina.  
   * Column names have data in them.  
+  
   * `sp` indicates the test (same for all columns)  
+  
   * Patient sex is indicated with an `m` or an `f`  
+  
   * Patient age range is indicated by numbers.  
+  
     * i.e., `014` is 0-14; `1524` is 15-24; `65` is $\ge$ 65.  
     
   * Your tidy data file should end up with 154 rows and 6-7 columns (depending on if you keep the `sp` or not).  
+  
   * Save your .csv file in your `data/` folder.  
+  
     * Make sure your lastname is in your filename so I can keep them straight when I grade it.  
+    
     * i.e., `week_09_tidy_yourlastname.csv`  
     
 # Problem 2  

@@ -24,6 +24,9 @@ library(xaringanthemer)
 style_mono_accent(text_bold_color = "#000000",
   base_color = "#F03297",
   base_font_size = "28px",
+  header_h1_font_size = "1.75rem",
+  header_h2_font_size = "1.75rem",
+  header_h3_font_size = "1.75rem",
   header_font_google = google_font("Josefin Sans"),
   text_font_google = google_font("Montserrat"),
   #code_font_google = google_font("Inconsolata", "500"),
@@ -567,12 +570,15 @@ $\alpha$ = level of signifigance
 
 $\text{p-values}$ = One of the outputs of most statistical tests  
 * We compare the $\text{p-values}$ against $\alpha = 0.05$  
-* If $\text{p-value} < \alpha$, we **Reject the null hypothesis **  
-  + i.e., This usually means there *is a difference*  
-  
--- 
 
-* If $\text{p-value} > \alpha$, we **FAIL to reject the null hypothesis **  
+--
+
+If $\text{p-value} < \alpha$, we **Reject the null hypothesis **  
+  + i.e., This usually means there *is a difference*  
+
+--
+
+If $\text{p-value} > \alpha$, we **FAIL to reject the null hypothesis **  
 
   + i.e., This usually means there *is NOT a difference*  
   

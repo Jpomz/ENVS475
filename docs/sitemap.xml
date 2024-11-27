@@ -28,6 +28,9 @@
     <loc>/articles/homework/HW_09_markdown.html</loc>
   </url>
   <url>
+    <loc>/articles/homework/HW_09_tidy.html</loc>
+  </url>
+  <url>
     <loc>/articles/homework/HW_10_ANOVA.html</loc>
   </url>
   <url>
@@ -73,6 +76,9 @@
     <loc>/articles/lab_08_t-tests.html</loc>
   </url>
   <url>
+    <loc>/articles/lab_09_tidy-data-entry.html</loc>
+  </url>
+  <url>
     <loc>/articles/lab_10_anova.html</loc>
   </url>
   <url>
@@ -97,6 +103,9 @@
     <loc>/articles/lectures/lecture_03_basic-stats/lecture_03_basic-stats.html</loc>
   </url>
   <url>
+    <loc>/articles/lectures/lecture_03_basic-stats/lecture_03_basic-stats_2025.html</loc>
+  </url>
+  <url>
     <loc>/articles/lectures/lecture_05_estimation/lecture_05_estimation.html</loc>
   </url>
   <url>
@@ -104,6 +113,9 @@
   </url>
   <url>
     <loc>/articles/lectures/lecture_07_t-tests/lecture_07_t-tests.html</loc>
+  </url>
+  <url>
+    <loc>/articles/lectures/lecture_09_tidy/lecture_09_tidy.html</loc>
   </url>
   <url>
     <loc>/articles/lectures/lecture_10_anova/lecture_10_anova.html</loc>
