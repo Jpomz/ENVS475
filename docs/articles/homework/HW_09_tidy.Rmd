@@ -1,0 +1,78 @@
+---
+title: 'HW 09: Tidy Data'
+subtitle: "ENVS475: Experimental Analysis and Design"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+
+tb_argentina <- read_csv(here::here("inst/extdata/tb_argentina.csv"))
+
+tb_tidy <- tb_argentina |> pivot_longer(sp_m_014:sp_f_65,
+                             names_to = c("diagnosis", "sex", "age"), 
+                             names_sep = "_",
+                             values_to = "count", values_drop_na = TRUE)
+```
+
+
+# Overview  
+
+You will be working with an untidy data set. Your goal is to enter the data into a tidy format in spreadsheet software, save it as a .csv file, import it into R and run some simple calculations. 
+
+# Data  
+
+The data you will be working with is a simplified version of the `who2` data set. The `who2` data is automatically loaded with the `tidyverse`, and documents Tuberculosis cases by country through time. 
+
+The simplified data set has information on "smear positive" TB tests from Argentina for 2000 to 2010. "Smear positive" is abbreviated as sp and is one of the testing methodologies available for detecting TB cases. 
+
+Students in class will receive a print out of the data set, and the full data can be viewed below:  
+
+```{r}
+tb_argentina
+```
+
+# Assignment  
+
+This week, most of your assignment will take place outside of an R script. You will need to make a new csv file (i.e., using Microsoft Excel, or Google Sheets) which has all the `tb_argentina` information stored in a tidy format.  
+
+The second half of your assignment will be an R script that imports your tidy csv and performs a few basic calculations. 
+
+## Submission files  
+
+Two files will need to be submitted on D2L this week.  
+1) A tidy .csv file with the following naming convention: `week_09_tidy_yourlastname.csv`  
+2) An R script completing the second half of the assignment.  
+
+# Problem 1  
+
+A. Create a tidy .csv file with the TB information from Argentina.  
+  * Column names have data in them.  
+  * `sp` indicates the test (same for all columns)  
+  * Patient sex is indicated with an `m` or an `f`  
+  * Patient age range is indicated by numbers.  
+    * i.e., `014` is 0-14; `1524` is 15-24; `65` is $\ge$ 65.  
+    
+  * Your tidy data file should end up with 154 rows and 6-7 columns (depending on if you keep the `sp` or not).  
+  * Save your .csv file in your `data/` folder.  
+    * Make sure your lastname is in your filename so I can keep them straight when I grade it.  
+    * i.e., `week_09_tidy_yourlastname.csv`  
+    
+# Problem 2  
+
+* Make a new assignment R Script.  
+* Load the `tidyverse`  
+* Read in your tidy csv file.  
+
+A. Print the `head()` of your tidy data.  
+B. Print out the `dim()` of your tidy data.  
+C. Calculate the rate per 1000 people (number of cases / population * 1000) of TB infections.
+D. Calculate the total number of cases per year.  
+E. Plot the total number of cases by year.  
+F. Use `lm()` to perform a t-test comparing the average number of TB-infections based on sex (i.e., `count ~ sex`). Display the `summary()` of the model to your screen.  
+G. Interpret the results of your model in part F above.  

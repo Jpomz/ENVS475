@@ -60,8 +60,8 @@ navbar:
           href: articles/lab_06_linear-models.html
         - text: "lab 07: t-tests"
           href: articles/lab_08_t-tests.html
-        - text: "lab 09: intro to R markdown"
-          href: articles/lab_07_intro_markdown.html
+        - text: "lab 09: Tidy Data Entry"
+          href: articles/lab_09_tidy-data-entry.html
         - text: "lab 10: ANOVA"
           href: articles/lab_10_anova.html
         - text: "lab 11: Factorial ANOVA"
