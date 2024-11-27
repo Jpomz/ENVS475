@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>LECTURE 03: Basic concepts in statistics</title>
+    <meta charset="utf-8" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# LECTURE 03: Basic concepts in statistics
+]
+.subtitle[
+## ENVS475: Exp. Design and Analysis
+]
+
+---
+
+
+
+
+
+
+
+
+class: inverse
+
+# Outline&lt;sup&gt;1&lt;/sup&gt;
+
+.footnote[[1] Lecture based on [FANR6750](https://rushinglab.github.io/FANR6750/index.html)]
+
+#### 1) What is statistics, and why do we need it?
+
+--
+
+#### 2) Populations and samples
+
+--
+
+#### 3) Summary statistics
+
+--
+
+#### 4) Inferential statistics
+
+--
+#### 5) Hypothesis testing
+
+---
+
+# What is statistics?
+
+&lt;br/&gt;
+&lt;br/&gt;
+&gt; The study of the collection, analysis, interpretation, presentation, and organization of data (Dodge 2006)  
+
+--
+&lt;br/&gt;
+&gt; The science of learning from data (various) 
+
+
+--
+`\(Statistics = Information + Uncertainty\)`
+
+--
+* Or:
+
+--
+
+  * Detecting the signal from the noise.  
+
+---
+# Why do we need statistics?  
+- Summarize and describe data  
+
+--
+  - Summarize a Vector of data into a location and measure of dispersion  
+
+--
+- Test hypotheses  
+
+--
+  - i.e., are the means different between groups?  
+
+--
+- Causal inference  
+
+--
+  - Does `\(x\)` influence `\(y\)`?  
+
+--
+- Estimate parameters  
+
+--
+- Make predictions that account for uncertainty  
+
+
+---
+# Populations Vs. Samples  
+#### Population  
+- A collection of subjects of interest  
+- Often, a biologically meaningful unit  
+- Sometimes a process of interest  
+
+--
+
+#### Sample  
+- A finite subset of the population  
+  + i.e. the data we collect  
+- Samples allow us to draw inferences about the population  
+- Good samples are:  
+  + Random, Representative, Sufficiently large  
+
+---
+# Population: Human Height  
+
+&lt;u&gt;P&lt;/u&gt;opulation &lt;u&gt;P&lt;/u&gt;arameters
+- The "true" mean and standard deviation  
+
+&lt;img src="lecture_03_basic-stats_2025_files/figure-html/pop-1.png" width="648" style="display: block; margin: auto;" /&gt;
+
+
+---
+# Sample: Human Height  
+&lt;img src="lecture_03_basic-stats_2025_files/figure-html/samp1-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+
+
+
+---
+# Sample: Human Height  
+&lt;img src="lecture_03_basic-stats_2025_files/figure-html/samp1 annotated-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+
+
+
+---
+# Summary Statistics  
+### Describing the sample  
+.pull-left[
+Vector of data is hard to interpret  
+&lt;table class="table table-condensed" style="font-size: 18px; width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Heights &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 67.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 68.2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 74.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 69.2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 69.5 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+--
+
+.pull-right[
+Describe any vector with two summary stats  
+* Average (mean)  
+* Standard Deviation  
+]
+
+---
+# Summary Statistics  
+.pull-left[
+* **Mean** is a measure of location or central tendency  
+  * Works well with normally distributed data  
+  * "Peak" of the bell curve  
+
+* **Standard deviation (SD)** measure of dispersion  
+  * Average distance of data point to mean  
+  * "Width" of the bell curve  
+]
+
+.pull-right[
+&lt;img src="lecture_03_basic-stats_2025_files/figure-html/unnamed-chunk-2-1.png" width="576" style="display: block; margin: auto;" /&gt;
+]
+---
+# Sample Variation 
+.pull-left[
+&lt;img src="lecture_03_basic-stats_2025_files/figure-html/samp var-1.png" width="648" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="lecture_03_basic-stats_2025_files/figure-html/samp var2-1.png" width="648" style="display: block; margin: auto;" /&gt;
+]
+--
+.pull-right[
+&lt;br/&gt; 
+
+* Each sample produces its own mean and SD 
+
+* Inferential statistics allows us to deal with this  
+]
+
+---
+# Sampling = Uncertainty
+
+Populations (usually) cannot be measured  
+* sampling is essential  
+
+--
+
+But sampling is inherently *stochastic* 
+
+- sampling produces uncertainty
+
+- unavoidable (but that's ok!) 
+
+---
+# Inferential Statistics  
+Standard Error (SE) of the mean  
+* On average, how far is sample mean, `\(\bar y\)`, from the population mean, `\(\mu\)`?  
+
+Statistics is what allows us to learn about the **population** using **samples** in the face of **uncertainty** 
+
+Use samples to make *inferences* about the populations   
+---
+# Hypothesis Testing  
+
+Statistics is often concerned with testing hypotheses  
+* Is the sample mean different or the same as some value?  
+* Are the sample means of two groups the same or different?  
+
+We will go through the details in future classes  
+
+The following is a brief review of statistical terms and principles  
+
+---
+# Statistics review  
+
+What is a Null and Alternative Hypothesis?  
+Can you write out one set of two-tailed hypotheses?  
+Do you remember what a one-tailed hypothesis is?  
+
+What does `\(\alpha\)` mean?  
+What value does `\(\alpha\)` usually have?  
+
+What is a `\(\text{p-values}\)`? 
+What do we compare `\(\text{p-values}\)` to?  
+
+How do we decide if we reject or fail to Reject a null hypothesis?
+
+---
+# Statistics review  
+
+Null Hypothesis = base-level we're testing against.  
+  * Usually has the `\(=\)` sign in it.  
+  * i.e., Not different  
+
+--
+
+Alternative Hypothesis   
+  * Does not have an `\(=\)` sign in it  
+  * In this class, it will have the `\(\ne\)` sign in it.  
+
+--
+
+Two-tailed hypotheses
+Null: `\(\large H_0 : \mu_1 = \mu_2\)`  
+Alternative: `\(\large H_0 : \mu_1 \ne \mu_2\)`  
+* In this class, we will always be working with 2-tailed tests  
+
+---
+# Statistics review  
+`\(\alpha\)` = level of signifigance  
+  * In this class, `\(\alpha = 0.05\)`.  
+  
+--
+
+`\(\text{p-values}\)` = One of the outputs of most statistical tests  
+* We compare the `\(\text{p-values}\)` against `\(\alpha = 0.05\)`  
+* If `\(\text{p-value} &lt; \alpha\)`, we **Reject the null hypothesis **  
+  + i.e., This usually means there *is a difference*  
+  
+-- 
+
+* If `\(\text{p-value} &gt; \alpha\)`, we **FAIL to reject the null hypothesis **  
+
+  + i.e., This usually means there *is NOT a difference*  
+  
+---
+# Example  
+
+Is the average height of males and females in the US different?
+
+&lt;img src="lecture_03_basic-stats_2025_files/figure-html/unnamed-chunk-3-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+--
+
+* Estimated difference in heights = 5.9 inches  
+
+--
+
+* `\(\text{p-value} = 0.001\)`  
+--
+
+What do we conclude?  
+
+---
+# Example 2  
+
+Is the average height of males and females in the US different?
+
+&lt;img src="lecture_03_basic-stats_2025_files/figure-html/unnamed-chunk-4-1.png" width="864" style="display: block; margin: auto;" /&gt;
+--
+
+* Estimated difference in heights = 1.5 inches  
+
+--
+
+* `\(\text{p-value} = 0.273\)`  
+
+--
+
+What do we conclude?  
+
+---
+# Looking ahead
+
+#### **Wednesday**: Normal Distributions  
+* Look over Normal Distribution Lecture notes before next class!  
+
+#### **Friday**: HW02  
+
+&lt;br/&gt;
+
+#### **Reading**: Hector chp. 5
+
+#### **Video Resources**: on D2L
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

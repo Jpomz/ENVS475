@@ -1,0 +1,660 @@
+---
+title: "LECTURE 03: Basic concepts in statistics"
+subtitle: "ENVS475: Exp. Design and Analysis"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: false
+---
+
+```{r setup, echo = FALSE, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo = FALSE, fig.align = 'center', warning=FALSE, message=FALSE, fig.retina = 2)
+library(tidyverse)
+library(kableExtra)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(text_bold_color = "#000000",
+  base_color = "#F03297",
+  base_font_size = "28px",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google = google_font("Montserrat"),
+  #code_font_google = google_font("Inconsolata", "500"),
+  link_color = "#0A0AD3",
+  inverse_background_color = "#4C4F57",
+  title_slide_background_color = "#4C4F57",
+  table_row_even_background_color = lighten_color("#4C4F57", 0.9)
+  )
+```
+
+```{r plot theme, include=FALSE}
+  options(digits = 4)
+  library(ggplot2)
+  theme_spacelab <- function(base_size = 12, base_family = "") {
+    half_line <- base_size / 2
+    theme(
+      # Elements in this first block aren't used directly, but are inherited
+      # by others
+      line = element_line(
+        size = 0.5, linetype = 1, colour = "black",
+        lineend = "butt", color ="#f89406"
+      ),
+      rect = element_rect(fill = "white", colour = "black", size = 0.5, linetype = 1),
+      text = element_text(
+        family = base_family, face = "plain", colour = "black",
+        size = base_size,
+        hjust = 0.5, vjust = 0.5, angle = 0, lineheight = 0.9, margin = margin(),
+        debug = FALSE
+      ),
+      axis.text = element_text(size = rel(0.8), color = "#999999"),
+      axis.title = element_text(size = rel(0.8), color = "grey40", vjust = 0.35),
+      strip.text = element_text(size = rel(0.8)),
+
+      axis.line = element_line(size = 0.8, color = "#999999"),
+      axis.line.x = NULL,
+      axis.line.y = NULL,
+      axis.text.x = element_text(
+        size = base_size * 1.2, lineheight = 0.9,
+        margin = margin(t = 0.8 * half_line / 2), vjust = 1
+      ),
+      axis.text.x.top = element_text(margin = margin(b = 0.8 * half_line / 2), vjust = 0),
+      axis.text.y = element_text(
+        size = base_size * 1.2, lineheight = 0.9,
+        margin = margin(r = 0.8 * half_line / 2), vjust = 0.5
+      ),
+      axis.text.y.right = element_text(margin = margin(l = 0.8 * half_line / 2), hjust = 0),
+      axis.ticks = element_line(size = 0.2, color = "#999999"),
+      axis.title.x = element_text(
+        size = base_size * 1.8, vjust = 0.3,
+        margin = margin(t = 10, b = 0.8 * half_line / 2)
+      ),
+      axis.title.x.top = element_text(margin = margin(b = half_line), vjust = 0),
+      axis.title.y = element_text(
+        size = base_size * 1.8, angle = 90, vjust = 1,
+        margin = margin(r = 10, l = 0.8 * half_line / 2)
+      ),
+      axis.title.y.right = element_text(angle = -90, margin = margin(l = half_line), vjust = 0),
+      axis.ticks.length = grid::unit(0.3, "lines"),
+
+      legend.background = element_rect(colour = NA),
+      legend.spacing = unit(0.4, "cm"),
+      legend.spacing.x = NULL,
+      legend.spacing.y = NULL,
+      legend.margin = margin(
+        half_line, half_line, half_line,
+        half_line
+      ),
+      legend.box.margin = margin(0, 0, 0, 0, "cm"),
+      legend.box.background = element_blank(),
+      legend.box.spacing = unit(0.4, "cm"),
+      legend.key = element_rect(colour = "#999999"),
+      legend.key.size = grid::unit(1.2, "lines"),
+      legend.key.height = NULL,
+      legend.key.width = NULL,
+      legend.text = element_text(size = base_size, color = "#999999"),
+      legend.text.align = NULL,
+      legend.title = element_blank(),
+      legend.title.align = NULL,
+      legend.position = "right",
+      legend.direction = NULL,
+      legend.justification = "center",
+      legend.box = NULL,
+
+      panel.background = element_rect(colour = NA),
+      panel.border = element_rect(fill = NA, color = NA, size = .5),
+      panel.grid = element_blank(),
+      panel.grid.minor = element_blank(),
+      panel.spacing = grid::unit(half_line, "pt"),
+      panel.ontop = FALSE,
+      panel.spacing.x = NULL,
+      panel.spacing.y = NULL,
+
+
+      strip.background = element_rect(colour = NA),
+      strip.text.x = element_text(size = base_size * 1.6, margin = margin(t = half_line, b = half_line), face = "bold", color = "#999999"),
+      strip.text.y = element_text(size = base_size * 1.6, angle = -90, margin = margin(l = half_line, r = half_line), face = "bold", color = "#999999"),
+      strip.switch.pad.grid = unit(0.1, "cm"),
+      strip.switch.pad.wrap = unit(0.1, "cm"),
+      strip.placement = "inside",
+
+      plot.tag = element_text(
+        size = rel(1.2), color = "#999999",
+        hjust = 0.5, vjust = 0.5
+      ),
+      plot.tag.position = 'topleft',
+
+      plot.background = element_rect(colour = NA),
+      plot.title = element_text(color = "grey30",
+        size = base_size * 2, hjust = 0, #face = "bold",
+        vjust = 2, margin = margin(b = half_line * 1.2)
+      ),
+      plot.subtitle = element_text(color = "#999999",
+        size = base_size * 1.2, hjust = 0,
+        vjust = 2, margin = margin(b = half_line * 0.9)
+      ),
+      plot.caption = element_text(color = "#999999",
+        size = rel(0.9), hjust = 1,
+        vjust = 2, margin = margin(t = half_line * 0.9)
+      ),
+      plot.margin = margin(
+        half_line, half_line, half_line,
+        half_line
+      ), complete = TRUE
+    )
+  }
+
+
+theme_set(theme_spacelab())
+  
+update_geom_defaults("point", list(size = 3))
+update_geom_defaults("line", list(size = 0.8))
+
+```
+
+class: inverse
+
+# Outline<sup>1</sup>
+
+.footnote[[1] Lecture based on [FANR6750](https://rushinglab.github.io/FANR6750/index.html)]
+
+#### 1) What is statistics, and why do we need it?
+
+--
+
+#### 2) Populations and samples
+
+--
+
+#### 3) Summary statistics
+
+--
+
+#### 4) Inferential statistics
+
+--
+#### 5) Hypothesis testing
+
+---
+
+# What is statistics?
+
+<br/>
+<br/>
+> The study of the collection, analysis, interpretation, presentation, and organization of data (Dodge 2006)  
+
+--
+<br/>
+> The science of learning from data (various) 
+
+
+--
+$Statistics = Information + Uncertainty$
+
+--
+* Or:
+
+--
+
+  * Detecting the signal from the noise.  
+
+---
+# Why do we need statistics?  
+- Summarize and describe data  
+
+--
+  - Summarize a Vector of data into a location and measure of dispersion  
+
+--
+- Test hypotheses  
+
+--
+  - i.e., are the means different between groups?  
+
+--
+- Causal inference  
+
+--
+  - Does $x$ influence $y$?  
+
+--
+- Estimate parameters  
+
+--
+- Make predictions that account for uncertainty  
+
+
+---
+# Populations Vs. Samples  
+#### Population  
+- A collection of subjects of interest  
+- Often, a biologically meaningful unit  
+- Sometimes a process of interest  
+
+--
+
+#### Sample  
+- A finite subset of the population  
+  + i.e. the data we collect  
+- Samples allow us to draw inferences about the population  
+- Good samples are:  
+  + Random, Representative, Sufficiently large  
+
+---
+# Population: Human Height  
+
+<u>P</u>opulation <u>P</u>arameters
+- The "true" mean and standard deviation  
+
+```{r pop, fig.width=9, fig.height=4}
+# Assumed average American Male height = 69 \pm 2.5 inches
+# Assumed average American Female height = 63 \pm 2.5 inches
+x <- seq(from = 55, to = 77, length.out = 100)
+
+pop_height <- data.frame(x = x, 
+                       height = c(dnorm(x, 69, 2.5),
+                                  dnorm(x, 63, 2.5)),
+                       sex = rep(c("Male", "Female"), each = 100))
+
+ggplot(pop_height) +
+  geom_path(aes(x = x, y = height, color = sex), size = 1.75) +
+  scale_x_continuous("Height") +
+  scale_y_continuous("") +
+  labs(title = "Distribution of Height in the US") +
+ # theme_bw() +
+  scale_color_manual(values = c("darkorchid3", "darkorange2"))
+```
+
+
+---
+# Sample: Human Height  
+```{r samp1, fig.width=12, fig.height=6}
+# Assumed average American Male height = 69 \pm 2.5 inches
+# Assumed average American Female height = 63 \pm 2.5 inches
+x <- seq(from = 55, to = 77, length.out = 100)
+
+set.seed(333)
+n_samp = 20
+samp_height <- data.frame( 
+                       height = c(rnorm(n_samp, 69, 2.5),
+                                  rnorm(n_samp, 63, 2.5)),
+                       sex = rep(c("Male", "Female"), each = n_samp))
+
+mean_df <- samp_height %>%
+  group_by(sex) |>
+  summarise(mean_height = mean(height))
+
+
+ggplot() +
+  geom_histogram(data = samp_height,
+                 aes(x = height,
+                     y = ..density..,
+                     fill = sex), 
+                 color = "white",
+                 alpha = 0.4,
+                 position = "dodge") +
+  geom_path(data = pop_height, 
+            aes(x = x, y = height, color = sex),
+            size = 1.75) +
+  geom_rug(data = samp_height,
+           aes(x = height, color = sex),
+           size = 1) +
+  geom_vline(data = mean_df,
+             aes(xintercept = mean_height, color = sex),
+             size = 2) +
+  
+  scale_x_continuous("Height") +
+  scale_y_continuous("") +
+  labs(title = "Sample of Height in the US") +
+  #theme_bw(base_size = 12) +
+  scale_color_manual(values = c("darkorchid3", "darkorange2"))+
+  scale_fill_manual(values = c("darkorchid3", "darkorange2"))
+```
+
+
+
+
+---
+# Sample: Human Height  
+```{r samp1 annotated, fig.width=12, fig.height=6}
+ggplot() +
+  geom_histogram(data = samp_height,
+                 aes(x = height,
+                     y = ..density..,
+                     fill = sex), 
+                 color = "white",
+                 alpha = 0.4,
+                 position = "dodge") +
+  geom_path(data = pop_height, 
+            aes(x = x, y = height, color = sex),
+            size = 1.75) +
+  geom_rug(data = samp_height,
+           aes(x = height, color = sex),
+           size = 1) +
+    scale_x_continuous("Height") +
+  scale_y_continuous("") +
+  geom_vline(data = mean_df,
+               aes(xintercept = mean_height, color = sex),
+             size = 2) +
+  labs(title = "Sample of Height in the US") +
+  #theme_bw(base_size = 12) +
+  scale_color_manual(values = c("darkorchid3", "darkorange2"))+
+  scale_fill_manual(values = c("darkorchid3", "darkorange2")) +
+  annotate("text", x = 75, y = 0.2, label = "Populations",
+           size = 10) +
+  geom_segment(aes(x = 75, y = 0.18, xend = 64.5, yend = 0.14),
+               arrow = arrow(length = unit(0.25, "cm")),
+               linewidth = 0.75) +
+  geom_segment(aes(x = 75, y = 0.18, xend = 70.5, yend = 0.14),
+               arrow = arrow(length = unit(0.25, "cm")),
+               linewidth = 0.75) +
+  annotate("text", x = 72.5, y = 0.27, label = "Sample means",
+           size = 10) +
+  geom_segment(aes(x = 72.5, y = 0.25, xend = 62.9, yend = 0.2),
+               arrow = arrow(length = unit(0.25, "cm")),
+               linewidth = 0.75) +
+  geom_segment(aes(x = 72.5, y = 0.25, xend = 68.7, yend = 0.2),
+               arrow = arrow(length = unit(0.25, "cm")),
+              linewidth = 0.75) +
+  annotate("text", x = 57, y = 0.18, label = "Sample \nfrequencies",
+           size = 10) +
+  geom_segment(aes(x = 57, y = 0.15, xend = 62, yend = 0.037),
+               arrow = arrow(length = unit(0.25, "cm")),
+              linewidth = 0.75) +
+  geom_segment(aes(x = 57, y = 0.15, xend = 67.9, yend = 0.05),
+               arrow = arrow(length = unit(0.25, "cm")),
+              linewidth = 0.75)
+```
+
+
+
+
+---
+# Summary Statistics  
+### Describing the sample  
+.pull-left[
+Vector of data is hard to interpret  
+```{r}
+set.seed(123)
+tibble(Heights = round(rnorm(5, 69, 3.5), 1)) %>%
+  kable("html", align = 'c') %>%
+  kable_styling(bootstrap_options = c("condensed"), 
+                full_width = FALSE, font_size = 18)
+```
+]
+
+--
+
+.pull-right[
+Describe any vector with two summary stats  
+* Average (mean)  
+* Standard Deviation  
+]
+
+---
+# Summary Statistics  
+.pull-left[
+* **Mean** is a measure of location or central tendency  
+  * Works well with normally distributed data  
+  * "Peak" of the bell curve  
+
+* **Standard deviation (SD)** measure of dispersion  
+  * Average distance of data point to mean  
+  * "Width" of the bell curve  
+]
+
+.pull-right[
+```{r, fig.width=8, fig.height=6}
+ggplot(pop_height) +
+  geom_path(aes(x = x, y = height, color = sex), size = 1.75) +
+  scale_x_continuous("Height") +
+  scale_y_continuous("") +
+  labs(title = "Distribution of Height in the US") +
+ # theme_bw() +
+  scale_color_manual(values = c("darkorchid3", "darkorange2"))
+```
+]
+---
+# Sample Variation 
+.pull-left[
+```{r samp var, fig.width=9, fig.height=3}
+set.seed(333)
+n_samp = 5
+samp1 <- data.frame( 
+                       height = c(rnorm(n_samp, 69, 2.5),
+                                  rnorm(n_samp, 63, 2.5)),
+                       sex = rep(c("Male", "Female"), each = n_samp))
+
+samp2 <- data.frame( 
+                       height = c(rnorm(n_samp, 69, 2.5),
+                                  rnorm(n_samp, 63, 2.5)),
+                       sex = rep(c("Male", "Female"), each = n_samp))
+
+ggplot() +
+  geom_histogram(data = samp1,
+                 aes(x = height,
+                     y = ..density..,
+                     fill = sex), 
+                 color = "white",
+                 alpha = 0.6,
+                 position = "dodge") +
+geom_path(data = pop_height, 
+            aes(x = x, y = height, color = sex),
+            size = 1.75) +
+  geom_rug(data = samp1,
+           aes(x = height, color = sex),
+           size = 1) +
+    scale_x_continuous("Height") +
+  scale_y_continuous("") +
+  labs(title = "Sample 1 of Height in the US") +
+  #theme_bw(base_size = 12) +
+  scale_color_manual(values = c("darkorchid3", "darkorange2"))+
+  scale_fill_manual(values = c("darkorchid3", "darkorange2"))
+```
+
+```{r samp var2, fig.width=9, fig.height=3}
+ggplot() +
+  geom_histogram(data = samp2,
+                 aes(x = height,
+                     y = ..density..,
+                     fill = sex), 
+                 color = "white",
+                 alpha = 0.6,
+                 position = "dodge") +
+geom_path(data = pop_height, 
+            aes(x = x, y = height, color = sex),
+            size = 1.75) +
+  geom_rug(data = samp2,
+           aes(x = height, color = sex),
+           size = 1) +
+    scale_x_continuous("Height") +
+  scale_y_continuous("") +
+  labs(title = "Sample 2 of Height in the US") +
+  #theme_bw(base_size = 12) +
+  scale_color_manual(values = c("darkorchid3", "darkorange2"))+
+  scale_fill_manual(values = c("darkorchid3", "darkorange2"))
+```
+]
+--
+.pull-right[
+<br/> 
+
+* Each sample produces its own mean and SD 
+
+* Inferential statistics allows us to deal with this  
+]
+
+---
+# Sampling = Uncertainty
+
+Populations (usually) cannot be measured  
+* sampling is essential  
+
+--
+
+But sampling is inherently *stochastic* 
+
+- sampling produces uncertainty
+
+- unavoidable (but that's ok!) 
+
+---
+# Inferential Statistics  
+Standard Error (SE) of the mean  
+* On average, how far is sample mean, $\bar y$, from the population mean, $\mu$?  
+
+Statistics is what allows us to learn about the **population** using **samples** in the face of **uncertainty** 
+
+Use samples to make *inferences* about the populations   
+---
+# Hypothesis Testing  
+
+Statistics is often concerned with testing hypotheses  
+* Is the sample mean different or the same as some value?  
+* Are the sample means of two groups the same or different?  
+
+We will go through the details in future classes  
+
+The following is a brief review of statistical terms and principles  
+
+---
+# Statistics review  
+
+What is a Null and Alternative Hypothesis?  
+Can you write out one set of two-tailed hypotheses?  
+Do you remember what a one-tailed hypothesis is?  
+
+What does $\alpha$ mean?  
+What value does $\alpha$ usually have?  
+
+What is a $\text{p-values}$? 
+What do we compare $\text{p-values}$ to?  
+
+How do we decide if we reject or fail to Reject a null hypothesis?
+
+---
+# Statistics review  
+
+Null Hypothesis = base-level we're testing against.  
+  * Usually has the $=$ sign in it.  
+  * i.e., Not different  
+
+--
+
+Alternative Hypothesis   
+  * Does not have an $=$ sign in it  
+  * In this class, it will have the $\ne$ sign in it.  
+
+--
+
+Two-tailed hypotheses
+Null: $\large H_0 : \mu_1 = \mu_2$  
+Alternative: $\large H_0 : \mu_1 \ne \mu_2$  
+* In this class, we will always be working with 2-tailed tests  
+
+---
+# Statistics review  
+$\alpha$ = level of signifigance  
+  * In this class, $\alpha = 0.05$.  
+  
+--
+
+$\text{p-values}$ = One of the outputs of most statistical tests  
+* We compare the $\text{p-values}$ against $\alpha = 0.05$  
+* If $\text{p-value} < \alpha$, we **Reject the null hypothesis **  
+  + i.e., This usually means there *is a difference*  
+  
+-- 
+
+* If $\text{p-value} > \alpha$, we **FAIL to reject the null hypothesis **  
+
+  + i.e., This usually means there *is NOT a difference*  
+  
+---
+# Example  
+
+Is the average height of males and females in the US different?
+
+```{r, fig.width=12, fig.height=3}
+ggplot(data = samp_height) +
+  geom_histogram(
+                 aes(x = height,
+                     y = ..density..,
+                     fill = sex), 
+                 color = "white",
+                 alpha = 0.9,
+                 position = "dodge") +
+    scale_x_continuous("Height") +
+  scale_y_continuous("") +
+  labs(title = "Sample of Height in the US") +
+  #theme_bw(base_size = 12) +
+  scale_fill_manual(values = c("darkorchid3", "darkorange2"))
+```
+
+--
+
+* Estimated difference in heights = 5.9 inches  
+
+--
+
+* $\text{p-value} = 0.001$  
+--
+
+What do we conclude?  
+
+---
+# Example 2  
+
+Is the average height of males and females in the US different?
+
+```{r, fig.width=12, fig.height=3}
+n_samp = 20
+samp_height2 <- data.frame( 
+                       height = c(rnorm(n_samp, 67, 5),
+                                  rnorm(n_samp, 65, 5)),
+                       sex = rep(c("Male", "Female"), each = n_samp))
+ggplot(data = samp_height2) +
+  geom_histogram(
+                 aes(x = height,
+                     y = ..density..,
+                     fill = sex), 
+                 color = "white",
+                 alpha = 0.9,
+                 position = "dodge") +
+    scale_x_continuous("Height") +
+  scale_y_continuous("") +
+  labs(title = "Sample of Height in the US") +
+  #theme_bw(base_size = 12) +
+  scale_fill_manual(values = c("darkorchid3", "darkorange2"))
+```
+--
+
+* Estimated difference in heights = 1.5 inches  
+
+--
+
+* $\text{p-value} = 0.273$  
+
+--
+
+What do we conclude?  
+
+---
+# Looking ahead
+
+#### **Wednesday**: Normal Distributions  
+* Look over Normal Distribution Lecture notes before next class!  
+
+#### **Friday**: HW02  
+
+<br/>
+
+#### **Reading**: Hector chp. 5
+
+#### **Video Resources**: on D2L
