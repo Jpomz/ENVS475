@@ -26,13 +26,15 @@ navbar:
         - text: "Lecture 01: Course introduction"
           href: articles/lectures/lecture_01/lecture_01.html
         - text: "Lecture 03: Basic Statistics"
-          href: articles/lectures/lecture_03_basic-stats/lecture_03_basic-stats.html
+          href: articles/lectures/lecture_03_basic-stats/lecture_03_basic-stats_2025.html
         - text: "Lecture 05: Point Estimates"
           href: articles/lectures/lecture_05_estimation/lecture_05_estimation.html
         - text: "Lecture 06: Intro to Models"
           href: articles/lectures/lecture_06_intro-models/lecture_06_intro-models.html
         - text: "Lecture 07: t-tests"
           href: articles/lectures/lecture_07_t-tests/lecture_07_t-tests.html
+        - text: "Lecture 09: Tidy"
+          href: articles/lectures/lecture_09_tidy/lecture_09_tidy.html
         - text: "Lecture 10: ANOVA"
           href: articles/lectures/lecture_10_anova/lecture_10_anova.html
         - text: "Lecture 11: Factorial"
@@ -89,8 +91,8 @@ navbar:
           href: articles/homework/HW_06_linear_models.html
         - text: "Homework 07 t-tests"
           href: articles/homework/HW_07_t-tests.html
-        - text: "Homework 09 R Markdown"
-          href: articles/homework/HW_09_markdown.html
+        - text: "Homework 09 Tidy"
+          href: articles/homework/HW_09_tidy.html
         - text: "Homework 10 ANOVA"
           href: articles/homework/HW_10_ANOVA.html
         - text: "Homework 11 Factorial ANOVA"
