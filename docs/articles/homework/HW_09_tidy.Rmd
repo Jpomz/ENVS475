@@ -52,6 +52,7 @@ Two files will need to be submitted on D2L this week.
 # Problem 1  
 
 A. Create a tidy .csv file with the TB information from Argentina.  
+
   * Column names have data in them.  
   
   * `sp` indicates the test (same for all columns)  
