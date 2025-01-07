@@ -1,9 +1,6 @@
 ---
-title: "Lab 02: Introduction to R"
+title: "Lab 01A: Introduction to R"
 subtitle: "ENVS475: Experimental Analysis and Design"
-date: "Spring, 2023"
-resource_files:
-  - vignettes/Swainson_Thrush.jpg
 output:
   html_document:
     toc: true
@@ -51,7 +48,7 @@ We will go over the basics of using `R` in class but there are many good online 
 
 - [R for Data Science](https://r4ds.had.co.nz/) Which is a completely free book online and covers many of the important aspects of working in R. 
 
-Of course, if you encounter error messages you don't understand or need help figuring out how to accomplish something in `R`, google is your best friend (even the most experienced `R` users use google on a daily basis, myself included). The key to finding answers on google is asking the right questions. Please refer to these links for advice on formulating `R`-related questions:
+Of course, if you encounter error messages you don't understand or need help figuring out how to accomplish something in `R`, Google is your best friend (even the most experienced `R` users use Google on a daily basis, myself included). The key to finding answers on Google is asking the right questions. Please refer to these links for advice on formulating `R`-related questions:
 
 - [How to ask for R help](https://blog.revolutionanalytics.com/2014/01/how-to-ask-for-r-help.html)
 
@@ -63,16 +60,31 @@ As a statistical programming tool, one thing R is very good at is doing math. So
 
 We interact with this calculator by typing numbers and operators (+, -, \*, /) into the `Console` window. By default, the `Console` window is in the bottom left, but you can customize the display of windows in RStudio by clicking on *Tools > Global Options > Pane Layout*.  For example, I like to have my `Console` window in the bottom right, and the `Source` window in the bottom left.  
 
-## Basic expressions
+## Basic expressions  
+
+### Working in the Console  
+
 Let's try it - in the Console, write the `R` code required to add two plus two and then press enter:
 
 ``` {r calc, echo=TRUE, eval = FALSE}
 2+2
 ```
 
-When you run the code, you should see the answer printed below the window. Play with your code a bit - try changing the number and the operators and then run the code again.  For example, try multiplying with `*`, division with `/`, and exponents with `^` or with `**`. Also, play around with order of operations and the use of `()` in your basic expressions. 
+When you run the code, you should see the answer printed below the window. 
 
-## Objects
+Here's some more basic expressions. Enter one line at a time into the console and press `Enter` to run it.  
+``` {r calc, echo=TRUE, eval = FALSE}
+3 / 4
+10 * 2
+2^3
+2**3
+5 + 10 / 3
+```
+
+Play with your code a bit - try changing the number and the operators and then run the code again.  For example, try multiplying with `*`, division with `/`, and exponents with `^` or with `**`. Also, play around with order of operations and the use of `()` in your basic expressions. 
+
+
+## Working With Objects
 
 ### Scalars
 
@@ -86,11 +98,33 @@ x <- 3
 
 The operator `<-` is how we do assignments in `R`. Whatever is to the left of `<-` is the object's name and whatever is to the right is the value. As we will see later, objects can be much more complex than simply a number but for now, we'll keep it simple. 
 
-RStudio has built in shorcuts for the `<-` operator: `Alt + -` (Windows) or `Option + -` (Mac).
+RStudio has built in shorcuts for the `<-` operator: `Alt + -` (Windows) or `Option + -` (Mac).  
+
+Enter each line into the Console and press enter.  
+
+``` {r calc, echo=TRUE, eval = FALSE}
+x / 4
+x - 5
+x / 10
+(X + 50) / 7
+```
+
+What is the value of x?
+
+``` {r echo=TRUE, eval = FALSE}
+x
+```
+
+The calculations run, but `x` does not change. If we want to store the new value we have to use the `<-` operator.  
+
+``` {r echo=TRUE, eval = FALSE}
+x <- x*10
+x
+```
 
 ### Removing objects
 
-If you no longer want an object to be in your working environment, you can use the `rm()` command. If you ran the `x <- 3` command above, you should see an `x` object in your Environment panel. After you confirm that you have an `x` object there, run the following code:
+If you no longer want an object to be in your working environment, you can use the `rm()` command. If you ran the commands above, you should see an `x` object in your `Environment` panel. After you confirm that you have an `x` object there, run the following code:
 
 ```{r}
 rm(x)
@@ -101,7 +135,7 @@ After running this, the `x` object should no longer be in your Environment.
 
 ***
 
-You try it - change the code to create an object called `new_x`. Instead of assigning `new_x` a number, give it a calculation, for example `25/5`. What do you think the value of `new_x` is?
+You try it - create an object called `new_x`. Instead of assigning `new_x` a number, give it a calculation, for example `25/5`. What do you think the value of `new_x` is?
 
 ***  
 
@@ -122,6 +156,20 @@ y <- x * 4
 ```
 
 After running it, print the new object `y` to see its value. Were you right?
+
+## Using scripts instead of the console
+
+The console is useful for doing simple tasks but as our analyses become more complicated, the console is not very efficient. What if you need to go back and change a line of code? What if you want to show your code to someone else to get help?
+
+Instead of using the console, most of our work will be done using scripts. Scripts are special files that us to write, save, and run many lines of code. Scripts can be saved so you can work on them later or send them to collaborators.  
+
+To create a script, click `File -> New File -> R Script`. You can also select the white square with a green plus sign on it in the top left of Rstudio and select the `R Script` option. Finally, if you don't want to use your mouse or prefer keyboard shortcuts, you can also press `Ctrl + Shift + N` (windows) or `Cmd + Shift + N` (mac). This new file should show up in a new window. 
+
+### Shortcuts
+
+As you gain more coding experience, you may be interested in learning more shortcuts. [A full list (Windows and Mac) can be found here](https://support.posit.co/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE)
+
+## First Script  
 
 We can do more complex manipulations and give our variables meaningful names. For example, perhaps we are doing surveys of nesting birds and want to get an estimate on the total weight of eggs in a nest. Let's say we have 6 eggs in a nest, and each egg weighs an average of 14 grams. Note that the last line is the name of the object that we created. We include this line of code so that R sill tell us the value of that object. 
 ```{r more-objects, echo=TRUE}
@@ -163,16 +211,17 @@ sqrt(49)
 * We can also pass variables as the argument
 
 ```{r}
-weight_lb <- 0.11
+weight_lb <- 0.36054
 sqrt(weight_lb)
 ```
 
-* Another function that we'll use a lot is `str()`
-* All values and therefore all variables have types
-* `str`, short for "structure", lets us look at them
+* Another function that we'll use a lot is `class()`
+* All values and therefore all variables have a class
+* lets us look at them
 
 ```{r}
-str(weight_lb)
+class(3)
+class(weight_lb)
 ```
 
 * Another data type is for text data, called "character"
@@ -182,14 +231,32 @@ str(weight_lb)
 "hello world"
 ```
 
-* We can use the `str()` and `class()` functions to look at the "structure" and "class of the object
+* We can use the `class()` function to look at the "class" of different objects  
 
 ```{r}
-str("hello world")
 class("hello world")
+class(TRUE)
+class(FALSE)
 ```
 
-### Function Arguments 
+* Most of what we will use in class is `numeric` and `character`.  
+* Other classes include `logical` and `factor`  
+
+```{r}
+class(TRUE)
+class(FALSE)
+
+char1 <- "apple"
+class(char1)
+fact1 <- as.factor(char1)
+class(fact1)
+```
+
+* `factor` classes are special types of characters.  
+* They are important as grouping variables in statistical analyses.  
+* We will discuss them in more detail when it is relevant later in class.  
+
+## Function Arguments 
 * Functions can take multiple arguments.
     * The `round()` function is used to round numbers to a specific decimal point
     * Type `?round` in the console
@@ -198,6 +265,7 @@ class("hello world")
       * `digits`: number of digits  
 
 ```{r}
+weight_lb
 round(x = weight_lb, digits = 1)
 ```
 **NOTE** If you enter the arguments in the same order as they show up in the function you do not have to name them:
@@ -214,20 +282,13 @@ Likewise, if you name the arguments, you can put them in different order and it 
 round(digits = 1, x = weight_lb)
 ```
 
-***  
-
-You try it - modify the code above to round `weight_lb` to the 4th decimal point. 
-
-***  
-
-
-If you do name the arguments, you can switch their order:
-
-```{r round2, eval = TRUE, echo = TRUE}
-round(digits = 0, x = y)
-```
-
 Although you don't have to name arguments, it’s a good idea to get in the habit of naming them. This will make you code easier to read, will help avoid mistakes that can occur when you don't put the arguments in the correct order, and makes it easier to trouble shoot code that doesn't do what you expect it to do. 
+
+***  
+
+You try it - modify the code above to round `weight_lb` to the 3rd decimal point. 
+
+***  
 
 
 * Functions return values, so as with other values and expressions, if we don't save the output of a function then there is no way to access it later
@@ -246,17 +307,6 @@ weight_rounded <- round(weight_lb, digits = 1)
 weight_rounded
 ```
 
-## Using scripts instead of the console
-
-The console is useful for doing simple tasks but as our analyses become more complicated, the console is not very efficient. What if you need to go back and change a line of code? What if you want to show your code to someone else to get help?
-
-Instead of using the console, most of our work will be done using scripts. Scripts are special files that us to write, save, and run many lines of code. Scripts can be saved so you can work on them later or send them to collaborators.  
-
-To create a script, click `File -> New File -> R Script`. You can also select the white square with a green plus sign on it in the top left of Rstudio and select the `R Script` option. Finally, if you don't want to use your mouse or prefer keyboard shortcuts, you can also press `Ctrl + Shift + N` (windows) or `Cmd + Shift + N` (mac). This new file should show up in a new window. 
-
-### Shortcuts
-
-As you gain more coding experience, you may be interested in learning more shortcuts. [A full list (Windows and Mac) can be found here](https://support.posit.co/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE)
 
 ## Commenting your code
 
@@ -273,11 +323,11 @@ When you entered the code, you probably knew what each object name meant. But if
 This is a great example of when to use comments to define what each object represents:
 
 ```{r LP_comment, echo = TRUE}
-n1 <- 44     # Number of individuals captured on first occasion
+n1 <- 44 # Number of individuals captured on first occasion
 
-n2 <- 32     # Number of individuals captured on second occasion
+n2 <- 32 # Number of individuals captured on second occasion
   
-m2 <- 15     # Number of previously marked individuals captured on second occasion
+m2 <- 15 # Number of previously marked individuals captured on second occasion
 ```
 
 Notice that when you run this code, `R` ignores the comments. 
@@ -288,7 +338,6 @@ If you need to put in a longer comment, you will need to put a `#` in front of e
 
 ```{r Long_comment, echo = TRUE}
 # load the pre-built data set in R called "CO2"
-
 data(CO2)
 
 # what are the names of the columns?
@@ -304,9 +353,15 @@ co2_chilled <- CO2[CO2$Treatment == "chilled",]
 mean(co2_chilled$uptake)
 ```
 
-You can run the entire script by selecting "source" at the top right of the script window (recommend selecting the down arrow and choosing "source with echo"). Likewise, you can run the entire script with echo with the shortcut `Ctrl+Shift+Enter` (windows) or `Cmd+Shift+Return` (mac). 
+### Running lines of code in your script  
 
-You can also run individual lines of code in the script by putting your cursor on that line and pressing `Ctrl+Enter` (windows)	 or `Cmd+Return` (mac). When you do this, your cursor automatically moves to the next line. The line-by-line method is preferred when you are working out code or trying to figure out sections, problems, etc.
+You run individual lines of code in the script by putting your cursor on that line and pressing `Ctrl+Enter` (windows)	 or `Cmd+Return` (mac). When you do this, your cursor automatically moves to the next line. The line-by-line method is preferred when you are working out code or trying to figure out sections, problems, etc.
+
+You can also run the entire script by selecting "source" at the top right of the script window (recommend selecting the down arrow and choosing "source with echo"). 
+
+Likewise, you can run the entire script with echo with the shortcut `Ctrl+Shift+Enter` (windows) or `Cmd+Shift+Return` (mac). 
+
+It is recommended that you restart your R session and `source` your script before you submit your homework. 
 
 # Vectors
 
@@ -315,50 +370,20 @@ So far, we have only been working with objects that store a single number (calle
 `c()` is for "concatenate" which means link things together in a chain or series:
 
 ```{r c(), echo = TRUE}
-x <- c(3,5,2,5)
-x
+vec1 <- c(3, 5, 2)
+vec1
 ```
 
 You can also store sequences of consecutive numbers in a few different ways:
 
 ```{r 1:10 and seq(), echo = TRUE}
-x <- 1:10
-x
+vec2 <- 1:10
+vec2
 
-x2 <- seq(from = 1, to = 10, by = 1)
-x2
+vec3 <- seq(from = 1, to = 10, by = 1)
+vec3
 ```
 
-### Using Functions to make Vectors
-
-A quick note on functions in `R`. We will be using functions heavily in this class. Functions take the form of `function_name()`, where the `()` enclose the function `arguments`. So in the call above: `seq(from = 1, to = 10, by = 1)` we are saying: produce a sequence of numbers from 1 (`from = 1`) to 10 (`to = 10`), and do it for each integer (`by = 1`). **Note** that you can enter the arguments without names if you put them in the correct order: `seq(1, 10, 1)`. However, while learning I **STRONGLY** encourage you to write out the argument names. This will undoubtedly avoid lots of confusion and frustration. 
-
-The `seq()` function is very flexible and useful so if you are not familiar with it, be sure to look at the help page to better understand how to use it. for example, note the `length.out` argument. This can be useful if you want a vector of a certain length (i.e., number of values) between a minimum and maximum value, but aren't sure what `by = ?` value to use. In this case, you would leave out the `by = ` argument and only use the `length.out = ` argument. 
-
-```{r length out, echo = TRUE}
-x3 <- seq(from = 1, to = 10, length.out = 5)
-x3
-```
-
-*** 
-
-You try it - change the `seq()` call to make a vector from 1 to 20 which has 8 values, and store it as `x4`. 
-
-***
-
-Another useful function for creating vectors is `rep()`, which repeats values of a vector:
-
-```{r rep1, echo = TRUE}
-rep(x2, times = 2)
-```
-
-or:
-
-```{r rep2, echo = TRUE}
-rep(x2, each = 2)
-```
-
-Be sure you notice the difference between using the `times` argument vs the `each` argument!
 
 ### Vectors: Numeric OR Character
 
@@ -367,13 +392,40 @@ A vector can also contain characters (though you cannot mix numbers and characte
 ```{r string vector, echo = TRUE}
 occasions <- c("Occasion1", "Occasion2", "Occasion3")
 occasions
+class(occasions)
 ```
 
 The quotes around “Occasion1”, “Occasion2”, and "Occasion3" are critical. Without the quotes, `R` will assume there are objects called `Occasion1`, `Occasion2` and `Occasion3`. As these objects don’t exist in `R`’s memory, there will be an error message.
 
-***
-You try it - modify the code above removing the `" "` around the different occassions within the `c( )`. What does the Error message tell you?
-***
+#### Mixing vector classes  
+
+* Vectors can only be one class  
+
+```{r}
+lgl_vec <- c(TRUE, TRUE, FALSE)
+class(lgl_vec)
+class(occasions)
+class(vec1)
+```
+
+* If you try and mix them, R will convert to whatever class can accommodate all the elements
+
+```{r}
+mixed_vec <- c(1, 2, "apple", TRUE)
+class(mixed_vec)
+mixed_vec
+```
+* `character` is the most versatile class  
+
+### Logicals as numerics  
+
+* This doesn't come up a lot in this class, but you should be aware that logicals have numeric values associated with them  
+
+```{r}
+as.numeric(c(FALSE, TRUE))
+```
+
+### `length()` of a vector  
 
 Vectors can be any length (including 1. In fact, the numeric objects we've been working with are just vectors with length 1). The function `length()` tells you how long a vector is:
 
@@ -382,31 +434,8 @@ Vectors can be any length (including 1. In fact, the numeric objects we've been 
 x
 # what is the length of x?
 length(x)
-```
-
-The function `class()` indicates the class (the type of element) of an object:
-
-```{r echo = TRUE}
-class(x)
-class(occasions)
-```
-
-What is the class of a vector with both numeric and characters entries? Hint:
-
-```{r mixed vector, echo = TRUE}
-mixed <- c(1, 2, "3", "4")
-```
-
-Print out the `mixed` object in the console. What does it look like? What happend to the `numbers` and the `characters` in the vector? You can also type `class(mixed)` to confirm what R "thinks" it is. 
-
-You can also use the `c()` function to add other elements to your vector:
-
-```{r echo = TRUE}
-# first, recall what value you stored in "x"
-x
-
-# now make a new vector y, with x and other numbers
-y <- c(x, 4, 8, 3)
+# length of mixed_vec
+length(mixed_vec)
 ```
 
 Vectors are one of the many data structures that `R` uses. Other important ones are lists (`list()`), matrices (`matrix()`), data frames (`data.frame()`), factors (`factor()`) and arrays (`array()`). We will learn about each of those data structures as we encounter them in lab exercises. 
@@ -429,18 +458,6 @@ y[c(1,3)]
 ***
 You try it - subset the `y` vector to have the 1st and 3rd to 5th, and 8th observation
 ***
-
-We can also index vectors using *a logical vector*. A logical vector is a special type of object that contains values of `TRUE` or `FALSE`. When using a logical vector for indexing, the logical vector indicates which elements to keep (`TRUE`) or remove (`FALSE`) from the original vector. For this reason, the indexing vector must be same length as the focal vector; i.e., `length(a) == length(v)`
-
-```{r echo = TRUE}
-# Logical vector (which elements of y are greater than 4?)
-y > 5
-```
-
-```{r echo = TRUE}
-# Indexing using a logical vector (keep elements 3, 5 and 7)
-y[y > 5]
-```
 
 We can also use indexing to remove elements from a vector:
 
@@ -491,10 +508,10 @@ What is the mean number of ticks per dog?
 mean(ticks)
 ```
 
-And the variance?
+And the standard deviation?
 
 ```{r echo = TRUE}
-var(ticks)
+sd(ticks)
 ```
 
 * We can also calculate common summary statistics
@@ -578,6 +595,99 @@ cond
 
 As you can see, when we divide one vector by another, `R` divides the first element of the first vector by the first element of the second vector, etc. and returns a vector. 
 
+# Data frames  
+
+* Most of what we do in class will be working with data frames.  
+* Data frames are a 2-dimensional data structures with columns and rows.  
+* Each column is a vector (has to be one class).  
+* Each row in the data frame is one observation.  
+
+* Here is an example of a data frame for the `mass` and `wings` vectors:  
+
+```{r}
+data.frame(mass, wing)
+```
+
+* We will be working with pre-loaded data frames in R  
+* To make them accessible, you use the `data()` command.  
+* Here is a pre-loaded data set called `sleep`  
+
+```{r}
+data(sleep)
+sleep
+```
+
+* We will also be downloading data from D2L and loading it into R  
+* We will go over this when we need to later.  
+
+### Functions for data frames  
+
+* The `length()` function tells us how many elements were in a vector  
+* It can also be used to tell us the number of columns in a data frame  
+
+```{r}
+length(sleep)
+```
+
+* Other useful functions are:  
+  * `dim()` which returns the dimensions, number of rows and columns (always in that order).  
+  * `nrow()` which returns the number of rows  
+  * and `ncol()` which gives us the number of columns (I prefer using this instead of `length()`)  
+  
+```{r}
+dim(sleep)
+nrow(sleep)
+ncol(sleep) 
+```
+
+
+### Subsetting data frames  
+
+* recall that the `[]` are used to extract an element from a vector.  
+* We can also use the `[]` to subset dataframes  
+* Data frames have 2 dimensions, so we need to supply two numbers, separated by `,`  
+* you always supply the `[row, column]` numbers in that order.  
+
+```{r}
+sleep
+# extract the second row and first column
+sleep[2,1]
+```
+
+* you can extract entire rows or columns by leaving that space blank in the `[]` 
+
+```{r}
+# extract just the 3rd row from sleep  
+sleep[3,]
+# extract just the first column from sleep
+sleep[,1]
+```
+
+***
+
+You try it.
+Using the `sleep` data frame:
+* Extract the value from the seventh row and first column  
+* Extract the entire fourth row  
+* Extract the entire third column  
+* Use the `[,]` notation to extract the value which = 0.8 in the column called `extra`  
+
+***
+
+* you can also extract a column by its name using the `$`  
+
+```{r}
+sleep$extra
+sleep$group
+```
+
+* It can also be useful to check the classes of specific columns  
+
+```{r}
+class(sleep$extra)
+class(sleep$group)
+```
+
 
 # Packages
 
@@ -586,212 +696,36 @@ One of `R`'s primary strengths is the large number of *packages* available to us
 Accessing the code in a package first requires installing the package. This only needs to be done **once per computer** and is usually done using the `install.packages()` function:
 
 ```{r eval = FALSE}
-install.packages("dplyr")
+install.packages("ggplot2")
 ```
 
-Note that the name of the package (in this case `dplyr`) must be in quotation marks. Packages installed using `install.packages()` are stored in a centralized repository called CRAN (Comprehensive R Archive Network). Once `dplyr` (or any package) is installed on your computer, you do not need to re-run the `install.packages()` function unless you re-install/update `R` or need to update the package to a newer version.
+Note that the name of the package (in this case `ggplot2`) must be in quotation marks. Packages installed using `install.packages()` are stored in a centralized repository called CRAN (Comprehensive R Archive Network). Once `ggpot2` (or any package) is installed on your computer, you do not need to re-run the `install.packages()` function unless you re-install/update `R` or need to update the package to a newer version.
 
-`dplyr` is a powerful package for summarizing and modifying data which we will use extensively in class. We will have a more thorough introduction to `dplyr` later this semester. 
+If you are working on a different machine (i.e., a home desktop) you will need to `install.package()` on each machine once.  
 
 **Note** if you will be using your own personal laptop for this course, you will only need to run the `install.packages()` function once. However, if you will be using the department laptops in class, and then a desktop computer at home or in the library, computer labs, etc., you will need to run `install.packages()` the first time you use each computer. Likewise, if you are using university computers in the library or computer labs, you may need to `install.packages()` each time you log on (it's unclear if the University IT security procedures will remove these regularly or not). 
+
+## Loading the `library()`  
 
 Installing a package does not automatically make the functions from that package available in a given `R` session. To tell `R` where the functions come from, you must *load* the package using the `library()` function:
 
 ```{r}
-library(dplyr)
+library(ggplot2)
 ```
 
 Unlike `install.packages()`, `library()` must be re-run each time you open `R`. Most people include a few calls to `library()` at the beginning of each script so that all packages needed to run the code are loaded at the beginning of the script. 
 
-
-# Data frames
-
-So far, we have only discussed one particular class of `R` object - vectors. Vectors hold a string of values as a single object. Although useful for many applications, vectors are limited in their ability to store multiple types of data (numeric and character).  
-
-This is where data frames become useful. Perhaps the most common type data object you will use in `R` is the data frame. Data frames are tabular objects (rows and columns) similar in structure to spreadsheets (think Excel or GoogleSheets). In effect, data frames store multiple vectors - each column of the data frame is a vector. As such, each column can be a different class (numeric, character, etc.) but all values within a column must be the same class. Just as the first row of an Excel spreadsheet can be a list of column names, each column in a data frame has a name that (hopefully) provides information about what the values in that column represent. The names of columns in data frames are often referred to as `variables` while the rows are generally referred to as `observations`.   
-
-To see how data frames work, let's load a data frame called `starwars` that comes with the `dplyr` package. 
+* `ggplot2` has some useful plotting functions  
+* we will go over the details at a later date, but here's an example of a boxplot using the `sleep` data  
 
 ```{r}
-library(dplyr)
-# the data() function loads data sets which are built-in 
-# or that come with packages
-data("starwars") 
-```
-
-If you ran the `library(dplyr)` function above, you do not strictly need to run it here again, but i included it here to ensure that you have this package loaded. The `data()` function access the built-in data set called `"starwars"` and makes it accessible in your working session. After running that call, you should see a `starwars` data object in your Environment tab. 
-
-***
-
-Note - As discussed above, if you want to access function or data sets that come with packages, you first need to *load* the package in your current working environment. To do that, use the `library()` function, with the unquoted package name as the argument. Once loaded, all of the package's functions and built-in data sets are available to use. 
-
-Alternatively, you can access functions from a given package without loading the package using `package.name::function.name()`. For example, if you want to use the `filter()` function from the `dplyr` package, you could type `dplyr::filter()`. Although less commonly used, this method has a few advantages:
-
-1) Sometimes different packages have functions with the same names. `R` will default to using the function from the package that was loaded last. For example, the `raster` package also has a function called `filter()` so if you load `dplyr` first (using `library() `and then `raster`, `R` will default to using `raster`'s `filter()` function, which could cause problems. 
-
-2) If you share your code with others, the `::` method makes it clear which packages are being use for which functions. That additional clarity is often helpful and is the reason I will occasionally use `::` in this course.
-
-***
-
-To get a quick idea of what information the `starwars` data frame contains, we can use the `names()` function, which returns the names of the columns, and the `head()` and `tail()` functions, which will print the first and last 6 rows of the data frame:
-
-```{r}
-names(starwars)
-head(starwars)
-tail(starwars)
-```
-`names()` just tells us the names of the columns (aka variables) in the data frame. We also get this information from some of the other functions, but it is often helpful to get a reminder on the column names, and the output from `names()` is easier to interpret quickly. 
-
-We can see that `starwars` contains 14 columns with information on different characters in the star wars universe. The `head()` and `tail()` functions abbreviated the data presentation and only show the columns that easily fit on your screen. This is because the `starwars` object is a special kind of data.frame called a "tibble". 
-
-```{r}
-class(starwars)
-```
-
-If we converted it to be just a data frame, it will show the first rows for all the columns:
-
-```{r}
-head(as.data.frame(starwars))
-```
-
-Several other useful functions exist for investigating the structure of data frames such as `str()` and `summary()`. I have not included the output of these in the tutorial, but you should run them to see what values they return.
-
-`str()` tells us about the structure of the data frame, for example which columns are numeric or character class. `summary()` provides some simple summary statistics for each variable. 
-
-Other useful functions are `dim()`, `nrow()` and `ncol()`, which tells us the dimensions (number of rows and columns, in that order) number of columns, and how many rows are in the data frame (similar to `length()` for vectors):
-
-```{r}
-dim(starwars)
-nrow(starwars)
-ncol(starwars)
-```
-
-### Subsetting data frames
-
-As you will see shortly, one of the most common tasks when working with data frames is creating new objects from *parts* of the full data frame. This task involves subsetting the data frame - selecting specific rows and columns. There are **many** ways of subsetting data frames in `R`, too many to discuss so we will only learn about a few.
-
-#### Selecting columns
-
-First, we may want to select a subset of all of the columns in a big data frame. Data frames are essentially tables, which means we can reference both rows and columns by their number: `data.frame[row#, column#]`. 
-**Note** that you don't actually type "row#", you just enter the numer you want. for example, if you want the observation in the 1st row and the first column you would type:
-```{r}
-starwars[1,1]
+ggplot(sleep,
+       aes(x = extra,
+           y = group)) +
+  geom_boxplot()
 ```
 
 
-The row and column numbers have to put inside of square brackets following the name of the data frame object. The row number always comes first and the column number second. If you want to select all rows of a specific column, you just leave the `row#` blank. For example, if we wanted a vector containing just the home worlds (the 10th column) of all the characters: 
-
-```{r}
-starwars[,10]
-```
-
-
-We can also select columns using `data.frame$column_name` (where `data.frame` is the name of the data frame object and `column_name` is the name of the column). In this case, you do actually need to type the `$`. For example,
-
-```{r}
-starwars$homeworld
-```
-
-Notice that if you hit `tab` after you type the `$`, RStudio will bring up all of the column names in that dataframe and you can use the up or down buttons to find the one you want. 
-
-Sometimes you may want to select more than one column. The easiest way to do that is to use the `select()` function in the `dplyr` package. Remember to run `install.packages("dplyr")` before the `library(dplyr)` call below if this is you're first time using the `dplyr` package on the computer you are using. 
-
-```{r}
-library(dplyr)
-
-head(select(.data = starwars, name, height, homeworld))
-
-```
-
-**Quick note** I used the `head()` function around the `select()` function above to shorten the display of the `starwars` to save room. Nesting functions like this (`head(select(...))`) can be very useful. However, it can also be confusing because you have to read the functions "inside out". Likewise it can be easy to miss or add additional `()` or `,` to either the beginning or the end of the function call. To help reduce this risk, I recommend turning on "rainbow brackets":
-1. Open Global Options from the Tools menu
-2. Select Code -> Display
-3. Enable the Rainbow Parentheses option at the bottom
-
-Back to the `select()` function... 
-
-Notice that select requires us to first provide the data frame object (`.data = starwars`) and then we provide the column names (unquoted!) we want to select. You can also use select to remove columns:
-
-```{r}
-head(select(.data = starwars, -height))
-```
-
-You can also select all the columns that occur between two names using the `:`
-
-```{r}
-head(select(.data = starwars, name:eye_color))
-```
-
-***
-
-It's important to realize that even though there are different ways to accomplish the same general task (in this case, "subset columns of a data frame"), those methods will sometimes differ in subtle but important ways. 
-
-For example, what type of object did the `data.frame[,col#]` and `data.frame$column.name` options return? What type of object did `select(data.frame, col1, col2)` return? Modify the code above by nesting it into the `class()` function to see what type of objects they are. 
-
-For example:
-
-```{r}
-class(starwars$homeworld)
-class(select(.data = starwars, -height))
-```
-
-Those are very different results and knowing what the output will be can be useful when deciding the best way to accomplish your task i.e. if you want to have a vector or data.frame at the end.  
-
-***
-
-#### Filtering rows
-
-To select specific rows, we can use the `[row#, col#]` method we learned above, this time leaving the columns blank:
-
-```{r}
-starwars[1,]
-```
-
-If we want more than one row, we just put in a vector with all of the rows we want:
-
-```{r}
-# rows 1 and 2
-starwars[1:2,]
-
-# rows 1 and 30
-starwars[c(1,30),]
-```
-
-Note that we can use the square brackets to also subset vectors, in which case we don't need the comma as long as you tell `R` which column you want first:
-
-```{r}
-starwars$name[1]
-```
-
-Sometimes, we may not know the specific row number(s) we want but we do know the value of one of the columns we want to keep. Using the `filter()` function in the `dplyr` package allows us to filter rows based on the value of one of the variables. For example, if we want just characters from Tatooine, we use:
-
-```{r}
-head(filter(starwars, homeworld == "Tatooine"))
-```
-
-Notice the need for two equals signs (`==`) when telling `R` we want the row where `homeworld` *is* `Tatooine`. A related task might be to filter out all the rows *that are not* `Tatooine`. In this case we would use the `!=` operator which can be read "is not equal to":
-
-```{r}
-head(filter(starwars, homeworld != "Tatooine"))
-```
-
-Filter makes it very easy to select multiple rows using operators like greater than, less than, etc. 
-
-```{r}
-head(filter(starwars, height > 200))
-```
-
-It is also possible to use the "or" operator (`|`) when we want to select observations which meet different values. For example, we want observations of less than 80 *OR* > 200:
-
-```{r}
-head(filter(starwars, height < 80 | height > 200))
-```
-
-We can also filter out observations based on multiple columns using the "and" (`&`) operator. For example, we want the rows which have an height greater than 200, **AND** are from Tatooine:
-
-```{r}
-head(filter(starwars, height > 200 & homeworld == "Tatooine"))
-```
 
 # Assignment Formats: R Scripts
 
@@ -833,11 +767,10 @@ volume
 
 ```
 
-# Homework 1 - For a grade
+# Homework 
 
 Create an assignment script, put it in your class folder and name it according to the convention above. 
 
 * We are going to get a feel for this by working through some exercises together. 
 * In class we will often only do part of an exercise and save the rest for later or for you to do on your own. 
 
-See the homework 1 file for exercise descriptions. 
