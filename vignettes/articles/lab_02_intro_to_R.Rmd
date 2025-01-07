@@ -622,6 +622,7 @@ sleep
 
 ### Functions for data frames  
 
+
 * The `length()` function tells us how many elements were in a vector  
 * It can also be used to tell us the number of columns in a data frame  
 
@@ -640,6 +641,19 @@ nrow(sleep)
 ncol(sleep) 
 ```
 
+* `names()` returns the column names in a data frame  
+
+```{r}
+names(sleep)
+```
+
+* `str()` gives the structure of a data frame  
+
+```{r}
+str(sleep)
+```
+* First row is the data structure (data.frame) and the number of rows (obs) and columns (variables)  
+* One row for each column with the name, the class (num = numeric; Factor = factor) and the first few values in the column.  
 
 ### Subsetting data frames  
 

@@ -148,40 +148,17 @@ A built-in function is one that you don’t need to install and load a package t
 * `abs()` returns the absolute value of a number (e.g., `abs(-2)`)
 * `round()` rounds a number (the first argument) to a given number of decimal places (the second argument `digits =`) (e.g., `round(12.1123, digits = 2)`)
 * `sqrt()` takes the square root of a number (e.g., `sqrt(4)`)
-* `tolower()` makes a string all lower case (e.g., `tolower("HELLO")`)
-* `toupper()` makes a string all upper case (e.g., `toupper("hello")`)
+
 
 Use these built-in functions to print the following items:
 
 4.1. The absolute value of -15.5.
 4.2. 4.483847 rounded to one decimal place.
 4.3. 3.8 rounded to the nearest integer. *You don’t have to specify the number of decimal places in this case if you don’t want to, because `round()` will default to using 0 if the `digits` argument is not provided. Look at `help(round)` or `?round` to see how this is indicated.*
-4.4. "species" in all capital letters.
-4.5. "SPECIES" in all lower case letters.
-4.6. Assign the value of the square root of 2.6 to a variable. Then round the variable you’ve created to 2 decimal places and assign it to another variable. Print out the rounded value.
+4.4. Assign the value of the square root of 2.6 to a variable. Then round the variable you’ve created to 2 decimal places and assign it to another variable. Print out the rounded value.
 
 *Optional Challenge*: Do the same thing as task 6 (immediately above), but instead of creating the intermediate variable, perform both the square root and the round on a single line by putting the `sqrt()` call inside the `round()` call.
 
-## 5. Modify the code 
-
-The following code estimates the total net primary productivity (NPP) per day for two sites. It does this by multiplying the grams of carbon produced in a single square meter per day by the total area of the site. It then prints the daily NPP for each site.
-
-```{r, eval = FALSE}
-site1_g_carbon_m2_day <- 5
-site2_g_carbon_m2_day <- 2.3
-site1_area_m2 <- 200
-site2_area_m2 <- 450
-site1_npp_day <- site1_g_carbon_m2_day * site1_area_m2
-site2_npp_day <- site2_g_carbon_m2_day * site2_area_m2
-site1_npp_day
-site2_npp_day
-```
-
-Copy this code into your assignment and then add additional lines of code to do the following steps and print them out after the daily NPP values (the ones currently printed by the code):
-
-5.1. The sum of the total daily NPP for the two sites.
-5.2. The difference between the daily NPP for the two sites. We only want an absolute difference, so use abs() function to make sure the number is positive.
-5.3. The total NPP over a year for the two sites combined (the sum of the total daily NPP values from part (1) multiplied by 365).
 
 ## 6. Basic Vectors 
 Cut and paste the following vector into your assignment and then use code to print the requested values related to the vector.
@@ -231,7 +208,21 @@ Copy these vectors into an R script and then determine the following:
 
 *Optional Challenge*: A vector of the volumes of the last 5 shrubs with the code written so that it will return the last 5 values regardless of the length of the vector (i.e., it will give the last 5 values if there are 10, 20, or 50 individuals).
 
-## 9. Variable Names (optional)
-In the More Variables exercise (number 3 above) we used the variable names grams, number, and biomass to describe the individual mass, number of individuals, and total biomass of some white-throated woodrats. But are these variable names the best choice? If we came back to the code for this assignment in two weeks would we be able to remember what these variables were referring to and therefore what was going on in the code? The variable name biomass is also kind of long. If we had to type it many times it would be faster just to type b. We could also use really descriptive alternatives like individual_mass_in_grams. Or we would compromise and abbreviate this or leave out some of the words to make it shorter (e.g., indiv_mass_g).
+## 9. Data frames  
 
-Think about good variable names and then create a new version of this code with the variables renamed to be most useful. Make sure your code still runs properly with the name changes.
+* Copy and run the following code in your assignment, then answer the questions below.  
+
+```{r, eval=FALSE}
+data("PlantGrowth")
+```
+
+Write code in your script to answer all of the following questions for the `PLantGrowth` data frame  
+9.1  What are the dimensions?  
+9.2 What are the number of columns?  
+9.3 What are the number of rows?  
+9.4 What are the column names?  
+9.5 Print out the structure of the data frame.  
+  * Add a comment telling me what the class of each column is.  
+9.6 Extract the entire 3rd row.  
+9.7 Extract the entire 1st column.  
+9.8 Extract the column named `group`.    

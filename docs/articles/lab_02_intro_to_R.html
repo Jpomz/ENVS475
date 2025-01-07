@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lab 02: Introduction to R • ENVS475</title>
+<title>Lab 01A: Introduction to R • ENVS475</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/spacelab/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Lab 02: Introduction to R">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Lab 01A: Introduction to R">
 <meta property="og:description" content="ENVS475">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -232,11 +232,10 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Lab 02: Introduction to R</h1>
+      <h1 data-toc-skip>Lab 01A: Introduction to R</h1>
             <h3 data-toc-skip class="subtitle">ENVS475: Experimental
 Analysis and Design</h3>
             
-            <h4 data-toc-skip class="date">Spring, 2023</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/Jpomz/ENVS475/blob/HEAD/vignettes/articles/lab_02_intro_to_R.Rmd" class="external-link"><code>vignettes/articles/lab_02_intro_to_R.Rmd</code></a></small>
       <div class="hidden name"><code>lab_02_intro_to_R.Rmd</code></div>
@@ -304,9 +303,9 @@ of working in R.</p></li>
 </ul>
 <p>Of course, if you encounter error messages you don’t understand or
 need help figuring out how to accomplish something in <code>R</code>,
-google is your best friend (even the most experienced <code>R</code>
-users use google on a daily basis, myself included). The key to finding
-answers on google is asking the right questions. Please refer to these
+Google is your best friend (even the most experienced <code>R</code>
+users use Google on a daily basis, myself included). The key to finding
+answers on Google is asking the right questions. Please refer to these
 links for advice on formulating <code>R</code>-related questions:</p>
 <ul>
 <li><p><a href="https://blog.revolutionanalytics.com/2014/01/how-to-ask-for-r-help.html" class="external-link">How
@@ -333,19 +332,32 @@ Options &gt; Pane Layout</em>. For example, I like to have my
 <div class="section level3">
 <h3 id="basic-expressions">Basic expressions<a class="anchor" aria-label="anchor" href="#basic-expressions"></a>
 </h3>
+<div class="section level4">
+<h4 id="working-in-the-console">Working in the Console<a class="anchor" aria-label="anchor" href="#working-in-the-console"></a>
+</h4>
 <p>Let’s try it - in the Console, write the <code>R</code> code required
 to add two plus two and then press enter:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fl">2</span><span class="op">+</span><span class="fl">2</span></span></code></pre></div>
 <p>When you run the code, you should see the answer printed below the
-window. Play with your code a bit - try changing the number and the
-operators and then run the code again. For example, try multiplying with
+window.</p>
+<p>Here’s some more basic expressions. Enter one line at a time into the
+console and press <code>Enter</code> to run it.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fl">3</span> <span class="op">/</span> <span class="fl">4</span></span>
+<span><span class="fl">10</span> <span class="op">*</span> <span class="fl">2</span></span>
+<span><span class="fl">2</span><span class="op">^</span><span class="fl">3</span></span>
+<span><span class="fl">2</span><span class="op">**</span><span class="fl">3</span></span>
+<span><span class="fl">5</span> <span class="op">+</span> <span class="fl">10</span> <span class="op">/</span> <span class="fl">3</span></span></code></pre></div>
+<p>Play with your code a bit - try changing the number and the operators
+and then run the code again. For example, try multiplying with
 <code>*</code>, division with <code>/</code>, and exponents with
 <code>^</code> or with <code>**</code>. Also, play around with order of
 operations and the use of <code>()</code> in your basic expressions.</p>
 </div>
+</div>
 <div class="section level3">
-<h3 id="objects">Objects<a class="anchor" aria-label="anchor" href="#objects"></a>
+<h3 id="working-with-objects">Working With Objects<a class="anchor" aria-label="anchor" href="#working-with-objects"></a>
 </h3>
 <div class="section level4">
 <h4 id="scalars">Scalars<a class="anchor" aria-label="anchor" href="#scalars"></a>
@@ -359,7 +371,7 @@ analysis.</p>
 <p>This might seem a bit confusing if you are new to programming so
 let’s try it. The following code creates an <em>object</em> called
 <code>x</code> and <em>assigns</em> it a value of <code>3</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">3</span></span></code></pre></div>
 <p>The operator <code>&lt;-</code> is how we do assignments in
 <code>R</code>. Whatever is to the left of <code>&lt;-</code> is the
@@ -368,29 +380,44 @@ later, objects can be much more complex than simply a number but for
 now, we’ll keep it simple.</p>
 <p>RStudio has built in shorcuts for the <code>&lt;-</code> operator:
 <code>Alt + -</code> (Windows) or <code>Option + -</code> (Mac).</p>
+<p>Enter each line into the Console and press enter.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">/</span> <span class="fl">4</span></span>
+<span><span class="va">x</span> <span class="op">-</span> <span class="fl">5</span></span>
+<span><span class="va">x</span> <span class="op">/</span> <span class="fl">10</span></span>
+<span><span class="op">(</span><span class="va">X</span> <span class="op">+</span> <span class="fl">50</span><span class="op">)</span> <span class="op">/</span> <span class="fl">7</span></span></code></pre></div>
+<p>What is the value of x?</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span></span></code></pre></div>
+<p>The calculations run, but <code>x</code> does not change. If we want
+to store the new value we have to use the <code>&lt;-</code>
+operator.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="va">x</span><span class="op">*</span><span class="fl">10</span></span>
+<span><span class="va">x</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="removing-objects">Removing objects<a class="anchor" aria-label="anchor" href="#removing-objects"></a>
 </h4>
 <p>If you no longer want an object to be in your working environment,
-you can use the <code><a href="https://rdrr.io/r/base/rm.html" class="external-link">rm()</a></code> command. If you ran the
-<code>x &lt;- 3</code> command above, you should see an <code>x</code>
-object in your Environment panel. After you confirm that you have an
+you can use the <code><a href="https://rdrr.io/r/base/rm.html" class="external-link">rm()</a></code> command. If you ran the commands
+above, you should see an <code>x</code> object in your
+<code>Environment</code> panel. After you confirm that you have an
 <code>x</code> object there, run the following code:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/rm.html" class="external-link">rm</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
 <p>After running this, the <code>x</code> object should no longer be in
 your Environment.</p>
 <hr>
-<p>You try it - change the code to create an object called
-<code>new_x</code>. Instead of assigning <code>new_x</code> a number,
-give it a calculation, for example <code>25/5</code>. What do you think
-the value of <code>new_x</code> is?</p>
+<p>You try it - create an object called <code>new_x</code>. Instead of
+assigning <code>new_x</code> a number, give it a calculation, for
+example <code>25/5</code>. What do you think the value of
+<code>new_x</code> is?</p>
 <hr>
 </div>
 </div>
 <div class="section level3">
-<h3 id="working-with-objects">Working with objects<a class="anchor" aria-label="anchor" href="#working-with-objects"></a>
+<h3 id="working-with-objects-1">Working with objects<a class="anchor" aria-label="anchor" href="#working-with-objects-1"></a>
 </h3>
 <p>In the exercise above, you may have noticed that after running the
 code, <code>R</code> did not print anything. That is because we simply
@@ -400,17 +427,47 @@ told <code>R</code> to create the object (if you click on the
 we can do a lot of things with it. For one, we can print it to see the
 value. To do that, we simply type the name of the object and run the
 code:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">new_x</span> <span class="op">&lt;-</span> <span class="fl">25</span><span class="op">/</span><span class="fl">5</span></span>
 <span><span class="va">new_x</span></span>
 <span><span class="co">#&gt; [1] 5</span></span></code></pre></div>
 <p>We can also use objects to create new objects. <em>What do you think
 the following code does?</em></p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">3</span></span>
 <span><span class="va">y</span> <span class="op">&lt;-</span> <span class="va">x</span> <span class="op">*</span> <span class="fl">4</span></span></code></pre></div>
 <p>After running it, print the new object <code>y</code> to see its
 value. Were you right?</p>
+</div>
+<div class="section level3">
+<h3 id="using-scripts-instead-of-the-console">Using scripts instead of the console<a class="anchor" aria-label="anchor" href="#using-scripts-instead-of-the-console"></a>
+</h3>
+<p>The console is useful for doing simple tasks but as our analyses
+become more complicated, the console is not very efficient. What if you
+need to go back and change a line of code? What if you want to show your
+code to someone else to get help?</p>
+<p>Instead of using the console, most of our work will be done using
+scripts. Scripts are special files that us to write, save, and run many
+lines of code. Scripts can be saved so you can work on them later or
+send them to collaborators.</p>
+<p>To create a script, click
+<code>File -&gt; New File -&gt; R Script</code>. You can also select the
+white square with a green plus sign on it in the top left of Rstudio and
+select the <code>R Script</code> option. Finally, if you don’t want to
+use your mouse or prefer keyboard shortcuts, you can also press
+<code>Ctrl + Shift + N</code> (windows) or <code>Cmd + Shift + N</code>
+(mac). This new file should show up in a new window.</p>
+<div class="section level4">
+<h4 id="shortcuts">Shortcuts<a class="anchor" aria-label="anchor" href="#shortcuts"></a>
+</h4>
+<p>As you gain more coding experience, you may be interested in learning
+more shortcuts. <a href="https://support.posit.co/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE" class="external-link">A
+full list (Windows and Mac) can be found here</a></p>
+</div>
+</div>
+<div class="section level3">
+<h3 id="first-script">First Script<a class="anchor" aria-label="anchor" href="#first-script"></a>
+</h3>
 <p>We can do more complex manipulations and give our variables
 meaningful names. For example, perhaps we are doing surveys of nesting
 birds and want to get an estimate on the total weight of eggs in a nest.
@@ -418,7 +475,7 @@ Let’s say we have 6 eggs in a nest, and each egg weighs an average of 14
 grams. Note that the last line is the name of the object that we
 created. We include this line of code so that R sill tell us the value
 of that object.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">n_eggs</span> <span class="op">&lt;-</span> <span class="fl">6</span></span>
 <span><span class="va">egg_mass_g</span> <span class="op">&lt;-</span> <span class="fl">14</span></span>
@@ -465,7 +522,7 @@ is case-sensitive so, for example, <code>Apple</code> is
 <li>A function is a complicated expression.</li>
 <li>Command that returns a value</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">sqrt</a></span><span class="op">(</span><span class="fl">49</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 7</span></span></code></pre></div>
 <ul>
@@ -481,39 +538,73 @@ is the argument.</li>
 </li>
 <li>We can also pass variables as the argument</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">weight_lb</span> <span class="op">&lt;-</span> <span class="fl">0.11</span></span>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">weight_lb</span> <span class="op">&lt;-</span> <span class="fl">0.36054</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">sqrt</a></span><span class="op">(</span><span class="va">weight_lb</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0.3316625</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 0.6004498</span></span></code></pre></div>
 <ul>
-<li>Another function that we’ll use a lot is <code><a href="https://rdrr.io/r/utils/str.html" class="external-link">str()</a></code>
+<li>Another function that we’ll use a lot is <code><a href="https://rdrr.io/r/base/class.html" class="external-link">class()</a></code>
 </li>
-<li>All values and therefore all variables have types</li>
-<li>
-<code>str</code>, short for “structure”, lets us look at them</li>
+<li>All values and therefore all variables have a class</li>
+<li>lets us look at them</li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">weight_lb</span><span class="op">)</span></span>
-<span><span class="co">#&gt;  num 0.11</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "numeric"</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">weight_lb</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "numeric"</span></span></code></pre></div>
 <ul>
 <li>Another data type is for text data, called “character”</li>
 <li>We write text inside of quotation makes</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="st">"hello world"</span></span>
 <span><span class="co">#&gt; [1] "hello world"</span></span></code></pre></div>
 <ul>
-<li>We can use the <code><a href="https://rdrr.io/r/utils/str.html" class="external-link">str()</a></code> and <code><a href="https://rdrr.io/r/base/class.html" class="external-link">class()</a></code> functions
-to look at the “structure” and “class of the object</li>
+<li>We can use the <code><a href="https://rdrr.io/r/base/class.html" class="external-link">class()</a></code> function to look at the “class”
+of different objects</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="st">"hello world"</span><span class="op">)</span></span>
-<span><span class="co">#&gt;  chr "hello world"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="st">"hello world"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "character"</span></span></code></pre></div>
-<div class="section level4">
-<h4 id="function-arguments">Function Arguments<a class="anchor" aria-label="anchor" href="#function-arguments"></a>
-</h4>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="st">"hello world"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "character"</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "logical"</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "logical"</span></span></code></pre></div>
+<ul>
+<li>Most of what we will use in class is <code>numeric</code> and
+<code>character</code>.<br>
+</li>
+<li>Other classes include <code>logical</code> and
+<code>factor</code>
+</li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "logical"</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "logical"</span></span>
+<span></span>
+<span><span class="va">char1</span> <span class="op">&lt;-</span> <span class="st">"apple"</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">char1</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "character"</span></span>
+<span><span class="va">fact1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">as.factor</a></span><span class="op">(</span><span class="va">char1</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">fact1</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "factor"</span></span></code></pre></div>
+<ul>
+<li>
+<code>factor</code> classes are special types of characters.<br>
+</li>
+<li>They are important as grouping variables in statistical
+analyses.<br>
+</li>
+<li>We will discuss them in more detail when it is relevant later in
+class.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="function-arguments">Function Arguments<a class="anchor" aria-label="anchor" href="#function-arguments"></a>
+</h3>
 <ul>
 <li>Functions can take multiple arguments.
 <ul>
@@ -532,14 +623,16 @@ specific decimal point</li>
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">weight_lb</span>, digits <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0.1</span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">weight_lb</span></span>
+<span><span class="co">#&gt; [1] 0.36054</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">weight_lb</span>, digits <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0.4</span></span></code></pre></div>
 <p><strong>NOTE</strong> If you enter the arguments in the same order as
 they show up in the function you do not have to name them:</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">weight_lb</span>, <span class="fl">1</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0.1</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 0.4</span></span></code></pre></div>
 <p>Although you don’t have to name arguments, it’s a good idea to get in
 the habit of naming them. This will make you code easier to read, will
 help avoid mistakes that can occur when you don’t put the arguments in
@@ -547,22 +640,18 @@ the correct order, and makes it easier to trouble shoot code that
 doesn’t do what you expect it to do.</p>
 <p>Likewise, if you name the arguments, you can put them in different
 order and it will still run correctly:</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">1</span>, x <span class="op">=</span> <span class="va">weight_lb</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 0.1</span></span></code></pre></div>
-<hr>
-<p>You try it - modify the code above to round <code>weight_lb</code> to
-the 4th decimal point.</p>
-<hr>
-<p>If you do name the arguments, you can switch their order:</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">0</span>, x <span class="op">=</span> <span class="va">y</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 12</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 0.4</span></span></code></pre></div>
 <p>Although you don’t have to name arguments, it’s a good idea to get in
 the habit of naming them. This will make you code easier to read, will
 help avoid mistakes that can occur when you don’t put the arguments in
 the correct order, and makes it easier to trouble shoot code that
 doesn’t do what you expect it to do.</p>
+<hr>
+<p>You try it - modify the code above to round <code>weight_lb</code> to
+the 3rd decimal point.</p>
+<hr>
 <ul>
 <li>Functions return values, so as with other values and expressions, if
 we don’t save the output of a function then there is no way to access it
@@ -572,43 +661,16 @@ the function to have changed the value of the variable</li>
 <li>But looking at <code>weight_lb</code> we see that it hasn’t been
 rounded</li>
 </ul>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">weight_lb</span></span>
-<span><span class="co">#&gt; [1] 0.11</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 0.36054</span></span></code></pre></div>
 <ul>
 <li>To save the output of a function we assign it to a variable.</li>
 </ul>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">weight_rounded</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">weight_lb</span>, digits <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
 <span><span class="va">weight_rounded</span></span>
-<span><span class="co">#&gt; [1] 0.1</span></span></code></pre></div>
-</div>
-</div>
-<div class="section level3">
-<h3 id="using-scripts-instead-of-the-console">Using scripts instead of the console<a class="anchor" aria-label="anchor" href="#using-scripts-instead-of-the-console"></a>
-</h3>
-<p>The console is useful for doing simple tasks but as our analyses
-become more complicated, the console is not very efficient. What if you
-need to go back and change a line of code? What if you want to show your
-code to someone else to get help?</p>
-<p>Instead of using the console, most of our work will be done using
-scripts. Scripts are special files that us to write, save, and run many
-lines of code. Scripts can be saved so you can work on them later or
-send them to collaborators.</p>
-<p>To create a script, click
-<code>File -&gt; New File -&gt; R Script</code>. You can also select the
-white square with a green plus sign on it in the top left of Rstudio and
-select the <code>R Script</code> option. Finally, if you don’t want to
-use your mouse or prefer keyboard shortcuts, you can also press
-<code>Ctrl + Shift + N</code> (windows) or <code>Cmd + Shift + N</code>
-(mac). This new file should show up in a new window.</p>
-<div class="section level4">
-<h4 id="shortcuts">Shortcuts<a class="anchor" aria-label="anchor" href="#shortcuts"></a>
-</h4>
-<p>As you gain more coding experience, you may be interested in learning
-more shortcuts. <a href="https://support.posit.co/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE" class="external-link">A
-full list (Windows and Mac) can be found here</a></p>
-</div>
+<span><span class="co">#&gt; [1] 0.4</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="commenting-your-code">Commenting your code<a class="anchor" aria-label="anchor" href="#commenting-your-code"></a>
@@ -619,7 +681,7 @@ yourself and others. Use comments to remind yourself what a newly
 created object is, to explain what a line of code does, to leave
 yourself a reminder for later, etc. For example, let’s say you are
 working with mark-recapture data and you have the following code:</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">n1</span> <span class="op">&lt;-</span> <span class="fl">44</span>     </span>
 <span><span class="va">n2</span> <span class="op">&lt;-</span> <span class="fl">32</span>     </span>
 <span><span class="va">m2</span> <span class="op">&lt;-</span> <span class="fl">15</span></span></code></pre></div>
@@ -628,12 +690,12 @@ meant. But if you come back to it six months from now you might not have
 any idea what’s going on.</p>
 <p>This is a great example of when to use comments to define what each
 object represents:</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">n1</span> <span class="op">&lt;-</span> <span class="fl">44</span>     <span class="co"># Number of individuals captured on first occasion</span></span>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">n1</span> <span class="op">&lt;-</span> <span class="fl">44</span> <span class="co"># Number of individuals captured on first occasion</span></span>
 <span></span>
-<span><span class="va">n2</span> <span class="op">&lt;-</span> <span class="fl">32</span>     <span class="co"># Number of individuals captured on second occasion</span></span>
+<span><span class="va">n2</span> <span class="op">&lt;-</span> <span class="fl">32</span> <span class="co"># Number of individuals captured on second occasion</span></span>
 <span>  </span>
-<span><span class="va">m2</span> <span class="op">&lt;-</span> <span class="fl">15</span>     <span class="co"># Number of previously marked individuals captured on second occasion</span></span></code></pre></div>
+<span><span class="va">m2</span> <span class="op">&lt;-</span> <span class="fl">15</span> <span class="co"># Number of previously marked individuals captured on second occasion</span></span></code></pre></div>
 <p>Notice that when you run this code, <code>R</code> ignores the
 comments.</p>
 <p>You can also put a commented line above the code you want to comment.
@@ -642,9 +704,8 @@ comment.</p>
 <p>If you need to put in a longer comment, you will need to put a
 <code>#</code> in front of every line. For example (don’t worry about
 the code for now, just observe the comments):</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># load the pre-built data set in R called "CO2"</span></span>
-<span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">CO2</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># what are the names of the columns?</span></span>
@@ -660,17 +721,24 @@ the code for now, just observe the comments):</p>
 <span><span class="co"># what is the average uptake of the chilled treatment?</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">co2_chilled</span><span class="op">$</span><span class="va">uptake</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 23.78333</span></span></code></pre></div>
-<p>You can run the entire script by selecting “source” at the top right
-of the script window (recommend selecting the down arrow and choosing
-“source with echo”). Likewise, you can run the entire script with echo
-with the shortcut <code>Ctrl+Shift+Enter</code> (windows) or
-<code>Cmd+Shift+Return</code> (mac).</p>
-<p>You can also run individual lines of code in the script by putting
-your cursor on that line and pressing <code>Ctrl+Enter</code> (windows)
-or <code>Cmd+Return</code> (mac). When you do this, your cursor
+<div class="section level4">
+<h4 id="running-lines-of-code-in-your-script">Running lines of code in your script<a class="anchor" aria-label="anchor" href="#running-lines-of-code-in-your-script"></a>
+</h4>
+<p>You run individual lines of code in the script by putting your cursor
+on that line and pressing <code>Ctrl+Enter</code> (windows) or
+<code>Cmd+Return</code> (mac). When you do this, your cursor
 automatically moves to the next line. The line-by-line method is
 preferred when you are working out code or trying to figure out
 sections, problems, etc.</p>
+<p>You can also run the entire script by selecting “source” at the top
+right of the script window (recommend selecting the down arrow and
+choosing “source with echo”).</p>
+<p>Likewise, you can run the entire script with echo with the shortcut
+<code>Ctrl+Shift+Enter</code> (windows) or <code>Cmd+Shift+Return</code>
+(mac).</p>
+<p>It is recommended that you restart your R session and
+<code>source</code> your script before you submit your homework.</p>
+</div>
 </div>
 <div class="section level2">
 <h2 id="vectors">Vectors<a class="anchor" aria-label="anchor" href="#vectors"></a>
@@ -683,115 +751,94 @@ they are usually created by enclosing the string between <code>c(</code>
 and <code>)</code>.</p>
 <p><code><a href="https://rdrr.io/r/base/c.html" class="external-link">c()</a></code> is for “concatenate” which means link things
 together in a chain or series:</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">5</span>,<span class="fl">2</span>,<span class="fl">5</span><span class="op">)</span></span>
-<span><span class="va">x</span></span>
-<span><span class="co">#&gt; [1] 3 5 2 5</span></span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">vec1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">5</span>, <span class="fl">2</span><span class="op">)</span></span>
+<span><span class="va">vec1</span></span>
+<span><span class="co">#&gt; [1] 3 5 2</span></span></code></pre></div>
 <p>You can also store sequences of consecutive numbers in a few
 different ways:</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span></span>
-<span><span class="va">x</span></span>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">vec2</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span></span>
+<span><span class="va">vec2</span></span>
 <span><span class="co">#&gt;  [1]  1  2  3  4  5  6  7  8  9 10</span></span>
 <span></span>
-<span><span class="va">x2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">1</span>, to <span class="op">=</span> <span class="fl">10</span>, by <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span><span class="va">x2</span></span>
+<span><span class="va">vec3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">1</span>, to <span class="op">=</span> <span class="fl">10</span>, by <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="va">vec3</span></span>
 <span><span class="co">#&gt;  [1]  1  2  3  4  5  6  7  8  9 10</span></span></code></pre></div>
-<div class="section level4">
-<h4 id="using-functions-to-make-vectors">Using Functions to make Vectors<a class="anchor" aria-label="anchor" href="#using-functions-to-make-vectors"></a>
-</h4>
-<p>A quick note on functions in <code>R</code>. We will be using
-functions heavily in this class. Functions take the form of
-<code>function_name()</code>, where the <code>()</code> enclose the
-function <code>arguments</code>. So in the call above:
-<code>seq(from = 1, to = 10, by = 1)</code> we are saying: produce a
-sequence of numbers from 1 (<code>from = 1</code>) to 10
-(<code>to = 10</code>), and do it for each integer
-(<code>by = 1</code>). <strong>Note</strong> that you can enter the
-arguments without names if you put them in the correct order:
-<code>seq(1, 10, 1)</code>. However, while learning I
-<strong>STRONGLY</strong> encourage you to write out the argument names.
-This will undoubtedly avoid lots of confusion and frustration.</p>
-<p>The <code><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq()</a></code> function is very flexible and useful so if you
-are not familiar with it, be sure to look at the help page to better
-understand how to use it. for example, note the <code>length.out</code>
-argument. This can be useful if you want a vector of a certain length
-(i.e., number of values) between a minimum and maximum value, but aren’t
-sure what <code>by = ?</code> value to use. In this case, you would
-leave out the <code>by =</code> argument and only use the
-<code>length.out =</code> argument.</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">x3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">1</span>, to <span class="op">=</span> <span class="fl">10</span>, length.out <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
-<span><span class="va">x3</span></span>
-<span><span class="co">#&gt; [1]  1.00  3.25  5.50  7.75 10.00</span></span></code></pre></div>
-<hr>
-<p>You try it - change the <code><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq()</a></code> call to make a vector from
-1 to 20 which has 8 values, and store it as <code>x4</code>.</p>
-<hr>
-<p>Another useful function for creating vectors is <code><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep()</a></code>,
-which repeats values of a vector:</p>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="va">x2</span>, times <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="co">#&gt;  [1]  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10</span></span></code></pre></div>
-<p>or:</p>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="va">x2</span>, each <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="co">#&gt;  [1]  1  1  2  2  3  3  4  4  5  5  6  6  7  7  8  8  9  9 10 10</span></span></code></pre></div>
-<p>Be sure you notice the difference between using the
-<code>times</code> argument vs the <code>each</code> argument!</p>
-</div>
 <div class="section level4">
 <h4 id="vectors-numeric-or-character">Vectors: Numeric OR Character<a class="anchor" aria-label="anchor" href="#vectors-numeric-or-character"></a>
 </h4>
 <p>A vector can also contain characters (though you cannot mix numbers
 and characters in the same vector!):</p>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">occasions</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Occasion1"</span>, <span class="st">"Occasion2"</span>, <span class="st">"Occasion3"</span><span class="op">)</span></span>
 <span><span class="va">occasions</span></span>
-<span><span class="co">#&gt; [1] "Occasion1" "Occasion2" "Occasion3"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "Occasion1" "Occasion2" "Occasion3"</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">occasions</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "character"</span></span></code></pre></div>
 <p>The quotes around “Occasion1”, “Occasion2”, and “Occasion3” are
 critical. Without the quotes, <code>R</code> will assume there are
 objects called <code>Occasion1</code>, <code>Occasion2</code> and
 <code>Occasion3</code>. As these objects don’t exist in <code>R</code>’s
 memory, there will be an error message.</p>
-<hr>
-<p>You try it - modify the code above removing the <code>" "</code>
-around the different occassions within the <code><a href="https://rdrr.io/r/base/c.html" class="external-link">c( )</a></code>. What does
-the Error message tell you? ***</p>
+<div class="section level5">
+<h5 id="mixing-vector-classes">Mixing vector classes<a class="anchor" aria-label="anchor" href="#mixing-vector-classes"></a>
+</h5>
+<ul>
+<li>Vectors can only be one class</li>
+</ul>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">lgl_vec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">lgl_vec</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "logical"</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">occasions</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "character"</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">vec1</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "numeric"</span></span></code></pre></div>
+<ul>
+<li>If you try and mix them, R will convert to whatever class can
+accommodate all the elements</li>
+</ul>
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mixed_vec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="st">"apple"</span>, <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">mixed_vec</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "character"</span></span>
+<span><span class="va">mixed_vec</span></span>
+<span><span class="co">#&gt; [1] "1"     "2"     "apple" "TRUE"</span></span></code></pre></div>
+<ul>
+<li>
+<code>character</code> is the most versatile class</li>
+</ul>
+</div>
+</div>
+<div class="section level4">
+<h4 id="logicals-as-numerics">Logicals as numerics<a class="anchor" aria-label="anchor" href="#logicals-as-numerics"></a>
+</h4>
+<ul>
+<li>This doesn’t come up a lot in this class, but you should be aware
+that logicals have numeric values associated with them</li>
+</ul>
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">FALSE</span>, <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 0 1</span></span></code></pre></div>
+</div>
+<div class="section level4">
+<h4 id="length-of-a-vector">
+<code>length()</code> of a vector<a class="anchor" aria-label="anchor" href="#length-of-a-vector"></a>
+</h4>
 <p>Vectors can be any length (including 1. In fact, the numeric objects
 we’ve been working with are just vectors with length 1). The function
 <code><a href="https://rdrr.io/r/base/length.html" class="external-link">length()</a></code> tells you how long a vector is:</p>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># first, recall what the value of x is</span></span>
 <span><span class="va">x</span></span>
-<span><span class="co">#&gt;  [1]  1  2  3  4  5  6  7  8  9 10</span></span>
+<span><span class="co">#&gt; [1] 3</span></span>
 <span><span class="co"># what is the length of x?</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 10</span></span></code></pre></div>
-<p>The function <code><a href="https://rdrr.io/r/base/class.html" class="external-link">class()</a></code> indicates the class (the type of
-element) of an object:</p>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "integer"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">occasions</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "character"</span></span></code></pre></div>
-<p>What is the class of a vector with both numeric and characters
-entries? Hint:</p>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">mixed</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="st">"3"</span>, <span class="st">"4"</span><span class="op">)</span></span></code></pre></div>
-<p>Print out the <code>mixed</code> object in the console. What does it
-look like? What happend to the <code>numbers</code> and the
-<code>characters</code> in the vector? You can also type
-<code>class(mixed)</code> to confirm what R “thinks” it is.</p>
-<p>You can also use the <code><a href="https://rdrr.io/r/base/c.html" class="external-link">c()</a></code> function to add other elements
-to your vector:</p>
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># first, recall what value you stored in "x"</span></span>
-<span><span class="va">x</span></span>
-<span><span class="co">#&gt;  [1]  1  2  3  4  5  6  7  8  9 10</span></span>
-<span></span>
-<span><span class="co"># now make a new vector y, with x and other numbers</span></span>
-<span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">x</span>, <span class="fl">4</span>, <span class="fl">8</span>, <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 1</span></span>
+<span><span class="co"># length of mixed_vec</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">mixed_vec</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 4</span></span></code></pre></div>
 <p>Vectors are one of the many data structures that <code>R</code> uses.
 Other important ones are lists (<code><a href="https://rdrr.io/r/base/list.html" class="external-link">list()</a></code>), matrices
 (<code><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix()</a></code>), data frames (<code><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame()</a></code>),
@@ -805,7 +852,7 @@ lab exercises.</p>
 <p>Often you will need to work with just a subset of a vector. For
 example, maybe you have a vector of plant biomass measured along
 transects but you only need the third observation:</p>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">8</span>, <span class="fl">5</span>, <span class="fl">25</span>, <span class="fl">3</span>, <span class="fl">6</span>, <span class="fl">1</span><span class="op">)</span></span>
 <span><span class="va">y</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span></span>
 <span><span class="co">#&gt; [1] 8</span></span></code></pre></div>
@@ -815,34 +862,19 @@ provided <em>an integer</em> to refer to the position of elements in the
 vector. The indexing vector can be more than length = 1, but to do that
 we need to group them using the <code><a href="https://rdrr.io/r/base/c.html" class="external-link">c()</a></code> function. For example,
 let’s say we wanted the 1st and the 3rd observation in a vector:</p>
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">y</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">3</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="co">#&gt; [1] 2 8</span></span></code></pre></div>
 <hr>
 <p>You try it - subset the <code>y</code> vector to have the 1st and 3rd
 to 5th, and 8th observation ***</p>
-<p>We can also index vectors using <em>a logical vector</em>. A logical
-vector is a special type of object that contains values of
-<code>TRUE</code> or <code>FALSE</code>. When using a logical vector for
-indexing, the logical vector indicates which elements to keep
-(<code>TRUE</code>) or remove (<code>FALSE</code>) from the original
-vector. For this reason, the indexing vector must be same length as the
-focal vector; i.e., <code>length(a) == length(v)</code></p>
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Logical vector (which elements of y are greater than 4?)</span></span>
-<span><span class="va">y</span> <span class="op">&gt;</span> <span class="fl">5</span></span>
-<span><span class="co">#&gt; [1] FALSE FALSE  TRUE FALSE  TRUE FALSE  TRUE FALSE</span></span></code></pre></div>
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Indexing using a logical vector (keep elements 3, 5 and 7)</span></span>
-<span><span class="va">y</span><span class="op">[</span><span class="va">y</span> <span class="op">&gt;</span> <span class="fl">5</span><span class="op">]</span></span>
-<span><span class="co">#&gt; [1]  8 25  6</span></span></code></pre></div>
 <p>We can also use indexing to remove elements from a vector:</p>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Remove the second element</span></span>
 <span><span class="va">y</span><span class="op">[</span><span class="op">-</span><span class="fl">2</span><span class="op">]</span></span>
 <span><span class="co">#&gt; [1]  2  8  5 25  3  6  1</span></span></code></pre></div>
 <p>or to rearrange the order of a vector</p>
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">y</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5</span>,<span class="fl">4</span>,<span class="fl">3</span>,<span class="fl">2</span>,<span class="fl">1</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="co">#&gt; [1] 25  5  8  4  2</span></span></code></pre></div>
 </div>
@@ -913,24 +945,24 @@ Ticks
 </table>
 <p>What is the total number of ticks recorded in the study? For that, we
 can use the built-in <code><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum()</a></code> function:</p>
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ticks</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">4</span>, <span class="fl">7</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">150</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">ticks</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 166</span></span></code></pre></div>
 <p>What is the mean number of ticks per dog?</p>
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">ticks</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 33.2</span></span></code></pre></div>
-<p>And the variance?</p>
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">var</a></span><span class="op">(</span><span class="va">ticks</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 4266.7</span></span></code></pre></div>
+<p>And the standard deviation?</p>
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html" class="external-link">sd</a></span><span class="op">(</span><span class="va">ticks</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 65.31998</span></span></code></pre></div>
 <ul>
 <li>We can also calculate common summary statistics</li>
 <li>For example, if we have a vector of population counts</li>
 </ul>
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">count</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">9</span>, <span class="fl">16</span>, <span class="fl">3</span>, <span class="fl">10</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">count</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 9.5</span></span>
@@ -957,13 +989,13 @@ pretty good at escaping before you’ve finished measuring them</li>
 <li>So a vector of 4 population counts with the third value missing
 would look like</li>
 </ul>
-<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">count_na</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">9</span>, <span class="fl">16</span>, <span class="cn">NA</span>, <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>If we try to take the mean of this vector we get
 <code>NA</code>?</li>
 </ul>
-<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">count_na</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] NA</span></span></code></pre></div>
 <ul>
@@ -980,7 +1012,7 @@ the function</p></li>
 (<code>na.rm</code>), <code>=</code>, and the value that we want those
 arguments to take (<code>TRUE</code>)</p></li>
 </ul>
-<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">count_na</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 11.66667</span></span></code></pre></div>
 </div>
@@ -1084,13 +1116,13 @@ on these measures. One common metric of body condition used by
 ornithologists is <span class="math inline">\(\frac{mass}{size}\)</span>, where wing chord is
 used as a proxy for body size. We <em>could</em> calculate body
 condition for each individual:</p>
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cond1</span> <span class="op">&lt;-</span> <span class="fl">36.2</span><span class="op">/</span><span class="fl">95.1</span> <span class="co"># Body condition of the first individual</span></span>
 <span></span>
 <span><span class="va">cond2</span> <span class="op">&lt;-</span> <span class="fl">34.6</span><span class="op">/</span><span class="fl">88.4</span> <span class="co"># Body condition of the second individual</span></span></code></pre></div>
 <p>But that is time consuming and error prone. Luckily, <code>R</code>
 will <em>vectorize</em> basic arithmetic:</p>
-<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mass</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">36.2</span>, <span class="fl">34.6</span>, <span class="fl">31.0</span>, <span class="fl">31.8</span>, <span class="fl">29.4</span>, <span class="fl">32.0</span><span class="op">)</span></span>
 <span><span class="va">wing</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">95.1</span>, <span class="fl">88.4</span>, <span class="fl">97.9</span>, <span class="fl">96.8</span>, <span class="fl">92.3</span>, <span class="fl">90.6</span><span class="op">)</span></span>
 <span></span>
@@ -1100,6 +1132,212 @@ will <em>vectorize</em> basic arithmetic:</p>
 <p>As you can see, when we divide one vector by another, <code>R</code>
 divides the first element of the first vector by the first element of
 the second vector, etc. and returns a vector.</p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="data-frames">Data frames<a class="anchor" aria-label="anchor" href="#data-frames"></a>
+</h2>
+<ul>
+<li><p>Most of what we do in class will be working with data
+frames.<br></p></li>
+<li><p>Data frames are a 2-dimensional data structures with columns and
+rows.<br></p></li>
+<li><p>Each column is a vector (has to be one class).<br></p></li>
+<li><p>Each row in the data frame is one observation.</p></li>
+<li><p>Here is an example of a data frame for the <code>mass</code> and
+<code>wings</code> vectors:</p></li>
+</ul>
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="va">mass</span>, <span class="va">wing</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   mass wing</span></span>
+<span><span class="co">#&gt; 1 36.2 95.1</span></span>
+<span><span class="co">#&gt; 2 34.6 88.4</span></span>
+<span><span class="co">#&gt; 3 31.0 97.9</span></span>
+<span><span class="co">#&gt; 4 31.8 96.8</span></span>
+<span><span class="co">#&gt; 5 29.4 92.3</span></span>
+<span><span class="co">#&gt; 6 32.0 90.6</span></span></code></pre></div>
+<ul>
+<li>We will be working with pre-loaded data frames in R<br>
+</li>
+<li>To make them accessible, you use the <code><a href="https://rdrr.io/r/utils/data.html" class="external-link">data()</a></code>
+command.<br>
+</li>
+<li>Here is a pre-loaded data set called <code>sleep</code>
+</li>
+</ul>
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">sleep</span><span class="op">)</span></span>
+<span><span class="va">sleep</span></span>
+<span><span class="co">#&gt;    extra group ID</span></span>
+<span><span class="co">#&gt; 1    0.7     1  1</span></span>
+<span><span class="co">#&gt; 2   -1.6     1  2</span></span>
+<span><span class="co">#&gt; 3   -0.2     1  3</span></span>
+<span><span class="co">#&gt; 4   -1.2     1  4</span></span>
+<span><span class="co">#&gt; 5   -0.1     1  5</span></span>
+<span><span class="co">#&gt; 6    3.4     1  6</span></span>
+<span><span class="co">#&gt; 7    3.7     1  7</span></span>
+<span><span class="co">#&gt; 8    0.8     1  8</span></span>
+<span><span class="co">#&gt; 9    0.0     1  9</span></span>
+<span><span class="co">#&gt; 10   2.0     1 10</span></span>
+<span><span class="co">#&gt; 11   1.9     2  1</span></span>
+<span><span class="co">#&gt; 12   0.8     2  2</span></span>
+<span><span class="co">#&gt; 13   1.1     2  3</span></span>
+<span><span class="co">#&gt; 14   0.1     2  4</span></span>
+<span><span class="co">#&gt; 15  -0.1     2  5</span></span>
+<span><span class="co">#&gt; 16   4.4     2  6</span></span>
+<span><span class="co">#&gt; 17   5.5     2  7</span></span>
+<span><span class="co">#&gt; 18   1.6     2  8</span></span>
+<span><span class="co">#&gt; 19   4.6     2  9</span></span>
+<span><span class="co">#&gt; 20   3.4     2 10</span></span></code></pre></div>
+<ul>
+<li>We will also be downloading data from D2L and loading it into
+R<br>
+</li>
+<li>We will go over this when we need to later.</li>
+</ul>
+<div class="section level4">
+<h4 id="functions-for-data-frames">Functions for data frames<a class="anchor" aria-label="anchor" href="#functions-for-data-frames"></a>
+</h4>
+<ul>
+<li>The <code><a href="https://rdrr.io/r/base/length.html" class="external-link">length()</a></code> function tells us how many elements were
+in a vector<br>
+</li>
+<li>It can also be used to tell us the number of columns in a data
+frame</li>
+</ul>
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">sleep</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 3</span></span></code></pre></div>
+<ul>
+<li>Other useful functions are:
+<ul>
+<li>
+<code><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim()</a></code> which returns the dimensions, number of rows and
+columns (always in that order).<br>
+</li>
+<li>
+<code><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow()</a></code> which returns the number of rows<br>
+</li>
+<li>and <code><a href="https://rdrr.io/r/base/nrow.html" class="external-link">ncol()</a></code> which gives us the number of columns (I
+prefer using this instead of <code><a href="https://rdrr.io/r/base/length.html" class="external-link">length()</a></code>)</li>
+</ul>
+</li>
+</ul>
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">sleep</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 20  3</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">sleep</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 20</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">ncol</a></span><span class="op">(</span><span class="va">sleep</span><span class="op">)</span> </span>
+<span><span class="co">#&gt; [1] 3</span></span></code></pre></div>
+<ul>
+<li>
+<code><a href="https://rdrr.io/r/base/names.html" class="external-link">names()</a></code> returns the column names in a data frame</li>
+</ul>
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">sleep</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "extra" "group" "ID"</span></span></code></pre></div>
+<ul>
+<li>
+<code><a href="https://rdrr.io/r/utils/str.html" class="external-link">str()</a></code> gives the structure of a data frame</li>
+</ul>
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">sleep</span><span class="op">)</span></span>
+<span><span class="co">#&gt; 'data.frame':    20 obs. of  3 variables:</span></span>
+<span><span class="co">#&gt;  $ extra: num  0.7 -1.6 -0.2 -1.2 -0.1 3.4 3.7 0.8 0 2 ...</span></span>
+<span><span class="co">#&gt;  $ group: Factor w/ 2 levels "1","2": 1 1 1 1 1 1 1 1 1 1 ...</span></span>
+<span><span class="co">#&gt;  $ ID   : Factor w/ 10 levels "1","2","3","4",..: 1 2 3 4 5 6 7 8 9 10 ...</span></span></code></pre></div>
+<ul>
+<li>First row is the data structure (data.frame) and the number of rows
+(obs) and columns (variables)<br>
+</li>
+<li>One row for each column with the name, the class (num = numeric;
+Factor = factor) and the first few values in the column.</li>
+</ul>
+</div>
+<div class="section level4">
+<h4 id="subsetting-data-frames">Subsetting data frames<a class="anchor" aria-label="anchor" href="#subsetting-data-frames"></a>
+</h4>
+<ul>
+<li>recall that the <code>[]</code> are used to extract an element from
+a vector.<br>
+</li>
+<li>We can also use the <code>[]</code> to subset dataframes<br>
+</li>
+<li>Data frames have 2 dimensions, so we need to supply two numbers,
+separated by <code>,</code><br>
+</li>
+<li>you always supply the <code>[row, column]</code> numbers in that
+order.</li>
+</ul>
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">sleep</span></span>
+<span><span class="co">#&gt;    extra group ID</span></span>
+<span><span class="co">#&gt; 1    0.7     1  1</span></span>
+<span><span class="co">#&gt; 2   -1.6     1  2</span></span>
+<span><span class="co">#&gt; 3   -0.2     1  3</span></span>
+<span><span class="co">#&gt; 4   -1.2     1  4</span></span>
+<span><span class="co">#&gt; 5   -0.1     1  5</span></span>
+<span><span class="co">#&gt; 6    3.4     1  6</span></span>
+<span><span class="co">#&gt; 7    3.7     1  7</span></span>
+<span><span class="co">#&gt; 8    0.8     1  8</span></span>
+<span><span class="co">#&gt; 9    0.0     1  9</span></span>
+<span><span class="co">#&gt; 10   2.0     1 10</span></span>
+<span><span class="co">#&gt; 11   1.9     2  1</span></span>
+<span><span class="co">#&gt; 12   0.8     2  2</span></span>
+<span><span class="co">#&gt; 13   1.1     2  3</span></span>
+<span><span class="co">#&gt; 14   0.1     2  4</span></span>
+<span><span class="co">#&gt; 15  -0.1     2  5</span></span>
+<span><span class="co">#&gt; 16   4.4     2  6</span></span>
+<span><span class="co">#&gt; 17   5.5     2  7</span></span>
+<span><span class="co">#&gt; 18   1.6     2  8</span></span>
+<span><span class="co">#&gt; 19   4.6     2  9</span></span>
+<span><span class="co">#&gt; 20   3.4     2 10</span></span>
+<span><span class="co"># extract the second row and first column</span></span>
+<span><span class="va">sleep</span><span class="op">[</span><span class="fl">2</span>,<span class="fl">1</span><span class="op">]</span></span>
+<span><span class="co">#&gt; [1] -1.6</span></span></code></pre></div>
+<ul>
+<li>you can extract entire rows or columns by leaving that space blank
+in the <code>[]</code>
+</li>
+</ul>
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># extract just the 3rd row from sleep  </span></span>
+<span><span class="va">sleep</span><span class="op">[</span><span class="fl">3</span>,<span class="op">]</span></span>
+<span><span class="co">#&gt;   extra group ID</span></span>
+<span><span class="co">#&gt; 3  -0.2     1  3</span></span>
+<span><span class="co"># extract just the first column from sleep</span></span>
+<span><span class="va">sleep</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span></span>
+<span><span class="co">#&gt;  [1]  0.7 -1.6 -0.2 -1.2 -0.1  3.4  3.7  0.8  0.0  2.0  1.9  0.8  1.1  0.1 -0.1</span></span>
+<span><span class="co">#&gt; [16]  4.4  5.5  1.6  4.6  3.4</span></span></code></pre></div>
+<hr>
+<p>You try it. Using the <code>sleep</code> data frame: * Extract the
+value from the seventh row and first column<br>
+* Extract the entire fourth row<br>
+* Extract the entire third column<br>
+* Use the <code>[,]</code> notation to extract the value which = 0.8 in
+the column called <code>extra</code></p>
+<hr>
+<ul>
+<li>you can also extract a column by its name using the
+<code>$</code>
+</li>
+</ul>
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">sleep</span><span class="op">$</span><span class="va">extra</span></span>
+<span><span class="co">#&gt;  [1]  0.7 -1.6 -0.2 -1.2 -0.1  3.4  3.7  0.8  0.0  2.0  1.9  0.8  1.1  0.1 -0.1</span></span>
+<span><span class="co">#&gt; [16]  4.4  5.5  1.6  4.6  3.4</span></span>
+<span><span class="va">sleep</span><span class="op">$</span><span class="va">group</span></span>
+<span><span class="co">#&gt;  [1] 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2</span></span>
+<span><span class="co">#&gt; Levels: 1 2</span></span></code></pre></div>
+<ul>
+<li>It can also be useful to check the classes of specific columns</li>
+</ul>
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">sleep</span><span class="op">$</span><span class="va">extra</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "numeric"</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">sleep</span><span class="op">$</span><span class="va">group</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "factor"</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -1118,20 +1356,18 @@ think of.</p>
 package. This only needs to be done <strong>once per computer</strong>
 and is usually done using the <code><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages()</a></code>
 function:</p>
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"dplyr"</span><span class="op">)</span></span></code></pre></div>
-<p>Note that the name of the package (in this case <code>dplyr</code>)
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"ggplot2"</span><span class="op">)</span></span></code></pre></div>
+<p>Note that the name of the package (in this case <code>ggplot2</code>)
 must be in quotation marks. Packages installed using
 <code><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages()</a></code> are stored in a centralized repository
-called CRAN (Comprehensive R Archive Network). Once <code>dplyr</code>
+called CRAN (Comprehensive R Archive Network). Once <code>ggpot2</code>
 (or any package) is installed on your computer, you do not need to
 re-run the <code><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages()</a></code> function unless you
 re-install/update <code>R</code> or need to update the package to a
 newer version.</p>
-<p><code>dplyr</code> is a powerful package for summarizing and
-modifying data which we will use extensively in class. We will have a
-more thorough introduction to <code>dplyr</code> later this
-semester.</p>
+<p>If you are working on a different machine (i.e., a home desktop) you
+will need to <code>install.package()</code> on each machine once.</p>
 <p><strong>Note</strong> if you will be using your own personal laptop
 for this course, you will only need to run the
 <code><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages()</a></code> function once. However, if you will be
@@ -1142,460 +1378,33 @@ Likewise, if you are using university computers in the library or
 computer labs, you may need to <code><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages()</a></code> each time
 you log on (it’s unclear if the University IT security procedures will
 remove these regularly or not).</p>
+<div class="section level3">
+<h3 id="loading-the-library">Loading the <code>library()</code><a class="anchor" aria-label="anchor" href="#loading-the-library"></a>
+</h3>
 <p>Installing a package does not automatically make the functions from
 that package available in a given <code>R</code> session. To tell
 <code>R</code> where the functions come from, you must <em>load</em> the
 package using the <code><a href="https://rdrr.io/r/base/library.html" class="external-link">library()</a></code> function:</p>
-<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
 <p>Unlike <code><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages()</a></code>, <code><a href="https://rdrr.io/r/base/library.html" class="external-link">library()</a></code> must
 be re-run each time you open <code>R</code>. Most people include a few
 calls to <code><a href="https://rdrr.io/r/base/library.html" class="external-link">library()</a></code> at the beginning of each script so that
 all packages needed to run the code are loaded at the beginning of the
 script.</p>
-</div>
-<div class="section level2">
-<h2 id="data-frames">Data frames<a class="anchor" aria-label="anchor" href="#data-frames"></a>
-</h2>
-<p>So far, we have only discussed one particular class of <code>R</code>
-object - vectors. Vectors hold a string of values as a single object.
-Although useful for many applications, vectors are limited in their
-ability to store multiple types of data (numeric and character).</p>
-<p>This is where data frames become useful. Perhaps the most common type
-data object you will use in <code>R</code> is the data frame. Data
-frames are tabular objects (rows and columns) similar in structure to
-spreadsheets (think Excel or GoogleSheets). In effect, data frames store
-multiple vectors - each column of the data frame is a vector. As such,
-each column can be a different class (numeric, character, etc.) but all
-values within a column must be the same class. Just as the first row of
-an Excel spreadsheet can be a list of column names, each column in a
-data frame has a name that (hopefully) provides information about what
-the values in that column represent. The names of columns in data frames
-are often referred to as <code>variables</code> while the rows are
-generally referred to as <code>observations</code>.</p>
-<p>To see how data frames work, let’s load a data frame called
-<code>starwars</code> that comes with the <code>dplyr</code>
-package.</p>
-<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
-<span><span class="co"># the data() function loads data sets which are built-in </span></span>
-<span><span class="co"># or that come with packages</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"starwars"</span><span class="op">)</span> </span></code></pre></div>
-<p>If you ran the <code><a href="https://dplyr.tidyverse.org" class="external-link">library(dplyr)</a></code> function above, you do not
-strictly need to run it here again, but i included it here to ensure
-that you have this package loaded. The <code><a href="https://rdrr.io/r/utils/data.html" class="external-link">data()</a></code> function
-access the built-in data set called <code>"starwars"</code> and makes it
-accessible in your working session. After running that call, you should
-see a <code>starwars</code> data object in your Environment tab.</p>
-<hr>
-<p>Note - As discussed above, if you want to access function or data
-sets that come with packages, you first need to <em>load</em> the
-package in your current working environment. To do that, use the
-<code><a href="https://rdrr.io/r/base/library.html" class="external-link">library()</a></code> function, with the unquoted package name as the
-argument. Once loaded, all of the package’s functions and built-in data
-sets are available to use.</p>
-<p>Alternatively, you can access functions from a given package without
-loading the package using <code>package.name::function.name()</code>.
-For example, if you want to use the <code><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter()</a></code> function from
-the <code>dplyr</code> package, you could type
-<code><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">dplyr::filter()</a></code>. Although less commonly used, this method
-has a few advantages:</p>
-<ol style="list-style-type: decimal">
-<li><p>Sometimes different packages have functions with the same names.
-<code>R</code> will default to using the function from the package that
-was loaded last. For example, the <code>raster</code> package also has a
-function called <code><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter()</a></code> so if you load <code>dplyr</code>
-first (using <code><a href="https://rdrr.io/r/base/library.html" class="external-link">library()</a></code>and then <code>raster</code>,
-<code>R</code> will default to using <code>raster</code>’s
-<code><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter()</a></code> function, which could cause problems.</p></li>
-<li><p>If you share your code with others, the <code>::</code> method
-makes it clear which packages are being use for which functions. That
-additional clarity is often helpful and is the reason I will
-occasionally use <code>::</code> in this course.</p></li>
-</ol>
-<hr>
-<p>To get a quick idea of what information the <code>starwars</code>
-data frame contains, we can use the <code><a href="https://rdrr.io/r/base/names.html" class="external-link">names()</a></code> function, which
-returns the names of the columns, and the <code><a href="https://rdrr.io/r/utils/head.html" class="external-link">head()</a></code> and
-<code><a href="https://rdrr.io/r/utils/head.html" class="external-link">tail()</a></code> functions, which will print the first and last 6
-rows of the data frame:</p>
-<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">starwars</span><span class="op">)</span></span>
-<span><span class="co">#&gt;  [1] "name"       "height"     "mass"       "hair_color" "skin_color"</span></span>
-<span><span class="co">#&gt;  [6] "eye_color"  "birth_year" "sex"        "gender"     "homeworld" </span></span>
-<span><span class="co">#&gt; [11] "species"    "films"      "vehicles"   "starships"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">starwars</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 14</span></span></span>
-<span><span class="co">#&gt;   name      height  mass hair_color skin_color eye_color birth_year sex   gender</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Luke Sky…    172    77 blond      fair       blue            19   male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> C-3PO        167    75 <span style="color: #BB0000;">NA</span>         gold       yellow         112   none  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> R2-D2         96    32 <span style="color: #BB0000;">NA</span>         white, bl… red             33   none  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Darth Va…    202   136 none       white      yellow          41.9 male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Leia Org…    150    49 brown      light      brown           19   fema… femin…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Owen Lars    178   120 brown, gr… light      blue            52   male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   vehicles &lt;list&gt;, starships &lt;list&gt;</span></span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">tail</a></span><span class="op">(</span><span class="va">starwars</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 14</span></span></span>
-<span><span class="co">#&gt;   name      height  mass hair_color skin_color eye_color birth_year sex   gender</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Tion Med…    206    80 none       grey       black             <span style="color: #BB0000;">NA</span> male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Finn          <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> black      dark       dark              <span style="color: #BB0000;">NA</span> male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Rey           <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> brown      light      hazel             <span style="color: #BB0000;">NA</span> fema… femin…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Poe Dame…     <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> brown      light      brown             <span style="color: #BB0000;">NA</span> male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> BB8           <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> none       none       black             <span style="color: #BB0000;">NA</span> none  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Captain …     <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span> none       none       unknown           <span style="color: #BB0000;">NA</span> fema… femin…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   vehicles &lt;list&gt;, starships &lt;list&gt;</span></span></span></code></pre></div>
-<p><code><a href="https://rdrr.io/r/base/names.html" class="external-link">names()</a></code> just tells us the names of the columns (aka
-variables) in the data frame. We also get this information from some of
-the other functions, but it is often helpful to get a reminder on the
-column names, and the output from <code><a href="https://rdrr.io/r/base/names.html" class="external-link">names()</a></code> is easier to
-interpret quickly.</p>
-<p>We can see that <code>starwars</code> contains 14 columns with
-information on different characters in the star wars universe. The
-<code><a href="https://rdrr.io/r/utils/head.html" class="external-link">head()</a></code> and <code><a href="https://rdrr.io/r/utils/head.html" class="external-link">tail()</a></code> functions abbreviated the
-data presentation and only show the columns that easily fit on your
-screen. This is because the <code>starwars</code> object is a special
-kind of data.frame called a “tibble”.</p>
-<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">starwars</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "tbl_df"     "tbl"        "data.frame"</span></span></code></pre></div>
-<p>If we converted it to be just a data frame, it will show the first
-rows for all the columns:</p>
-<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="va">starwars</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt;             name height mass  hair_color  skin_color eye_color birth_year</span></span>
-<span><span class="co">#&gt; 1 Luke Skywalker    172   77       blond        fair      blue       19.0</span></span>
-<span><span class="co">#&gt; 2          C-3PO    167   75        &lt;NA&gt;        gold    yellow      112.0</span></span>
-<span><span class="co">#&gt; 3          R2-D2     96   32        &lt;NA&gt; white, blue       red       33.0</span></span>
-<span><span class="co">#&gt; 4    Darth Vader    202  136        none       white    yellow       41.9</span></span>
-<span><span class="co">#&gt; 5    Leia Organa    150   49       brown       light     brown       19.0</span></span>
-<span><span class="co">#&gt; 6      Owen Lars    178  120 brown, grey       light      blue       52.0</span></span>
-<span><span class="co">#&gt;      sex    gender homeworld species</span></span>
-<span><span class="co">#&gt; 1   male masculine  Tatooine   Human</span></span>
-<span><span class="co">#&gt; 2   none masculine  Tatooine   Droid</span></span>
-<span><span class="co">#&gt; 3   none masculine     Naboo   Droid</span></span>
-<span><span class="co">#&gt; 4   male masculine  Tatooine   Human</span></span>
-<span><span class="co">#&gt; 5 female  feminine  Alderaan   Human</span></span>
-<span><span class="co">#&gt; 6   male masculine  Tatooine   Human</span></span>
-<span><span class="co">#&gt;                                                                                                                                       films</span></span>
-<span><span class="co">#&gt; 1                                           A New Hope, The Empire Strikes Back, Return of the Jedi, Revenge of the Sith, The Force Awakens</span></span>
-<span><span class="co">#&gt; 2                    A New Hope, The Empire Strikes Back, Return of the Jedi, The Phantom Menace, Attack of the Clones, Revenge of the Sith</span></span>
-<span><span class="co">#&gt; 3 A New Hope, The Empire Strikes Back, Return of the Jedi, The Phantom Menace, Attack of the Clones, Revenge of the Sith, The Force Awakens</span></span>
-<span><span class="co">#&gt; 4                                                              A New Hope, The Empire Strikes Back, Return of the Jedi, Revenge of the Sith</span></span>
-<span><span class="co">#&gt; 5                                           A New Hope, The Empire Strikes Back, Return of the Jedi, Revenge of the Sith, The Force Awakens</span></span>
-<span><span class="co">#&gt; 6                                                                                     A New Hope, Attack of the Clones, Revenge of the Sith</span></span>
-<span><span class="co">#&gt;                             vehicles                starships</span></span>
-<span><span class="co">#&gt; 1 Snowspeeder, Imperial Speeder Bike X-wing, Imperial shuttle</span></span>
-<span><span class="co">#&gt; 2                                                            </span></span>
-<span><span class="co">#&gt; 3                                                            </span></span>
-<span><span class="co">#&gt; 4                                             TIE Advanced x1</span></span>
-<span><span class="co">#&gt; 5              Imperial Speeder Bike                         </span></span>
-<span><span class="co">#&gt; 6</span></span></code></pre></div>
-<p>Several other useful functions exist for investigating the structure
-of data frames such as <code><a href="https://rdrr.io/r/utils/str.html" class="external-link">str()</a></code> and <code><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary()</a></code>. I
-have not included the output of these in the tutorial, but you should
-run them to see what values they return.</p>
-<p><code><a href="https://rdrr.io/r/utils/str.html" class="external-link">str()</a></code> tells us about the structure of the data frame,
-for example which columns are numeric or character class.
-<code><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary()</a></code> provides some simple summary statistics for each
-variable.</p>
-<p>Other useful functions are <code><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim()</a></code>, <code><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow()</a></code>
-and <code><a href="https://rdrr.io/r/base/nrow.html" class="external-link">ncol()</a></code>, which tells us the dimensions (number of rows
-and columns, in that order) number of columns, and how many rows are in
-the data frame (similar to <code><a href="https://rdrr.io/r/base/length.html" class="external-link">length()</a></code> for vectors):</p>
-<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">starwars</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 87 14</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">starwars</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 87</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">ncol</a></span><span class="op">(</span><span class="va">starwars</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 14</span></span></code></pre></div>
-<div class="section level4">
-<h4 id="subsetting-data-frames">Subsetting data frames<a class="anchor" aria-label="anchor" href="#subsetting-data-frames"></a>
-</h4>
-<p>As you will see shortly, one of the most common tasks when working
-with data frames is creating new objects from <em>parts</em> of the full
-data frame. This task involves subsetting the data frame - selecting
-specific rows and columns. There are <strong>many</strong> ways of
-subsetting data frames in <code>R</code>, too many to discuss so we will
-only learn about a few.</p>
-<div class="section level5">
-<h5 id="selecting-columns">Selecting columns<a class="anchor" aria-label="anchor" href="#selecting-columns"></a>
-</h5>
-<p>First, we may want to select a subset of all of the columns in a big
-data frame. Data frames are essentially tables, which means we can
-reference both rows and columns by their number:
-<code>data.frame[row#, column#]</code>. <strong>Note</strong> that you
-don’t actually type “row#”, you just enter the numer you want. for
-example, if you want the observation in the 1st row and the first column
-you would type:</p>
-<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">starwars</span><span class="op">[</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">]</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 1</span></span></span>
-<span><span class="co">#&gt;   name          </span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Luke Skywalker</span></span></code></pre></div>
-<p>The row and column numbers have to put inside of square brackets
-following the name of the data frame object. The row number always comes
-first and the column number second. If you want to select all rows of a
-specific column, you just leave the <code>row#</code> blank. For
-example, if we wanted a vector containing just the home worlds (the 10th
-column) of all the characters:</p>
-<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">starwars</span><span class="op">[</span>,<span class="fl">10</span><span class="op">]</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 87 × 1</span></span></span>
-<span><span class="co">#&gt;    homeworld</span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Tatooine </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Tatooine </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Naboo    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Tatooine </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Alderaan </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Tatooine </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Tatooine </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Tatooine </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Tatooine </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Stewjon  </span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 77 more rows</span></span></span></code></pre></div>
-<p>We can also select columns using <code>data.frame$column_name</code>
-(where <code>data.frame</code> is the name of the data frame object and
-<code>column_name</code> is the name of the column). In this case, you
-do actually need to type the <code>$</code>. For example,</p>
-<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">starwars</span><span class="op">$</span><span class="va">homeworld</span></span>
-<span><span class="co">#&gt;  [1] "Tatooine"       "Tatooine"       "Naboo"          "Tatooine"      </span></span>
-<span><span class="co">#&gt;  [5] "Alderaan"       "Tatooine"       "Tatooine"       "Tatooine"      </span></span>
-<span><span class="co">#&gt;  [9] "Tatooine"       "Stewjon"        "Tatooine"       "Eriadu"        </span></span>
-<span><span class="co">#&gt; [13] "Kashyyyk"       "Corellia"       "Rodia"          "Nal Hutta"     </span></span>
-<span><span class="co">#&gt; [17] "Corellia"       "Bestine IV"     NA               "Naboo"         </span></span>
-<span><span class="co">#&gt; [21] "Kamino"         NA               "Trandosha"      "Socorro"       </span></span>
-<span><span class="co">#&gt; [25] "Bespin"         "Mon Cala"       "Chandrila"      NA              </span></span>
-<span><span class="co">#&gt; [29] "Endor"          "Sullust"        NA               "Cato Neimoidia"</span></span>
-<span><span class="co">#&gt; [33] "Coruscant"      "Naboo"          "Naboo"          "Naboo"         </span></span>
-<span><span class="co">#&gt; [37] "Naboo"          "Naboo"          "Toydaria"       "Malastare"     </span></span>
-<span><span class="co">#&gt; [41] "Naboo"          "Tatooine"       "Dathomir"       "Ryloth"        </span></span>
-<span><span class="co">#&gt; [45] "Ryloth"         "Aleen Minor"    "Vulpter"        "Troiken"       </span></span>
-<span><span class="co">#&gt; [49] "Tund"           "Haruun Kal"     "Cerea"          "Glee Anselm"   </span></span>
-<span><span class="co">#&gt; [53] "Iridonia"       "Coruscant"      "Iktotch"        "Quermia"       </span></span>
-<span><span class="co">#&gt; [57] "Dorin"          "Champala"       "Naboo"          "Naboo"         </span></span>
-<span><span class="co">#&gt; [61] "Tatooine"       "Geonosis"       "Mirial"         "Mirial"        </span></span>
-<span><span class="co">#&gt; [65] "Naboo"          "Serenno"        "Alderaan"       "Concord Dawn"  </span></span>
-<span><span class="co">#&gt; [69] "Zolan"          "Ojom"           "Kamino"         "Kamino"        </span></span>
-<span><span class="co">#&gt; [73] "Coruscant"      NA               "Skako"          "Muunilinst"    </span></span>
-<span><span class="co">#&gt; [77] "Shili"          "Kalee"          "Kashyyyk"       "Alderaan"      </span></span>
-<span><span class="co">#&gt; [81] "Umbara"         "Utapau"         NA               NA              </span></span>
-<span><span class="co">#&gt; [85] NA               NA               NA</span></span></code></pre></div>
-<p>Notice that if you hit <code>tab</code> after you type the
-<code>$</code>, RStudio will bring up all of the column names in that
-dataframe and you can use the up or down buttons to find the one you
-want.</p>
-<p>Sometimes you may want to select more than one column. The easiest
-way to do that is to use the <code><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select()</a></code> function in the
-<code>dplyr</code> package. Remember to run
-<code>install.packages("dplyr")</code> before the
-<code><a href="https://dplyr.tidyverse.org" class="external-link">library(dplyr)</a></code> call below if this is you’re first time
-using the <code>dplyr</code> package on the computer you are using.</p>
-<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span>.data <span class="op">=</span> <span class="va">starwars</span>, <span class="va">name</span>, <span class="va">height</span>, <span class="va">homeworld</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 3</span></span></span>
-<span><span class="co">#&gt;   name           height homeworld</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Luke Skywalker    172 Tatooine </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> C-3PO             167 Tatooine </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> R2-D2              96 Naboo    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Darth Vader       202 Tatooine </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Leia Organa       150 Alderaan </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Owen Lars         178 Tatooine</span></span></code></pre></div>
-<p><strong>Quick note</strong> I used the <code><a href="https://rdrr.io/r/utils/head.html" class="external-link">head()</a></code> function
-around the <code><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select()</a></code> function above to shorten the display
-of the <code>starwars</code> to save room. Nesting functions like this
-(<code>head(select(...))</code>) can be very useful. However, it can
-also be confusing because you have to read the functions “inside out”.
-Likewise it can be easy to miss or add additional <code>()</code> or
-<code>,</code> to either the beginning or the end of the function call.
-To help reduce this risk, I recommend turning on “rainbow brackets”: 1.
-Open Global Options from the Tools menu 2. Select Code -&gt; Display 3.
-Enable the Rainbow Parentheses option at the bottom</p>
-<p>Back to the <code><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select()</a></code> function…</p>
-<p>Notice that select requires us to first provide the data frame object
-(<code>.data = starwars</code>) and then we provide the column names
-(unquoted!) we want to select. You can also use select to remove
-columns:</p>
+<ul>
+<li>
+<code>ggplot2</code> has some useful plotting functions<br>
+</li>
+<li>we will go over the details at a later date, but here’s an example
+of a boxplot using the <code>sleep</code> data</li>
+</ul>
 <div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span>.data <span class="op">=</span> <span class="va">starwars</span>, <span class="op">-</span><span class="va">height</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 13</span></span></span>
-<span><span class="co">#&gt;   name    mass hair_color skin_color eye_color birth_year sex   gender homeworld</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Luke …    77 blond      fair       blue            19   male  mascu… Tatooine </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> C-3PO     75 <span style="color: #BB0000;">NA</span>         gold       yellow         112   none  mascu… Tatooine </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> R2-D2     32 <span style="color: #BB0000;">NA</span>         white, bl… red             33   none  mascu… Naboo    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Darth…   136 none       white      yellow          41.9 male  mascu… Tatooine </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Leia …    49 brown      light      brown           19   fema… femin… Alderaan </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Owen …   120 brown, gr… light      blue            52   male  mascu… Tatooine </span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 4 more variables: species &lt;chr&gt;, films &lt;list&gt;, vehicles &lt;list&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   starships &lt;list&gt;</span></span></span></code></pre></div>
-<p>You can also select all the columns that occur between two names
-using the <code>:</code></p>
-<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span>.data <span class="op">=</span> <span class="va">starwars</span>, <span class="va">name</span><span class="op">:</span><span class="va">eye_color</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 6</span></span></span>
-<span><span class="co">#&gt;   name           height  mass hair_color  skin_color  eye_color</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Luke Skywalker    172    77 blond       fair        blue     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> C-3PO             167    75 <span style="color: #BB0000;">NA</span>          gold        yellow   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> R2-D2              96    32 <span style="color: #BB0000;">NA</span>          white, blue red      </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Darth Vader       202   136 none        white       yellow   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Leia Organa       150    49 brown       light       brown    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Owen Lars         178   120 brown, grey light       blue</span></span></code></pre></div>
-<hr>
-<p>It’s important to realize that even though there are different ways
-to accomplish the same general task (in this case, “subset columns of a
-data frame”), those methods will sometimes differ in subtle but
-important ways.</p>
-<p>For example, what type of object did the
-<code>data.frame[,col#]</code> and <code>data.frame$column.name</code>
-options return? What type of object did
-<code>select(data.frame, col1, col2)</code> return? Modify the code
-above by nesting it into the <code><a href="https://rdrr.io/r/base/class.html" class="external-link">class()</a></code> function to see what
-type of objects they are.</p>
-<p>For example:</p>
-<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="va">starwars</span><span class="op">$</span><span class="va">homeworld</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "character"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">class</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span>.data <span class="op">=</span> <span class="va">starwars</span>, <span class="op">-</span><span class="va">height</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "tbl_df"     "tbl"        "data.frame"</span></span></code></pre></div>
-<p>Those are very different results and knowing what the output will be
-can be useful when deciding the best way to accomplish your task i.e. if
-you want to have a vector or data.frame at the end.</p>
-<hr>
-</div>
-<div class="section level5">
-<h5 id="filtering-rows">Filtering rows<a class="anchor" aria-label="anchor" href="#filtering-rows"></a>
-</h5>
-<p>To select specific rows, we can use the <code>[row#, col#]</code>
-method we learned above, this time leaving the columns blank:</p>
-<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">starwars</span><span class="op">[</span><span class="fl">1</span>,<span class="op">]</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 14</span></span></span>
-<span><span class="co">#&gt;   name      height  mass hair_color skin_color eye_color birth_year sex   gender</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Luke Sky…    172    77 blond      fair       blue              19 male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   vehicles &lt;list&gt;, starships &lt;list&gt;</span></span></span></code></pre></div>
-<p>If we want more than one row, we just put in a vector with all of the
-rows we want:</p>
-<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># rows 1 and 2</span></span>
-<span><span class="va">starwars</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span>,<span class="op">]</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 × 14</span></span></span>
-<span><span class="co">#&gt;   name      height  mass hair_color skin_color eye_color birth_year sex   gender</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Luke Sky…    172    77 blond      fair       blue              19 male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> C-3PO        167    75 <span style="color: #BB0000;">NA</span>         gold       yellow           112 none  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   vehicles &lt;list&gt;, starships &lt;list&gt;</span></span></span>
-<span></span>
-<span><span class="co"># rows 1 and 30</span></span>
-<span><span class="va">starwars</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">30</span><span class="op">)</span>,<span class="op">]</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 × 14</span></span></span>
-<span><span class="co">#&gt;   name      height  mass hair_color skin_color eye_color birth_year sex   gender</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Luke Sky…    172    77 blond      fair       blue              19 male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Nien Nunb    160    68 none       grey       black             <span style="color: #BB0000;">NA</span> male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   vehicles &lt;list&gt;, starships &lt;list&gt;</span></span></span></code></pre></div>
-<p>Note that we can use the square brackets to also subset vectors, in
-which case we don’t need the comma as long as you tell <code>R</code>
-which column you want first:</p>
-<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">starwars</span><span class="op">$</span><span class="va">name</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span>
-<span><span class="co">#&gt; [1] "Luke Skywalker"</span></span></code></pre></div>
-<p>Sometimes, we may not know the specific row number(s) we want but we
-do know the value of one of the columns we want to keep. Using the
-<code><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter()</a></code> function in the <code>dplyr</code> package allows
-us to filter rows based on the value of one of the variables. For
-example, if we want just characters from Tatooine, we use:</p>
-<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">starwars</span>, <span class="va">homeworld</span> <span class="op">==</span> <span class="st">"Tatooine"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 14</span></span></span>
-<span><span class="co">#&gt;   name      height  mass hair_color skin_color eye_color birth_year sex   gender</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Luke Sky…    172    77 blond      fair       blue            19   male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> C-3PO        167    75 <span style="color: #BB0000;">NA</span>         gold       yellow         112   none  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Darth Va…    202   136 none       white      yellow          41.9 male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Owen Lars    178   120 brown, gr… light      blue            52   male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Beru Whi…    165    75 brown      light      blue            47   fema… femin…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> R5-D4         97    32 <span style="color: #BB0000;">NA</span>         white, red red             <span style="color: #BB0000;">NA</span>   none  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   vehicles &lt;list&gt;, starships &lt;list&gt;</span></span></span></code></pre></div>
-<p>Notice the need for two equals signs (<code>==</code>) when telling
-<code>R</code> we want the row where <code>homeworld</code> <em>is</em>
-<code>Tatooine</code>. A related task might be to filter out all the
-rows <em>that are not</em> <code>Tatooine</code>. In this case we would
-use the <code>!=</code> operator which can be read “is not equal
-to”:</p>
-<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">starwars</span>, <span class="va">homeworld</span> <span class="op">!=</span> <span class="st">"Tatooine"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 14</span></span></span>
-<span><span class="co">#&gt;   name      height  mass hair_color skin_color eye_color birth_year sex   gender</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> R2-D2         96    32 <span style="color: #BB0000;">NA</span>         white, bl… red               33 none  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Leia Org…    150    49 brown      light      brown             19 fema… femin…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Obi-Wan …    182    77 auburn, w… fair       blue-gray         57 male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Wilhuff …    180    <span style="color: #BB0000;">NA</span> auburn, g… fair       blue              64 male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Chewbacca    228   112 brown      unknown    blue             200 male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Han Solo     180    80 brown      fair       brown             29 male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   vehicles &lt;list&gt;, starships &lt;list&gt;</span></span></span></code></pre></div>
-<p>Filter makes it very easy to select multiple rows using operators
-like greater than, less than, etc.</p>
-<div class="sourceCode" id="cb65"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">starwars</span>, <span class="va">height</span> <span class="op">&gt;</span> <span class="fl">200</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 14</span></span></span>
-<span><span class="co">#&gt;   name      height  mass hair_color skin_color eye_color birth_year sex   gender</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Darth Va…    202   136 none       white      yellow          41.9 male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Chewbacca    228   112 brown      unknown    blue           200   male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Roos Tar…    224    82 none       grey       orange          <span style="color: #BB0000;">NA</span>   male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Rugor Na…    206    <span style="color: #BB0000;">NA</span> none       green      orange          <span style="color: #BB0000;">NA</span>   male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Yarael P…    264    <span style="color: #BB0000;">NA</span> none       white      yellow          <span style="color: #BB0000;">NA</span>   male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Lama Su      229    88 none       grey       black           <span style="color: #BB0000;">NA</span>   male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   vehicles &lt;list&gt;, starships &lt;list&gt;</span></span></span></code></pre></div>
-<p>It is also possible to use the “or” operator (<code>|</code>) when we
-want to select observations which meet different values. For example, we
-want observations of less than 80 <em>OR</em> &gt; 200:</p>
-<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">starwars</span>, <span class="va">height</span> <span class="op">&lt;</span> <span class="fl">80</span> <span class="op">|</span> <span class="va">height</span> <span class="op">&gt;</span> <span class="fl">200</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 14</span></span></span>
-<span><span class="co">#&gt;   name      height  mass hair_color skin_color eye_color birth_year sex   gender</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Darth Va…    202   136 none       white      yellow          41.9 male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Chewbacca    228   112 brown      unknown    blue           200   male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Yoda          66    17 white      green      brown          896   male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Roos Tar…    224    82 none       grey       orange          <span style="color: #BB0000;">NA</span>   male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Rugor Na…    206    <span style="color: #BB0000;">NA</span> none       green      orange          <span style="color: #BB0000;">NA</span>   male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Ratts Ty…     79    15 none       grey, blue unknown         <span style="color: #BB0000;">NA</span>   male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   vehicles &lt;list&gt;, starships &lt;list&gt;</span></span></span></code></pre></div>
-<p>We can also filter out observations based on multiple columns using
-the “and” (<code>&amp;</code>) operator. For example, we want the rows
-which have an height greater than 200, <strong>AND</strong> are from
-Tatooine:</p>
-<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">starwars</span>, <span class="va">height</span> <span class="op">&gt;</span> <span class="fl">200</span> <span class="op">&amp;</span> <span class="va">homeworld</span> <span class="op">==</span> <span class="st">"Tatooine"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 14</span></span></span>
-<span><span class="co">#&gt;   name      height  mass hair_color skin_color eye_color birth_year sex   gender</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Darth Va…    202   136 none       white      yellow          41.9 male  mascu…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   vehicles &lt;list&gt;, starships &lt;list&gt;</span></span></span></code></pre></div>
-</div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">sleep</span>,</span>
+<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">extra</span>,</span>
+<span>           y <span class="op">=</span> <span class="va">group</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><img src="lab_02_intro_to_R_files/figure-html/unnamed-chunk-47-1.png" width="700" style="display: block; margin: auto;"></p>
 </div>
 </div>
 <div class="section level2">
@@ -1629,7 +1438,7 @@ example below</li>
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Problem 1</span></span>
 <span></span>
 <span><span class="co"># 1.1</span></span>
@@ -1648,7 +1457,7 @@ example below</li>
 </div>
 </div>
 <div class="section level2">
-<h2 id="homework-1---for-a-grade">Homework 1 - For a grade<a class="anchor" aria-label="anchor" href="#homework-1---for-a-grade"></a>
+<h2 id="homework">Homework<a class="anchor" aria-label="anchor" href="#homework"></a>
 </h2>
 <p>Create an assignment script, put it in your class folder and name it
 according to the convention above.</p>
@@ -1658,7 +1467,6 @@ exercises together.</li>
 <li>In class we will often only do part of an exercise and save the rest
 for later or for you to do on your own.</li>
 </ul>
-<p>See the homework 1 file for exercise descriptions.</p>
 </div>
   </div>
 
