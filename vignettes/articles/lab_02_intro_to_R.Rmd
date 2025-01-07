@@ -73,7 +73,7 @@ Let's try it - in the Console, write the `R` code required to add two plus two a
 When you run the code, you should see the answer printed below the window. 
 
 Here's some more basic expressions. Enter one line at a time into the console and press `Enter` to run it.  
-``` {r calc, echo=TRUE, eval = FALSE}
+``` {r echo=TRUE, eval = FALSE}
 3 / 4
 10 * 2
 2^3
@@ -102,7 +102,7 @@ RStudio has built in shorcuts for the `<-` operator: `Alt + -` (Windows) or `Opt
 
 Enter each line into the Console and press enter.  
 
-``` {r calc, echo=TRUE, eval = FALSE}
+``` {r echo=TRUE, eval = FALSE}
 x / 4
 x - 5
 x / 10
