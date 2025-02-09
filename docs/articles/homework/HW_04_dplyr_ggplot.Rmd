@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 library(tidyverse)
-finch <- read_csv(here::here("data/galapago-finches.csv"))
+finch <- read_csv(here::here("inst/extdata/galapago-finches.csv"))
 ```
 
 # Assignment Format

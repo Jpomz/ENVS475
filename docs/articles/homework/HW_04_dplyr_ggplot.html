@@ -437,7 +437,7 @@ library(tidyverse)</code></pre>
 it in your <code>data/</code> folder in your Class R project.</p>
 <p>Read the data file into R using the following command:</p>
 <pre class="r"><code># read in full data set
-finch &lt;- read.csv(&quot;data/galapago-finches.csv&quot;)</code></pre>
+finch &lt;- read_csv(&quot;data/galapago-finches.csv&quot;)</code></pre>
 </div>
 </div>
 <div id="exercises-dplyr-and-ggplot2" class="section level1">
@@ -468,6 +468,14 @@ data in order based on the <code>species</code>, <code>year</code>, and
 <p>0.10 Use <code>group_by()</code> and <code>summarize</code> to
 calculate the average <code>blength</code> for each <code>species</code>
 in <code>finch</code> data set.</p>
+<p>0.11 Use <code>unique()</code> to print out all the values in the
+<code>species</code> column.</p>
+<p>0.12 Use <code>unique()</code> to print out all the values in the
+<code>year</code> column.</p>
+<p>0.13 Use <code>filter()</code> to extract all the rows in the
+<code>finch</code> data where <code>species</code> has the value
+<code>scandens</code>. (Hint, make sure to use <code>==</code>, and “”
+around scandens).</p>
 </div>
 <div id="problem-1-plot-one-continuous-variable" class="section level2">
 <h2>Problem: 1 Plot one continuous variable</h2>
