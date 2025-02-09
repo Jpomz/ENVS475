@@ -96,6 +96,13 @@ finch <- read_csv("data/galapago-finches.csv")
 
 0.10 Use `group_by()` and  `summarize` to calculate the average `blength` for each `species` in `finch` data set.  
 
+0.11 Use `unique()` to print out all the values in the `species` column.  
+
+0.12 Use `unique()` to print out all the values in the `year` column.  
+
+0.13 Use `filter()` to extract all the rows in the `finch` data where `species` has the value `scandens`. (Hint, make sure to use `==`, and "" around scandens).  
+
+
 
 ## Problem: 1 Plot one continuous variable  
 1.1 Make a histogram of the `blength` column.  
