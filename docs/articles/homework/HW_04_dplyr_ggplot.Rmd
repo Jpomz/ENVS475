@@ -140,7 +140,7 @@ finch <- read_csv("data/galapago-finches.csv")
 
 ## Problem 4: dplyr + ggplot
 
-4.1 Use `mutate()` to create a new variable in the `finch` data set. This new variable should be equal to beak length $\times$ beak depth. Make a plain histogram showing the distribution of your new variable.  
+4.1 Use `mutate()` to create a new variable in the `finch` data set. This new variable should be equal to beak length $\times$ beak depth. Make a plain boxplot showing the distribution of your new variable.  
 
 4.2 Do the same thing as in 4.1, but this time, only plot the data from 1975, and map the fill color to the species variable.   
 
