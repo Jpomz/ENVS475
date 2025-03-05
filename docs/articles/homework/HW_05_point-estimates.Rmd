@@ -109,6 +109,7 @@ finch <- read_csv("data/galapago-finches.csv")
   * use the `labs(title = "...")` function to add a title with the species name and year.  
   * You can add `theme_bw()` if you want to.  
   * Under each plot, comment on whether or not you think these variables appear to be normally distributed.  
+    + WHY do you think it looks normal or not?  
     + Make sure you begin each line of your interpretation answer with a `#` to make it a comment in your R scipt.  
 
 
@@ -134,7 +135,7 @@ finch <- read_csv("data/galapago-finches.csv")
   * Is the mean beak length different between the years?  
   * How "confident" are we?  
 
-## Problem 4 `scandens` beak depth  
+## Problem 4 `scandens`  
 
 1. Calculate the mean, SD, SEM, and 95% confidence interval for the `blength` variable for the *scandens* species in both 1975 and 2012. 
 
@@ -143,7 +144,6 @@ finch <- read_csv("data/galapago-finches.csv")
   * Is the mean beak length different between the years?  
   * How "confident" are we?  
   
-3. 
 
 ## Problem 5 Challenge (optional)
 

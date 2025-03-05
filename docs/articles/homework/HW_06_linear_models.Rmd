@@ -110,8 +110,8 @@ scandens$year <- as.character(scandens$year)
 
 4. Use `confint()` to calculate and display a 99% CI for the estimated difference in beak length between 1975 and 2012.  
 
-5. Use a comment to interpret the results of problem 3.4 above. Are these results in agreement? Why do you think this is?  
-+ **Hint** use `dplyr`, `group_by()` and `summarize(n())` to show the number of observations within each year.  
+5. Use a comment to interpret the results of problem 3.4 above. How are the 95% and 99% CI's different? How does our interpretation change when discussing a 95% and 99% CI?    
+  
 
 ## Problem 4: Assumptions  
 
