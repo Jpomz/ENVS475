@@ -68,7 +68,9 @@ scandens$year <- as.character(scandens$year)
 
 
 
-# Exercises Homework 06: Linear Models
+# Exercises Homework 06: Linear Models  
+
+All of the following questions relate to the `scandens` object **NOT** the `finch` object.   
 
 ## Problem 1: Intercept only
 
