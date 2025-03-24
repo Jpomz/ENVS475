@@ -79,7 +79,8 @@ A. Create a tidy .csv file with the TB information from Argentina.
 
 A. Print the `head()` of your tidy data.  
 B. Print out the `dim()` of your tidy data.  
-C. Calculate the rate per 1000 people (number of cases / population * 1000) of TB infections.
+C. Calculate the rate per 1000 people (number of cases / population * 1000) of TB infections.  
+
 D. Calculate the total number of cases per year.  
 E. Plot the total number of cases by year.  
 F. Use `lm()` to perform a t-test comparing the average number of TB-infections based on sex (i.e., `count ~ sex`). Display the `summary()` of the model to your screen.  
