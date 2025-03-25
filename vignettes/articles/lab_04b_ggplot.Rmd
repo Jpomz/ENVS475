@@ -114,7 +114,7 @@ ggplot(data = invert,
                      y = body_mass_g))
 ```
 
-* Notice we now have "CIRC" on the x-axis and "HEIGHT" on the y-axis
+* Notice we now have "body_length_mm" on the x-axis and "body_mass_g" on the y-axis
 * This still doesn't create a figure, it's just a blank canvas and some information on the default values for the data and mapping columns to axes of the plots  
 
 ### Plot Layers  
@@ -249,6 +249,7 @@ ggplot(data = invert,
        mapping = aes(x = body_mass_g)) +
   geom_boxplot()
 ```
+
 * whiskers: show minimum (left side) and maximum (right side) of data  
 
 * Box: shows where 50% of the data lies  
