@@ -147,47 +147,28 @@ All of the following questions refer to the `scandens` object.
 
 ### Data `darwin_maize`  
 
-For this problem, we will be returning to the `darwin_maize` data. Recall that the original experimental design included growing plants from different fertilization categories (self vs. cross). The individual plants were taken from the same parent, so are "paired" in this sense. Here, we will be testing the hypothesis that there is a difference in `height` between the Self and Cross `type`.  
-
-### Data: `darwin_maize`  
-
-For this problem, we will be using the `darwin_maize.csv` available on D2L. Download this csv file into your `data/` folder and read it into R. 
+For this problem, we will be returning to the `darwin_maize` data. Recall that the original experimental design included growing plants from different fertilization categories (self vs. cross). The individual plants were taken from the same parent, so are "paired" in this sense. Here, we will be testing the hypothesis that there is a difference in `height` between the Self and Cross `type`.  The `darwin_maize.csv` file is available on D2L. Download this csv file into your `data/` folder and read it into R. 
 
 ```{r, eval = FALSE}
 darwin_maize <- read_csv("data/darwin_maize.csv")
 ```
 
-3.1 Add a comment to your homework script stating the null and alternative hypotheses. Make sure to put each hypothesis on its own line. Make sure that your alternative hypothesis is 2-tailed.   
+3.1 Add a comment to your homework script stating the null and alternative hypotheses for a paired t-test. Make sure to put each hypothesis on its own line. Make sure that your alternative hypothesis is 2-tailed.   
 
 3.2. Make a new data object called `darwin_diff` which includes the `difference` in `heights` for each `pair` in the data set. 
-  + As in the lab, the way the data is structured does not make this task simple, but we can use `group_by()` function before using the `-diff()` function inside of `mutate()` to accomplish this.  
+  + As in the lab, the way the data is structured does not make this task simple, but we can use `group_by()` function before using the `-diff()` function inside of `summarize()` to accomplish this.  
   + See the `caterpillar` example from the lab.  
   + **Hint** your new object should contain the following columns: `pair` and `difference`.  
   + Make sure to print out your new `darwin_diff` object at the end of this problem.  
   
 3.3 Use `lm()` function to formally test your hypothesis.  
+
+  + Hint: If you modified the data correctly in 3.2, you should be setting up an "intercept-only" model inside of `lm()`.   
+
   + Store the output of `lm()` in a new data object, and then use the `summary()` function to print out the results.  
-  
-3.4 Add a comment to your script interpreting the results of your analysis.
-```{r}
-# read in the data
-darwin_maize <- read_csv(here::here("data/darwin_maize.csv"))
-```
-
-3.1 Add a comment to your script describing the null and alternative hypotheses. Put each hypothesis on its own line.  
-
-3.2 You will need to modify the structure of the `darwin_maize` object in order to formally test these hypotheses. Follow the example in lab, and save your modified data as a new object.  
-
-  + Hint: The grouping variable will be `pair` and you will want to calculate the difference in the `height` variable.  
-  
-3.3 Use the `lm()` function to calculate a formal test on the modified data object.  
-
-  + Hint: If you modified the data correctly in 3.2, you should be setting up an "intercept-only" model inside of `lm()`.  
-  
-  + Be sure to store your model fit in a new object and run the `summary()` function on it.  
   
 3.4 Add a comment to your script describing the estimated average and standard error for the difference between the two groups.  
 
-3.5 Add a comment to your script interpreting the results of your analysis. Be sure to refer back to the null and alternative hypotheses (reject or fail to reject?) include the t-statistic, the degrees of freedom, and the p-value in your answer. 
+3.5 Add a comment to your script interpreting the results of your analysis. Be sure to refer back to the null and alternative hypotheses (reject or fail to reject?) include the t-statistic, and the p-value in your answer. 
 
 #### **This concludes the homework** 
