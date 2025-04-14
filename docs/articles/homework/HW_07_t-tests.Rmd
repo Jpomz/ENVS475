@@ -123,22 +123,23 @@ scandens$year <- as.character(scandens$year)
 
 All of the following questions refer to the `scandens` object. 
 
-2.1 Add a comment to your homework script stating the null and alternative hypotheses. Make sure to put each hypothesis on its own line. Make sure that your alternative hypothesis is 2-tailed.  
+2.1 Add a comment to your homework script stating the null and alternative hypotheses for a 2-sample t-test. Make sure to put each hypothesis on its own line. Make sure that your alternative hypothesis is 2-tailed.  
 
 2.2 Use `dplyr`, `group_by()`, `summarize()` and `mutate()` to calculate the following statistics for the `blength` variable in each `year`:  
 
   + Average, Standard Deviation, $\sqrt(n)$, and the Standard Error of the Mean.  
+2.3 When fitting a linear model with two groups, there will be two coefficient estimates; the intercept ($\beta_0$) and the difference in groups ($\beta_1$). Write out the null and alternative hypotheses for *each* coefficient.  In addition, indicate which set of hypotheses is the same as the hypothesis for a two-sample t-test. In other words, which coefficient p-value should you look at to interpret the results of your 2-sample t-test?  
   
-2.3 Use the `lm()` function to perform a 2-sample t-test on whether or not the average `blength` (in mm) is equal between the two years of data.  
+2.4 Use the `lm()` function to perform a 2-sample t-test on whether or not the average `blength` (in mm) is equal between the two years of data.  
 
   + Note that you will be using the `scandens` data for this step, not the summarized data you calculated in 1.2 above. 
   
   + Make sure to save your model-fit as an object, and then use the `summary()` function to print out the results.  
 
 
-2.4 What is the estimate and standard error for `blength` in the "1975" sample? What is the estimate and standard error for the *difference* in `blength` between "1975" and the "2012" samples?   
+2.5 What is the estimate and standard error for `blength` in the "1975" sample? What is the estimate and standard error for the *difference* in `blength` between "1975" and the "2012" samples?   
 
-2.5 Add a comment to your script interpreting the results of your analysis. Be sure to refer back to the null and alternative hypotheses (reject or fail to reject?) include the t-statistic, the degrees of freedom, and the p-value in your answer.   
+2.6 Add a comment to your script interpreting the results of your analysis. Be sure to refer back to the null and alternative hypotheses (reject or fail to reject?) include the t-statistic, the degrees of freedom, and the p-value in your answer.   
 
 ## Problem 3: paired t-test  
 
