@@ -139,7 +139,9 @@ All of the following questions refer to the `scandens` object.
 
 2.5 What is the estimate and standard error for `blength` in the "1975" sample? What is the estimate and standard error for the *difference* in `blength` between "1975" and the "2012" samples?   
 
-2.6 Add a comment to your script interpreting the results of your analysis. Be sure to refer back to the null and alternative hypotheses (reject or fail to reject?) include the t-statistic, the degrees of freedom, and the p-value in your answer.   
+2.6 Add a comment to your script interpreting the results of your analysis for both the intercept ($\beta_0$) and the estimated differences ($\beta_1$) between the groups.  
+  * You will have two interpretation sentences  
+  * both should refer back to the null and alternative hypotheses for both coefficients and include the t-statistic, and the p-value in your answer.   
 
 ## Problem 3: paired t-test  
 
