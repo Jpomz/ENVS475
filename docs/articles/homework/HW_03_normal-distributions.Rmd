@@ -54,9 +54,13 @@ a. What age at childbirth puts a woman in the upper 2.5\% of the age distributio
 b. What proportion of women who give birth are 21 years of age or older?
 c. What is the probability that a woman will have a child at exactly 32.8 years old?
 d. What is the probability that a woman will have a child between the ages of 18 and 22?
-e. What is the probability that a woman will give birth at exactly the mean age of this distribution?
-f. What values bound the range 95% of the data?
-g. How many standard deviations (i.e., Z-score) from the mean is a woman who gives birth at the age of 35?
+e. What is the probability that a woman will give birth at exactly the mean age of this distribution?  
+
+f. What values bound *approximately* 95% of the data? (hint: $\mu \pm x * \sigma$)  
+
+g. What values bound *exactly* 95% of the data? (hint: use `qnorm()` twice. Think about what values to put in `qnorm`. We have 5% of the data left over, but where does the 5% need to be split between?)  
+
+h. How many standard deviations (i.e., Z-score) from the mean is a woman who gives birth at the age of 35?
   
 ### 3. Triathlon times. (8 points)
 
