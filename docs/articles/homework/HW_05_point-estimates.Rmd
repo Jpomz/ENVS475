@@ -151,8 +151,12 @@ In the above example we split the original data object into four based on combin
 Using `dplyr` functions and the original, complete, `finch` data object, calculate the mean, sd, sem, and 95% CIs for beak length for each combination of year, and species.  
 
 **Hints**  
+
 * Recall the `group_by()` function.  
+
 * `summarize()` collapses a large data set down to one row per group  
-* the `mutate()` function can be used to make new column(s) based on calculations using values already in columns.  
+
+* the `mutate()` function can be used to make new column(s) based on calculations using values already in columns.    
+
 
 

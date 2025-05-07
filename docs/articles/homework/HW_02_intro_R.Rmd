@@ -119,7 +119,8 @@ mass_g
 
 2.1) Create similar code to convert a mass in pounds to a mass kilograms.
 
-**Notes** 
+**Notes**  
+
 * Create a variable to store a body mass in pounds. Assign this variable a value of 3.5 (an appropriate mass for a [*Sylvilagus audubonii*](https://en.wikipedia.org/wiki/Desert_cottontail).
 
 * Convert the variable from body mass in pounds to body mass in kilograms (by dividing it by 2.2046), and assign it to a new variable.
@@ -152,12 +153,16 @@ A built-in function is one that you don’t need to install and load a package t
 
 Use these built-in functions to print the following items:
 
-4.1. The absolute value of -15.5.
-4.2. 4.483847 rounded to one decimal place.
-4.3. 3.8 rounded to the nearest integer. *You don’t have to specify the number of decimal places in this case if you don’t want to, because `round()` will default to using 0 if the `digits` argument is not provided. Look at `help(round)` or `?round` to see how this is indicated.*
+4.1. The absolute value of -15.5.  
+
+4.2. 4.483847 rounded to one decimal place.  
+
+4.3. 3.8 rounded to the nearest integer.  
+  *You don’t have to specify the number of decimal places in this case if you don’t want to, because `round()` will default to using 0 if the `digits` argument is not provided. Look at `help(round)` or `?round` to see how this is indicated.*  
+
 4.4. Assign the value of the square root of 2.6 to a variable. Then round the variable you’ve created to 2 decimal places and assign it to another variable. Print out the rounded value.
 
-*Optional Challenge*: Do the same thing as task 6 (immediately above), but instead of creating the intermediate variable, perform both the square root and the round on a single line by putting the `sqrt()` call inside the `round()` call.
+**Optional Challenge**: Do the same thing as task 6 (immediately above), but instead of creating the intermediate variable, perform both the square root and the round on a single line by putting the `sqrt()` call inside the `round()` call.
 
 
 ## 6. Basic Vectors 
@@ -166,15 +171,22 @@ Cut and paste the following vector into your assignment and then use code to pri
 numbers <- c(5, 2, 26, 8, 16)
 ```
 
-6.1. The number of items in the numbers vector (using the `length` function)
-6.2. The third item in the numbers vector (using `[]`)
-6.3. The smallest number in the numbers vector (using the `min` function)
-6.4. The largest number in the numbers vector (using the `max` function)
-6.5. The average of the numbers in the numbers vector (using the `mean` function)
-6.6. The first, second and third numbers in the numbers vector (using `[]`)
-6.7. The sum of the values in the numbers vector (using the `sum` function)
+5.1. The number of items in the numbers vector (using the `length` function)  
 
-## 7. `NULLS` in Vectors
+5.2. The third item in the numbers vector (using `[]`)  
+
+5.3. The smallest number in the numbers vector (using the `min` function)  
+
+5.4. The largest number in the numbers vector (using the `max` function)  
+
+5.5. The average of the numbers in the numbers vector (using the `mean` function)  
+
+5.6. The first, second and third numbers in the numbers vector (using `[]`)  
+
+5.7. The sum of the values in the numbers vector (using the `sum` function)  
+
+
+## 6. `NULLS` in Vectors
 
 Cut and paste the following vector into your assignment. Then use code to print the requested values related to the vector. You’ll need to use `na.rm = TRUE` argument within each function to ignore the null values. for example: `range(numbers_2, na.rm = TRUE)`
 
@@ -182,12 +194,16 @@ Cut and paste the following vector into your assignment. Then use code to print 
 numbers_2 <- c(7, 6, 22, 5, NA, 42)
 ```
 
-7.1. The smallest number in the `numbers_2` vector
-7.2. The largest number in the `numbers_2` vector
-7.3. The average of the numbers in the `numbers_2`
-7.4. The sum of the values in the `numbers_2` vector
+6.1. The smallest number in the `numbers_2` vector  
 
-## 8. Shrub Volume Vectors 
+6.2. The largest number in the `numbers_2` vector  
+
+6.3. The average of the numbers in the `numbers_2`  
+
+6.4. The sum of the values in the `numbers_2` vector  
+
+
+## 7. Shrub Volume Vectors 
 
 You have data on the length, width, and height of 10 individuals of the yew [*Taxus baccata*](https://en.wikipedia.org/wiki/Taxus_baccata) stored in the following vectors:
 
@@ -199,16 +215,23 @@ height <- c(9.6, 7.6, 2.2, 1.5, 4.0, 3.0, 4.5, 2.3, 7.5, 3.2)
 
 Copy these vectors into an R script and then determine the following:
 
-8.1. The volume of each shrub (length × width × height). *Storing this in a variable will make some of the next problems easier.*
-8.2. The sum of the volume of all of the shrubs (using the `sum` function).
-8.3. A vector of the height of shrubs with lengths > 2.5.
-8.4. A vector of the height of shrubs with heights > 5.
-8.5. A vector of the heights of the first 5 shrubs (using `[]`).
-8.6. A vector of the volumes of the first 3 shrubs (using `[]`).
+7.1. The volume of each shrub (length × width × height).  
+  *Storing this in a variable will make some of the next problems easier.*  
+  
+7.2. The sum of the volume of all of the shrubs (using the `sum` function).  
+
+7.3. A vector of the height of shrubs with lengths > 2.5.  
+
+7.4. A vector of the height of shrubs with heights > 5.  
+
+7.5. A vector of the heights of the first 5 shrubs (using `[]`).  
+
+7.6. A vector of the volumes of the first 3 shrubs (using `[]`).  
+
 
 *Optional Challenge*: A vector of the volumes of the last 5 shrubs with the code written so that it will return the last 5 values regardless of the length of the vector (i.e., it will give the last 5 values if there are 10, 20, or 50 individuals).
 
-## 9. Data frames  
+## 8. Data frames  
 
 * Copy and run the following code in your assignment, then answer the questions below.  
 
@@ -222,7 +245,7 @@ Write code in your script to answer all of the following questions for the `PLan
 9.3 What are the number of rows?  
 9.4 What are the column names?  
 9.5 Print out the structure of the data frame.  
-  * Add a comment telling me what the class of each column is.  
+  ** Add a comment telling me what the class of each column is.**  
 9.6 Extract the entire 3rd row.  
 9.7 Extract the entire 1st column.  
 9.8 Extract the column named `group`.    

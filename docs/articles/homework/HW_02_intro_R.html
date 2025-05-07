@@ -350,7 +350,7 @@ display: none;
 
 <h1 class="title toc-ignore">ENVS475 Homework 02: Intro to R</h1>
 <h3 class="subtitle">Complete for a grade</h3>
-<h4 class="date">January, 2025</h4>
+<h4 class="date">May, 2025</h4>
 
 </div>
 
@@ -368,11 +368,11 @@ Basic Objects: Scalars</a></li>
 Built-in Functions</a></li>
 <li><a href="#basic-vectors" id="toc-basic-vectors">6. Basic
 Vectors</a></li>
-<li><a href="#nulls-in-vectors" id="toc-nulls-in-vectors">7.
+<li><a href="#nulls-in-vectors" id="toc-nulls-in-vectors">6.
 <code>NULLS</code> in Vectors</a></li>
-<li><a href="#shrub-volume-vectors" id="toc-shrub-volume-vectors">8.
+<li><a href="#shrub-volume-vectors" id="toc-shrub-volume-vectors">7.
 Shrub Volume Vectors</a></li>
-<li><a href="#data-frames" id="toc-data-frames">9. Data frames</a></li>
+<li><a href="#data-frames" id="toc-data-frames">8. Data frames</a></li>
 </ul></li>
 </ul>
 </div>
@@ -478,11 +478,11 @@ mass_g &lt;- mass_kg * 1000
 mass_g</code></pre>
 <p>2.1) Create similar code to convert a mass in pounds to a mass
 kilograms.</p>
-<p><strong>Notes</strong> * Create a variable to store a body mass in
-pounds. Assign this variable a value of 3.5 (an appropriate mass for a
-<a href="https://en.wikipedia.org/wiki/Desert_cottontail"><em>Sylvilagus
-audubonii</em></a>.</p>
+<p><strong>Notes</strong></p>
 <ul>
+<li><p>Create a variable to store a body mass in pounds. Assign this
+variable a value of 3.5 (an appropriate mass for a <a href="https://en.wikipedia.org/wiki/Desert_cottontail"><em>Sylvilagus
+audubonii</em></a>.</p></li>
 <li><p>Convert the variable from body mass in pounds to body mass in
 kilograms (by dividing it by 2.2046), and assign it to a new
 variable.</p></li>
@@ -526,50 +526,56 @@ number of decimal places (the second argument <code>digits =</code>)
 <code>sqrt(4)</code>)</li>
 </ul>
 <p>Use these built-in functions to print the following items:</p>
-<p>4.1. The absolute value of -15.5. 4.2. 4.483847 rounded to one
-decimal place. 4.3. 3.8 rounded to the nearest integer. <em>You don’t
-have to specify the number of decimal places in this case if you don’t
-want to, because <code>round()</code> will default to using 0 if the
-<code>digits</code> argument is not provided. Look at
+<p>4.1. The absolute value of -15.5.</p>
+<p>4.2. 4.483847 rounded to one decimal place.</p>
+<p>4.3. 3.8 rounded to the nearest integer.<br />
+<em>You don’t have to specify the number of decimal places in this case
+if you don’t want to, because <code>round()</code> will default to using
+0 if the <code>digits</code> argument is not provided. Look at
 <code>help(round)</code> or <code>?round</code> to see how this is
-indicated.</em> 4.4. Assign the value of the square root of 2.6 to a
-variable. Then round the variable you’ve created to 2 decimal places and
-assign it to another variable. Print out the rounded value.</p>
-<p><em>Optional Challenge</em>: Do the same thing as task 6 (immediately
-above), but instead of creating the intermediate variable, perform both
-the square root and the round on a single line by putting the
-<code>sqrt()</code> call inside the <code>round()</code> call.</p>
+indicated.</em></p>
+<p>4.4. Assign the value of the square root of 2.6 to a variable. Then
+round the variable you’ve created to 2 decimal places and assign it to
+another variable. Print out the rounded value.</p>
+<p><strong>Optional Challenge</strong>: Do the same thing as task 6
+(immediately above), but instead of creating the intermediate variable,
+perform both the square root and the round on a single line by putting
+the <code>sqrt()</code> call inside the <code>round()</code> call.</p>
 </div>
 <div id="basic-vectors" class="section level2">
 <h2>6. Basic Vectors</h2>
 <p>Cut and paste the following vector into your assignment and then use
 code to print the requested values related to the vector.</p>
 <pre class="r"><code>numbers &lt;- c(5, 2, 26, 8, 16)</code></pre>
-<p>6.1. The number of items in the numbers vector (using the
-<code>length</code> function) 6.2. The third item in the numbers vector
-(using <code>[]</code>) 6.3. The smallest number in the numbers vector
-(using the <code>min</code> function) 6.4. The largest number in the
-numbers vector (using the <code>max</code> function) 6.5. The average of
-the numbers in the numbers vector (using the <code>mean</code> function)
-6.6. The first, second and third numbers in the numbers vector (using
-<code>[]</code>) 6.7. The sum of the values in the numbers vector (using
-the <code>sum</code> function)</p>
+<p>5.1. The number of items in the numbers vector (using the
+<code>length</code> function)</p>
+<p>5.2. The third item in the numbers vector (using <code>[]</code>)</p>
+<p>5.3. The smallest number in the numbers vector (using the
+<code>min</code> function)</p>
+<p>5.4. The largest number in the numbers vector (using the
+<code>max</code> function)</p>
+<p>5.5. The average of the numbers in the numbers vector (using the
+<code>mean</code> function)</p>
+<p>5.6. The first, second and third numbers in the numbers vector (using
+<code>[]</code>)</p>
+<p>5.7. The sum of the values in the numbers vector (using the
+<code>sum</code> function)</p>
 </div>
 <div id="nulls-in-vectors" class="section level2">
-<h2>7. <code>NULLS</code> in Vectors</h2>
+<h2>6. <code>NULLS</code> in Vectors</h2>
 <p>Cut and paste the following vector into your assignment. Then use
 code to print the requested values related to the vector. You’ll need to
 use <code>na.rm = TRUE</code> argument within each function to ignore
 the null values. for example:
 <code>range(numbers_2, na.rm = TRUE)</code></p>
 <pre class="r"><code>numbers_2 &lt;- c(7, 6, 22, 5, NA, 42)</code></pre>
-<p>7.1. The smallest number in the <code>numbers_2</code> vector 7.2.
-The largest number in the <code>numbers_2</code> vector 7.3. The average
-of the numbers in the <code>numbers_2</code> 7.4. The sum of the values
-in the <code>numbers_2</code> vector</p>
+<p>6.1. The smallest number in the <code>numbers_2</code> vector</p>
+<p>6.2. The largest number in the <code>numbers_2</code> vector</p>
+<p>6.3. The average of the numbers in the <code>numbers_2</code></p>
+<p>6.4. The sum of the values in the <code>numbers_2</code> vector</p>
 </div>
 <div id="shrub-volume-vectors" class="section level2">
-<h2>8. Shrub Volume Vectors</h2>
+<h2>7. Shrub Volume Vectors</h2>
 <p>You have data on the length, width, and height of 10 individuals of
 the yew <a href="https://en.wikipedia.org/wiki/Taxus_baccata"><em>Taxus
 baccata</em></a> stored in the following vectors:</p>
@@ -578,20 +584,24 @@ width &lt;- c(1.3, 2.2, 1.5, 4.5, 3.1, NA, 1.8, 0.5, 2.0, 2.7)
 height &lt;- c(9.6, 7.6, 2.2, 1.5, 4.0, 3.0, 4.5, 2.3, 7.5, 3.2)</code></pre>
 <p>Copy these vectors into an R script and then determine the
 following:</p>
-<p>8.1. The volume of each shrub (length × width × height). <em>Storing
-this in a variable will make some of the next problems easier.</em> 8.2.
-The sum of the volume of all of the shrubs (using the <code>sum</code>
-function). 8.3. A vector of the height of shrubs with lengths &gt; 2.5.
-8.4. A vector of the height of shrubs with heights &gt; 5. 8.5. A vector
-of the heights of the first 5 shrubs (using <code>[]</code>). 8.6. A
-vector of the volumes of the first 3 shrubs (using <code>[]</code>).</p>
+<p>7.1. The volume of each shrub (length × width × height).<br />
+<em>Storing this in a variable will make some of the next problems
+easier.</em></p>
+<p>7.2. The sum of the volume of all of the shrubs (using the
+<code>sum</code> function).</p>
+<p>7.3. A vector of the height of shrubs with lengths &gt; 2.5.</p>
+<p>7.4. A vector of the height of shrubs with heights &gt; 5.</p>
+<p>7.5. A vector of the heights of the first 5 shrubs (using
+<code>[]</code>).</p>
+<p>7.6. A vector of the volumes of the first 3 shrubs (using
+<code>[]</code>).</p>
 <p><em>Optional Challenge</em>: A vector of the volumes of the last 5
 shrubs with the code written so that it will return the last 5 values
 regardless of the length of the vector (i.e., it will give the last 5
 values if there are 10, 20, or 50 individuals).</p>
 </div>
 <div id="data-frames" class="section level2">
-<h2>9. Data frames</h2>
+<h2>8. Data frames</h2>
 <ul>
 <li>Copy and run the following code in your assignment, then answer the
 questions below.</li>
@@ -604,7 +614,7 @@ for the <code>PLantGrowth</code> data frame<br />
 9.3 What are the number of rows?<br />
 9.4 What are the column names?<br />
 9.5 Print out the structure of the data frame.<br />
-* Add a comment telling me what the class of each column is.<br />
+** Add a comment telling me what the class of each column is.**<br />
 9.6 Extract the entire 3rd row.<br />
 9.7 Extract the entire 1st column.<br />
 9.8 Extract the column named <code>group</code>.</p>
